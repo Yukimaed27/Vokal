@@ -187,3 +187,16 @@ Faltan plantillas OTP, primer inicio de sesión del propietario y pruebas reales
 No se solicitaron códigos, no se crearon usuarios, no se envió correo y no se hizo un despliegue.
 El siguiente paso está en HANDOFF/CLOUD: mostrar {{ .Token }} en Magic Link/Confirm signup y probar Mi cuenta.
 Actualizar estado técnico cuando haya verificación real; no registrar navegación incidental del panel.
+
+## 2026-10-25 — Requisito de SMTP y corrección de la guía de autenticación
+
+Se verificó en el changelog oficial que desde 2026-06-03 los proyectos Free nuevos con correo predeterminado no permiten editar plantillas.
+Esto bloquea la configuración OTP indicada: primero hace falta SMTP propio. La instrucción anterior omitió ese requisito.
+Se corrigieron CLOUD, HANDOFF, STATUS y ROADMAP para evitar que otra sesión repita el mismo paso inviable.
+
+Se plantean dos opciones, aún sin elección: conservar OTP con SMTP o implementar GitHub OAuth para evitar correo de acceso.
+GitHub OAuth no está implementado ni configurado; no se cambió el cliente, no se enviaron mensajes y no se contrataron servicios.
+No se investigaron ni prometieron condiciones gratuitas de un proveedor SMTP concreto.
+Este es un bloqueo técnico del diseño de acceso, no un registro de navegación incidental del propietario.
+
+Fuente primaria: https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier.

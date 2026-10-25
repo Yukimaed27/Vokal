@@ -1,5 +1,9 @@
 # Cambios
 
+## Corrección documental de autenticación — 2026-10-25
+- Se aclara el requisito de SMTP propio para editar plantillas en proyectos Free nuevos de Supabase.
+- Autenticación pendiente de elección entre OTP con SMTP y alternativa GitHub OAuth; sin cambios de código ni servicios contratados.
+
 ## 0.2.1 — 2026-10-25
 - Configuración pública del proyecto Supabase incorporada para continuar desde otra computadora sin volver a copiarla.
 - Variables de Pages vacías ya no desactivan los valores públicos configurados.

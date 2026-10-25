@@ -16,7 +16,7 @@
 - [x] Preparar esquema, políticas RLS y combinación transaccional.
 - [x] Preparar build estático y workflow de GitHub Pages.
 - [x] Configurar identificadores públicos del proyecto y comprobar API real y rechazo de acceso anónimo.
-- [ ] Configurar código por correo y revisar límites de destinatarios/envíos.
+- [ ] Resolver acceso: OTP necesita SMTP para personalizar plantillas en Free nuevo; alternativa GitHub OAuth pendiente de elección e implementación.
 - [x] Migración aplicada según el propietario; API de tabla/RPC rechaza acceso sin sesión.
 - [ ] Probar restricciones de RLS con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.

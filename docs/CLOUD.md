@@ -72,6 +72,24 @@ La comprobación anónima de tabla/RPC es correcta, pero no demuestra aislamient
 
 ## 3. Activar el código por correo
 
+### Requisito previo: SMTP propio en proyectos Free nuevos
+
+Desde el 3 de junio de 2026, los proyectos Free nuevos que usan el correo predeterminado de Supabase no pueden editar las plantillas.
+Por tanto, la instrucción de insertar {{ .Token }} requiere primero configurar un proveedor SMTP propio.
+La recomendación inicial de editar directamente las plantillas era incompleta y no debe repetirse.
+Fuente: [cambio oficial de Supabase](https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier).
+
+SMTP es el servicio que envía los mensajes, no la base de datos. No hace falta contratar Pro para usar un SMTP propio,
+pero sus condiciones, dominio y posibles costos deben verificarse con el proveedor antes de configurarlo.
+No solicitar la contraseña SMTP ni claves secretas por chat ni guardarlas en el frontend; se configuran únicamente en Supabase.
+
+Alternativa pendiente de elección: implementar acceso con GitHub mediante Supabase OAuth, sin envío de correo de acceso ni edición de plantillas.
+El propietario ya utiliza GitHub. Esa opción requiere habilitar/configurar el proveedor y cambiar el cliente; no está implementada todavía.
+Referencia: [acceso con GitHub](https://supabase.com/docs/guides/auth/social-sign-in/auth-github).
+No cambiar el método ni contratar servicios sin acordar la opción con el propietario.
+
+### Plantillas, después de configurar SMTP
+
 En **Authentication**, mantén habilitado el proveedor Email y las confirmaciones.
 En las plantillas de **Magic Link** y, si corresponde, **Confirm signup**, incluye el código:
 

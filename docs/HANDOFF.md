@@ -12,10 +12,10 @@ No mantener aquí un registro de pantallas, clics o pasos menores del propietari
 
 ## Próxima acción concreta
 
-1. Configurar Magic Link y Confirm signup para incluir {{ .Token }}; mantener confirmaciones.
-2. El propietario entra desde Mi cuenta usando su correo. No solicitar ni guardar el código OTP en el chat.
-3. Verificar guardado y luego aislamiento/sincronización con cuentas/dispositivos reales.
-4. No repetir la migración ya aplicada sin revisar el estado de sus políticas.
+1. Resolver el requisito de autenticación: Free nuevo no permite editar plantillas sin SMTP propio. La guía inicial omitió esa restricción y ya fue corregida.
+2. Acordar si se mantiene OTP con SMTP o se implementa acceso con GitHub mediante Supabase OAuth. La alternativa GitHub todavía no está implementada.
+3. Tras configurar el método elegido, el propietario inicia sesión; no solicitar ni guardar OTP o secretos del proveedor en el chat.
+4. Verificar guardado y luego aislamiento/sincronización con cuentas/dispositivos reales. No repetir la migración sin revisar su estado.
 
 El SMTP de prueba tiene restricciones de destinatarios y frecuencia. Leer CLOUD antes de prometer acceso por correo a los probadores.
 No añadir a los probadores como administradores del proyecto para eludir esos límites.

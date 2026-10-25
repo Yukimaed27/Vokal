@@ -49,8 +49,8 @@ Guía: docs/CLOUD.md. Falta verificar acceso y guardado con cuentas/dispositivos
 La web no se ha publicado en esta revisión; existe un workflow manual para hacerlo después.
 
 ## Siguiente tarea
-1. Configurar las plantillas Magic Link/Confirm signup para mostrar el código OTP.
-2. Probar inicio de sesión con el correo del propietario, sin compartir el código con el agente.
+1. Acordar autenticación: mantener OTP configurando SMTP propio o implementar GitHub OAuth sin correo de acceso.
+2. Configurar el método elegido y probar una sesión real. Free nuevo exige SMTP para editar plantillas; no indicar edición directa sin ese requisito.
 3. Verificar aislamiento entre cuentas y recuperación del progreso en dos dispositivos.
 4. Publicar y comprobar el sitio desplegado.
 5. Ampliar el currículo con revisión lingüística; no cargar miles de traducciones sin validar.
