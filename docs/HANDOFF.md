@@ -6,15 +6,15 @@ Actualizado: 2026-10-25. Aplicación: 0.2.1. Idioma de colaboración: español.
 
 La configuración pública de Supabase está en src/config.js y funciona en el servidor/build.
 El propietario informó SQL ejecutado sin errores. La API real responde y tabla/RPC rechazan acceso sin sesión.
-Falta el primer acceso OTP y probar guardado/aislamiento con usuarios autenticados.
+La API real confirma GitHub habilitado. Falta implementar el acceso OAuth en Vokal y probar guardado/aislamiento autenticados.
 La guía de instalación reutilizable está en [CLOUD](CLOUD.md).
 No mantener aquí un registro de pantallas, clics o pasos menores del propietario.
 
 ## Próxima acción concreta
 
-1. Resolver el requisito de autenticación: Free nuevo no permite editar plantillas sin SMTP propio. La guía inicial omitió esa restricción y ya fue corregida.
-2. Acordar si se mantiene OTP con SMTP o se implementa acceso con GitHub mediante Supabase OAuth. La alternativa GitHub todavía no está implementada.
-3. Tras configurar el método elegido, el propietario inicia sesión; no solicitar ni guardar OTP o secretos del proveedor en el chat.
+1. Implementar botón y flujo de GitHub OAuth en Vokal; el proveedor ya está habilitado según Auth settings.
+2. Configurar/verificar la redirección al sitio y el intercambio seguro de sesión. No pedir Client Secret al propietario.
+3. Probar un acceso real del propietario. La comprobación del proveedor no valida credenciales completas ni el flujo de extremo a extremo.
 4. Verificar guardado y luego aislamiento/sincronización con cuentas/dispositivos reales. No repetir la migración sin revisar su estado.
 
 El SMTP de prueba tiene restricciones de destinatarios y frecuencia. Leer CLOUD antes de prometer acceso por correo a los probadores.

@@ -200,3 +200,10 @@ No se investigaron ni prometieron condiciones gratuitas de un proveedor SMTP con
 Este es un bloqueo técnico del diseño de acceso, no un registro de navegación incidental del propietario.
 
 Fuente primaria: https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier.
+
+## 2026-10-25 — Proveedor GitHub habilitado, pendiente cliente OAuth
+
+Verificación real solicitada por el propietario: Auth settings respondió 200 con external.github=true y email habilitado.
+Este hito confirma el proveedor activo, no el intercambio OAuth ni guardado autenticado.
+Se actualizó el contexto técnico para implementar el botón/flujo en Vokal; no se modificó código, envió correo ni inició una sesión.
+No se solicitaron ni registraron credenciales privadas del proveedor.

@@ -49,3 +49,8 @@ Se guardan en src/config.js porque son identificadores del frontend, no secretos
 No se reproducen en el diario ni se añaden contraseñas o tokens. La separación de usuarios depende de autenticación/RLS.
 Las variables de entorno no vacías siguen permitiendo sobrescribirlos; una variable de Pages ausente/vacía no debe desconectarlos.
 El acceso por correo y el guardado deben verificarse con el propietario sin solicitar su OTP.
+
+## Acceso por GitHub
+
+Se eligió GitHub OAuth para evitar el requisito de SMTP de plantillas OTP. El proveedor está habilitado y verificado por API.
+La integración en Vokal aún está pendiente; Client Secret permanece exclusivamente en Supabase.

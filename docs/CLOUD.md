@@ -83,10 +83,11 @@ SMTP es el servicio que envía los mensajes, no la base de datos. No hace falta 
 pero sus condiciones, dominio y posibles costos deben verificarse con el proveedor antes de configurarlo.
 No solicitar la contraseña SMTP ni claves secretas por chat ni guardarlas en el frontend; se configuran únicamente en Supabase.
 
-Alternativa pendiente de elección: implementar acceso con GitHub mediante Supabase OAuth, sin envío de correo de acceso ni edición de plantillas.
-El propietario ya utiliza GitHub. Esa opción requiere habilitar/configurar el proveedor y cambiar el cliente; no está implementada todavía.
+Método elegido: acceso con GitHub mediante Supabase OAuth, sin envío de correo de acceso ni edición de plantillas.
+El proveedor ya está habilitado, comprobado con Auth settings (external.github=true).
+Faltan el botón/flujo OAuth del cliente y su verificación real; el valor true no prueba Client Secret, callback ni guardado.
 Referencia: [acceso con GitHub](https://supabase.com/docs/guides/auth/social-sign-in/auth-github).
-No cambiar el método ni contratar servicios sin acordar la opción con el propietario.
+No contratar servicios de correo ni cambiar de nuevo el método sin acordarlo con el propietario.
 
 ### Plantillas, después de configurar SMTP
 

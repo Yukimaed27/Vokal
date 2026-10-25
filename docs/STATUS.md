@@ -5,7 +5,7 @@ Fecha: 2026-10-25. Versión: 0.2.1.
 ## Tarea activa y contexto entre sesiones
 
 El proyecto Supabase está configurado con URL y clave pública. La API real responde y rechaza lectura/RPC sin sesión.
-El propietario confirmó SQL ejecutado sin errores. Falta completar y comprobar autenticación OTP, RLS entre usuarios y guardado real.
+El propietario confirmó SQL ejecutado sin errores. GitHub está habilitado según la API real. Faltan botón/flujo OAuth de Vokal, acceso real, RLS entre usuarios y guardado.
 El punto de continuidad está en [HANDOFF](HANDOFF.md), con detalle en [CLOUD](CLOUD.md).
 El [índice](README.md), [arquitectura](ARCHITECTURE.md), [operación](OPERATIONS.md) y [diario](SESSION_LOG.md)
 permiten continuar sin recuperar este chat. [WORKFLOW](WORKFLOW.md) y AGENTS obligan a actualizar los .md en cada entrega.
@@ -49,8 +49,8 @@ Guía: docs/CLOUD.md. Falta verificar acceso y guardado con cuentas/dispositivos
 La web no se ha publicado en esta revisión; existe un workflow manual para hacerlo después.
 
 ## Siguiente tarea
-1. Acordar autenticación: mantener OTP configurando SMTP propio o implementar GitHub OAuth sin correo de acceso.
-2. Configurar el método elegido y probar una sesión real. Free nuevo exige SMTP para editar plantillas; no indicar edición directa sin ese requisito.
+1. Implementar GitHub OAuth en Vokal: el proveedor ya está habilitado y verificado por API.
+2. Verificar redirección e inicio de sesión real; no confundir proveedor activo con integración completa.
 3. Verificar aislamiento entre cuentas y recuperación del progreso en dos dispositivos.
 4. Publicar y comprobar el sitio desplegado.
 5. Ampliar el currículo con revisión lingüística; no cargar miles de traducciones sin validar.
