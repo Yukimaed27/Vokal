@@ -1,6 +1,6 @@
 # Operación, comprobaciones y diagnóstico
 
-Aplicable a la base 0.2.0. Comandos desde la raíz del repositorio, salvo indicación contraria.
+Aplicable a la base 0.2.1. Comandos desde la raíz del repositorio, salvo indicación contraria.
 
 ## 1. Entornos y portabilidad
 
@@ -90,7 +90,7 @@ No abras el index.html como file://: los módulos y solicitudes deben pasar por 
 
 ### Node
 
-Hay 14 pruebas. Cubren corrección, intervalos, validación y migración de estado, contenido coherente, bloqueos,
+Hay 15 pruebas; una cubre la regresión de variables vacías de Pages. Cubren corrección, intervalos, validación y migración de estado, contenido coherente, bloqueos,
 combinación de dos avances, configuración de nube, OTP y autorización simulados, renovación concurrente en una instancia,
 fallos de red/cierre de sesión y ocultación de recursos privados del servidor.
 
@@ -102,7 +102,8 @@ No hay pruebas de pronunciación, validación lingüística humana, carga masiva
 La comprobación usa Edge/Chromium instalado, su DevTools Protocol y WebSocket nativo de Node.
 No requiere instalar Playwright, Selenium ni paquetes del registro.
 
-Requisitos: `pnpm dev` activo en puerto 3000 y un navegador con **perfil temporal exclusivo**, depuración en 9223 y sin sesiones reales.
+Requisitos: un servidor de Vokal activo y un navegador con **perfil temporal exclusivo**, depuración en 9223 y sin sesiones reales.
+El script usa por defecto http://localhost:3000/; acepta otra URL como primer argumento para no interferir con un servidor del propietario.
 Nunca conectes este script al perfil habitual del propietario: modifica el progreso de prueba y cierra el navegador de QA al terminar.
 El script no está diseñado para conservar datos personales.
 
@@ -116,6 +117,9 @@ node scripts/browser-check.mjs
 
 En Linux utiliza un Chromium disponible con esos puertos y un directorio temporal exclusivo; no lo instales solo para repetir una verificación documental.
 El script espera brevemente el arranque del puerto. Escribe capturas en `.qa/`, que no se versiona.
+La comprobación de cuenta se adapta a configuración activa/inactiva y no envía correos ni inicia una sesión real.
+En la revisión 0.2.1 no pudo repetirse la parte visual: la revisión automática bloqueó iniciar el navegador, sin motivo más específico.
+Se completó la verificación local mediante HTTP; la QA visual anterior sigue correspondiendo a 0.2.0.
 
 Recorridos comprobados:
 
@@ -144,7 +148,8 @@ El build no limpia archivos preexistentes del directorio: revisa dist si se reut
 La carpeta dist se ignora en Git y puede regenerarse en otra laptop.
 
 El workflow Publicar web es manual. Necesita Pages con origen GitHub Actions.
-Las variables de repositorio esperadas son SUPABASE_URL y SUPABASE_PUBLISHABLE_KEY.
+SUPABASE_URL y SUPABASE_PUBLISHABLE_KEY permiten sobrescribir el proyecto.
+Si faltan o están vacías, se usan los identificadores públicos versionados en src/config.js.
 Leer CLOUD para configurar y verificar; no declarar un sitio publicado solo porque existe el YAML.
 
 ## 7. Qué no se sincroniza por Git
@@ -155,7 +160,7 @@ Leer CLOUD para configurar y verificar; no declarar un sitio publicado solo porq
 | Cambios sin commit/push | No están en GitHub; deben guardarse antes de cambiar de equipo |
 | Progreso de invitado | Está en el navegador original; no migra por clonar |
 | Progreso de cuenta | Se recuperará tras activar la nube y entrar con la misma cuenta |
-| URL/clave pública local | Recrear config.local.js o usar la web publicada configurada |
+| URL/clave pública | El proyecto Vokal se hereda de src/config.js; recrear config.local.js solo para sobrescrituras locales |
 | Contraseña PostgreSQL/tokens | Gestor privado; nunca documentación ni Git |
 | Apariencia | Preferencia de cada navegador, no de la nube |
 | Capturas QA/dist | Regenerar si hace falta |
@@ -170,7 +175,7 @@ Leer CLOUD para configurar y verificar; no declarar un sitio publicado solo porq
 | Puerto 3000 ocupado | Identificar el proceso y su dueño; puede ser el servidor del propietario |
 | Aparece progreso local | Configuración vacía, sesión ausente o nube todavía sin conectar |
 | Cambié config.local.js y no se refleja | Reiniciar pnpm dev; la configuración se carga al arrancar |
-| Build ignora el valor local | Revisar si una variable de entorno definida, incluso vacía, lo sobrescribe |
+| Build ignora el valor local | Revisar si una variable de entorno no vacía lo sobrescribe; las vacías ahora se ignoran |
 | No llega el código | Plantillas OTP, destinatario autorizado, carpeta de spam y límite SMTP; ver CLOUD |
 | Error al ejecutar SQL otra vez | Políticas ya existentes; revisar qué se creó antes de repetir o borrar nada |
 | Datos no aparecen en otro equipo | Misma cuenta/proyecto, RPC, resultado de guardado y conexión; no confundir caché con nube |

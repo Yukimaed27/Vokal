@@ -51,6 +51,17 @@ Ejemplos revisados:
 La versión 11.28.6 está fuera de los rangos afectados publicados consultados en esta revisión.
 No se afirma ausencia de vulnerabilidades futuras o no publicadas.
 
+## Configuración pública conectada en 0.2.1
+
+La URL y clave publishable entregadas por el propietario se versionan en src/config.js. No es una clave secreta ni service_role.
+Supabase documenta que las publishable se pueden distribuir en componentes públicos; no distinguen entre alumnos y no sustituyen RLS.
+Referencia: [tipos y uso de claves](https://supabase.com/docs/guides/getting-started/api-keys).
+
+Comprobaciones reales sin sesión: Auth settings respondió 200 y la tabla/RPC rechazaron acceso con 401/código 42501.
+No se crearon cuentas, enviaron correos ni guardaron datos de alumno. El aislamiento entre dos usuarios sigue sin probarse.
+Quince pruebas y build correctos. La verificación visual adicional no se ejecutó: el arranque del navegador fue rechazado por revisión automática
+con el motivo blocked by policy, sin más detalle. Se completó comprobación HTTP del servidor/configuración, sin reintentar el arranque bloqueado.
+
 Referencias: [mitigación de ataques de suministro](https://pnpm.io/supply-chain-security),
 [configuración](https://pnpm.io/settings), [metadatos oficiales de pnpm 11.28.6](https://registry.npmjs.org/pnpm/11.28.6).
 

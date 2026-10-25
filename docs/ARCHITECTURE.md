@@ -1,6 +1,6 @@
 # Arquitectura y contratos de Vokal
 
-Verificado contra el código de la versión 0.2.0, commit funcional `8002135`.
+Actualizado contra el código de la versión 0.2.1. La base funcional previa está en `8002135`.
 Si se modifica un contrato descrito aquí, actualizar este documento en la misma entrega.
 
 ## 1. Enfoque general
@@ -41,7 +41,7 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | `src/curriculum.js` | Orden de secciones, ampliación de lecciones, teoría, diálogos y preguntas específicas | Genera objetos de lección a partir de datos redactados para el proyecto |
 | `src/learning.js` | Normalización, corrección, repasos, validación, combinación y desbloqueo | Lógica independiente del DOM y probada con Node |
 | `src/cloud.js` | Validación de configuración y API REST de autenticación/sincronización | Usa fetch, HTTPS, localStorage y timeout; no instala un SDK |
-| `src/config.js` | Configuración pública predeterminada, vacía en Git | No contiene credenciales administrativas |
+| `src/config.js` | URL y clave publishable del proyecto Vokal, versionadas | Son identificadores públicos del frontend; no hay credenciales administrativas |
 | `src/config.local.js` | Configuración pública específica de una instalación, opcional | Ignorado por Git; el servidor/build lo procesa sin exponer el archivo directamente |
 
 ### Herramientas
@@ -235,11 +235,13 @@ La importación de invitado requiere pulsar un botón explícito. Cerrar sesión
 
 Orden de selección por campo en `scripts/config.mjs`:
 
-1. Variable `SUPABASE_URL` o `SUPABASE_PUBLISHABLE_KEY`, si está definida.
+1. Variable `SUPABASE_URL` o `SUPABASE_PUBLISHABLE_KEY`, si contiene un valor no vacío tras recortar espacios.
 2. `src/config.local.js`, si existe.
-3. Valores vacíos de `src/config.js`.
+3. Identificadores públicos de Vokal en `src/config.js`.
 
-Se usa `??`: una variable definida como cadena vacía sobrescribe el valor local.
+Las variables vacías o compuestas solo de espacios no sobrescriben la configuración local/predeterminada.
+Esto evita desconectar Pages cuando sus variables opcionales todavía no existen.
+Para usar solo modo local, se puede crear config.local.js con ambos campos vacíos.
 El módulo local no es un .env y no se carga un .env automáticamente.
 
 `validateConfig()` permite desactivar ambos valores vacíos. Si hay configuración exige HTTPS con dominio de proyecto `*.supabase.co`
@@ -296,7 +298,8 @@ El cliente no necesita una clave administrativa.
 Los logros se unen: no existe reseteo/borrado sincronizado. Los mapas resuelven conflictos por reloj del dispositivo;
 la hora del servidor de la fila no sustituye la marca individual. Desajustes grandes de reloj y nuevos esquemas requieren pruebas adicionales.
 La migración se debe ejecutar una vez; no es completamente idempotente porque las políticas se crean sin cláusula de reemplazo.
-No ha sido ejecutada/verificada en PostgreSQL real en la entrega funcional actual.
+El propietario informó ejecución SQL sin errores. Se comprobó la API real: tabla y RPC rechazan solicitudes sin sesión
+con HTTP 401/código 42501. No se inspeccionaron las políticas ni se ejecutaron pruebas autenticadas de aislamiento/concurrencia.
 
 ## 10. Build, servidor y alojamiento
 

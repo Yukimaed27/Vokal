@@ -1,25 +1,31 @@
 # Traspaso activo para la próxima sesión
 
-Actualizado: 2026-10-25. Aplicación: 0.2.0. Idioma de colaboración: español.
+Actualizado: 2026-10-25. Aplicación: 0.2.1. Idioma de colaboración: español.
 
 ## Continuidad técnica
 
-La aplicación local está entregada. La siguiente tarea es conectar y verificar Supabase.
-El propietario dispone de un proyecto Vokal; no hay migración aplicada ni conexión real verificadas.
+La configuración pública de Supabase está en src/config.js y funciona en el servidor/build.
+El propietario informó SQL ejecutado sin errores. La API real responde y tabla/RPC rechazan acceso sin sesión.
+Falta el primer acceso OTP y probar guardado/aislamiento con usuarios autenticados.
 La guía de instalación reutilizable está en [CLOUD](CLOUD.md).
 No mantener aquí un registro de pantallas, clics o pasos menores del propietario.
 
 ## Próxima acción concreta
 
-1. Aplicar una vez `supabase/migrations/001_progress.sql` en SQL Editor.
-2. Conectar únicamente URL del proyecto y clave pública publishable/anon; nunca contraseña ni service_role.
-3. Configurar OTP por correo y verificar el primer acceso.
-4. Probar RLS y sincronización con cuentas/dispositivos reales antes de declarar la nube lista.
+1. Configurar Magic Link y Confirm signup para incluir {{ .Token }}; mantener confirmaciones.
+2. El propietario entra desde Mi cuenta usando su correo. No solicitar ni guardar el código OTP en el chat.
+3. Verificar guardado y luego aislamiento/sincronización con cuentas/dispositivos reales.
+4. No repetir la migración ya aplicada sin revisar el estado de sus políticas.
 
 El SMTP de prueba tiene restricciones de destinatarios y frecuencia. Leer CLOUD antes de prometer acceso por correo a los probadores.
 No añadir a los probadores como administradores del proyecto para eludir esos límites.
 
 ## Último trabajo funcional entregado
+
+0.2.1: proyecto público conectado, variables vacías de Pages ya no anulan configuración y prueba de regresión añadida.
+Quince pruebas y build aprobados. La comprobación visual nueva fue bloqueada automáticamente; se verificó por HTTP.
+No se envió ningún código ni se creó una sesión real. No confundir API disponible con sincronización comprobada.
+
 
 Commit `8002135`: temas burdeos/morado, botón y selección por sistema; ampliación a 31 lecciones, 15 secciones,
 372 entradas y 781 ejercicios; desbloqueo al 80 %; pnpm; nube y publicación preparadas.
@@ -33,7 +39,7 @@ La versión inicial está en `06db12b`. No hay que reconstruir el proyecto ni re
 | --- | --- |
 | Aplicación local | Implementada y comprobada en Windows con Node y navegador Edge |
 | Linux | CI de la entrega funcional completado correctamente en la matriz Windows/Linux |
-| Nube | Cliente y SQL preparados; sin proyecto real conectado ni migración ejecutada confirmados |
+| Nube | Configuración y API verificadas; SQL aplicado según el propietario. Acceso/guardado autenticado y RLS entre cuentas pendientes |
 | Sitio público | Workflow manual preparado; ninguna publicación confirmada |
 | Curso | Base de 372 entradas; no se cumplieron las 10 000 palabras ni un curso completo B2/C1 |
 | Calidad lingüística | Primera redacción asistida, pendiente de revisión externa |
@@ -42,15 +48,15 @@ La versión inicial está en `06db12b`. No hay que reconstruir el proyecto ni re
 El propietario puede estar ejecutando su propio servidor mientras prueba. No detener procesos ajenos.
 Las imágenes de QA y perfiles temporales no se suben al repositorio; otra laptop debe regenerar la evidencia si la necesita.
 
-## Qué se documentó en esta entrega
+## Referencias de contexto disponibles
 
 - Entrada única de contexto y protocolo obligatorio en AGENTS.
 - Mapa de archivos, rutas, datos, algoritmos y flujo de nube.
 - Operación Windows/Linux, hooks, pruebas, build y recuperación de contexto.
 - Historial de trabajo y decisiones con límites explícitos.
-- Guía de Supabase ampliada desde crear organización, sin activar ni contratar recursos.
+- Guía de Supabase: instalación, configuración pública, límites OTP y validaciones autenticadas pendientes.
 
-Esta entrega modifica documentación; no cambia la interfaz ni el comportamiento del aprendizaje.
+La última entrega configura la conexión; no modifica el contenido de aprendizaje ni su diseño.
 
 ## Preferencias que continúan vigentes
 

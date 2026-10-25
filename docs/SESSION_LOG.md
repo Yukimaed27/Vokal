@@ -157,3 +157,33 @@ Continuidad técnica: aplicar la migración, conectar configuración pública y 
 El contexto permanente conserva cambios técnicos, decisiones y pendientes relevantes.
 Se excluyen pasos menores del panel y conversaciones incidentales; no hace falta un commit por cada interacción.
 La aplicación no cambió al ajustar este criterio.
+
+## 2026-10-25 — Configuración pública y API real, versión 0.2.1
+
+### Motivo y cambios
+
+El propietario proporcionó identificadores públicos del proyecto para conectar Vokal y previamente informó ejecución SQL sin errores.
+Se configuró src/config.js con URL y clave publishable; no se usaron credenciales administrativas.
+La configuración se versiona para que una nueva copia del repositorio apunte al mismo proyecto.
+
+Se corrigió scripts/config.mjs: las variables de Pages vacías o con espacios se ignoran, manteniendo la configuración local/predeterminada.
+Se añadió una prueba de regresión. El QA de navegador ahora acepta una URL alternativa y verifica el formulario de cuenta si hay nube configurada,
+sin enviar códigos ni autenticar personas. La versión del paquete pasó a 0.2.1; no se añadieron dependencias.
+
+### Evidencia
+
+- API real de Auth settings: HTTP 200; email habilitado, signup permitido y confirmación requerida.
+- Lectura anónima de learning_progress: HTTP 401, código 42501.
+- Llamada anónima a sync_progress: HTTP 401, código 42501; rechazada sin modificar datos.
+- Quince pruebas Node aprobadas; build correcto e inclusión de la configuración pública comprobada.
+- Servidor de QA separado del servidor del propietario: aplicación y configuración servidas correctamente por HTTP.
+- La revisión automática rechazó iniciar el navegador con blocked by policy, sin detalle adicional. No se reintentó esa operación.
+  La QA visual anterior corresponde a 0.2.0; no se presenta como una prueba nueva del acceso a nube.
+
+### Límites y continuidad
+
+La API pública conectada no prueba el guardado de un alumno ni el aislamiento entre cuentas autenticadas.
+Faltan plantillas OTP, primer inicio de sesión del propietario y pruebas reales de progreso/RLS en dos dispositivos.
+No se solicitaron códigos, no se crearon usuarios, no se envió correo y no se hizo un despliegue.
+El siguiente paso está en HANDOFF/CLOUD: mostrar {{ .Token }} en Magic Link/Confirm signup y probar Mi cuenta.
+Actualizar estado técnico cuando haya verificación real; no registrar navegación incidental del panel.

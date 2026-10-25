@@ -4,6 +4,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {lessons} from '../src/content.js';
 import {lessonQuestions,assessmentQuestions} from '../src/learning.js';
 const endpoint = 'http://127.0.0.1:9223';
+const appUrl = process.argv[2] ?? 'http://localhost:3000/';
 let target;
 for (let attempt=0; attempt<30; attempt++) {
   try {target = await (await fetch(`${endpoint}/json/new?about:blank`,{method:'PUT'})).json();break;}
@@ -67,7 +68,7 @@ try {
   await send('Page.enable');await send('Runtime.enable');
   await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'dark'},{name:'prefers-reduced-motion',value:'reduce'}]});
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
-  await send('Page.navigate',{url:'http://localhost:3000/'});
+  await send('Page.navigate',{url:appUrl});
   for (let attempt=0;attempt<30;attempt++) {
     if (await evaluate('!!document.querySelector("main h1")')) break;
     await evaluate('new Promise(r=>setTimeout(r,100))');
@@ -91,7 +92,10 @@ try {
   await go('palabras');
   await evaluate('document.querySelector("#word-search").value="gracias";document.querySelector("#word-search").dispatchEvent(new Event("input",{bubbles:true}));');
   assert.ok(await evaluate('document.querySelectorAll(".word-card").length > 0'));
-  await go('cuenta');assert.match(await evaluate('document.querySelector("main").textContent'),/sincronización aún no está activada/);
+  await go('cuenta');
+  const configured = await evaluate("import('/src/config.js').then(m=>Boolean(m.cloudConfig.supabaseUrl && m.cloudConfig.supabasePublishableKey))");
+  if (configured) assert.ok(await evaluate('!!document.querySelector("#login-form")'));
+  else assert.match(await evaluate('document.querySelector("main").textContent'),/sincronización aún no está activada/);
   await go('inicio');
   await mkdir(new URL('../.qa/',import.meta.url),{recursive:true});
   for (const theme of ['dark','light']) {

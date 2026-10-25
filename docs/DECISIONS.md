@@ -39,5 +39,13 @@ La documentación es Markdown versionado; no depende de skills de una computador
 
 Aclaración del propietario: no documentar pasos menores de navegación ni conversaciones incidentales.
 Mantener contexto técnico suficiente, sin convertirlo en una bitácora de clics.
-La siguiente tarea de nube es aplicar la migración y verificar la conexión; no asumir SQL aplicado ni RLS comprobado.
+La siguiente tarea de nube es verificar un acceso real y su progreso; no asumir que la configuración pública demuestra aislamiento entre cuentas.
 Se conserva la preferencia por costo cero; no hay autorización para contratar planes ni complementos de pago.
+
+## Conexión pública en 0.2.1
+
+El propietario proporcionó la URL y una clave publishable de su proyecto para conectarlo.
+Se guardan en src/config.js porque son identificadores del frontend, no secretos administrativos, y permiten continuar desde otra laptop.
+No se reproducen en el diario ni se añaden contraseñas o tokens. La separación de usuarios depende de autenticación/RLS.
+Las variables de entorno no vacías siguen permitiendo sobrescribirlos; una variable de Pages ausente/vacía no debe desconectarlos.
+El acceso por correo y el guardado deben verificarse con el propietario sin solicitar su OTP.

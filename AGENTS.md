@@ -12,7 +12,7 @@ El objetivo final es A1–C1, con B2 como primer objetivo completo y catálogo d
 Una muestra A1 no acredita nivel. No rellenes el catálogo con traducciones sin revisar ni cuentes flexiones como palabras nuevas.
 
 Usa pnpm y conserva su versión fijada, lockfile y controles. Revisa docs/SECURITY.md antes de añadir dependencias.
-No actives servicios de pago. Supabase se dejó preparado a petición del propietario; consulta docs/CLOUD.md.
+No actives servicios de pago. El proyecto Supabase público ya está configurado; faltan autenticación y sincronización reales verificadas. Consulta docs/CLOUD.md.
 
 ## Documentación obligatoria y comunicación entre sesiones
 

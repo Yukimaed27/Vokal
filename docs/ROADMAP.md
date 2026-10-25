@@ -15,9 +15,10 @@
 - [x] Preparar integración REST de Supabase sin dependencias externas.
 - [x] Preparar esquema, políticas RLS y combinación transaccional.
 - [x] Preparar build estático y workflow de GitHub Pages.
-- Proyecto Supabase disponible según el propietario; no implica conexión ni validación técnica de la integración.
+- [x] Configurar identificadores públicos del proyecto y comprobar API real y rechazo de acceso anónimo.
 - [ ] Configurar código por correo y revisar límites de destinatarios/envíos.
-- [ ] Ejecutar migración y probar restricciones con dos cuentas reales.
+- [x] Migración aplicada según el propietario; API de tabla/RPC rechaza acceso sin sesión.
+- [ ] Probar restricciones de RLS con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.
 - [ ] Publicar y verificar la web desplegada.
 

@@ -1,5 +1,12 @@
 # Cambios
 
+## 0.2.1 — 2026-10-25
+- Configuración pública del proyecto Supabase incorporada para continuar desde otra computadora sin volver a copiarla.
+- Variables de Pages vacías ya no desactivan los valores públicos configurados.
+- Prueba de regresión de configuración; quince pruebas y build aprobados.
+- API real: autenticación disponible y acceso a tabla/RPC sin sesión rechazado; guardado autenticado todavía pendiente.
+- QA admite otra URL y cuenta configurada. Nueva ejecución visual bloqueada por revisión automática; comprobación local por HTTP realizada.
+
 ## Documentación posterior a 0.2.0 — 2026-10-25
 - Traspaso activo y punto exacto para continuar desde otra IA o laptop.
 - Índice de contexto, mapa detallado de arquitectura y contratos, operación Windows/Linux e historial de sesiones.

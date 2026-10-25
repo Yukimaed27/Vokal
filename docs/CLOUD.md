@@ -1,7 +1,13 @@
 # Activar la nube cuando estés listo
 
-La integración está preparada. No hay un proyecto conectado ni una web publicada en esta revisión.
-Hasta activarla, el progreso solo vive en el navegador. No se ha contratado nada.
+## Estado técnico actual: 0.2.1
+
+El proyecto Vokal está configurado en src/config.js con URL y clave publishable públicas. No hay claves administrativas.
+La API de autenticación responde y el proveedor email está habilitado, con confirmaciones activas.
+El propietario informó SQL ejecutado sin errores; tabla y RPC rechazaron solicitudes sin sesión (401, código 42501).
+Faltan plantilla OTP, primer acceso real, pruebas autenticadas y sincronización entre dispositivos.
+Sin iniciar sesión, el progreso sigue siendo local. No se ha publicado la web ni contratado un servicio.
+
 
 ## 1. Crear organización y proyecto desde cero
 
@@ -56,7 +62,8 @@ En **SQL Editor**, ejecuta una vez el contenido de `supabase/migrations/001_prog
 La migración crea la tabla, habilita RLS y permite que cada sesión lea o modifique solo su propio progreso.
 La función `sync_progress` combina los logros y resuelve los repasos/resultados por su marca de modificación dentro de una transacción.
 
-La migración no se ha ejecutado contra un proyecto real. Antes de usar datos importantes:
+La ejecución SQL fue confirmada por el propietario. No hace falta repetir la migración salvo revisión técnica: las políticas no son idempotentes.
+La comprobación anónima de tabla/RPC es correcta, pero no demuestra aislamiento entre usuarios autenticados. Antes de usar datos importantes:
 
 1. Comprueba que una solicitud sin sesión no puede leer la tabla ni llamar a `sync_progress`.
 2. Con dos usuarios, verifica que A no puede consultar ni modificar la fila de B.
@@ -84,7 +91,8 @@ Fuente: [restricciones del SMTP integrado](https://supabase.com/docs/guides/auth
 
 ## 4. Conectar en tu computadora
 
-Crea `src/config.local.js` con estos datos **públicos**:
+El proyecto Vokal ya está configurado en `src/config.js`; para usarlo no hace falta crear un archivo local ni volver a copiar su clave.
+Para apuntar a otro proyecto o sobrescribir la configuración en una instalación, crea `src/config.local.js` con datos **públicos**:
 
 ```js
 export const cloudConfig = {
@@ -112,7 +120,9 @@ El workflow está preparado y es **manual**. No se ha ejecutado.
 3. En **Actions**, ejecuta **Publicar web (manual)** con **Run workflow**.
 4. Abre la URL que devuelva el trabajo `Publicar`; comprueba inicio de sesión y progreso en celular y computadora.
 
-Sin las variables, el sitio se publica en modo local, sin sincronización. La compilación rechaza claves secretas conocidas.
+Las variables de Pages son opcionales si se utiliza el proyecto configurado en Git.
+Sin ellas, o si están vacías, se mantienen los identificadores públicos de src/config.js.
+La compilación rechaza claves secretas conocidas. La sincronización requiere además una sesión válida y la base configurada.
 El build contiene únicamente la lista de archivos públicos. Las rutas relativas permiten alojar la web bajo `/Vokal/`.
 No publiques la raíz del repositorio como si todos sus archivos fueran recursos de la aplicación.
 
