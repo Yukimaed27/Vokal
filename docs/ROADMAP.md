@@ -15,7 +15,7 @@
 - [x] Preparar integración REST de Supabase sin dependencias externas.
 - [x] Preparar esquema, políticas RLS y combinación transaccional.
 - [x] Preparar build estático y workflow de GitHub Pages.
-- [ ] Crear organización/proyecto Free: el propietario está en Crear organización; todavía sin confirmación de finalización.
+- Proyecto Supabase disponible según el propietario; no implica conexión ni validación técnica de la integración.
 - [ ] Configurar código por correo y revisar límites de destinatarios/envíos.
 - [ ] Ejecutar migración y probar restricciones con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.

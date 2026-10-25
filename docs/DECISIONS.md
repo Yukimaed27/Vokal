@@ -37,6 +37,7 @@ El propietario pidió ampliar la documentación de todo lo realizado y mantenerl
 Se estableció el protocolo permanente en AGENTS y WORKFLOW, con índice, traspaso, arquitectura, operación e historial.
 La documentación es Markdown versionado; no depende de skills de una computadora ni de memoria del modelo.
 
-Después de dejar la nube preparada, abrió Supabase y llegó a Crear organización.
-La tarea inmediata es guiarlo en organización/proyecto Free, sin asumir que ya existe un proyecto o que la migración está aplicada.
+Aclaración del propietario: no documentar pasos menores de navegación ni conversaciones incidentales.
+Mantener contexto técnico suficiente, sin convertirlo en una bitácora de clics.
+La siguiente tarea de nube es aplicar la migración y verificar la conexión; no asumir SQL aplicado ni RLS comprobado.
 Se conserva la preferencia por costo cero; no hay autorización para contratar planes ni complementos de pago.

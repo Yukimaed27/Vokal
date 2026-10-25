@@ -16,11 +16,11 @@ No actives servicios de pago. Supabase se dejó preparado a petición del propie
 
 ## Documentación obligatoria y comunicación entre sesiones
 
-El propietario requiere que cada avance quede documentado en Markdown para continuar desde otra IA, sesión o laptop.
+El propietario requiere documentar avances técnicos, decisiones y pendientes relevantes en Markdown para continuar desde otra IA, sesión o laptop. No registrar cada paso de navegación, clic, pantalla o comentario incidental.
 No dependas del historial del chat, memoria del modelo, archivos locales ignorados o skills instaladas en esta máquina.
 
 - Después de cada cambio significativo, hallazgo que altere el plan o instrucción nueva del propietario, actualiza el contexto afectado.
-- Antes de cambiar de tarea, pausar o terminar el turno, actualiza HANDOFF y STATUS con el punto real de interrupción.
+- Antes de entregar trabajo significativo o dejar una tarea técnica pendiente, actualiza HANDOFF y STATUS si cambió el contexto útil. No generar cambios documentales por cada respuesta conversacional.
 - Toda entrega debe registrar lo realizado, motivo, archivos afectados, validaciones y resultados, límites y siguiente acción concreta.
 - Mantén SESSION_LOG como historial acumulativo. No borres entradas anteriores para presentar solo la última versión.
 - Actualiza DECISIONS cuando cambie una decisión, ROADMAP cuando avance o cambie el alcance y CHANGELOG cuando haya una entrega.
@@ -30,6 +30,6 @@ No dependas del historial del chat, memoria del modelo, archivos locales ignorad
 - Distingue expresamente: implementado, preparado, verificado localmente, verificado en CI y verificado contra un servicio real.
 - Nunca copies contraseñas, tokens, cookies, claves secretas, correos de alumnos o progreso personal a la documentación.
 
-Esta regla forma parte del criterio de finalización de todas las tareas, incluidas correcciones pequeñas.
+Esta regla aplica a cambios técnicos, incluidas correcciones pequeñas. Documentar utilidad para continuar, no una transcripción de la actividad del usuario.
 Los hooks actuales ejecutan pruebas; no redactan ni verifican automáticamente la documentación. Esa responsabilidad es del agente.
 Sigue la matriz y la plantilla de cierre de docs/WORKFLOW.md. No crees documentos duplicados si existe uno adecuado.

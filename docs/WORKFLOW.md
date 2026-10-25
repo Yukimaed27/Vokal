@@ -25,10 +25,11 @@ ya están acordados. Consulta al propietario solo por información que realmente
 - No inventes resultados ni ocultes fallos. Un mock confirma el contrato probado, no la conectividad real.
 - Registra los hallazgos que cambien el siguiente paso: un límite de correo, un error de SQL, una decisión del propietario o un fallo de CI.
 - Actualiza la documentación afectada al cerrar cada bloque significativo, no únicamente cuando termine todo el proyecto.
-- Si el propietario avanza fuera del editor, anota su confirmación con precisión: «usuario confirmó X», no «se verificó X» si no lo verificaste.
+- Registra una confirmación externa solo si cambia un requisito técnico, recurso necesario o bloqueo. Distingue lo declarado de lo verificado; no registres clics, pantallas ni pasos incidentales.
 
 Una lectura o un comando sin cambios no necesita una entrada de diario separada por sí solo.
-Sí se documenta si produce información necesaria para retomar, modifica una conclusión o deja una operación pendiente.
+Sí se documenta si produce información necesaria para retomar, modifica una conclusión o deja una operación técnica pendiente.
+Los intercambios de acompañamiento y pasos menores del propietario no requieren commits ni entradas de diario.
 
 ## 3. Matriz obligatoria de actualizaciones
 
@@ -42,7 +43,7 @@ Sí se documenta si produce información necesaria para retomar, modifica una co
 | Cambiaron instalación, comandos, hooks, CI o diagnóstico | OPERATIONS y README |
 | Se añadieron materiales o cambió cómo se cuentan | CONTENT; contadores donde aparezcan; ARCHITECTURE si cambió el esquema |
 | Se revisaron paquetes, permisos, avisos o controles | SECURITY y SESSION_LOG con fecha y alcance |
-| Se creó/configuró/validó Supabase o Pages | CLOUD, STATUS y HANDOFF con el paso realmente alcanzado |
+| Cambió la conexión, configuración o validación técnica de Supabase o Pages | Actualizar el contrato/estado relevante; no registrar navegación del panel |
 | El usuario cambió una preferencia | DECISIONS y HANDOFF; AGENTS solo si es una instrucción permanente |
 | Se dejó un proceso, archivo local o push pendiente | HANDOFF con responsable, ubicación no sensible y cómo retomarlo |
 

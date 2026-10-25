@@ -4,8 +4,8 @@ Fecha: 2026-10-25. Versión: 0.2.0.
 
 ## Tarea activa y contexto entre sesiones
 
-El propietario está probando la web y ha llegado a **Crear organización** en Supabase.
-Se le guía para crear organización/proyecto Free; no hay confirmación de haber completado ese proceso externo.
+La integración de nube requiere aplicar la migración y conectar la configuración pública.
+El proyecto Supabase está disponible según confirmó el propietario; conexión, SQL y RLS real siguen sin verificarse.
 El punto de continuidad está en [HANDOFF](HANDOFF.md), con detalle en [CLOUD](CLOUD.md).
 El [índice](README.md), [arquitectura](ARCHITECTURE.md), [operación](OPERATIONS.md) y [diario](SESSION_LOG.md)
 permiten continuar sin recuperar este chat. [WORKFLOW](WORKFLOW.md) y AGENTS obligan a actualizar los .md en cada entrega.
@@ -35,14 +35,14 @@ La entrega actual modifica únicamente documentación; el comportamiento de la a
   No confundir esa evidencia con el resultado de futuros commits.
 
 ## Decisión del propietario
-Primero solicitó dejar Supabase preparado. Ahora está iniciando la creación de la organización y pidió acompañamiento.
-No hay un proyecto creado/conectado confirmado. No pedir claves secretas.
+La nube sigue pendiente de conexión y pruebas reales. No pedir claves secretas.
+Documentar solo avances técnicos, decisiones y pendientes relevantes; excluir pasos menores del panel.
 Guía: docs/CLOUD.md. Falta activar el servicio y verificar nube con dos cuentas/dispositivos reales.
 La web no se ha publicado en esta revisión; existe un workflow manual para hacerlo después.
 
 ## Siguiente tarea
-1. Acompañar desde Crear organización: nombre Vokal, tipo Personal si aparece, plan Free; crear el proyecto.
-2. Abrir SQL Editor, ejecutar la migración una vez y conectar solo URL/clave pública.
+1. Aplicar la migración SQL una vez en el proyecto Supabase.
+2. Conectar solo URL/clave pública y configurar OTP por correo.
 3. Verificar aislamiento entre cuentas y recuperación del progreso en dos dispositivos.
 4. Publicar y comprobar el sitio desplegado.
 5. Ampliar el currículo con revisión lingüística; no cargar miles de traducciones sin validar.

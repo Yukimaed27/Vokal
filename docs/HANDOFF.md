@@ -2,23 +2,19 @@
 
 Actualizado: 2026-10-25. Aplicación: 0.2.0. Idioma de colaboración: español.
 
-## Punto exacto de continuidad
+## Continuidad técnica
 
-Yohaldo está probando Vokal y ha abierto Supabase. Su pantalla muestra **Crear organización**.
-Solicitó instrucciones paso a paso desde ahí y una documentación exhaustiva en .md para retomar desde otra IA/laptop.
-Todavía no confirmó haber creado la organización, el proyecto, la tabla o una cuenta de alumno.
-No asumir que avanzar en una pantalla implica que la integración esté activada.
-
-Se le ha indicado: organización Vokal, tipo Personal si aparece y plan Free; después proyecto Vokal.
-La contraseña de PostgreSQL debe guardarse de forma privada. La guía completa está en [CLOUD](CLOUD.md).
+La aplicación local está entregada. La siguiente tarea es conectar y verificar Supabase.
+El propietario dispone de un proyecto Vokal; no hay migración aplicada ni conexión real verificadas.
+La guía de instalación reutilizable está en [CLOUD](CLOUD.md).
+No mantener aquí un registro de pantallas, clics o pasos menores del propietario.
 
 ## Próxima acción concreta
 
-1. Continuar la guía desde la pantalla en la que realmente esté el propietario.
-2. Tras crear el proyecto Free, abrir SQL Editor y ejecutar una vez `supabase/migrations/001_progress.sql`.
-3. Obtener únicamente URL de proyecto y clave pública publishable/anon; nunca contraseña ni service_role.
-4. Configurar OTP por correo, conectar la configuración local y verificar el primer acceso del propietario.
-5. Probar RLS y sincronización con cuentas/dispositivos reales antes de declarar la nube lista.
+1. Aplicar una vez `supabase/migrations/001_progress.sql` en SQL Editor.
+2. Conectar únicamente URL del proyecto y clave pública publishable/anon; nunca contraseña ni service_role.
+3. Configurar OTP por correo y verificar el primer acceso.
+4. Probar RLS y sincronización con cuentas/dispositivos reales antes de declarar la nube lista.
 
 El SMTP de prueba tiene restricciones de destinatarios y frecuencia. Leer CLOUD antes de prometer acceso por correo a los probadores.
 No añadir a los probadores como administradores del proyecto para eludir esos límites.
@@ -58,7 +54,7 @@ Esta entrega modifica documentación; no cambia la interfaz ni el comportamiento
 
 ## Preferencias que continúan vigentes
 
-- Respuestas al propietario breves; documentación detallada y actualizada.
+- Respuestas al propietario breves; documentación técnica detallada y actualizada, sin registrar pasos menores.
 - Mantener la estructura visual que le gustó, con tonos oscuros rojos/morados.
 - Aprendizaje práctico con teoría, sesiones de 20–30 minutos, progreso sin castigos por faltar.
 - Cuentas para él y eventualmente 2–3 probadores; acceso desde celular, laptop o tableta.
@@ -67,7 +63,7 @@ Esta entrega modifica documentación; no cambia la interfaz ni el comportamiento
 
 ## Antes de terminar la próxima sesión
 
-Actualizar este documento con la pantalla/paso realmente alcanzado, STATUS con las verificaciones nuevas,
+Actualizar este documento si cambió la continuidad técnica, STATUS con las verificaciones nuevas,
 SESSION_LOG con el trabajo realizado y los documentos específicos afectados. Incluirlo en el commit de la tarea.
 Si hay errores, archivos sin commit, configuración local faltante o un push fallido, dejarlo escrito con una acción de recuperación.
 No copiar secretos ni progreso personal. Lee [WORKFLOW](WORKFLOW.md) para la plantilla de cierre.

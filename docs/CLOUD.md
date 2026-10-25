@@ -5,8 +5,7 @@ Hasta activarla, el progreso solo vive en el navegador. No se ha contratado nada
 
 ## 1. Crear organización y proyecto desde cero
 
-Punto de continuidad confirmado por el propietario: está en la pantalla **Crear organización**.
-No se ha confirmado que los siguientes pasos estén completados. Actualiza HANDOFF/STATUS cuando avance.
+Esta sección es una guía de instalación reutilizable, no un registro de la navegación del propietario.
 
 ### Organización
 

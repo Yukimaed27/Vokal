@@ -45,8 +45,7 @@ Las sesiones apuntan a 20–30 minutos, pero no imponemos una duración artifici
 
 Sin configuración, el progreso permanece en este navegador. No se muestra como sincronizado.
 Sigue [la guía de nube](docs/CLOUD.md) para conectar tu propio proyecto gratuito de Supabase y publicar con GitHub Pages.
-La integración está preparada. El propietario está siguiendo la guía desde Crear organización;
-todavía no hay un proyecto conectado ni un despliegue confirmados.
+La integración está preparada; todavía no hay un proyecto conectado ni un despliegue verificados.
 
 `pnpm build` genera únicamente los archivos públicos en `dist/`. No subas documentos, credenciales o datos personales como archivos estáticos.
 

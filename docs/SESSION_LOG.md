@@ -120,13 +120,13 @@ No se ejecutó la migración en PostgreSQL real ni se comprobó la nube con cuen
 No se llegó a 10 000 palabras ni a un curso completo o acreditación B2/C1.
 El material requiere revisión lingüística; faltan audio, producción libre evaluada y reanudación de ejercicios incompletos.
 
-## 2026-10-25 — Traspaso detallado y guía desde Crear organización
+## 2026-10-25 — Traspaso técnico detallado y guía de instalación
 
 ### Solicitud y contexto
 
 El propietario está probando la aplicación y quiere que **cada cambio futuro** mantenga contexto detallado en .md,
 de forma que otra sesión de IA en otra laptop pueda continuar sin este chat.
-Ha abierto Supabase y ve Crear organización; pidió acompañamiento desde ese paso.
+También solicitó una guía de instalación de Supabase.
 
 ### Cambios documentales
 
@@ -150,5 +150,10 @@ Se cotejó el detalle con los módulos, scripts, migración y workflows existent
 Se revisaron enlaces locales Markdown y el diff antes de versionar. Los hooks ejecutan las 14 pruebas al guardar/subir la entrega.
 El commit de esta documentación se identifica mediante git log; no se escribe aquí su propio hash.
 
-Siguiente paso: acompañar al propietario al crear organización/proyecto Free, sin pedir credenciales secretas,
-y continuar por CLOUD. No hay confirmación de haber completado todavía ese paso externo.
+Continuidad técnica: aplicar la migración, conectar configuración pública y verificar nube real según CLOUD.
+
+### Criterio de documentación afinado
+
+El contexto permanente conserva cambios técnicos, decisiones y pendientes relevantes.
+Se excluyen pasos menores del panel y conversaciones incidentales; no hace falta un commit por cada interacción.
+La aplicación no cambió al ajustar este criterio.
