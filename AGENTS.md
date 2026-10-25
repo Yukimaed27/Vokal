@@ -1,6 +1,7 @@
 # Vokal · instrucciones para continuar
 
-Lee primero docs/STATUS.md, docs/DECISIONS.md y docs/ROADMAP.md.
+Lee primero docs/HANDOFF.md y docs/STATUS.md. Después consulta docs/WORKFLOW.md.
+El índice docs/README.md indica qué documento leer para cada tarea; consulta los detalles bajo demanda.
 Trabaja en español. Mantén mensajes breves y código sencillo. No elimines funciones acordadas para simplificar.
 Antes de editar: revisa git status y los archivos afectados. No sobrescribas cambios ajenos.
 Al terminar: ejecuta pnpm check y actualiza STATUS, ROADMAP y CHANGELOG con hechos comprobables.
@@ -12,3 +13,23 @@ Una muestra A1 no acredita nivel. No rellenes el catálogo con traducciones sin 
 
 Usa pnpm y conserva su versión fijada, lockfile y controles. Revisa docs/SECURITY.md antes de añadir dependencias.
 No actives servicios de pago. Supabase se dejó preparado a petición del propietario; consulta docs/CLOUD.md.
+
+## Documentación obligatoria y comunicación entre sesiones
+
+El propietario requiere que cada avance quede documentado en Markdown para continuar desde otra IA, sesión o laptop.
+No dependas del historial del chat, memoria del modelo, archivos locales ignorados o skills instaladas en esta máquina.
+
+- Después de cada cambio significativo, hallazgo que altere el plan o instrucción nueva del propietario, actualiza el contexto afectado.
+- Antes de cambiar de tarea, pausar o terminar el turno, actualiza HANDOFF y STATUS con el punto real de interrupción.
+- Toda entrega debe registrar lo realizado, motivo, archivos afectados, validaciones y resultados, límites y siguiente acción concreta.
+- Mantén SESSION_LOG como historial acumulativo. No borres entradas anteriores para presentar solo la última versión.
+- Actualiza DECISIONS cuando cambie una decisión, ROADMAP cuando avance o cambie el alcance y CHANGELOG cuando haya una entrega.
+- Si cambias contratos, rutas, datos, configuración, seguridad o comandos, actualiza su documentación técnica específica.
+- Incluye esos .md en el mismo commit que la implementación relacionada y súbelos si está autorizado; no declares un push sin verificarlo.
+- Si debes dejar trabajo sin commit, enumera los archivos y cambios pendientes en HANDOFF. No digas que están disponibles en otra laptop.
+- Distingue expresamente: implementado, preparado, verificado localmente, verificado en CI y verificado contra un servicio real.
+- Nunca copies contraseñas, tokens, cookies, claves secretas, correos de alumnos o progreso personal a la documentación.
+
+Esta regla forma parte del criterio de finalización de todas las tareas, incluidas correcciones pequeñas.
+Los hooks actuales ejecutan pruebas; no redactan ni verifican automáticamente la documentación. Esa responsabilidad es del agente.
+Sigue la matriz y la plantilla de cierre de docs/WORKFLOW.md. No crees documentos duplicados si existe uno adecuado.

@@ -3,12 +3,49 @@
 La integración está preparada. No hay un proyecto conectado ni una web publicada en esta revisión.
 Hasta activarla, el progreso solo vive en el navegador. No se ha contratado nada.
 
-## 1. Crear tu proyecto
+## 1. Crear organización y proyecto desde cero
 
-1. Entra en [Supabase](https://supabase.com/dashboard) con tu cuenta y crea una organización **Free** y un proyecto.
-2. Conserva la contraseña de la base de datos fuera del repositorio y del chat.
-3. En la configuración de conexión/API, localiza la URL `https://TU-PROYECTO.supabase.co` y la clave pública `sb_publishable_…`.
-4. No uses `sb_secret_…`, `service_role`, la contraseña de PostgreSQL ni un token personal en el navegador.
+Punto de continuidad confirmado por el propietario: está en la pantalla **Crear organización**.
+No se ha confirmado que los siguientes pasos estén completados. Actualiza HANDOFF/STATUS cuando avance.
+
+### Organización
+
+Una organización agrupa proyectos y su plan de facturación. No necesitas constituir una empresa para usarla personalmente.
+
+| Campo si aparece | Valor para esta primera instalación |
+| --- | --- |
+| Name / Nombre | Vokal, o un nombre personal identificable |
+| Type / Tipo | Personal, si esa opción está disponible |
+| Plan | Free, sin seleccionar Pro ni añadir extras de pago |
+
+Pulsa **Create organization / Crear organización**.
+Las etiquetas pueden variar: no cambies a un plan de pago solo porque otra pantalla tenga un diseño diferente.
+Referencia: [organizaciones y planes](https://supabase.com/docs/guides/platform/billing-on-supabase).
+
+### Proyecto
+
+Dentro de la organización, pulsa **New project / Nuevo proyecto** si no se abre el formulario automáticamente.
+
+| Campo | Qué elegir o hacer |
+| --- | --- |
+| Organization | La organización Free que acabas de crear |
+| Project name | Vokal |
+| Database password | Generar una contraseña fuerte y guardarla en un gestor privado |
+| Region | Una región cercana a los usuarios; para pruebas desde Perú, considerar São Paulo si aparece |
+| Opciones de API/seguridad | Mantener las predeterminadas mientras se revisan; Vokal necesita la Data API para su RPC REST |
+
+La región afecta ubicación y latencia; no representa por sí sola una garantía de rendimiento.
+Consulta las [regiones disponibles](https://supabase.com/docs/guides/platform/regions) si el panel ofrece grupos o regiones específicas.
+La migración del proyecto habilita RLS explícitamente para la tabla de progreso.
+Pulsa **Create new project / Crear proyecto** y espera a que el panel esté listo.
+La contraseña de la base de datos no se pega en el chat, no se escribe en config.js y no se necesita para el login del alumno.
+
+### Datos que necesitaremos después
+
+1. En la configuración de conexión/API, localiza la URL `https://TU-PROYECTO.supabase.co` y la clave pública `sb_publishable_…`.
+2. Según la versión del panel, la URL puede aparecer en Connect/Data API y la clave en API Keys. Comprueba los nombres, no copies el primer secreto que aparezca.
+3. No uses `sb_secret_…`, `service_role`, la contraseña de PostgreSQL ni un token personal en el navegador.
+4. No compartas una captura que incluya credenciales administrativas. Para conectar el frontend bastan los dos identificadores públicos.
 
 El [plan Free](https://supabase.com/pricing) incluye actualmente 500 MB de base de datos y 50 000 usuarios activos mensuales.
 Puede pausarse después de una semana sin actividad. Son límites del proveedor, no una garantía de servicio gratuito permanente.

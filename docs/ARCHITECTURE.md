@@ -1,0 +1,323 @@
+# Arquitectura y contratos de Vokal
+
+Verificado contra el código de la versión 0.2.0, commit funcional `8002135`.
+Si se modifica un contrato descrito aquí, actualizar este documento en la misma entrega.
+
+## 1. Enfoque general
+
+Vokal es una aplicación web estática de una sola página, escrita con HTML, CSS y módulos JavaScript nativos.
+Node se usa para desarrollo, pruebas y construcción de archivos públicos; no hay servidor de aplicación propio en producción.
+No hay React, framework de rutas, bundler, SDK de Supabase, base de datos local ni dependencias del registro npm.
+pnpm organiza los comandos y establece controles para futuras dependencias.
+
+El navegador recibe contenido de aprendizaje versionado en el repositorio.
+El progreso se conserva en localStorage y, cuando se configure, se combinará con el estado de Supabase.
+La interfaz funciona sin configuración de nube: muestra explícitamente que el progreso es local.
+
+```mermaid
+flowchart LR
+  G[GitHub: código y Markdown] --> W[Copia Windows o Linux]
+  W --> D[Servidor local o build estático]
+  D --> B[Navegador: interfaz y ejercicios]
+  B <--> L[localStorage: caché y preferencia]
+  B <-->|Solo al configurar y autenticar| S[Supabase: Auth y RPC]
+  S <--> P[PostgreSQL: progreso aislado con RLS]
+```
+
+Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos. Son canales distintos.
+
+## 2. Inventario de archivos
+
+### Aplicación
+
+| Archivo | Responsabilidad | Dependencias o efectos relevantes |
+| --- | --- | --- |
+| `index.html` | Estructura, navegación, contenedor principal, apariencia y avisos | Carga CSS y módulos; incluye CSP en meta para alojamiento estático |
+| `src/style.css` | Distribución original, tarjetas, tipografía y adaptación por ancho | Conserva la estructura visual aprobada inicialmente |
+| `src/theme.css` | Paleta actual, variantes claro/oscuro y estilos de las funciones añadidas | Se carga después de style.css para sobrescribir tokens y colores originales |
+| `src/theme.js` | Preferencia del sistema, botón de alternancia y selector de apariencia | Lee/escribe `vokal.theme`; actualiza `data-theme` y meta theme-color |
+| `src/app.js` | Rutas, renderizado, eventos, ejercicios y coordinación de persistencia/sincronización | Consume contenido, lógica pura, configuración y cliente de nube |
+| `src/content.js` | Tres lecciones originales y composición del catálogo completo | Conserva IDs antiguos; incorpora currículo y elimina IDs repetidos del catálogo |
+| `src/curriculum.js` | Orden de secciones, ampliación de lecciones, teoría, diálogos y preguntas específicas | Genera objetos de lección a partir de datos redactados para el proyecto |
+| `src/learning.js` | Normalización, corrección, repasos, validación, combinación y desbloqueo | Lógica independiente del DOM y probada con Node |
+| `src/cloud.js` | Validación de configuración y API REST de autenticación/sincronización | Usa fetch, HTTPS, localStorage y timeout; no instala un SDK |
+| `src/config.js` | Configuración pública predeterminada, vacía en Git | No contiene credenciales administrativas |
+| `src/config.local.js` | Configuración pública específica de una instalación, opcional | Ignorado por Git; el servidor/build lo procesa sin exponer el archivo directamente |
+
+### Herramientas
+
+| Archivo | Responsabilidad |
+| --- | --- |
+| `package.json` | Nombre/versión, Node mínimo, pnpm fijado y scripts |
+| `pnpm-lock.yaml` | Resolución versionada; actualmente no contiene paquetes externos |
+| `pnpm-workspace.yaml` | Espera de versiones, permisos de build de dependencias y controles de instalación |
+| `scripts/check.mjs` | Recorre los JS/MJS de src y scripts y valida su sintaxis con Node |
+| `scripts/serve.mjs` | Servidor local con lista permitida de archivos, tipos MIME y cabeceras |
+| `scripts/public-files.mjs` | Lista única de archivos públicos usada por servidor y build |
+| `scripts/config.mjs` | Selecciona configuración pública, la valida y genera el módulo servido/compilado |
+| `scripts/build.mjs` | Copia archivos permitidos a dist y escribe la configuración pública generada |
+| `scripts/browser-check.mjs` | QA en Chromium/Edge vía DevTools Protocol y WebSocket nativo |
+| `.githooks/pre-commit` | Ejecuta pnpm check antes del commit |
+| `.githooks/pre-push` | Ejecuta pnpm check antes del push |
+| `.github/workflows/check.yml` | Sintaxis, pruebas, auditoría y build en Windows/Linux |
+| `.github/workflows/pages.yml` | Publicación estática manual a GitHub Pages |
+| `.gitattributes` | Saltos LF consistentes, incluidos hooks, para Windows/Linux |
+| `.gitignore` | Excluye dependencias, dist, configuración local, archivos de entorno y evidencia QA |
+
+### Pruebas y base de datos
+
+| Archivo | Cobertura o propósito |
+| --- | --- |
+| `tests/learning.test.mjs` | Corrección, caracteres alemanes, intervalos, contenido, migración, desbloqueo y combinación |
+| `tests/cloud.test.mjs` | Configuración, OTP, cabeceras, sesión, renovación compartida, errores y cierre con API simulada |
+| `tests/server.test.mjs` | Recursos públicos, CSP, ocultación de archivos privados y rutas malformadas |
+| `supabase/migrations/001_progress.sql` | Tabla, RLS, funciones de combinación y RPC autenticada |
+
+Los archivos de contexto se describen en [el índice](README.md). No se sirven como recursos de la aplicación.
+
+## 3. Navegación y renderizado
+
+Las rutas usan el fragmento de la URL. No requieren redirecciones de servidor y funcionan bajo un subdirectorio como `/Vokal/`.
+
+| Fragmento | Vista |
+| --- | --- |
+| `#inicio` o fragmento vacío | Resumen, siguiente lección, estadísticas y sección actual |
+| `#ruta` | Todas las secciones, orden y bloqueos |
+| `#ruta/A1`, `A2`, `B1`, `B2`, `C1` | Filtro de ruta por nivel |
+| `#leccion/ID` | Teoría, gramática, contexto, diálogo, vocabulario y práctica |
+| `#practica/ID` | Ejercicios de una lección iniciados desde su vista |
+| `#evaluacion/ID-DE-SECCION` | Evaluación de una sección iniciada desde la interfaz |
+| `#palabras` | Catálogo con búsqueda, filtro por nivel y páginas de 24 entradas |
+| `#repaso` | Entradas vencidas o tarjetas de un repaso activo |
+| `#cuenta` | Estado de nube, autenticación y acciones de sesión |
+
+`render()` reemplaza el contenido principal y actualiza `aria-current` en la navegación.
+La delegación de eventos está en el contenedor main para conservar controladores al cambiar el HTML.
+Las búsquedas actualizan solo resultados y paginación; las respuestas enfocan el botón Continuar.
+Cambiar de ruta descarta la sesión de ejercicios si ya no corresponde a su ruta.
+
+Una URL de práctica abierta directamente no restaura preguntas: muestra cómo regresar a una lección.
+Abrir por URL una lección bloqueada muestra su restricción. El bloqueo es pedagógico del cliente, no un control de acceso a contenido secreto.
+
+## 4. Contrato del contenido
+
+### Sección
+
+Cada elemento de `units` tiene `id`, `level`, `title` y `description`.
+El orden del array define los prerrequisitos: la siguiente sección exige todas las lecciones de las anteriores.
+No hay un grafo independiente de dependencias.
+
+### Lección
+
+Cada lección contiene:
+
+- `id`: identificador estable del progreso.
+- `unit`, `level`, `category`: pertenencia y clasificación.
+- `title`, `subtitle`, `theory`, `grammar`, `tip`: material explicativo y contexto.
+- `dialogue`: pares `[alemán, español]`.
+- `example`: par heredado/representativo del diálogo.
+- `words`: filas `[id, alemán, español, ejemplo]`.
+- `questions`: preguntas específicas de concepto o gramática.
+
+Las tres lecciones originales conservan sus IDs y los de sus entradas para que el progreso previo siga siendo reconocido.
+Las nuevas lecciones usan `make()` para construir objetos coherentes y generan IDs de términos con prefijo `term-`.
+No renombrar IDs publicados sin una migración explícita: `readState` descarta IDs que no reconoce.
+
+`content.js` exporta `lessons`, `units` y un catálogo `words` deduplicado por ID mediante Map.
+Cada entrada del catálogo añade `lesson` y `level` de su primera aparición. Las tarjetas de una lección usan sus propias filas.
+Si se reutiliza una entrada en varios niveles, el filtro global actual la clasifica por su primera aparición.
+
+### Pregunta
+
+Una pregunta tiene `prompt`, `answers` (lista de respuestas aceptadas), `explanation` y opcionalmente `options` y `wordId`.
+La presencia de `options` determina si se muestra selección o escritura.
+`wordId` conecta el resultado con el repaso de esa entrada.
+
+`lessonQuestions()` concatena:
+
+1. Preguntas específicas de la lección.
+2. Una pregunta de reconocimiento por entrada, con distractores de la misma lección.
+3. Una pregunta de escritura por entrada, pidiendo el término aprendido con su artículo si corresponde.
+
+La posición correcta se rota de forma determinista. No hay aleatoriedad ni un modelo de IA generando preguntas en tiempo real.
+`assessmentQuestions()` toma preguntas específicas más las tres primeras de reconocimiento y las tres últimas de escritura.
+Una evaluación cubre una muestra; no demuestra todo el vocabulario del nivel.
+
+## 5. Corrección, dominio y repasos
+
+### Corrección
+
+`normalize()` recorta extremos, normaliza Unicode NFC, pasa a minúsculas alemanas,
+elimina puntuación final `. ! ?` y unifica espacios. `isCorrect()` compara con cada respuesta declarada.
+
+Consecuencias conocidas:
+
+- Se acepta variación de mayúsculas; la interfaz sí enseña la forma escrita.
+- No se equiparan `ö/o` ni `ß/ss`.
+- Una traducción sinónima no declarada puede rechazarse.
+- No hay evaluación semántica de producción libre.
+
+### Dominio
+
+Cada respuesta cuenta una sola vez. Se registra si se acertó al primer intento.
+Al terminar, `score / total >= 0.8` marca la lección como completada.
+Una evaluación aprobada marca las lecciones de esa sección; una reprobada permite repetir sin castigo.
+Los logros previos no se eliminan por una repetición peor.
+
+La primera sección está abierta. Cada siguiente sección exige todas las lecciones de todas las anteriores.
+La evaluación solo se inicia para una sección disponible; puede saltar su práctica, no omitir todos los prerrequisitos de golpe.
+
+### Repaso
+
+Por entrada se acumula evidencia durante la práctica. Si una de sus respuestas falla, la evidencia de esa entrada queda en falso.
+Al finalizar la práctica se ajustan solo las entradas que participaron en ejercicios vinculados a `wordId`.
+Las preguntas gramaticales sin wordId cuentan para el resultado, pero no crean una entrada de repaso.
+
+`schedule()` devuelve `streak`, `due` y `updatedAt`:
+
+| Resultado | Próximo intervalo |
+| --- | --- |
+| Error | 10 minutos; racha 0 |
+| Primer acierto de la racha | 1 día |
+| Segundo | 3 días |
+| Tercero | 7 días |
+| Cuarto | 14 días |
+| Quinto | 30 días |
+| Sexto y posteriores | 60 días, racha limitada a 6 |
+
+`dueWords()` solo devuelve entradas ya practicadas cuyo `due <= ahora`.
+En las tarjetas, el alumno revela el significado y se autoevalúa. Esta autoevaluación no es reconocimiento automático del habla.
+
+## 6. Estado y persistencia
+
+### Objeto de progreso
+
+```json
+{
+  "completed": ["saludos"],
+  "reviews": {
+    "hallo": {"streak": 1, "due": 100000000, "updatedAt": 13600000}
+  },
+  "assessment": null,
+  "results": {
+    "saludos": {"score": 25, "total": 27, "updatedAt": 13600000}
+  },
+  "assessments": {
+    "a1-primeros": {"score": 24, "total": 27, "updatedAt": 13600000}
+  }
+}
+```
+
+Los números anteriores son ilustrativos, no progreso real de un alumno. Fechas del cliente: milisegundos desde Unix epoch.
+`assessment` se conserva por compatibilidad con la evaluación global antigua; las evaluaciones actuales usan `assessments` por sección.
+
+`readState()` valida el JSON, restringe IDs a los conocidos y elimina rachas, fechas o puntuaciones inválidas.
+Una revisión antigua sin `updatedAt` recibe 0. No modifica la fecha `due` de un registro válido antiguo.
+
+### Claves de navegador
+
+| Clave | Contenido |
+| --- | --- |
+| `vokal.progress.v1` | Progreso de invitado, conservado para compatibilidad |
+| `vokal.progress.v2:UUID` | Copia de progreso separada para un usuario autenticado |
+| `vokal.auth:https://PROYECTO.supabase.co` | Sesión de autenticación del proyecto |
+| `vokal.theme` | `system`, `dark` o `light` |
+
+No inspeccionar/copiar valores reales de sesión a logs o documentación.
+Se guarda progreso al terminar la práctica/evaluación o autoevaluar una tarjeta de repaso.
+Una práctica incompleta no se serializa y no se reanuda después de recargar.
+La preferencia visual permanece por dispositivo; no forma parte del objeto sincronizado.
+
+Al iniciar sesión se carga la copia asociada a esa cuenta, sin incorporar automáticamente el invitado.
+La importación de invitado requiere pulsar un botón explícito. Cerrar sesión vuelve a la copia de invitado.
+
+## 7. Configuración pública
+
+Orden de selección por campo en `scripts/config.mjs`:
+
+1. Variable `SUPABASE_URL` o `SUPABASE_PUBLISHABLE_KEY`, si está definida.
+2. `src/config.local.js`, si existe.
+3. Valores vacíos de `src/config.js`.
+
+Se usa `??`: una variable definida como cadena vacía sobrescribe el valor local.
+El módulo local no es un .env y no se carga un .env automáticamente.
+
+`validateConfig()` permite desactivar ambos valores vacíos. Si hay configuración exige HTTPS con dominio de proyecto `*.supabase.co`
+y una clave publishable o JWT con rol anon. No soporta actualmente un dominio personalizado de Supabase.
+La validación del JWT identifica su rol declarado; la validez criptográfica y los permisos se comprueban en Supabase.
+
+## 8. Cliente de nube
+
+El cliente usa fetch, cabecera `apikey` y, en operaciones privadas, `Authorization: Bearer ACCESS_TOKEN`.
+El timeout es de 15 segundos. Se muestran errores de red, de autenticación, de límite 429 y errores generales; no se ocultan como éxito.
+
+| Método | Endpoint | Comportamiento |
+| --- | --- | --- |
+| `sendCode(email)` | POST `/auth/v1/otp` | Solicita OTP con creación de usuario permitida |
+| `verifyCode(email, code)` | POST `/auth/v1/verify` | Verifica tipo email y guarda la sesión devuelta |
+| Renovación interna | POST `/auth/v1/token?grant_type=refresh_token` | Renueva si quedan 60 segundos o menos |
+| `sync(progress)` | POST `/rest/v1/rpc/sync_progress` | Envía `{ incoming: progreso }` y recibe progreso combinado |
+| `signOut()` | POST `/auth/v1/logout?scope=local` | Intenta revocar la sesión actual y borra la sesión local en memoria/almacenamiento |
+
+Una promesa compartida evita renovar dos veces simultáneamente dentro de la misma instancia del cliente.
+No hay un coordinador de renovación entre varias pestañas; no declarar ese caso como comprobado.
+
+`app.js` guarda primero la copia local y programa una sincronización con demora de 700 ms.
+También sincroniza al recuperar conexión o foco, al iniciar una sesión restaurada y por botón manual.
+Evita trabajos simultáneos y repite cuando se solicita otro durante uno activo.
+Si cambia la cuenta, descarta resultados pendientes del propietario anterior y solicita sincronización de la cuenta nueva.
+
+La respuesta se valida y combina con el estado actual para conservar cambios locales ocurridos durante la solicitud.
+En error se conserva la copia local y se indica pendiente; la siguiente sincronización ocurre por interacción, foco, conexión o acción manual.
+No hay reintento ilimitado en segundo plano ni garantía de que la última escritura llegue si se cierra la pestaña de inmediato.
+
+## 9. PostgreSQL y RLS
+
+`learning_progress` contiene:
+
+- `user_id uuid`: clave primaria y referencia a `auth.users`, borrado en cascada si se borra el usuario.
+- `state jsonb`: objeto completo de progreso.
+- `updated_at timestamptz`: fecha del servidor de la actualización.
+
+RLS está habilitado. Las políticas select/insert/update exigen que `auth.uid()` coincida con user_id.
+Anon no recibe permisos de tabla y no puede ejecutar la RPC. No existe una política de borrado desde la aplicación.
+
+Funciones:
+
+- `merge_progress_map(a,b)`: combina mapas por ID y elige la mayor marca `updatedAt`; en empate prefiere la entrada existente.
+- `merge_learning_progress(a,b)`: une `completed` sin duplicados y combina reviews, results y assessments.
+- `sync_progress(incoming)`: exige sesión, tipos de campos y tamaño máximo de 4 000 000 bytes para el JSON entrante;
+  inserta o actualiza con `ON CONFLICT` y devuelve el estado combinado dentro de la operación del servidor.
+
+La función es `security invoker`, con search_path vacío y referencias de esquema explícitas.
+La separación de usuarios depende de RLS, no de confiar en un UUID que mande el navegador.
+El cliente no necesita una clave administrativa.
+
+Los logros se unen: no existe reseteo/borrado sincronizado. Los mapas resuelven conflictos por reloj del dispositivo;
+la hora del servidor de la fila no sustituye la marca individual. Desajustes grandes de reloj y nuevos esquemas requieren pruebas adicionales.
+La migración se debe ejecutar una vez; no es completamente idempotente porque las políticas se crean sin cláusula de reemplazo.
+No ha sido ejecutada/verificada en PostgreSQL real en la entrega funcional actual.
+
+## 10. Build, servidor y alojamiento
+
+El servidor escucha únicamente `127.0.0.1:3000`; acceder desde otro dispositivo no equivale a escribir localhost en ese dispositivo.
+El servidor de desarrollo no se publica como servicio de producción ni se abre a la red por defecto.
+La lista `publicFiles` permite nueve archivos de aplicación; config.js se genera aparte: diez archivos públicos.
+El servidor responde 404 a contexto, SQL, .git, configuración local y archivos de entorno.
+
+El build crea `dist/`, copia esos archivos y genera `dist/src/config.js` con valores públicos validados.
+No ejecuta un bundler ni instala paquetes. Tampoco borra automáticamente archivos antiguos de dist.
+En CI el checkout empieza limpio; antes de publicar un dist local reutilizado, comprobar que no contiene archivos extra.
+No publicar la raíz del repositorio como directorio estático.
+
+El workflow de comprobaciones corre en push/PR y valida Windows/Linux.
+El de Pages solo se ejecuta por workflow_dispatch y necesita habilitar Pages en el repositorio.
+Sus variables de build son las URL/clave públicas; no deben ser una service_role ni una contraseña.
+El resultado de un build no equivale a un despliegue y un despliegue no equivale a nube funcionando.
+
+## 11. Límites y siguientes cambios
+
+Conservar la simplicidad no permite marcar como terminados curso, nube, pronunciación o validación lingüística.
+Para escalar el catálogo habrá que revisar importación/licencias, metadatos, respuestas alternativas, descarga por módulos
+y búsqueda, en lugar de añadir miles de términos sin control. La implementación actual carga todo el currículo disponible en memoria.
+Consultar [CONTENT](CONTENT.md), [ROADMAP](ROADMAP.md) y [CLOUD](CLOUD.md) antes de ampliar esas áreas.

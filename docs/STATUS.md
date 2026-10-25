@@ -2,6 +2,15 @@
 
 Fecha: 2026-10-25. Versión: 0.2.0.
 
+## Tarea activa y contexto entre sesiones
+
+El propietario está probando la web y ha llegado a **Crear organización** en Supabase.
+Se le guía para crear organización/proyecto Free; no hay confirmación de haber completado ese proceso externo.
+El punto de continuidad está en [HANDOFF](HANDOFF.md), con detalle en [CLOUD](CLOUD.md).
+El [índice](README.md), [arquitectura](ARCHITECTURE.md), [operación](OPERATIONS.md) y [diario](SESSION_LOG.md)
+permiten continuar sin recuperar este chat. [WORKFLOW](WORKFLOW.md) y AGENTS obligan a actualizar los .md en cada entrega.
+La entrega actual modifica únicamente documentación; el comportamiento de la aplicación sigue siendo 0.2.0.
+
 ## Implementado
 - Tema por sistema, botón noche/claro y selector para volver a automático. Persistencia local.
 - 31 lecciones, 15 secciones, 372 entradas y 781 ejercicios de vocabulario y gramática.
@@ -21,18 +30,24 @@ Fecha: 2026-10-25. Versión: 0.2.0.
 - Diseño comprobado en claro/oscuro a 375, 812 y 1440 px; sin desbordamiento horizontal en inicio.
   Contraste de texto principal/secundario, botones y estados comprobado en ambos temas.
 - Build estático generado correctamente. Evidencia visual local en .qa/ (ignorada por Git).
+- El CI del commit funcional 8002135 se confirmó completado con success en Windows/Linux:
+  [run 40240554393](https://github.com/Yukimaed27/Vokal/actions/runs/40240554393).
+  No confundir esa evidencia con el resultado de futuros commits.
 
 ## Decisión del propietario
-No tiene proyecto Supabase y solicitó dejar la integración preparada. No pedir claves secretas.
+Primero solicitó dejar Supabase preparado. Ahora está iniciando la creación de la organización y pidió acompañamiento.
+No hay un proyecto creado/conectado confirmado. No pedir claves secretas.
 Guía: docs/CLOUD.md. Falta activar el servicio y verificar nube con dos cuentas/dispositivos reales.
 La web no se ha publicado en esta revisión; existe un workflow manual para hacerlo después.
 
 ## Siguiente tarea
-1. Revisar el diseño y una lección ampliada con Yohaldo.
-2. Crear Supabase Free, ejecutar la migración y conectar solo URL/clave pública.
+1. Acompañar desde Crear organización: nombre Vokal, tipo Personal si aparece, plan Free; crear el proyecto.
+2. Abrir SQL Editor, ejecutar la migración una vez y conectar solo URL/clave pública.
 3. Verificar aislamiento entre cuentas y recuperación del progreso en dos dispositivos.
 4. Publicar y comprobar el sitio desplegado.
 5. Ampliar el currículo con revisión lingüística; no cargar miles de traducciones sin validar.
+
+Mantener la revisión del diseño/lecciones en paralelo según lo que observe el propietario al probar.
 
 ## Límites
 - 372 entradas no cumplen todavía la meta de 10 000 palabras. La ruta no acredita B2/C1.

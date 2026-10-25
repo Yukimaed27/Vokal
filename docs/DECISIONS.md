@@ -11,6 +11,9 @@
 - Meta de 10 000 palabras, ampliable a 25 000. El catálogo actual es una base, no el objetivo cumplido.
 - Primero aprendizaje y base didáctica; después audio/pronunciación. Evitar costos de IA.
 - GitHub conserva código y contexto. El progreso personal no se versiona en Git.
+- Cada avance debe dejar comunicación asíncrona detallada en Markdown para otra sesión/IA/laptop.
+  HANDOFF y STATUS mantienen el presente; SESSION_LOG conserva historia; el detalle técnico se consulta bajo demanda.
+  La actualización de contexto es parte de terminar cada tarea, no una mejora opcional.
 
 ## Cambios solicitados en esta revisión
 - Conservar diseño y distribución; sustituir verde/lima por tonos oscuros burdeos, rojo y morado.
@@ -27,3 +30,13 @@
 - Los logros se combinan por unión; los repasos y resultados se resuelven por su marca de modificación.
 - GitHub Pages preparado mediante publicación manual, sin activar alojamientos ni costos.
 - UI UX Pro Max: guía de contraste consultada; la paleta final adapta la preferencia del propietario.
+
+## Continuidad y Supabase: actualización posterior
+
+El propietario pidió ampliar la documentación de todo lo realizado y mantenerla siempre al día.
+Se estableció el protocolo permanente en AGENTS y WORKFLOW, con índice, traspaso, arquitectura, operación e historial.
+La documentación es Markdown versionado; no depende de skills de una computadora ni de memoria del modelo.
+
+Después de dejar la nube preparada, abrió Supabase y llegó a Crear organización.
+La tarea inmediata es guiarlo en organización/proyecto Free, sin asumir que ya existe un proyecto o que la migración está aplicada.
+Se conserva la preferencia por costo cero; no hay autorización para contratar planes ni complementos de pago.

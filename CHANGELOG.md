@@ -1,5 +1,12 @@
 # Cambios
 
+## Documentación posterior a 0.2.0 — 2026-10-25
+- Traspaso activo y punto exacto para continuar desde otra IA o laptop.
+- Índice de contexto, mapa detallado de arquitectura y contratos, operación Windows/Linux e historial de sesiones.
+- Protocolo obligatorio en AGENTS y WORKFLOW para actualizar Markdown con cada avance y entregar contexto junto al código.
+- Guía Supabase ampliada desde Crear organización; nube todavía no activada.
+- CI funcional anterior confirmado correcto. Esta entrega no modifica la aplicación ni su versión.
+
 ## 0.2.0 — 2026-10-25
 - Paleta burdeos/morado, modo noche/claro, botón y detección del sistema con preferencia persistente.
 - Ampliación de 3 a 31 lecciones y de 18 a 372 entradas; 15 secciones A1–C1 y 781 ejercicios.

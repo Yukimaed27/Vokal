@@ -2,6 +2,13 @@
 
 Alemán práctico para hispanohablantes. Comprende, conversa, escribe y repasa sin penalizaciones por faltar.
 
+## Retomar desde otra IA o computadora
+
+Empieza por [el traspaso activo](docs/HANDOFF.md) y [el índice del contexto](docs/README.md).
+El proyecto conserva instrucciones, arquitectura, historial de sesiones, verificaciones y procedimientos en Markdown.
+AGENTS exige actualizar ese contexto con cada avance antes de entregar o cambiar de sesión.
+El chat y los archivos ignorados no sustituyen el contexto versionado.
+
 ## Ejecutar en Windows o Linux
 
 Requiere Git, Node.js 22 o superior y Corepack/pnpm. No tiene dependencias externas.
@@ -38,7 +45,8 @@ Las sesiones apuntan a 20–30 minutos, pero no imponemos una duración artifici
 
 Sin configuración, el progreso permanece en este navegador. No se muestra como sincronizado.
 Sigue [la guía de nube](docs/CLOUD.md) para conectar tu propio proyecto gratuito de Supabase y publicar con GitHub Pages.
-El propietario ha solicitado dejarlo preparado por ahora: no se ha creado ni configurado un servicio externo.
+La integración está preparada. El propietario está siguiendo la guía desde Crear organización;
+todavía no hay un proyecto conectado ni un despliegue confirmados.
 
 `pnpm build` genera únicamente los archivos públicos en `dist/`. No subas documentos, credenciales o datos personales como archivos estáticos.
 
@@ -53,6 +61,12 @@ No hay que volver a instalar las skills para ejecutar la aplicación; las skills
 
 - [Decisiones](docs/DECISIONS.md)
 - [Estado actual](docs/STATUS.md)
+- [Traspaso para otra sesión](docs/HANDOFF.md)
+- [Índice de documentación](docs/README.md)
+- [Historial de sesiones](docs/SESSION_LOG.md)
+- [Arquitectura y contratos](docs/ARCHITECTURE.md)
+- [Operación Windows/Linux](docs/OPERATIONS.md)
+- [Protocolo de actualización](docs/WORKFLOW.md)
 - [Hoja de ruta](docs/ROADMAP.md)
 - [Revisión de seguridad](docs/SECURITY.md)
 - [Contenido y ampliación](docs/CONTENT.md)

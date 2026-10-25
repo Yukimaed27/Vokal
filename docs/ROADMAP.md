@@ -8,13 +8,15 @@
 - [x] Desbloqueo progresivo con umbral del 80 % y evaluaciones por sección.
 - [x] Repasos por palabra y conservación de progreso anterior.
 - [x] Validación en navegador y tamaños de celular, horizontal y escritorio.
+- [x] Contexto asíncrono detallado: índice, traspaso, arquitectura, operación, diario y protocolo obligatorio en AGENTS.
 - [ ] Revisión lingüística externa y prueba con el propietario.
 
 ## Acceso real entre dispositivos
 - [x] Preparar integración REST de Supabase sin dependencias externas.
 - [x] Preparar esquema, políticas RLS y combinación transaccional.
 - [x] Preparar build estático y workflow de GitHub Pages.
-- [ ] Crear proyecto Free y configurar código por correo (el propietario lo dejó pendiente).
+- [ ] Crear organización/proyecto Free: el propietario está en Crear organización; todavía sin confirmación de finalización.
+- [ ] Configurar código por correo y revisar límites de destinatarios/envíos.
 - [ ] Ejecutar migración y probar restricciones con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.
 - [ ] Publicar y verificar la web desplegada.
