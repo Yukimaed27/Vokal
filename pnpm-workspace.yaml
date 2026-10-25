@@ -1,0 +1,8 @@
+packages:
+  - .
+minimumReleaseAge: 10080
+strictDepBuilds: true
+allowBuilds: {}
+blockExoticSubdeps: true
+saveExact: true
+verifyStoreIntegrity: true

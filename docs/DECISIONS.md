@@ -1,20 +1,29 @@
 # Decisiones acordadas
 
-- Público: principiantes hispanohablantes, inicialmente el propietario y 2–3 probadores.
+- Público: principiantes hispanohablantes; inicialmente el propietario y 2–3 probadores.
 - Propósito: desenvolverse en Alemania con respeto por su cultura; viaje, conversación y trabajo.
-- Ruta: básico, intermedio y avanzado; objetivo B2 y continuación C1.
-- Sesiones de 20–30 minutos, sin castigos por faltar.
-- Método: explicación, ejemplos, práctica guiada, evaluación y repasos según errores.
-- Web adaptable con cuenta y sincronización como requisito del producto final. Internet requerido inicialmente.
-- Evaluación inicial para saltar conocimientos ya dominados; no certificar niveles por conteo de palabras.
-- Catálogo final: 10 000 entradas léxicas, ampliable a 25 000, contextualizadas y revisadas.
-- Primero base didáctica, después audio y pronunciación. Evitar costos de IA en la primera etapa.
-- GitHub conserva código y contexto; instrucciones para agentes y hooks de comprobación.
-- Implementación inicial sin dependencias: HTML, CSS, JavaScript y Node para desarrollo/pruebas.
-  Esto valida el método antes de elegir el servicio de autenticación, base de datos y alojamiento.
+- Ruta: básico, intermedio y avanzado. B2 es el primer objetivo completo; C1, la continuación.
+- Sesiones de 20–30 minutos sin castigos por faltar.
+- Explicación antes de practicar, ejemplos, diálogos, evaluación y repasos según errores.
+- Secciones progresivas dentro de cada nivel; dominio del 80 % para desbloquear la siguiente.
+- Se puede demostrar dominio mediante evaluación de sección, sin repetir todas sus lecciones.
+- Web adaptable. Nube con cuenta individual; internet requerido inicialmente.
+- Meta de 10 000 palabras, ampliable a 25 000. El catálogo actual es una base, no el objetivo cumplido.
+- Primero aprendizaje y base didáctica; después audio/pronunciación. Evitar costos de IA.
+- GitHub conserva código y contexto. El progreso personal no se versiona en Git.
 
-## Diseño
+## Cambios solicitados en esta revisión
+- Conservar diseño y distribución; sustituir verde/lima por tonos oscuros burdeos, rojo y morado.
+- Detectar tema del sistema, permitir noche/claro y recordar elección manual.
+- Migrar de npm a pnpm y revisar dependencias/avisos de seguridad.
+- Ampliar contenido y secciones; no representar niveles vacíos como disponibles.
+- Preparar nube gratuita. El propietario confirmó que aún no tiene Supabase: dejarlo preparado.
 
-UI UX Pro Max fue consultada. Sus coincidencias educativas favorecían estilos infantiles y páginas comerciales;
-se conservan accesibilidad, jerarquía y tarjetas, con diseño sobrio para adultos como adaptación propia.
-Fondo marfil, verde oscuro, acento lima, tipografía de sistema y bordes suaves. Sin fuentes remotas ni imágenes necesarias.
+## Implementación
+- HTML/CSS/JavaScript y Node para herramientas; sin dependencias externas.
+- pnpm 11.28.6 fijado, publicado el 2026-10-15. Configuración de seguridad y lockfile en Git.
+- Supabase REST: OTP por correo, caché por usuario y sincronización transaccional en PostgreSQL con RLS.
+- Entrada de invitados separada. Importar progreso de invitado requiere una elección explícita.
+- Los logros se combinan por unión; los repasos y resultados se resuelven por su marca de modificación.
+- GitHub Pages preparado mediante publicación manual, sin activar alojamientos ni costos.
+- UI UX Pro Max: guía de contraste consultada; la paleta final adapta la preferencia del propietario.

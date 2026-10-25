@@ -1,4 +1,5 @@
-export const lessons = [
+import { units, advancedLessons, firstLessonExtras } from './curriculum.js';
+const initialLessons = [
   {
     id: 'saludos', title: 'Tu primer Hallo', subtitle: 'Saluda y despídete con confianza.', category: 'PRIMER CONTACTO',
     theory: 'En alemán, el saludo depende de la situación. Hallo es habitual entre conocidos. Guten Tag funciona en un encuentro formal. Usa Auf Wiedersehen en una despedida formal y Tschüss en una informal.',
@@ -57,4 +58,20 @@ export const lessons = [
     ],
   },
 ];
-export const words = lessons.flatMap(lesson => lesson.words.map(([id, de, es, example]) => ({ id, de, es, example, lesson: lesson.id })));
+export { units };
+export const lessons = [
+  ...initialLessons.map(lesson => ({
+    ...lesson, unit: 'a1-primeros', level: 'A1',
+    grammar: firstLessonExtras[lesson.id].grammar,
+    dialogue: firstLessonExtras[lesson.id].dialogue,
+    words: [...lesson.words, ...firstLessonExtras[lesson.id].words],
+  })),
+  ...advancedLessons,
+];
+const catalog = new Map();
+for (const lesson of lessons) {
+  for (const [id, de, es, example] of lesson.words) {
+    if (!catalog.has(id)) catalog.set(id, { id, de, es, example, lesson: lesson.id, level: lesson.level });
+  }
+}
+export const words = [...catalog.values()];

@@ -1,0 +1,90 @@
+# Activar la nube cuando estés listo
+
+La integración está preparada. No hay un proyecto conectado ni una web publicada en esta revisión.
+Hasta activarla, el progreso solo vive en el navegador. No se ha contratado nada.
+
+## 1. Crear tu proyecto
+
+1. Entra en [Supabase](https://supabase.com/dashboard) con tu cuenta y crea una organización **Free** y un proyecto.
+2. Conserva la contraseña de la base de datos fuera del repositorio y del chat.
+3. En la configuración de conexión/API, localiza la URL `https://TU-PROYECTO.supabase.co` y la clave pública `sb_publishable_…`.
+4. No uses `sb_secret_…`, `service_role`, la contraseña de PostgreSQL ni un token personal en el navegador.
+
+El [plan Free](https://supabase.com/pricing) incluye actualmente 500 MB de base de datos y 50 000 usuarios activos mensuales.
+Puede pausarse después de una semana sin actividad. Son límites del proveedor, no una garantía de servicio gratuito permanente.
+No cambies a Pro para estas primeras pruebas.
+
+## 2. Preparar la base de datos
+
+En **SQL Editor**, ejecuta una vez el contenido de `supabase/migrations/001_progress.sql`.
+La migración crea la tabla, habilita RLS y permite que cada sesión lea o modifique solo su propio progreso.
+La función `sync_progress` combina los logros y resuelve los repasos/resultados por su marca de modificación dentro de una transacción.
+
+La migración no se ha ejecutado contra un proyecto real. Antes de usar datos importantes:
+
+1. Comprueba que una solicitud sin sesión no puede leer la tabla ni llamar a `sync_progress`.
+2. Con dos usuarios, verifica que A no puede consultar ni modificar la fila de B.
+3. Practica desde dos dispositivos y confirma que se conservan ambos avances al sincronizar.
+4. Comprueba que un error de conexión conserva la copia local y muestra estado pendiente.
+
+## 3. Activar el código por correo
+
+En **Authentication**, mantén habilitado el proveedor Email y las confirmaciones.
+En las plantillas de **Magic Link** y, si corresponde, **Confirm signup**, incluye el código:
+
+```html
+<h2>Tu código para Vokal</h2>
+<p>{{ .Token }}</p>
+```
+
+Vokal solicita el código y lo verifica como OTP de email; no necesita recibir tokens en la URL.
+Consulta la [guía oficial de OTP](https://supabase.com/docs/guides/auth/auth-email-passwordless).
+
+**Límite relevante:** el correo integrado de Supabase solo envía a direcciones autorizadas del equipo del proyecto,
+y actualmente limita los envíos a dos por hora. Para empezar, prueba con tu correo de propietario.
+No concedas acceso administrativo a los probadores para sortear ese límite: para otros destinatarios configura SMTP
+con un proveedor y revisa sus condiciones/precio antes de activarlo.
+Fuente: [restricciones del SMTP integrado](https://supabase.com/docs/guides/auth/auth-smtp).
+
+## 4. Conectar en tu computadora
+
+Crea `src/config.local.js` con estos datos **públicos**:
+
+```js
+export const cloudConfig = {
+  supabaseUrl: 'https://TU-PROYECTO.supabase.co',
+  supabasePublishableKey: 'sb_publishable_TU_CLAVE_PUBLICA',
+};
+```
+
+Ese archivo está ignorado por Git. El servidor usa sus datos y nunca publica el archivo local completo.
+Reinicia `pnpm dev`. En **Mi cuenta**, introduce tu correo, recibe el código y entra.
+El progreso de invitado solo se importa si pulsas el botón correspondiente.
+La clave pública identifica el proyecto; la protección de los datos depende de la sesión y de RLS.
+
+En otra computadora, conecta al mismo proyecto o usa la web publicada. Accede con el mismo correo.
+La apariencia queda en cada dispositivo; los resultados, logros y repasos se sincronizan al terminar una práctica o repaso.
+Una práctica a medias no se reanuda al recargar. El cierre de sesión conserva la copia del usuario separada de la de invitado.
+
+## 5. Publicar con GitHub Pages
+
+El workflow está preparado y es **manual**. No se ha ejecutado.
+
+1. En el repositorio, **Settings → Pages → Source**, elige **GitHub Actions**.
+2. En **Settings → Secrets and variables → Actions → Variables**, añade `SUPABASE_URL` y `SUPABASE_PUBLISHABLE_KEY`.
+   Son los dos identificadores públicos anteriores. Nunca añadas una clave administrativa para el frontend.
+3. En **Actions**, ejecuta **Publicar web (manual)** con **Run workflow**.
+4. Abre la URL que devuelva el trabajo `Publicar`; comprueba inicio de sesión y progreso en celular y computadora.
+
+Sin las variables, el sitio se publica en modo local, sin sincronización. La compilación rechaza claves secretas conocidas.
+El build contiene únicamente la lista de archivos públicos. Las rutas relativas permiten alojar la web bajo `/Vokal/`.
+No publiques la raíz del repositorio como si todos sus archivos fueran recursos de la aplicación.
+
+Referencia: [workflows de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Sesiones y seguridad
+
+Se usan solicitudes HTTPS a Supabase sin instalar un SDK. Los tokens se almacenan en el navegador para mantener la sesión,
+igual que el progreso de caché, y nunca se incluyen en Git. El cierre de sesión intenta revocar solo esa sesión.
+Las cuentas del navegador no protegen de alguien que tenga acceso físico a tu perfil: cierra sesión en equipos compartidos.
+Las políticas SQL y los límites deben verificarse en el proyecto real antes de considerar la nube lista.

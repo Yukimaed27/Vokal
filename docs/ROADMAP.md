@@ -1,27 +1,31 @@
 # Hoja de ruta
 
-## 0. Base local
+## Base y refinamientos
 - [x] Estructura portable, documentación, hooks y CI.
-- [x] Unidad inicial: saludos, presentación y cortesía.
-- [x] Práctica con explicación, evaluación de unidad y repasos persistentes.
-- [ ] Validación visual en navegador, celular y teclado.
+- [x] Temas noche/claro y detección del sistema, conservando la estructura visual.
+- [x] Migración a pnpm y revisión de paquetes/avisos publicados.
+- [x] 15 secciones y 31 lecciones con teoría, diálogos y 781 ejercicios.
+- [x] Desbloqueo progresivo con umbral del 80 % y evaluaciones por sección.
+- [x] Repasos por palabra y conservación de progreso anterior.
+- [x] Validación en navegador y tamaños de celular, horizontal y escritorio.
 - [ ] Revisión lingüística externa y prueba con el propietario.
 
-## 1. Acceso real entre dispositivos
-- [ ] Seleccionar alojamiento y servicio gratuito de autenticación y base de datos, verificando límites vigentes.
-- [ ] Cuentas para probadores, recuperación de acceso y aislamiento de datos por usuario.
-- [ ] Sincronización, manejo de conflictos y pruebas con dos dispositivos.
-- [ ] Publicación y comprobación del sitio desplegado.
+## Acceso real entre dispositivos
+- [x] Preparar integración REST de Supabase sin dependencias externas.
+- [x] Preparar esquema, políticas RLS y combinación transaccional.
+- [x] Preparar build estático y workflow de GitHub Pages.
+- [ ] Crear proyecto Free y configurar código por correo (el propietario lo dejó pendiente).
+- [ ] Ejecutar migración y probar restricciones con dos cuentas reales.
+- [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.
+- [ ] Publicar y verificar la web desplegada.
 
-## 2. Curso básico
-- [ ] Diseñar currículo A1/A2 y criterios de dominio de lectura, escritura, escucha y habla.
-- [ ] Obtener fuentes con licencia compatible y registrar procedencia de cada lote.
-- [ ] Ampliar unidades, ejercicios de producción y evaluación inicial que permita saltar contenidos.
-- [ ] Audio y luego práctica de pronunciación.
+## Curso completo
+- [ ] Ampliar currículo A1/A2, con evaluación de lectura, escritura, escucha y habla.
+- [ ] Revisión de cada lote y registro de fuentes/licencias si se incorpora material externo.
+- [ ] Evaluación inicial global que permita situarse en la ruta, aparte de las pruebas de sección.
+- [ ] Audio y práctica de pronunciación, después de validar la base.
+- [ ] Completar B1/B2 con tareas abiertas y comprobación práctica del dominio.
+- [ ] Alcanzar 10 000 lemas revisados y contextualizados, sin inflar flexiones ni expresiones.
+- [ ] Completar C1 y ampliar a 25 000 según utilidad y calidad.
 
-## 3. Intermedio y avanzado
-- [ ] B1/B2, situaciones de trabajo y cultura con matices regionales.
-- [ ] Alcanzar 10 000 entradas revisadas, sin duplicar flexiones para inflar el conteo.
-- [ ] C1 y ampliación a 25 000 según utilidad y calidad.
-
-No cargar miles de palabras generadas sin revisión. No prometer certificación oficial.
+Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras y los tests de vocabulario no certifican esos niveles.
