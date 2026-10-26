@@ -108,3 +108,10 @@ Se fija umbral por sentido: corroboración bilingüe y gramatical con dos famili
 contexto delimitado y aviso IA sin revisión humana. Sin aprobación global de palabras, ejemplos o conjugaciones.
 Las fichas que lo cumplen tienen sense-checked-ai; no se elimina la incertidumbre ni se promete100% de exactitud.
 Se recontrastan 22 casos anteriores, no se amplía el rango examinado. Se conservan todos los IDs/progreso.
+
+## 2026-10-26 — Pausa y preferencia de presentación
+
+El propietario pide solo registrar para continuar en otro dispositivo. Retirar después el aviso «sin revisión humana»:
+esta instrucción sustituye el requisito visual anterior. No equivale a declarar revisión humana o certeza absoluta.
+Usar también foros y páginas fiables para contrastar usos/contextos, diferenciando opiniones de evidencia verificable.
+No se modifica la aplicación ni se inicia otro lote durante la pausa. Prioridad siguiente:478 examinadas pendientes.

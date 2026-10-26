@@ -355,3 +355,12 @@ WordCard condiciona distintivo al de/es visible; límites y dos fuentes accesibl
 33 pruebas y build de 13 recursos correctos; hooks validan metadatos/render/cobertura documental. No son verificación semántica.
 Captura Edge de 375 px clara del distintivo/fuentes, docWidth=360 px sin overflow; no CDP completo. Servidor QA cerrado.
 REVIEW_POLICY/RECHECK-22 y contexto vigente actualizados; próximos pasos priorizan material pendiente con ese umbral.
+
+## 2026-10-26 — Pausa y registro para otro dispositivo
+
+El propietario pide detener trabajo y solo dejar continuidad. Nueva preferencia: no mostrar «sin revisión humana» en el sitio;
+retirada pendiente para próxima sesión, sin falsificar metadatos. Solicita páginas/información fiables y foros para verificación futura.
+Se actualizan HANDOFF/STATUS/DECISIONS/ROADMAP/REVIEW_POLICY y regla de continuidad en AGENTS.
+Sin modificaciones de app, datos, fuentes o dependencias ni nuevas búsquedas. Los hooks existentes comprueban código al guardar.
+Estado:500 examinadas,22 sentidos contrastados,478 examinadas aún pendientes del umbral y4500 sin examen individual.
+Siguiente sesión: cambio de texto/pruebas y luego revisión de las478. No continuar automáticamente durante la pausa.

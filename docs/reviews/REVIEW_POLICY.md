@@ -1,6 +1,8 @@
 # Criterio de contraste por sentido
 
-Decisión del propietario: máxima fiabilidad mediante fuentes contrastadas, marcando que no existe revisión humana.
+Preferencia vigente al pausar: máxima fiabilidad con fuentes contrastadas; retirar del sitio la frase «sin revisión humana»
+al retomar. Cambio visual pendiente de implementar. La ausencia de validación humana sigue siendo un hecho interno;
+no cambiar humanReviewed a true ni inventar aprobación. Foros pueden aportar uso/contexto, contrastados con información fiable.
 Fecha: 2026-10-26. No se promete100% de exactitud ni se considera consenso entre agentes como evidencia.
 
 ## Umbral para sense-checked-ai
@@ -15,7 +17,7 @@ Fecha: 2026-10-26. No se promete100% de exactitud ni se considera consenso entre
 
 El distintivo significa únicamente «sentido contrastado por IA con esas fuentes», no «todo correcto».
 No valida otros usos, ejemplos o paradigmas completos. No exige profesor porque el propietario eligió expresamente
-continuar sin revisión humana; esa ausencia debe ser visible, no quedar implícita.
+continuar sin revisión humana; el aviso visual anterior se retirará conforme a la preferencia posterior del propietario, sin afirmar validación humana.
 
 ## Estados y documentación
 

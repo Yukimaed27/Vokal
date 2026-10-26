@@ -2,9 +2,24 @@
 
 Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega — criterio de máxima fiabilidad por sentido
+## Punto de pausa solicitado por el propietario
 
-El propietario prioriza fiabilidad y eligió «fuentes contrastadas; marcar que no hay revisión humana».
+Solo registrar continuidad; no iniciar revisiones ni cambios de aplicación en esta pausa.
+Nueva preferencia: retirar del sitio la frase «sin revisión humana» al retomar. Sustituye la petición anterior
+que exigía mostrarla; no implica afirmar validación humana ni alterar falsamente metadatos internos.
+El aviso todavía está en la app: su retirada NO se implementó porque el propietario pidió solo dejar registro.
+
+Orden para la siguiente sesión:
+1. Retirar esa frase del distintivo y del texto desplegable en src/app.js; adaptar pruebas de render.
+   Conservar fuentes, alcance por sentido y límites reales sin afirmar aprobación de toda una palabra.
+2. Continuar verificación usando páginas/información fiables y foros para uso/contexto, contrastando afirmaciones
+   y distinguiendo opinión comunitaria de evidencia editorial. No usar coincidencia de agentes como garantía.
+3. Priorizar las 478 entradas ya examinadas que aún no cumplen el umbral por sentido antes de ampliar.
+   No reiniciar desde1 ni confundir500 examinadas con500 aprobadas. Las otras4500 no tienen examen individual.
+
+## Última implementación — criterio por sentido
+
+En la entrega anterior el propietario eligió fuentes contrastadas con aviso explícito; la preferencia visual vigente es la del punto de pausa superior.
 Criterio vigente: reviews/REVIEW_POLICY.md. Se recontrastan las 21 filas parciales y absolut del lote 201–500;
 NO es un nuevo lote, el total examinado sigue500, no 522. Evidencia y fuentes: reviews/RECHECK-22.md.
 22 sentidos delimitados cumplen contraste bilingüe + categoría/artículo, dos familias editoriales por ficha.

@@ -42,5 +42,6 @@ Conservar IDs/progreso e importación; aplicar correcciones en la capa editorial
 Los hooks comprueban cobertura documental y código; no garantizan corrección lingüística ni redactan contexto.
 
 La prioridad vigente es fiabilidad por sentido. Leer docs/reviews/REVIEW_POLICY.md antes de cambiar estados:
-solo fuentes contrastadas, humanReviewed=false explícito; no atribuir aprobación a variantes/ejemplos no comprobados.
+fuentes contrastadas y metadatos veraces; no atribuir aprobación a variantes/ejemplos no comprobados.
+Preferencia visual posterior: retirar «sin revisión humana» del sitio al retomar; mantener humanReviewed=false internamente.
 La decisión del propietario permite continuar sin profesor, no afirmar revisión humana ni certeza 100%.

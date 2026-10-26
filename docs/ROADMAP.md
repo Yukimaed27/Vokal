@@ -66,3 +66,6 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Recontrastar21 filas parciales y absolut: 22 sentidos delimitados con evidencia/estado visibles.
 - [x] Comprobar metadatos, render y registro documental desde los hooks existentes.
 - [ ] Extender ese umbral al resto aún pendiente; no tratar los 500 examinados como 500 aprobados.
+
+- [ ] Al retomar, retirar frase «sin revisión humana» del sitio y adaptar pruebas; preservar evidencia y metadatos verdaderos.
+- [ ] Continuar contraste de478 examinadas pendientes con fuentes fiables y apoyo contextual de foros.

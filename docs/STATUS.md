@@ -4,7 +4,11 @@ Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Fiabilidad: estado actual
 
-Criterio del propietario: fuentes contrastadas con ausencia de revisión humana explícita.
+Trabajo detenido a petición del propietario: solo registrar continuidad.
+Nueva preferencia: retirar el texto visible «sin revisión humana» al retomar; todavía no implementado.
+Usar páginas/información fiables y foros como apoyo de uso/contexto, corroborando fuentes.
+Prioridad: completar criterio por sentido en las 478 examinadas aún pendientes antes de ampliar.
+La implementación actual mantiene el aviso anterior y sus metadatos reales; no se modificaron datos ni UI en esta pausa.
 [Política vigente](reviews/REVIEW_POLICY.md) y [22 sentidos recontrastados](reviews/RECHECK-22.md).
 22 fichas tienen sense-checked-ai para el sentido mostrado, con dos fuentes, fecha y humanReviewed=false;
 4978 importadas siguen pendientes. No existe aprobación humana ni se garantiza100% de exactitud.
