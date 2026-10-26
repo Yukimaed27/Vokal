@@ -53,3 +53,6 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [ ] Completar revisión de dudas/sentidos restantes; priorizar siguientes lotes por riesgo, sin certificación prematura.
 
 - [x] Compactar botón sol/luna a44px e icono18px conservando accesibilidad.
+
+- [x] Revisar 101–200 con un revisor y aplicar 33 ajustes conservadores; 3 dudas abiertas.
+- [ ] Esperar lectura de consumo antes de continuar 201–300.

@@ -4,12 +4,12 @@ Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Fiabilidad: estado actual
 
-Capa editorial aplicada a 46 registros del piloto, con significados acotados, matices alineados y notas de uso.
-Las 6 dudas no se consideran resueltas: sentidos no corroborados quedan fuera de esa práctica o señalados.
-Todas las entradas importadas mantienen revisión pendiente. No se auditó el resto ni se certifican conjugaciones.
-Ver [integración y registro](reviews/APPLIED_CORRECTIONS.md) y fuentes históricas por entrada en reviews/README.md.
-25 pruebas aprobadas, build de 13 recursos; no cambia archivo importado, IDs, orden ni progreso.
-Header compacto:64px y menos espacio superior. Capturas reales escritorio oscuro/lección móvil clara revisadas.
+Revisión adicional autorizada101–200 con un revisor: 64 sin incidencia nuclear, 33 ajustes aplicados y 3 dudas.
+Total 200 entradas examinadas, 79 registros con ajustes/notas entre ambos lotes. No equivalen a200 aprobaciones.
+Contraste de significado nuclear/casos visibles, sin certificar todas las variantes ni paradigmas. Todas las etiquetas pendientes.
+Fuentes y detalle en [lote 101–200](reviews/LEX-101-200.md); dudas abiertas scheiße,Kerl,je.
+26 pruebas aprobadas y build de 13 recursos; importación/IDs/progreso intactos. Sin cambios de interfaz en esta entrega.
+Esperar lectura de cupo y nueva instrucción antes de revisar 201–300. Restan 4800 entradas sin este contraste individual.
 
 ## Entrega visual anterior
 

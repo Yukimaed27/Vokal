@@ -315,3 +315,13 @@ Próximo paso: reiniciar servidor para nuevo módulo y probar; continuar revisi�
 Petición: reducir botón y explicar notas de uso. src/style.css: botón48→44px con min-height explícito, SVG22→18px; comportamiento/etiquetas intactos. Notas de uso son aclaraciones de contexto, no actividades ni aprobaciones lingüísticas. Hooks ejecutan las25 pruebas existentes; sin nuevas dependencias, pruebas específicas o capturas para este ajuste CSS.
 
 Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.
+
+## 2026-10-26 — Lote 101–200 con consumo acotado
+
+Petición: continuar revisión. Ante necesidad de controlar cupo, propietario eligió otras 100 y detenerse.
+Sin subagentes: contraste nuclear/casos visibles en Langenscheidt, Duden/PONS para excepciones, fuentes por fila.
+Resultado: 64 sin incidencia nuclear, 33 ajustes de sentido/categoría/contexto aplicados,3 dudas (scheiße,Kerl,je).
+Se registra alcance limitado: no todas las variantes/paradigmas. Fuentes inaccesibles o homógrafos insuficientes quedan señalados.
+Capa editorial alcanza 79 registros. Archivo importado, IDs, progreso y UI intactos. Nueva regresión de fragmentos/traducciones.
+26 pruebas aprobadas y build de 13 recursos; hooks vigentes. Sin nueva captura para cambios de datos.
+Informe reviews/LEX-101-200.md; contexto actualizado. Próximo paso: lectura de porcentaje del propietario; no seguir 201 sin instrucción.

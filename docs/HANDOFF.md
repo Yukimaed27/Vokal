@@ -2,24 +2,22 @@
 
 Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega — fiabilidad del vocabulario y header compacto
+## Última entrega — revisión 101–200, lote de un revisor
 
-Prioridad del propietario: fiabilidad del vocabulario sin otro gasto masivo de tokens; header demasiado espaciado.
-Se integra evidencia ya documentada del piloto sin subagentes ni nuevas búsquedas.46 registros reciben ajustes
-conservadores de sentido/categoría/contexto; no 46 aprobaciones lingüísticas. Ver reviews/APPLIED_CORRECTIONS.md.
-Nueva capa src/vocabulary-corrections.js: no modificar el archivo importado. Se aplica al catálogo y a bloques LEX;
-las notas de uso se muestran en fichas y explicaciones de ejercicios. Todas las etiquetas siguen pendientes.
-Se mantienen IDs/orden/progreso y no se recalifican logros. Besser sigue identificado como comparativo, Seine como río;
-no se ha renormalizado el catálogo a lemas base certificados ni ampliado la muestra auditada.
-Header escritorio 64 px (antes 88), padding vertical8px, espacio superior del contenido28px (antes 44).
+El propietario autorizó otras 100 entradas y detenerse para medir. Se revisaron 101–200 sin auxiliares,
+con significado nuclear y discrepancias visibles contrastados con diccionarios editoriales; no todas las variantes.
+Resultado: 64 sin incidencia nuclear detectada, 33 ajustes/notas aplicados,3 dudas (scheiße,Kerl,je).
+Informe trazable: reviews/LEX-101-200.md. Total 200 entradas examinadas con alcance limitado, no 200 certificadas.
+La capa src/vocabulary-corrections.js alcanza 79 registros entre ambos lotes; raw/IDs/orden/progreso no cambian.
+Todas las etiquetas siguen pendientes. Ejemplos de retiro: abastanza, con aislado, total para toll, encontrar para stehen.
+No se hacen cambios de interfaz. Botón final: fondo visible28px/icono16px/área táctil44px, header64px.
 
-## Verificación y continuidad inmediata
+## Verificación y siguiente acción inmediata
 
-25 pruebas y build de 13 recursos correctos; nuevo recurso público vocabulary-corrections.js.
-Hooks existentes ejecutan esas pruebas automáticamente. Capturas Edge escritorio oscuro y lección móvil clara de 375 px;
-no CDP completo ni auditoría humana. Reiniciar pnpm dev si el servidor ya estaba abierto para cargar el nuevo módulo.
-Siguiente paso: practicar las entradas ajustadas y priorizar futuros lotes por riesgo. No prometer que el resto esté validado.
-El propietario reportó93→74% en el piloto; es referencia histórica de su medidor, no consumo calculable por el agente.
+26 pruebas aprobadas y build de 13 recursos. Hooks incluyen nueva regresión 101–200. Sin nueva QA visual por ser datos.
+Esperar porcentaje restante del propietario antes de revisar 201–300; no iniciar otro lote automáticamente.
+No comparar coste como si el alcance fuera idéntico al piloto de cuatro agentes: ahora un solo revisor y contraste nuclear.
+El agente no ve el cupo. El dato93→74% corresponde al piloto anterior; falta medición de este lote.
 
 ## Continuidad técnica
 

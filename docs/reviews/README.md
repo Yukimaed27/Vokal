@@ -44,3 +44,9 @@ Multiplicar ese descenso por 49 solo da una extrapolación lineal muy aproximada
 no es presupuesto garantizado: hay redondeo, contexto compartido, integración documental y dificultad variable.
 Esta muestra de primeras entradas por frecuencia no es aleatoria; no extrapolar su tasa de errores al catálogo entero.
 No iniciar otro lote hasta nueva instrucción del propietario.
+
+## Continuación autorizada:101–200
+
+[Lote de un revisor](LEX-101-200.md):64 sin incidencia nuclear detectada, 33 ajustes/notas aplicados,3 dudas.
+Total 200 examinadas con alcances limitados; 79 registros ajustados. No200 certificadas ni variantes exhaustivamente revisadas.
+Se detiene al acabar el lote por instrucción del propietario para medir consumo. Próximo índice 201.

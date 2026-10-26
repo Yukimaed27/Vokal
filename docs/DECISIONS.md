@@ -86,3 +86,9 @@ ni modificación automática del catálogo. No extrapolar tasa de errores de est
 El propietario prioriza fiabilidad y ahorro de tokens; se integra el piloto sin nueva revisión masiva/subagentes.
 Ajustes por lema fuera del archivo generado para sobrevivir a regeneración. Se acotan sentidos y añaden notas,
 sin certificar entradas ni borrar progreso. Header se reduce manteniendo botón de 48 px y navegación accesible.
+
+## 2026-10-26 — Continuación de100 entradas, un revisor
+
+El propietario elige explícitamente otras 100 y detenerse para medir. Alcance 101–200, sin auxiliares;
+contraste nuclear con fuentes, sin certificar todas las variantes ni retirar etiquetas pendientes.
+Se aplican ajustes respaldados por la capa existente, se preservan dudas y se espera medición antes de ampliar.

@@ -78,3 +78,9 @@ No se han integrado propuestas ni validado paradigmas completos. Las etiquetas d
 La práctica se limita a sentidos respaldados donde había mezcla/duda. No declarar las 6 dudas resueltas ni 46 aprobaciones.
 No cambian IDs, tamaños ni archivo importado. Lecciones LEX y catálogo usan ajustes; guiadas originales conservan sus sentidos.
 Las notas acompañan fichas y feedback; etiquetas pendientes conservadas. No hay nuevas entradas ni validación humana.
+
+## Lote 101–200
+
+Contraste nuclear por un solo revisor: 64 sin incidencia nuclear detectada, 33 ajustes aplicados,3 dudas.
+[Cien filas y fuentes](reviews/LEX-101-200.md). La capa editorial acumula 79 registros; todas las etiquetas pendientes.
+No se auditan todas las variantes ni conjugaciones. Las4800 entradas restantes no se presentan como contrastadas.

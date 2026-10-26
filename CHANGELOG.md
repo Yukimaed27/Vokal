@@ -1,5 +1,10 @@
 # Cambios
 
+## 2026-10-26 — Revisión 101–200
+
+- Contraste nuclear de otras 100 entradas,33 ajustes/notas aplicados y 3 dudas documentadas.
+- Se conservan revisión pendiente, importación y progreso; 26 pruebas aprobadas.
+
 ## 2026-10-26 — Reducir aspecto visible del botón
 
 - Recuadro de tema de 28 px sin contorno e icono de 16 px; área táctil invisible de 44 px.

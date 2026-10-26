@@ -97,3 +97,17 @@ test('corregir una entrada reutilizada conserva su ID, artículo y ejemplo', asy
   assert.equal(entry.example,'Dies ist meine Habe.');
   assert.ok(course.lessons.flatMap(l=>l.words).some(w=>w[0]==='id-preservado'&&w[2]==='propiedad / bienes'));
 });
+
+
+test('el lote 101–200 no reintroduce fragmentos ni equivalencias descartadas en la práctica', () => {
+  for(const [lemma,bad] of [['genug','abastanza'],['treffen','con'],['toll','total'],['stehen','encontrar'],['töten','achiar']]) {
+    const word=words.find(w=>w.lemma===lemma);
+    assert.ok(word.editorialNote,lemma);
+    assert.ok(!word.translations.includes(bad),lemma);
+    assert.equal(word.reviewStatus,'pending');
+    const row=lessons.filter(l=>l.level==='LEX').flatMap(l=>l.words).find(w=>w[0]===word.id);
+    assert.equal(row[2],word.es);
+  }
+  assert.equal(words.find(w=>w.lemma==='halt').pos,'particle');
+  assert.equal(words.find(w=>w.lemma==='später').pos,'adv');
+});
