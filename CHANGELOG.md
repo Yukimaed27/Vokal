@@ -1,5 +1,9 @@
 # Cambios
 
+## 2026-10-26 — Reducir aspecto visible del botón
+
+- Recuadro de tema de 28 px sin contorno e icono de 16 px; área táctil invisible de 44 px.
+
 ## 2026-10-26 — Botón de tema compacto
 
 - Botón sol/luna de 44 px e icono de 18 px; conserva foco y área táctil.

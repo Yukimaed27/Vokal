@@ -73,3 +73,5 @@ No hay 5000 frases originales, pronunciación evaluada ni curso completo B2/C1.
 Sin cuenta funcional, el progreso sigue local. Una práctica incompleta no se reanuda tras recargar.
 
 Ajuste posterior: botón sol/luna44px (antes48), icono18px (antes22), conservando foco y objetivo táctil. Sin cambios de vocabulario.
+
+Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.

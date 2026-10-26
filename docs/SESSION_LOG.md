@@ -313,3 +313,5 @@ Próximo paso: reiniciar servidor para nuevo módulo y probar; continuar revisi�
 
 ## 2026-10-26 — Botón de tema más compacto
 Petición: reducir botón y explicar notas de uso. src/style.css: botón48→44px con min-height explícito, SVG22→18px; comportamiento/etiquetas intactos. Notas de uso son aclaraciones de contexto, no actividades ni aprobaciones lingüísticas. Hooks ejecutan las25 pruebas existentes; sin nuevas dependencias, pruebas específicas o capturas para este ajuste CSS.
+
+Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.

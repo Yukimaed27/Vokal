@@ -47,3 +47,5 @@ El hash de esta entrega se consulta con git log, evitando referencias autorrefer
 
 ## Ajuste posterior: botón de tema
 Botón reducido de48 a44px, icono22→18px. Conserva etiqueta accesible, foco y alternancia; objetivo táctil44px. Cambio CSS sin lógica nueva. Pruebas existentes pasan por hooks; sin nueva captura de navegador.
+
+Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.
