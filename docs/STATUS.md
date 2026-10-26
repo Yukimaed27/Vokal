@@ -1,67 +1,61 @@
 # Estado para retomar
 
-Fecha: 2026-10-25. Versión: 0.2.1.
+Fecha: 2026-10-25. Versión: 0.3.0.
 
-## Tarea activa y contexto entre sesiones
+## Entrega actual
 
-El proyecto Supabase está configurado con URL y clave pública. La API real responde y rechaza lectura/RPC sin sesión.
-El propietario confirmó SQL ejecutado sin errores. GitHub está habilitado según la API real. Faltan botón/flujo OAuth de Vokal, acceso real, RLS entre usuarios y guardado.
-El punto de continuidad está en [HANDOFF](HANDOFF.md), con detalle en [CLOUD](CLOUD.md).
-El [índice](README.md), [arquitectura](ARCHITECTURE.md), [operación](OPERATIONS.md) y [diario](SESSION_LOG.md)
-permiten continuar sin recuperar este chat. [WORKFLOW](WORKFLOW.md) y AGENTS obligan a actualizar los .md en cada entrega.
-La entrega 0.2.1 conecta la configuración pública y evita que variables vacías de Pages la desactiven.
+Rediseño solicitado: fondo carbón, acento rojo coral, modo claro neutro y un único selector de apariencia (automático/oscuro/claro).
+Se sustituyó el CSS anterior para evitar capas de paletas antiguas. Inicio con navegación por iconos, tarjeta de estudio,
+plan de sesión, progreso real y acceso al catálogo. La carga inicial ya no desplaza el foco ocultando el encabezado.
 
-## Implementado
-- Tema por sistema, botón noche/claro y selector para volver a automático. Persistencia local.
-- 31 lecciones, 15 secciones, 372 entradas y 781 ejercicios de vocabulario y gramática.
-- Teoría, diálogo, comprensión, escritura y repaso. Desbloqueo con dominio del 80 %.
-- Evaluación por sección; conserva identificadores y progreso de la versión anterior.
-- pnpm 11.28.6 fijado, lockfile, bloqueo de scripts de dependencias y espera de siete días para nuevas versiones.
-- Autenticación por código y cliente REST de Supabase sin SDK externo. Caché separada por usuario.
-- Migración SQL con RLS y combinación transaccional de progreso por campo.
-- Build estático y publicación manual a GitHub Pages preparada.
-- Hooks y CI migrados a pnpm; acciones fijadas por SHA.
+Meta acordada y cumplida: catálogo utilizable de **5000 lemas de diccionario con traducción y ejercicios**, marcado como pendiente de revisión.
+El propietario aceptó ese alcance; no se prometió revisión humana completa ni un curso A1–C1 terminado.
 
-## Validación
-- 15 pruebas automatizadas (incluida regresión de configuración de Pages): repasos, migración, desbloqueo, combinación, autenticación/errores y servidor.
-- Auditoría pnpm: cero dependencias y cero avisos conocidos en el proyecto.
-- Navegador Edge real con perfil desechable: práctica, evaluación aprobada/reprobada, bloqueo por URL,
-  búsqueda, cuenta sin configurar, tema de sistema, selector y persistencia.
-- Diseño comprobado en claro/oscuro a 375, 812 y 1440 px; sin desbordamiento horizontal en inicio.
-  Contraste de texto principal/secundario, botones y estados comprobado en ambos temas.
-- Build estático generado correctamente. Evidencia visual local en .qa/ (ignorada por Git).
-- El CI del commit funcional 8002135 se confirmó completado con success en Windows/Linux:
-  [run 40240554393](https://github.com/Yukimaed27/Vokal/actions/runs/40240554393).
-  No confundir esa evidencia con el resultado de futuros commits.
+## Contenido y comportamiento
 
-## Conexión verificada en 0.2.1
+- Curso guiado conservado: 31 lecciones, 15 secciones, 372 entradas de base.
+- Ampliación: 5000 lemas únicos de FreeDict/WikDict, priorizados con FrequencyWords/OpenSubtitles2018.
+- 25 secciones de 200 palabras, cada una con ocho bloques de 25: 200 lecciones de vocabulario nuevas.
+- Total: 231 lecciones, 40 secciones, 5184 entradas al combinar curso y catálogo, 10 981 ejercicios.
+- Los 5000 importados tienen reconocimiento y escritura; se muestra categoría/artículo y matiz de diccionario cuando está disponible.
+- No se fabricaron 5000 ejemplos. Las entradas importadas sin ejemplo no se presentan como frases contextualizadas.
+- Ruta LEX independiente: empieza disponible sin completar C1; mantiene desbloqueo progresivo entre sus secciones.
+- Progreso y preferencias anteriores conservan claves e IDs compatibles.
+- Fuente, créditos, licencia y revisión pendiente visibles en la aplicación. Detalle en VOCABULARY_SOURCES.
+- Sin dependencias npm nuevas. Python estándar solo para regenerar los datos, no para ejecutar Vokal.
 
-- GET /auth/v1/settings: 200; email habilitado, registro permitido y confirmación requerida.
-- GET /rest/v1/learning_progress sin sesión: 401, código 42501; acceso denegado.
-- POST /rest/v1/rpc/sync_progress sin sesión: 401, código 42501; acceso denegado.
-- No se crearon usuarios, enviaron códigos ni modificaron registros durante estas comprobaciones.
-- Quince pruebas y build correctos; servidor temporal de QA verificó por HTTP el módulo público configurado.
+## Verificación de esta entrega
 
-## Decisión del propietario
-Los identificadores públicos se versionan para usar el mismo proyecto desde otra laptop. No pedir claves secretas.
-Documentar solo avances técnicos, decisiones y pendientes relevantes; excluir pasos menores del panel.
-Guía: docs/CLOUD.md. Falta verificar acceso y guardado con cuentas/dispositivos reales.
-La web no se ha publicado en esta revisión; existe un workflow manual para hacerlo después.
+- 22 pruebas aprobadas: las 15 anteriores, control de tema/contraste y cuatro comprobaciones del catálogo/escala.
+- 5000 lemas distintos; 5000 entradas con origen y revisión pendiente; 25×200 palabras y 200×25 bloques comprobados.
+- Todas las palabras tienen preguntas de reconocimiento/escritura; la ruta independiente y el límite de 4 MB de la RPC están probados.
+- Importación repetida determinista y hashes de fuentes contrastados. Datos generados: 1 299 583 bytes.
+- Build estático correcto: 12 archivos públicos, incluido el catálogo.
+- Capturas reales de Edge sin puerto de depuración: escritorio oscuro, claro y vista de 375 px; ruta de secciones de vocabulario, bloque de estudio móvil y catálogo visibles.
+- En un marco local de QA con anchura real 375: innerWidth=375, documentWidth=360; sin desbordamiento horizontal.
+- Escritorio: innerWidth=1440, documentWidth=1425, en claro y oscuro.
+- Contraste de texto/acentos/botones/estados comprobado matemáticamente en ambas paletas, mínimo 4.5:1.
+- No se repitió el recorrido interactivo CDP completo en esta entrega. La QA visual por capturas no equivale a probar cada ejercicio en navegador.
 
-## Siguiente tarea
-1. Implementar GitHub OAuth en Vokal: el proveedor ya está habilitado y verificado por API.
-2. Verificar redirección e inicio de sesión real; no confundir proveedor activo con integración completa.
-3. Verificar aislamiento entre cuentas y recuperación del progreso en dos dispositivos.
-4. Publicar y comprobar el sitio desplegado.
-5. Ampliar el currículo con revisión lingüística; no cargar miles de traducciones sin validar.
+## Nube: estado que permanece pendiente
 
-Mantener la revisión del diseño/lecciones en paralelo según lo que observe el propietario al probar.
+El proyecto Supabase tiene configuración pública versionada. La API responde; tabla y RPC rechazan acceso anónimo.
+SQL aplicado según el propietario. GitHub está habilitado, verificado por API, pero falta el botón/flujo OAuth en Vokal.
+No hay sesión real, guardado autenticado, RLS entre cuentas o sincronización multidispositivo verificados.
+OTP por correo requiere SMTP propio para editar plantillas en Free nuevo; se eligió GitHub para evitar ese requisito.
+No se ha publicado la web ni contratado un servicio.
+
+## Próximo trabajo
+
+1. Recoger la prueba del propietario sobre diseño y bloques de vocabulario; reiniciar pnpm dev para reconocer módulos nuevos.
+2. Implementar GitHub OAuth y verificar acceso, guardado, aislamiento y uso desde dos dispositivos.
+3. Revisar lingüísticamente lotes del catálogo y convertir sus términos en material contextualizado más variado.
+4. Ampliar hacia 10 000 lemas sin inflar flexiones ni atribuir nivel MCER no validado.
 
 ## Límites
-- 372 entradas no cumplen todavía la meta de 10 000 palabras. La ruta no acredita B2/C1.
-- El contenido es redacción propia asistida, pendiente de revisión externa; el nivel de cada sección es orientativo.
-- Pruebas de sesión/guardado autenticado simuladas; comprobaciones reales solo sin sesión.
-- SQL aplicado según el propietario; no se inspeccionaron políticas ni se verificó RLS con dos usuarios.
-- La nueva comprobación visual fue bloqueada por revisión automática (blocked by policy, sin detalle adicional); configuración y aplicación verificadas por HTTP.
-- Sin nube activa, borrar los datos del navegador elimina la copia de progreso de ese navegador.
-- Un ejercicio incompleto no se reanuda después de recargar; los resultados se guardan al terminar la práctica.
+
+Los 5000 son un catálogo de diccionario utilizable con práctica, no vocabulario revisado uno por uno por una persona.
+La frecuencia de subtítulos no equivale a importancia para cada viajero, ni a un nivel A1–C1.
+La selección usa heurísticas contra nombres/flexiones: puede haber errores o polisemia pendientes.
+No hay 5000 frases originales, pronunciación evaluada ni curso completo B2/C1.
+Sin cuenta funcional, el progreso sigue local. Una práctica incompleta no se reanuda tras recargar.

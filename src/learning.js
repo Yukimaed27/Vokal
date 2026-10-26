@@ -51,10 +51,14 @@ export function mergeProgress(left, right) {
 }
 
 export function unitUnlocked(unitId, units, lessons, completed) {
-  const index = units.findIndex(unit => unit.id === unitId);
+  const target = units.find(unit => unit.id === unitId);
+  if (!target) return false;
+  const track = units.filter(unit => (unit.track ?? 'course') === (target.track ?? 'course'));
+  const index = track.findIndex(unit => unit.id === unitId);
   if (index < 0) return false;
   if (index === 0) return true;
-  const previousLessons = lessons.filter(lesson => units.slice(0,index).some(unit => unit.id === lesson.unit));
+  const previousUnits = new Set(track.slice(0,index).map(unit => unit.id));
+  const previousLessons = lessons.filter(lesson => previousUnits.has(lesson.unit));
   return previousLessons.every(lesson => completed.includes(lesson.id));
 }
 
@@ -63,11 +67,11 @@ export function lessonQuestions(lesson) {
   const recognition = lesson.words.map(([id, de, es], index) => {
     const choices = [...new Set([es, meanings[(index + 1) % meanings.length], meanings[(index + 4) % meanings.length]])];
     const offset = index % choices.length;
-    return {prompt:`¿Qué significa «${de}»?`,options:[...choices.slice(offset),...choices.slice(0,offset)],answers:[es],explanation:`${de}: ${es}. Observa cómo se usa en el ejemplo de la lección.`,wordId:id};
+    return {prompt:`¿Qué significado trabajamos aquí para «${de}»?`,options:[...choices.slice(offset),...choices.slice(0,offset)],answers:[es],explanation:`${de}: ${es}. Consulta el material de la lección para distinguir sus sentidos.`,wordId:id};
   });
   const production = lesson.words.map(([id,de,es,example]) => ({
     prompt:`Recuerda la palabra o expresión de esta lección para «${es}». Incluye el artículo si lo aprendiste.`,
-    answers:[de], explanation:`La expresión objetivo es «${de}». Ejemplo: ${example}`,wordId:id,
+    answers:[de], explanation:`La expresión objetivo es «${de}». ${example ? `Ejemplo: ${example}` : 'Es una traducción de diccionario; puede tener otros sentidos según el contexto.'}`,wordId:id,
   }));
   return [...lesson.questions, ...recognition, ...production];
 }

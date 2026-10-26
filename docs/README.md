@@ -25,6 +25,7 @@ Los documentos describen lo observado, no certifican funciones todavía pendient
 | [OPERATIONS](OPERATIONS.md) | Preparar Windows/Linux, comprobar, ejecutar y diagnosticar | Cuando cambien herramientas, comandos o procedimientos |
 | [CLOUD](CLOUD.md) | Crear organización/proyecto Supabase, configurar RLS y publicar | Al avanzar la conexión o cambiar requisitos del proveedor |
 | [CONTENT](CONTENT.md) | Qué se enseña, qué se cuenta y cómo ampliar el material | Al cambiar contenido o criterios de calidad |
+| [VOCABULARY_SOURCES](VOCABULARY_SOURCES.md) | Fuentes, hashes, licencia y reproducción de los 5000 lemas | Al cambiar datos, filtros, selección o procedencia |
 | [SECURITY](SECURITY.md) | Paquetes, avisos revisados y controles de suministro | Al revisar avisos o modificar dependencias/configuración |
 | [CHANGELOG](../CHANGELOG.md) | Cambios entregados por versión | En cada entrega |
 | [README](../README.md) | Entrada breve para ejecutar y comprender el producto | Cuando cambie la experiencia de arranque o el alcance |

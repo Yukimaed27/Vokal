@@ -25,11 +25,15 @@ pnpm dev
 
 Abre http://localhost:3000. Detén el servidor con Ctrl+C. El proyecto fija pnpm 11.28.6; Corepack lo selecciona automáticamente.
 Si ya clonaste el proyecto, comienza con `git pull --ff-only`.
+Después de actualizar esta versión, reinicia pnpm dev para que reconozca los módulos nuevos.
+Python 3 solo es necesario para regenerar el catálogo; los datos ya vienen incluidos para usar la aplicación.
 
 ## Qué incluye
 
-- Temas oscuro y claro en tonos burdeos/morado. Detecta el sistema; puedes cambiarlo y guardar tu elección.
-- 31 lecciones distribuidas en 15 secciones A1–C1, con 372 entradas únicas y 781 ejercicios.
+- Diseño carbón/rojo coral y modo claro neutro. Un único selector automático/oscuro/claro, con preferencia persistente.
+- Curso guiado: 31 lecciones y 15 secciones A1–C1.
+- Catálogo añadido: 5000 lemas con traducción y ejercicios, en 25 secciones de 200 palabras y bloques de 25.
+- Total: 231 lecciones, 40 secciones, 5184 entradas y 10 981 ejercicios. Vocabulario accesible sin completar C1.
 - Teoría, explicación gramatical, diálogos traducidos y ejemplos contextualizados.
 - Comprensión y escritura. Alcanzar un 80 % permite dominar la lección; completar una sección abre la siguiente.
 - Evaluaciones de sección para saltar conocimientos ya dominados y repasos por palabra.
@@ -37,16 +41,17 @@ Si ya clonaste el proyecto, comienza con `git pull --ff-only`.
 - Integración de nube preparada: correo con código, progreso por usuario y combinación entre dispositivos.
 
 La ruta es una base ampliada en desarrollo, no un curso completo ni una certificación A1–C1.
-El catálogo de 10 000 palabras sigue pendiente. Las 372 entradas incluyen palabras y expresiones.
+Los 5000 lemas importados son utilizables con práctica y revisión pendiente indicada; no están revisados manualmente uno por uno.
+La meta de 10 000 sigue pendiente. Las entradas del curso incluyen palabras y expresiones; no se suman como lemas para inflar la meta.
 El material requiere revisión lingüística externa. No hay todavía audio ni evaluación automática del habla.
 Las sesiones apuntan a 20–30 minutos, pero no imponemos una duración artificial.
 
 ## Nube y publicación
 
 Sin iniciar sesión, el progreso permanece en este navegador. No se muestra como sincronizado.
-Sigue [la guía de nube](docs/CLOUD.md) para completar el acceso por correo, verificar la sincronización y publicar con GitHub Pages.
+Sigue [la guía de nube](docs/CLOUD.md) para completar el acceso GitHub, verificar la sincronización y publicar con GitHub Pages.
 El proyecto Supabase ya está configurado con sus identificadores públicos en el repositorio.
-La API responde y rechaza acceso sin sesión. Falta configurar/probar OTP y comprobar el guardado con una cuenta real.
+La API responde y rechaza acceso sin sesión. El proveedor GitHub está habilitado, pero falta su botón/flujo en Vokal y comprobar el guardado con una cuenta real.
 No hay un despliegue público verificado.
 
 `pnpm build` genera únicamente los archivos públicos en `dist/`. No subas documentos, credenciales o datos personales como archivos estáticos.
@@ -71,4 +76,5 @@ No hay que volver a instalar las skills para ejecutar la aplicación; las skills
 - [Hoja de ruta](docs/ROADMAP.md)
 - [Revisión de seguridad](docs/SECURITY.md)
 - [Contenido y ampliación](docs/CONTENT.md)
+- [Fuentes y licencia de los 5000 lemas](docs/VOCABULARY_SOURCES.md)
 - [Cambios](CHANGELOG.md)

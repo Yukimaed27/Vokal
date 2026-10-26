@@ -1,75 +1,48 @@
-# Traspaso activo para la próxima sesión
+# Traspaso activo
 
-Actualizado: 2026-10-25. Aplicación: 0.2.1. Idioma de colaboración: español.
+Actualizado: 2026-10-25. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
+
+## Última entrega
+
+El propietario pidió mejorar la interfaz, quitar la redundancia entre botón y selector de tema y sustituir el guindo.
+Después pidió alcanzar 5000 palabras hoy. Aceptó un catálogo utilizable con traducciones/ejercicios y revisión indicada,
+no la afirmación de que estuvieran revisadas manualmente.
+
+Hecho: carbón/rojo coral y claro neutro, un único selector automático/oscuro/claro, inicio más elaborado y progreso visible.
+Hecho: 5000 lemas importados con fuente/licencia, 25 secciones de 200 palabras, 200 bloques de 25 y práctica por palabra.
+El curso guiado previo se conserva. Totales: 231 lecciones, 40 secciones, 5184 entradas y 10 981 ejercicios.
+
+El catálogo se genera desde fuentes fijadas y verificadas: leer VOCABULARY_SOURCES antes de cambiarlo.
+No añadir traducciones automáticas inventadas ni presentar la importación como revisión humana o temario MCER completo.
+
+## Verificación
+
+22 pruebas y build correctos. Importación reproducible; hashes y volumen comprobados.
+Capturas de Edge sin depuración remota: inicio oscuro/claro, vista de 375 px y ruta de vocabulario.
+Anchura de marco comprobada: 375/360 y escritorio 1440/1425 (viewport/documento), sin overflow horizontal.
+Control de tema, persistencia y contraste probados con Node; no se repitió el flujo CDP interactivo completo.
+Las capturas y el marco temporal de QA están en .qa, ignorados por Git, no son infraestructura de producción.
 
 ## Continuidad técnica
 
-La configuración pública de Supabase está en src/config.js y funciona en el servidor/build.
-El propietario informó SQL ejecutado sin errores. La API real responde y tabla/RPC rechazan acceso sin sesión.
-La API real confirma GitHub habilitado. Falta implementar el acceso OAuth en Vokal y probar guardado/aislamiento autenticados.
-La guía de instalación reutilizable está en [CLOUD](CLOUD.md).
-No mantener aquí un registro de pantallas, clics o pasos menores del propietario.
+- Revisar con el propietario el resultado de diseño y la experiencia de los bloques.
+- Reiniciar pnpm dev después de actualizar: la lista de recursos públicos añade vocabulary.js y vocabulary-data.js.
+- Implementar GitHub OAuth: el proveedor Supabase ya está habilitado, pero Vokal todavía no tiene el botón/flujo.
+- Verificar después sesión real, guardado, RLS con dos cuentas y sincronización entre dispositivos.
+- No repetir la migración SQL ya aplicada sin revisar políticas. No pedir Client Secret ni OTP en el chat.
+- No contratar SMTP ni Pro: se eligió GitHub para evitar la restricción de plantillas de Free nuevo.
 
-## Próxima acción concreta
+El propietario puede estar ejecutando su servidor en 3000; no detenerlo. Los servidores de QA del agente se cierran al finalizar.
+No hay una publicación confirmada. Código/contexto viajan por Git; progreso privado no se guarda en Git.
 
-1. Implementar botón y flujo de GitHub OAuth en Vokal; el proveedor ya está habilitado según Auth settings.
-2. Configurar/verificar la redirección al sitio y el intercambio seguro de sesión. No pedir Client Secret al propietario.
-3. Probar un acceso real del propietario. La comprobación del proveedor no valida credenciales completas ni el flujo de extremo a extremo.
-4. Verificar guardado y luego aislamiento/sincronización con cuentas/dispositivos reales. No repetir la migración sin revisar su estado.
+## Lectura bajo demanda
 
-El SMTP de prueba tiene restricciones de destinatarios y frecuencia. Leer CLOUD antes de prometer acceso por correo a los probadores.
-No añadir a los probadores como administradores del proyecto para eludir esos límites.
+- STATUS: snapshot vigente y límites.
+- ARCHITECTURE: rutas, datos, mezcla de progreso y dos rutas de desbloqueo.
+- CONTENT y VOCABULARY_SOURCES: material, conteos, procedencia, licencia e importador.
+- OPERATIONS: Windows/Linux, build y comprobaciones.
+- CLOUD: estado de acceso y preparación de Supabase.
+- WORKFLOW/AGENTS: obligación de mantener contexto técnico relevante, sin bitácora de clics.
 
-## Último trabajo funcional entregado
-
-0.2.1: proyecto público conectado, variables vacías de Pages ya no anulan configuración y prueba de regresión añadida.
-Quince pruebas y build aprobados. La comprobación visual nueva fue bloqueada automáticamente; se verificó por HTTP.
-No se envió ningún código ni se creó una sesión real. No confundir API disponible con sincronización comprobada.
-
-
-Commit `8002135`: temas burdeos/morado, botón y selección por sistema; ampliación a 31 lecciones, 15 secciones,
-372 entradas y 781 ejercicios; desbloqueo al 80 %; pnpm; nube y publicación preparadas.
-Está subido a `origin/main`. La entrega documental posterior se identifica con `git log -1` para evitar un hash autorreferencial.
-
-La versión inicial está en `06db12b`. No hay que reconstruir el proyecto ni reinstalar dependencias de aplicación: no tiene ninguna.
-
-## Situación que no debe confundirse
-
-| Área | Situación conocida |
-| --- | --- |
-| Aplicación local | Implementada y comprobada en Windows con Node y navegador Edge |
-| Linux | CI de la entrega funcional completado correctamente en la matriz Windows/Linux |
-| Nube | Configuración y API verificadas; SQL aplicado según el propietario. Acceso/guardado autenticado y RLS entre cuentas pendientes |
-| Sitio público | Workflow manual preparado; ninguna publicación confirmada |
-| Curso | Base de 372 entradas; no se cumplieron las 10 000 palabras ni un curso completo B2/C1 |
-| Calidad lingüística | Primera redacción asistida, pendiente de revisión externa |
-| Sesión de desarrollo | No requiere recuperar procesos anteriores; el agente detuvo su servidor y cerró el navegador de QA |
-
-El propietario puede estar ejecutando su propio servidor mientras prueba. No detener procesos ajenos.
-Las imágenes de QA y perfiles temporales no se suben al repositorio; otra laptop debe regenerar la evidencia si la necesita.
-
-## Referencias de contexto disponibles
-
-- Entrada única de contexto y protocolo obligatorio en AGENTS.
-- Mapa de archivos, rutas, datos, algoritmos y flujo de nube.
-- Operación Windows/Linux, hooks, pruebas, build y recuperación de contexto.
-- Historial de trabajo y decisiones con límites explícitos.
-- Guía de Supabase: instalación, configuración pública, límites OTP y validaciones autenticadas pendientes.
-
-La última entrega configura la conexión; no modifica el contenido de aprendizaje ni su diseño.
-
-## Preferencias que continúan vigentes
-
-- Respuestas al propietario breves; documentación técnica detallada y actualizada, sin registrar pasos menores.
-- Mantener la estructura visual que le gustó, con tonos oscuros rojos/morados.
-- Aprendizaje práctico con teoría, sesiones de 20–30 minutos, progreso sin castigos por faltar.
-- Cuentas para él y eventualmente 2–3 probadores; acceso desde celular, laptop o tableta.
-- Simplicidad de implementación, evitar dependencias y costos innecesarios.
-- Contexto e historial en GitHub, compatible con Windows y Linux.
-
-## Antes de terminar la próxima sesión
-
-Actualizar este documento si cambió la continuidad técnica, STATUS con las verificaciones nuevas,
-SESSION_LOG con el trabajo realizado y los documentos específicos afectados. Incluirlo en el commit de la tarea.
-Si hay errores, archivos sin commit, configuración local faltante o un push fallido, dejarlo escrito con una acción de recuperación.
-No copiar secretos ni progreso personal. Lee [WORKFLOW](WORKFLOW.md) para la plantilla de cierre.
+Conservar IDs y claves existentes. No volver al botón duplicado de tema ni a la paleta guinda.
+El hash de esta entrega se consulta con git log, evitando referencias autorreferenciales.

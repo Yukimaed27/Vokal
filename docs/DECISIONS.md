@@ -15,7 +15,7 @@
   HANDOFF y STATUS mantienen el presente; SESSION_LOG conserva historia; el detalle técnico se consulta bajo demanda.
   La actualización de contexto es parte de terminar cada tarea, no una mejora opcional.
 
-## Cambios solicitados en esta revisión
+## Cambios solicitados en 0.2.0
 - Conservar diseño y distribución; sustituir verde/lima por tonos oscuros burdeos, rojo y morado.
 - Detectar tema del sistema, permitir noche/claro y recordar elección manual.
 - Migrar de npm a pnpm y revisar dependencias/avisos de seguridad.
@@ -54,3 +54,13 @@ El acceso por correo y el guardado deben verificarse con el propietario sin soli
 
 Se eligió GitHub OAuth para evitar el requisito de SMTP de plantillas OTP. El proveedor está habilitado y verificado por API.
 La integración en Vokal aún está pendiente; Client Secret permanece exclusivamente en Supabase.
+
+## Rediseño y alcance inmediato en 0.3.0
+
+El propietario rechazó el tono guindo y la duplicidad botón/selector. Se usa carbón/rojo coral, claro neutro y un solo selector con modo automático.
+Se mejora el inicio con iconos, tarjeta de estudio, plan de sesión y progreso real, manteniendo implementación nativa sin dependencias.
+La guía UI UX Pro Max recomendó jerarquía/tarjetas de dashboard; la paleta se adaptó a la preferencia explícita del propietario.
+
+Pidió 5000 palabras para la entrega inmediata y aceptó expresamente catálogo utilizable con traducción/ejercicios y revisión indicada.
+Se cumple con 5000 lemas de FreeDict/WikDict priorizados por FrequencyWords, atribución y licencia visibles.
+La ruta de vocabulario es independiente del curso y no recibe nivel MCER ficticio. No se promete revisión humana ni 5000 ejemplos completos.

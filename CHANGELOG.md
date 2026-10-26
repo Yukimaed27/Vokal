@@ -1,5 +1,16 @@
 # Cambios
 
+## 0.3.0 — 2026-10-25
+- Paleta carbón/rojo coral y claro neutro; un solo selector automático/oscuro/claro, sin botón redundante.
+- Inicio, navegación por iconos, tarjeta de estudio, plan de sesión, progreso y tarjetas refinados; foco inicial sin ocultar encabezado.
+- 5000 lemas de FreeDict/WikDict, priorizados por frecuencia, con traducciones españolas y revisión pendiente visible.
+- 25 secciones de 200 palabras y 200 bloques de 25, en una ruta independiente del curso.
+- Total combinado: 231 lecciones, 40 secciones, 5184 entradas y 10 981 ejercicios.
+- Importador Python sin dependencias, fuentes/hash fijados, selección reproducible y atribución/licencia CC BY-SA 4.0.
+- Se conservan curso, IDs y progreso anteriores; cada palabra importada tiene reconocimiento/escritura.
+- 22 pruebas aprobadas, build de 12 archivos y capturas de escritorio claro/oscuro y anchura real 375 px sin overflow.
+- Revisión lingüística humana, ejemplos específicos de todos los términos y acceso GitHub funcional siguen pendientes.
+
 ## Corrección documental de autenticación — 2026-10-25
 - Se aclara el requisito de SMTP propio para editar plantillas en proyectos Free nuevos de Supabase.
 - Autenticación pendiente de elección entre OTP con SMTP y alternativa GitHub OAuth; sin cambios de código ni servicios contratados.

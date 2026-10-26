@@ -207,3 +207,57 @@ Verificación real solicitada por el propietario: Auth settings respondió 200 c
 Este hito confirma el proveedor activo, no el intercambio OAuth ni guardado autenticado.
 Se actualizó el contexto técnico para implementar el botón/flujo en Vokal; no se modificó código, envió correo ni inició una sesión.
 No se solicitaron ni registraron credenciales privadas del proveedor.
+
+## 2026-10-25 — Rediseño y catálogo de 5000 lemas, versión 0.3.0
+
+### Solicitud y alcance acordado
+
+El propietario pidió reemplazar el guindo por un color mejor integrado en oscuro, quitar la redundancia entre botón y selector
+y mejorar el diseño con Ponytail. Durante el trabajo pidió ampliar secciones y llegar a 5000 palabras en la entrega del día.
+Mediante la entrevista de grilling aceptó un catálogo utilizable con traducción/ejercicios y revisión pendiente indicada.
+No se acordó presentarlo como 5000 palabras revisadas manualmente ni como todo el curso avanzado terminado.
+
+### Diseño implementado
+
+Se reescribió style.css y se separaron tokens en theme.css: carbón con rojo coral y modo claro neutro.
+Se eliminó theme-toggle de HTML/JS, conservando un único selector con sistema/oscuro/claro y la clave de preferencia anterior.
+Se añadieron iconos SVG nativos de navegación, tarjeta visual, plan de sesión y progreso real por sección.
+Se refinó jerarquía, espaciado, estados y adaptación móvil. El primer render no fuerza scroll/foco ocultando el encabezado.
+La guía UI UX Pro Max se consultó para dashboard adulto/jerarquía; su paleta automática no se aplicó sobre la preferencia del propietario.
+No se instalaron fuentes, iconos o frameworks externos.
+
+### Vocabulario y procedencia
+
+Se investigó y verificó FreeDict/WikDict alemán-español 2025.11.23, con 36 744 cabeceras declaradas y licencia BY-SA 3.0.
+Se utilizó la lista alemana FrequencyWords/OpenSubtitles2018 para priorizar; su contenido es BY-SA 4.0, no la licencia MIT del código.
+El importador estándar valida hashes, extrae solo traducciones españolas, filtra nombres/flexiones/registros mediante heurísticas,
+deduplica lemas y selecciona 5000. Se reprodujo la generación obteniendo exactamente el mismo SHA-256 del archivo resultante.
+La selección adaptada se atribuye bajo BY-SA 4.0, con créditos visibles y detalle en VOCABULARY_SOURCES.
+
+Se añadieron vocabulary-data.js y vocabulary.js. Generan 25 secciones de 200 lemas y 200 bloques de 25.
+La ruta LEX empieza abierta y se desbloquea independientemente del curso A1–C1.
+Se reutilizan 188 identificadores compatibles y no se altera el progreso del curso previo.
+Resultado unido: 231 lecciones, 40 secciones, 5184 entradas, 10 981 ejercicios.
+Los 5000 importados están marcados como pendientes de revisión, con tipo/artículo, traducción y matices originales.
+No se inventaron 5000 ejemplos ni se asignó un nivel MCER no validado a la importación.
+
+### Verificación y límites
+
+- 22 pruebas aprobadas, incluidos conteo/unicidad, sentidos, cobertura de reconocimiento/escritura, tamaños,
+  conservación de preferencias, desbloqueo independiente y restauración de 5000 repasos bajo el límite de cuatro MB de la RPC.
+- Importación determinista; checksums de ambos originales verificados; Python analizado sintácticamente sin instalar paquetes.
+- Build de 12 archivos correcto. Catálogo generado: 1 299 583 bytes, cargado por módulos; la vista pagina 24 resultados.
+- Capturas reales de Edge sin depuración remota en perfiles temporales; inicio oscuro/claro y ruta de vocabulario revisados.
+- En marco local de QA, viewport/documento 375/360 y 1440/1425: sin desbordamiento horizontal del documento.
+  El marco solo existió en .qa y no se publica. No se cambió la protección de los recursos de producción.
+- Se actualizó el script CDP al nuevo control y catálogo, pero no se volvió a ejecutar todo el recorrido interactivo.
+
+Los datos están preparados y utilizables, pero requieren revisión lingüística humana por lotes y más contexto específico.
+Frecuencia no equivale a nivel, utilidad individual o dominio del alumno. La meta final de 10 000 lemas sigue pendiente.
+La autenticación GitHub del cliente y guardado real permanecen pendientes: el rediseño no incorpora ese flujo.
+
+### Continuidad
+
+Reiniciar pnpm dev tras actualizar para que el servidor reconozca los nuevos módulos públicos.
+Recoger feedback del propietario sobre interfaz y bloques. Después completar OAuth y revisar catálogo por lotes.
+Actualizar los .md solo por cambios técnicos relevantes, no por navegación incidental.

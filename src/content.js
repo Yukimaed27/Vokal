@@ -1,4 +1,6 @@
-import { units, advancedLessons, firstLessonExtras } from './curriculum.js';
+import { units as guidedUnits, advancedLessons, firstLessonExtras } from './curriculum.js';
+import {createVocabularyCourse} from './vocabulary.js';
+export {dictionaryLemmaCount} from './vocabulary.js';
 const initialLessons = [
   {
     id: 'saludos', title: 'Tu primer Hallo', subtitle: 'Saluda y despídete con confianza.', category: 'PRIMER CONTACTO',
@@ -58,8 +60,7 @@ const initialLessons = [
     ],
   },
 ];
-export { units };
-export const lessons = [
+const guidedLessons = [
   ...initialLessons.map(lesson => ({
     ...lesson, unit: 'a1-primeros', level: 'A1',
     grammar: firstLessonExtras[lesson.id].grammar,
@@ -68,10 +69,17 @@ export const lessons = [
   })),
   ...advancedLessons,
 ];
+const vocabulary = createVocabularyCourse(guidedLessons);
+export const lessons = [...guidedLessons,...vocabulary.lessons];
+export const units = [...guidedUnits,...vocabulary.units];
 const catalog = new Map();
 for (const lesson of lessons) {
   for (const [id, de, es, example] of lesson.words) {
     if (!catalog.has(id)) catalog.set(id, { id, de, es, example, lesson: lesson.id, level: lesson.level });
   }
+}
+for (const entry of vocabulary.entries) {
+  const previous = catalog.get(entry.id);
+  catalog.set(entry.id,{...entry,...previous,lemma:entry.lemma,pos:entry.pos,gender:entry.gender,source:entry.source,reviewStatus:entry.reviewStatus,translations:entry.translations,definitions:entry.definitions,frequencyRank:entry.frequencyRank});
 }
 export const words = [...catalog.values()];

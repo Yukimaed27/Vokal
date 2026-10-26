@@ -2,7 +2,7 @@
 
 ## Base y refinamientos
 - [x] Estructura portable, documentación, hooks y CI.
-- [x] Temas noche/claro y detección del sistema, conservando la estructura visual.
+- [x] Carbón/rojo coral, modo claro neutro y único selector con detección del sistema; inicio y navegación refinados.
 - [x] Migración a pnpm y revisión de paquetes/avisos publicados.
 - [x] 15 secciones y 31 lecciones con teoría, diálogos y 781 ejercicios.
 - [x] Desbloqueo progresivo con umbral del 80 % y evaluaciones por sección.
@@ -22,6 +22,13 @@
 - [ ] Probar restricciones de RLS con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.
 - [ ] Publicar y verificar la web desplegada.
+
+## Catálogo inmediato
+- [x] 5000 lemas con traducciones españolas, licencia/procedencia y revisión pendiente indicada.
+- [x] 25 secciones de 200 palabras, 200 bloques de 25 y práctica por término.
+- [x] Ruta de vocabulario independiente del curso, manteniendo desbloqueo propio.
+- [x] Pruebas de conteo, cobertura, unicidad, restauración y tamaño de progreso.
+- [ ] Revisión lingüística humana y ejemplos/contextos específicos adicionales por lotes.
 
 ## Curso completo
 - [ ] Ampliar currículo A1/A2, con evaluación de lectura, escritura, escucha y habla.

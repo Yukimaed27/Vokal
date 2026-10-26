@@ -1,6 +1,6 @@
 # Operación, comprobaciones y diagnóstico
 
-Aplicable a la base 0.2.1. Comandos desde la raíz del repositorio, salvo indicación contraria.
+Aplicable a la base 0.3.0. Comandos desde la raíz del repositorio, salvo indicación contraria.
 
 ## 1. Entornos y portabilidad
 
@@ -90,12 +90,13 @@ No abras el index.html como file://: los módulos y solicitudes deben pasar por 
 
 ### Node
 
-Hay 15 pruebas; una cubre la regresión de variables vacías de Pages. Cubren corrección, intervalos, validación y migración de estado, contenido coherente, bloqueos,
+Hay 22 pruebas: las 15 de la base anterior, tres de tema/contraste y cuatro del catálogo de 5000 lemas. Cubren corrección, intervalos, validación y migración de estado, contenido coherente, bloqueos,
 combinación de dos avances, configuración de nube, OTP y autorización simulados, renovación concurrente en una instancia,
 fallos de red/cierre de sesión y ocultación de recursos privados del servidor.
 
 Los tests de nube simulan fetch. No ejecutan SQL ni prueban un proveedor real.
-No hay pruebas de pronunciación, validación lingüística humana, carga masiva, accesibilidad completa o reanudación de ejercicios.
+Se prueba restaurar 5000 repasos y que caben bajo el límite de la RPC; eso no es una prueba de carga de producción.
+No hay pruebas de pronunciación, validación lingüística humana, accesibilidad completa o reanudación de ejercicios.
 
 ### Navegador sin paquetes de pruebas
 
@@ -124,7 +125,7 @@ Se completó la verificación local mediante HTTP; la QA visual anterior sigue c
 Recorridos comprobados:
 
 1. Tema de sistema oscuro, botón y selector; preferencia conservada al recargar.
-2. Práctica aprobada de saludos y persistencia de progreso.
+2. Práctica aprobada de saludos y persistencia de progreso (recorrido CDP disponible).
 3. Evaluación de primeros pasos aprobada y desbloqueo de siguiente sección.
 4. Evaluación de siguiente sección reprobada, sin abrir la posterior.
 5. Bloqueo por URL directa, búsqueda y estado de cuenta sin nube.
@@ -142,7 +143,7 @@ Cada entrega posterior necesita consultar su propio resultado; el éxito anterio
 
 ## 6. Build y publicación
 
-`pnpm build` crea diez archivos públicos en dist. El módulo de configuración se genera con valores públicos.
+`pnpm build` crea doce archivos públicos en dist, incluidos vocabulary.js y vocabulary-data.js. El módulo de configuración se genera con valores públicos.
 No se copian documentación, SQL, .git, variables privadas ni el archivo config.local.js íntegro.
 El build no limpia archivos preexistentes del directorio: revisa dist si se reutilizó para otros fines.
 La carpeta dist se ignora en Git y puede regenerarse en otra laptop.
@@ -187,3 +188,23 @@ Leer CLOUD para configurar y verificar; no declarar un sitio publicado solo porq
 
 Antes de modificar datos, borrar caché, reinstalar herramientas o eliminar un directorio, determina si hay trabajo/progreso que preservar.
 No publiques respuestas autenticadas completas para diagnosticar. Copia solo el error necesario, sin secretos.
+
+## 9. Catálogo y validación visual de 0.3.0
+
+El catálogo de 5000 lemas ya está versionado: Python solo se necesita para regenerarlo.
+Consulta VOCABULARY_SOURCES para fuentes fijadas, hashes, licencia, filtros y comandos del importador.
+No edites el módulo generado sin mantener una regeneración o corrección reproducible.
+El archivo tiene aproximadamente 1.3 MB sin comprimir; se carga una vez con los módulos y las vistas paginan 24 resultados.
+
+Reinicia pnpm dev al actualizar esta entrega: el proceso anterior conserva en memoria la lista de archivos públicos sin los dos módulos nuevos.
+No detener el servidor del propietario automáticamente; indicar Ctrl+C y pnpm dev en su terminal.
+
+En esta entrega se usó captura nativa de Edge en perfiles temporales, sin puerto de depuración.
+Para anchos pequeños, Edge puede imponer un ancho de ventana superior al solicitado. No interpretar una imagen recortada como overflow real.
+Se utilizó un marco local de QA de 375 px y se registró innerWidth=375/documentWidth=360; en escritorio 1440/1425.
+El marco solo existió en .qa, no se sirve ni se incluye en dist. No se relajaron cabeceras de producción.
+Se revisaron inicio claro/oscuro y ruta de vocabulario; el contraste se prueba también por cálculo.
+El script CDP fue actualizado al selector único y a los recorridos del catálogo, pero no se ejecutó íntegramente en esta entrega.
+
+No hace falta instalar paquetes de navegador para usar el catálogo. Si la infraestructura no permite una prueba visual,
+registrar el límite y completar las comprobaciones seguras disponibles sin eludir el bloqueo.

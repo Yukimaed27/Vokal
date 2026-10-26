@@ -1,6 +1,6 @@
 # Arquitectura y contratos de Vokal
 
-Actualizado contra el código de la versión 0.2.1. La base funcional previa está en `8002135`.
+Actualizado contra el código de la versión 0.3.0. La base funcional previa está en `8002135`.
 Si se modifica un contrato descrito aquí, actualizar este documento en la misma entrega.
 
 ## 1. Enfoque general
@@ -33,12 +33,14 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | Archivo | Responsabilidad | Dependencias o efectos relevantes |
 | --- | --- | --- |
 | `index.html` | Estructura, navegación, contenedor principal, apariencia y avisos | Carga CSS y módulos; incluye CSP en meta para alojamiento estático |
-| `src/style.css` | Distribución original, tarjetas, tipografía y adaptación por ancho | Conserva la estructura visual aprobada inicialmente |
-| `src/theme.css` | Paleta actual, variantes claro/oscuro y estilos de las funciones añadidas | Se carga después de style.css para sobrescribir tokens y colores originales |
-| `src/theme.js` | Preferencia del sistema, botón de alternancia y selector de apariencia | Lee/escribe `vokal.theme`; actualiza `data-theme` y meta theme-color |
+| `src/style.css` | Distribución, tarjetas, tipografía, estados y adaptación por ancho | Reescrito para eliminar reglas/colores antiguos y dar coherencia al rediseño |
+| `src/theme.css` | Tokens carbón/coral y claro neutro, contraste y esquemas | Paleta separada de la estructura; aliases green/lime solo por compatibilidad |
+| `src/theme.js` | Preferencia del sistema y único selector automático/oscuro/claro | Lee/escribe `vokal.theme`; conserva valores anteriores y actualiza data-theme/meta |
 | `src/app.js` | Rutas, renderizado, eventos, ejercicios y coordinación de persistencia/sincronización | Consume contenido, lógica pura, configuración y cliente de nube |
 | `src/content.js` | Tres lecciones originales y composición del catálogo completo | Conserva IDs antiguos; incorpora currículo y elimina IDs repetidos del catálogo |
 | `src/curriculum.js` | Orden de secciones, ampliación de lecciones, teoría, diálogos y preguntas específicas | Genera objetos de lección a partir de datos redactados para el proyecto |
+| `src/vocabulary-data.js` | 5000 lemas de diccionario con traducciones, sentidos, POS/género y frecuencia | Archivo generado, con procedencia y licencia en VOCABULARY_SOURCES |
+| `src/vocabulary.js` | Crea 25 secciones y 200 bloques a partir de los datos | Ruta LEX independiente, revisión pendiente y reutilización de IDs compatibles |
 | `src/learning.js` | Normalización, corrección, repasos, validación, combinación y desbloqueo | Lógica independiente del DOM y probada con Node |
 | `src/cloud.js` | Validación de configuración y API REST de autenticación/sincronización | Usa fetch, HTTPS, localStorage y timeout; no instala un SDK |
 | `src/config.js` | URL y clave publishable del proyecto Vokal, versionadas | Son identificadores públicos del frontend; no hay credenciales administrativas |
@@ -57,6 +59,7 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | `scripts/config.mjs` | Selecciona configuración pública, la valida y genera el módulo servido/compilado |
 | `scripts/build.mjs` | Copia archivos permitidos a dist y escribe la configuración pública generada |
 | `scripts/browser-check.mjs` | QA en Chromium/Edge vía DevTools Protocol y WebSocket nativo |
+| `scripts/import-vocabulary.py` | Importación reproducible con Python estándar, fuentes fijadas y hashes; sin extraer rutas del tar al disco |
 | `.githooks/pre-commit` | Ejecuta pnpm check antes del commit |
 | `.githooks/pre-push` | Ejecuta pnpm check antes del push |
 | `.github/workflows/check.yml` | Sintaxis, pruebas, auditoría y build en Windows/Linux |
@@ -71,6 +74,8 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | `tests/learning.test.mjs` | Corrección, caracteres alemanes, intervalos, contenido, migración, desbloqueo y combinación |
 | `tests/cloud.test.mjs` | Configuración, OTP, cabeceras, sesión, renovación compartida, errores y cierre con API simulada |
 | `tests/server.test.mjs` | Recursos públicos, CSP, ocultación de archivos privados y rutas malformadas |
+| `tests/theme.test.mjs` | Único selector, sistema/persistencia/almacenamiento bloqueado y contraste de ambas paletas |
+| `tests/vocabulary.test.mjs` | 5000 lemas, cobertura de práctica, tamaños, desbloqueo independiente y restauración a escala |
 | `supabase/migrations/001_progress.sql` | Tabla, RLS, funciones de combinación y RPC autenticada |
 
 Los archivos de contexto se describen en [el índice](README.md). No se sirven como recursos de la aplicación.
@@ -84,6 +89,8 @@ Las rutas usan el fragmento de la URL. No requieren redirecciones de servidor y 
 | `#inicio` o fragmento vacío | Resumen, siguiente lección, estadísticas y sección actual |
 | `#ruta` | Todas las secciones, orden y bloqueos |
 | `#ruta/A1`, `A2`, `B1`, `B2`, `C1` | Filtro de ruta por nivel |
+| `#ruta/LEX` | Resumen de 25 secciones de vocabulario, con atribución y revisión pendiente |
+| `#seccion/lexico-NN` | Ocho bloques de 25 palabras y evaluación de esa sección |
 | `#leccion/ID` | Teoría, gramática, contexto, diálogo, vocabulario y práctica |
 | `#practica/ID` | Ejercicios de una lección iniciados desde su vista |
 | `#evaluacion/ID-DE-SECCION` | Evaluación de una sección iniciada desde la interfaz |
@@ -92,6 +99,7 @@ Las rutas usan el fragmento de la URL. No requieren redirecciones de servidor y 
 | `#cuenta` | Estado de nube, autenticación y acciones de sesión |
 
 `render()` reemplaza el contenido principal y actualiza `aria-current` en la navegación.
+El primer render no fuerza foco/desplazamiento; las navegaciones posteriores conservan el foco del contenido.
 La delegación de eventos está en el contenedor main para conservar controladores al cambiar el HTML.
 Las búsquedas actualizan solo resultados y paginación; las respuestas enfocan el botón Continuar.
 Cambiar de ruta descarta la sesión de ejercicios si ya no corresponde a su ruta.
@@ -103,9 +111,10 @@ Abrir por URL una lección bloqueada muestra su restricción. El bloqueo es peda
 
 ### Sección
 
-Cada elemento de `units` tiene `id`, `level`, `title` y `description`.
-El orden del array define los prerrequisitos: la siguiente sección exige todas las lecciones de las anteriores.
-No hay un grafo independiente de dependencias.
+Cada elemento de `units` tiene `id`, `level`, `title` y `description`, más `track` opcional.
+Sin track se considera course. Las unidades importadas usan track=vocabulary y level=LEX, sin equivalencia MCER.
+El orden define prerrequisitos dentro de cada track: cada sección exige todas las lecciones anteriores de su ruta.
+Las primeras secciones de curso y vocabulario están abiertas independientemente. No hay un grafo de dependencias general.
 
 ### Lección
 
@@ -126,6 +135,11 @@ No renombrar IDs publicados sin una migración explícita: `readState` descarta 
 `content.js` exporta `lessons`, `units` y un catálogo `words` deduplicado por ID mediante Map.
 Cada entrada del catálogo añade `lesson` y `level` de su primera aparición. Las tarjetas de una lección usan sus propias filas.
 Si se reutiliza una entrada en varios niveles, el filtro global actual la clasifica por su primera aparición.
+La importación añade metadatos de fuente a 5000 registros, conservando ejemplos/IDs compatibles del curso (188 reutilizados).
+El filtro LEX usa procedencia para mostrar los 5000 términos, aunque uno también aparezca en A1–C1.
+Los campos nuevos son lemma, pos, gender, source, reviewStatus, translations, definitions y frequencyRank.
+Los IDs nuevos de palabra usan lex- más el lema en minúsculas; las lecciones usan lexico-NN-NN.
+No cambiar el canon de IDs sin migrar progreso. Las filas de palabras mantienen cuatro elementos y ejemplo puede ser vacío.
 
 ### Pregunta
 
@@ -164,7 +178,7 @@ Al terminar, `score / total >= 0.8` marca la lección como completada.
 Una evaluación aprobada marca las lecciones de esa sección; una reprobada permite repetir sin castigo.
 Los logros previos no se eliminan por una repetición peor.
 
-La primera sección está abierta. Cada siguiente sección exige todas las lecciones de todas las anteriores.
+La primera sección de cada ruta está abierta. Las siguientes exigen todas las lecciones previas de su propia ruta.
 La evaluación solo se inicia para una sección disponible; puede saltar su práctica, no omitir todos los prerrequisitos de golpe.
 
 ### Repaso
@@ -305,10 +319,10 @@ con HTTP 401/código 42501. No se inspeccionaron las políticas ni se ejecutaron
 
 El servidor escucha únicamente `127.0.0.1:3000`; acceder desde otro dispositivo no equivale a escribir localhost en ese dispositivo.
 El servidor de desarrollo no se publica como servicio de producción ni se abre a la red por defecto.
-La lista `publicFiles` permite nueve archivos de aplicación; config.js se genera aparte: diez archivos públicos.
+La lista `publicFiles` permite once archivos de aplicación; config.js se genera aparte: doce archivos públicos.
 El servidor responde 404 a contexto, SQL, .git, configuración local y archivos de entorno.
 
-El build crea `dist/`, copia esos archivos y genera `dist/src/config.js` con valores públicos validados.
+El build crea `dist/`, copia esos archivos (incluido el catálogo de aproximadamente 1.3 MB sin comprimir) y genera `dist/src/config.js` con valores públicos validados.
 No ejecuta un bundler ni instala paquetes. Tampoco borra automáticamente archivos antiguos de dist.
 En CI el checkout empieza limpio; antes de publicar un dist local reutilizado, comprobar que no contiene archivos extra.
 No publicar la raíz del repositorio como directorio estático.

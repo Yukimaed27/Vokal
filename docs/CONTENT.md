@@ -1,45 +1,69 @@
-# Contenido y ampliación
+# Contenido, conteo y ampliación
 
-## Base actual
+Estado: 0.3.0. La meta inmediata acordada es un catálogo utilizable de 5000 lemas con revisión pendiente explícita.
 
-31 lecciones, 15 secciones, 372 entradas únicas y 781 ejercicios.
-Cada lección contiene teoría, explicación gramatical, nota de contexto, diálogo traducido, doce entradas con ejemplos,
-práctica de comprensión, escritura y una comprobación gramatical o conceptual. Las tres lecciones originales conservan sus ejercicios específicos.
+## Dos tipos de material
 
-Los textos son redacción propia asistida para Vokal, no una copia de un curso comercial.
-Están pendientes de revisión lingüística externa. Las etiquetas A1–C1 orientan la selección temática,
-pero no representan por sí solas un currículo completo ni equivalencias oficiales verificadas.
-La conversación y la escritura abierta todavía son retos de práctica personal, sin corrección automática.
+### Curso guiado A1–C1
+
+Se conservan las 31 lecciones, 15 secciones y 372 entradas originales.
+Tienen teoría, explicación gramatical, contexto, diálogo traducido, ejemplos y práctica de comprensión/escritura.
+Las etiquetas MCER son orientativas: no equivalen a currículo completo, validación externa ni certificación.
+El texto es redacción propia asistida, pendiente de revisión lingüística externa.
+
+### Ampliación de vocabulario
+
+5000 lemas del diccionario FreeDict/WikDict, seleccionados con una lista de frecuencia de subtítulos.
+25 secciones de 200 palabras, con ocho lecciones de 25 cada una: 200 lecciones nuevas.
+Cada término tiene reconocimiento y escritura, traducción al español, tipo y, para sustantivos, género/artículo.
+Se conservan sentidos y definiciones alemanas, presentadas como matices del diccionario.
+Las importadas llevan revisión pendiente visible. El vocabulario está en la ruta LEX, sin nivel MCER asignado.
+
+La guía/diálogo del bloque enseña a estudiar y distinguir tipos de palabras; se reutiliza entre bloques.
+No se inventaron ejemplos individuales para llegar a la cifra. Una entrada sin ejemplo no muestra un campo vacío como si fuera una frase.
+Las equivalencias pueden depender del sentido: las preguntas hablan del significado trabajado en ese bloque.
 
 ## Qué se cuenta
 
-El contador actual muestra **entradas de aprendizaje**, que incluyen palabras y expresiones.
-No son 372 lemas simples ni 372 palabras dominadas. Un sustantivo con su artículo es una entrada.
-El contador de práctica indica entradas que participaron en ejercicios, no prueba de dominio permanente.
-Los ejercicios de reconocimiento/escritura de una misma entrada no crean nuevas entradas.
+- 5000 lemas importados, distintos por forma normalizada NFC/minúsculas; no se convierten ß/ss en una sola forma.
+- 5184 entradas en la unión del catálogo y el curso, incluyendo expresiones y sentidos de material previo.
+- 231 lecciones y 40 secciones totales.
+- 10 981 ejercicios: no se cuentan como palabras nuevas.
+- 188 IDs compatibles del curso se reutilizan para no duplicar su progreso al incorporar el diccionario.
 
-La meta final es un mínimo de 10 000 palabras útiles, además de expresiones contextualizadas.
-No se ha cumplido todavía y no se rellenará con variantes flexionadas para simularla.
-Antes de alcanzar ese volumen, separar el catálogo de lemas del de expresiones, añadir género/plural y etiquetas revisadas,
-y documentar variantes válidas para que una traducción alternativa correcta no se rechace mecánicamente.
+El contador del catálogo es de entradas de aprendizaje. La cifra de lemas importados se muestra por separado.
+Los artículos no son palabras nuevas y los ejercicios de una entrada no multiplican el total.
+La cifra no significa que el alumno ya haya aprendido esas palabras.
 
-## Cómo ampliar sin perder consistencia
+La meta de 10 000 lemas útiles sigue pendiente. No completar el contador generando flexiones, repitiendo grafías o cambiando IDs.
 
-1. Añade la sección a `units` en `src/curriculum.js`, respetando el orden pedagógico de prerrequisitos.
-2. Añade su explicación, diálogo original y vocabulario contextualizado; conserva los identificadores ya publicados.
-3. Incluye al menos una pregunta gramatical o de aplicación y alternativas válidas cuando corresponda.
-4. Revisa traducción, artículo, uso real y ajuste al nivel; registra revisor y fecha en cada lote futuro.
-5. Si usas fuentes externas, registra URL, licencia y atribución antes de incorporar su contenido.
-6. Ejecuta `pnpm check` y prueba la lección; actualiza los contadores documentados solo con resultados reales.
+## Desbloqueo y práctica
 
-La lógica genera reconocimiento y producción a partir de las entradas, con explicaciones de ejemplo.
-La evaluación de sección incluye comprobaciones conceptuales y una muestra de vocabulario, no todo el temario.
-El umbral del 80 % controla el desbloqueo dentro de Vokal; no certifica competencias del MCER.
+El curso y la ampliación son rutas independientes. La primera sección de cada ruta está abierta.
+Secciones posteriores exigen las lecciones anteriores de su propia ruta; no hace falta terminar C1 para estudiar vocabulario.
+Alcanzar 80 % permite completar una lección o aprobar una evaluación de sección.
+La evaluación incluye una muestra de vocabulario y un concepto; no comprueba exhaustivamente las 200 palabras ni certifica nivel.
+Los repasos solo incluyen entradas con evidencia de práctica y no se inventa dominio de las demás.
 
-## Próximas mejoras pedagógicas
+## Procedencia y licencia
 
-- Tareas contextualizadas con menos dependencia de traducción literal.
-- Respuestas alternativas y tratamiento explícito de mayúsculas, plurales y registros.
-- Revisión espaciada ajustada con evidencia de más de una sesión.
-- Escucha, pronunciación y escritura extensa, después de consolidar la base.
-- Evaluación global y materiales suficientes para cada competencia y nivel.
+Leer [VOCABULARY_SOURCES](VOCABULARY_SOURCES.md) para hashes, versiones, autores, filtros, límites y reproducción.
+El catálogo adaptado se distribuye bajo CC BY-SA 4.0, conservando los créditos de FreeDict/WikDict y FrequencyWords/OpenSubtitles2018.
+No retirar avisos de revisión/atribución. Los datos importados no han sido revisados ni avalados por sus autores para este curso.
+
+## Modificar material
+
+Para cambiar el curso: editar curriculum.js/content.js preservando IDs y revisar los consumidores de las preguntas.
+Para regenerar el vocabulario: ejecutar scripts/import-vocabulary.py con Python estándar y fuentes verificadas.
+Para cambiar tamaños de bloques/rutas: revisar vocabulary.js, unitUnlocked, vistas de ruta/sección, pruebas y conteos documentados.
+No editar a mano miles de filas del archivo generado sin reflejar el cambio en el importador o en una corrección versionada reproducible.
+
+Antes de incorporar otra fuente: verificar licencia, atribución, idioma real de los campos y proceso de filtrado.
+Distinguir revisión automática estructural de revisión lingüística por una persona.
+Los tests detectan forma, IDs, cobertura y casos conocidos, no toda la semántica de 5000 traducciones.
+
+## Próximas mejoras
+
+Revisión por lotes, respuestas alternativas, uso contextual, género/plural más detallados y tareas con menos traducción literal.
+Después: audio, pronunciación, escritura extensa y evaluación de todas las competencias de cada nivel.
+No introducir dependencia de una IA de pago para utilizar el catálogo básico.

@@ -74,7 +74,9 @@ try {
     await evaluate('new Promise(r=>setTimeout(r,100))');
   }
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'dark');
-  await evaluate('document.querySelector("#theme-toggle").click()');
+  assert.equal(await evaluate('document.querySelectorAll("#theme-select").length'),1);
+  assert.equal(await evaluate('document.querySelectorAll("#theme-toggle").length'),0);
+  await evaluate('document.querySelector("#theme-select").value="light";document.querySelector("#theme-select").dispatchEvent(new Event("change"))');
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'light');
   await evaluate('document.querySelector("#theme-select").value="system";document.querySelector("#theme-select").dispatchEvent(new Event("change"))');
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'dark');
@@ -92,6 +94,13 @@ try {
   await go('palabras');
   await evaluate('document.querySelector("#word-search").value="gracias";document.querySelector("#word-search").dispatchEvent(new Event("input",{bubbles:true}));');
   assert.ok(await evaluate('document.querySelectorAll(".word-card").length > 0'));
+  await evaluate('document.querySelector("#word-search").value="";document.querySelector("#word-search").dispatchEvent(new Event("input",{bubbles:true}));document.querySelector("#word-level").value="LEX";document.querySelector("#word-level").dispatchEvent(new Event("change",{bubbles:true}));');
+  assert.match(await evaluate('document.querySelector("#search-count").textContent'),/5000 resultados/);
+  await go('ruta/LEX');assert.equal(await evaluate('document.querySelectorAll(".lesson-card").length'),25);
+  await go('seccion/lexico-01');assert.equal(await evaluate('document.querySelectorAll(".lesson-card").length'),8);
+  await go('leccion/lexico-01-01');assert.equal(await evaluate('document.querySelectorAll(".word-card").length'),25);
+  await start('practice:lexico-01-01');await answerAll(lessonQuestions(lessons.find(l=>l.id==='lexico-01-01')));
+  assert.ok(await evaluate('JSON.parse(localStorage.getItem("vokal.progress.v1")).completed.includes("lexico-01-01")'));
   await go('cuenta');
   const configured = await evaluate("import('/src/config.js').then(m=>Boolean(m.cloudConfig.supabaseUrl && m.cloudConfig.supabasePublishableKey))");
   if (configured) assert.ok(await evaluate('!!document.querySelector("#login-form")'));
@@ -111,7 +120,7 @@ try {
   }
   await send('Page.reload');await evaluate('new Promise(r=>setTimeout(r,250))');
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'light');
-  assert.equal(await evaluate('JSON.parse(localStorage.getItem("vokal.progress.v1")).completed.length'),3);
+  assert.equal(await evaluate('JSON.parse(localStorage.getItem("vokal.progress.v1")).completed.length'),4);
   assert.deepEqual(errors,[]);
   console.log('Browser QA passed: theme/system/persistence, contrast, responsive layouts, practice, assessment, locks, search and account state. Screenshots: .qa/');
 } finally {

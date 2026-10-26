@@ -34,6 +34,15 @@ Una auditoría del lockfile no inspecciona malware desconocido ni las dependenci
 pnpm no garantiza por sí solo la ausencia de paquetes comprometidos. Estas medidas reducen oportunidades de ejecución y actualización inesperadas.
 No desactives controles para silenciar un warning: investiga primero qué paquete lo produce y por qué necesita ejecutarse.
 
+## Datos externos de vocabulario en 0.3.0
+
+No se añadieron paquetes npm ni Python. El importador usa la biblioteca estándar y trata las descargas como datos, no como código.
+FreeDict y FrequencyWords están fijados a versión/commit y checksum; se comprueban antes del análisis.
+El miembro TEI se lee en memoria y no se extraen rutas del tar al sistema de archivos.
+El resultado JavaScript se genera serializando JSON; no se ejecuta contenido recibido del diccionario.
+Los textos se escapan al renderizar tarjetas, opciones y definiciones. Licencias/procedencia: VOCABULARY_SOURCES.
+La protección de anonimato/RLS no cambió; la nueva prueba de 5000 repasos confirma que el JSON cabe bajo el límite actual de la RPC.
+
 ## Historial de avisos consultado
 
 Se consultó la [lista oficial de avisos de pnpm](https://github.com/pnpm/pnpm/security/advisories) y sus rangos afectados.
