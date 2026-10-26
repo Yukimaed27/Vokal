@@ -2,23 +2,19 @@
 
 Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega — 2026-10-26, segunda revisión visual
+## Última entrega — piloto de revisión lingüística
 
-El propietario rechazó verde pino/esquinas rígidas: pide negro, acentos suaves inspirados en negro/rojo/amarillo,
-modo claro descansado y tarjetas sin contorno, con redondeo ligero. Esta decisión sustituye la revisión anterior.
-Implementado: oscuro negro neutro con rosa apagado/amarillo mantequilla; claro piedra sin blanco puro.
-Tarjetas sin bordes, radio 12 px; controles conservan foco y campos delimitados. Se mantienen botón sol/luna,
-textos discretos, contenido y progreso. Causa del contraste brusco anterior: hero y botones tenían colores oscuros
-heredados en ambos modos. Ahora cada paleta define sus cinco tokens hero y sus botones.
+El propietario autorizó revisar 100 entradas con cuatro agentes para medir consumo, partiendo de 93 % restante.
+Tres auxiliares y coordinador revisaron 25 entradas distintas cada uno, no cuatro revisiones de cada palabra.
+Informes y fuentes por entrada en reviews/README.md y sus cuatro lotes. Revisión IA, no validación humana.
+Se documentan errores, propuestas pedagógicas y dudas. No se aplicaron correcciones al catálogo ni se retiraron etiquetas.
+La interfaz de la entrega anterior se conserva (negro/rosa/amarillo suave, claro piedra, tarjetas sin contorno).
 
-## Verificación
+## Siguiente acción inmediata
 
-23 pruebas aprobadas y build correcto. Contraste de texto, tarjeta principal, botones y acentos >=4.5:1.
-Nueva comprobación exige que todos los tokens hero existan en cada paleta y que sus fondos difieran.
-Capturas nativas de Edge revisadas en escritorio claro/oscuro y móvil oscuro de 375 px, sin CDP completo.
-Hooks pre-commit/pre-push siguen ejecutando pnpm check y recogen automáticamente las 23 pruebas;
-core.hooksPath=.githooks comprobado. No generan documentación por sí solos.
-Las fuentes y limitaciones lingüísticas permanecen en VOCABULARY_SOURCES.
+Esperar porcentaje restante del propietario; estimar el coste de ampliar con cautela (medidor no disponible al agente).
+No iniciar otro lote automáticamente. Antes de integrar propuestas: resolver dudas, crear correcciones reproducibles
+sin romper IDs/progreso y probar ejercicios afectados. Ver reviews/README.md para alcance, límites y medición.
 
 ## Continuidad técnica
 

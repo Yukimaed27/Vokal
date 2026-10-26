@@ -1,5 +1,10 @@
 # Cambios
 
+## 2026-10-26 — Auditoría lingüística piloto
+
+- Informes por palabra de las primeras100 entradas, cuatro participantes, fuentes y dudas explícitas.
+- Propuestas documentadas; catálogo y etiquetas aún sin modificar.
+
 ## 2026-10-26 — Negro y acentos suaves
 
 - Tarjetas sin contorno con redondeo ligero, negro/rosa/amarillo y claro piedra.

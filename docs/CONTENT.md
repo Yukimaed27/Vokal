@@ -67,3 +67,7 @@ Los tests detectan forma, IDs, cobertura y casos conocidos, no toda la semántic
 Revisión por lotes, respuestas alternativas, uso contextual, género/plural más detallados y tareas con menos traducción literal.
 Después: audio, pronunciación, escritura extensa y evaluación de todas las competencias de cada nivel.
 No introducir dependencia de una IA de pago para utilizar el catálogo básico.
+
+## Piloto de revisión lingüística
+Las primeras100 entradas fueron auditadas por IA en cuatro bloques de25; ver [informes](reviews/README.md).
+No se han integrado propuestas ni validado paradigmas completos. Las etiquetas de revisión pendiente permanecen.

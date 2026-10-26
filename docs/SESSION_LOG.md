@@ -287,3 +287,14 @@ Hooks pre-commit/pre-push inspeccionados: ambos ejecutan pnpm check; core.hooksP
 No fue necesario reescribir hooks: incorporan automáticamente la nueva prueba. No generan contexto documental.
 HANDOFF/STATUS/DECISIONS/ARCHITECTURE/README/ROADMAP/CHANGELOG actualizados. Sin dependencias ni cambios de contenido/progreso.
 Límites: no recorrido CDP completo, OAuth y revisión lingüística siguen pendientes. Próximo paso: evaluar interfaz con propietario.
+
+## 2026-10-26 — Auditoría piloto de100 entradas con cuatro participantes
+
+Solicitud: revisar100 palabras con cuatro agentes y esperar lectura del cupo para estimar ampliación.
+Se repartieron las primeras100 filas originales en cuatro grupos de25: tres auxiliares y coordinador.
+Revisión de traducciones/categoría/género/sentidos consultando diccionarios editoriales independientes de WikDict.
+Informes individuales y metodología en docs/reviews. Se distinguen errores, propuestas de adecuación y dudas.
+Sin cambios de datos, ejercicios, etiquetas, dependencias o progreso. No se presentan como100 entradas aprobadas.
+Se comprobó cobertura de filas/índices; hooks de commit/push mantienen las pruebas de código existentes.
+No se midieron tokens ni cupo: solo el propietario ve su medidor. Inicio declarado93%; falta lectura final.
+Siguiente paso: esperar medición/decisión del propietario. Para integrar propuestas, mecanismo reproducible y pruebas de ejercicios.

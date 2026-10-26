@@ -44,3 +44,6 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Revisión 2026-10-26: esquinas suavizadas, negro con rosa/amarillo suave, botón sol/luna y textos sin promoción de cantidad.
 
 - [x] Segunda revisión: negro con acentos rosa/amarillo suave, claro piedra, tarjetas sin contorno y hero adaptado a ambos temas.
+
+- [x] Piloto: auditoría IA documentada de las primeras 100 entradas, cuatro participantes y fuentes por fila.
+- [ ] Resolver e integrar propuestas del piloto con mecanismo reproducible, sin retirar etiquetas prematuramente.

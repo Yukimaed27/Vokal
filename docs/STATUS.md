@@ -2,7 +2,14 @@
 
 Fecha: 2026-10-26. Versión: 0.3.0.
 
-## Entrega actual
+## Piloto lingüístico actual
+
+Auditadas las primeras 100 entradas mediante tres auxiliares y coordinador (25 cada uno).
+Informes trazables en [reviews/README.md](reviews/README.md). No equivalen a revisión humana ni cobertura de paradigmas completos.
+Propuestas pendientes de integración; los 5000 registros siguen etiquetados pendientes en la aplicación.
+Esperar lectura de consumo del propietario (inicio declarado: 93 %) antes de ampliar.
+
+## Entrega visual anterior
 
 Segunda revisión visual del 2026-10-26: negro neutro con acentos rosa/amarillo pastel, claro piedra sin blanco puro.
 Tarjetas sin contorno y radio 12 px. Botón sol/luna conservado; la tarjeta principal cambia completamente con el tema.

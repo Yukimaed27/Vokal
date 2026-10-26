@@ -50,3 +50,5 @@ Después de clonar o actualizar el repositorio, puedes pegar:
 
 Los secretos y archivos ignorados no deben convertirse en una fuente de contexto compartida. Documenta su propósito y ubicación,
 pero no su contenido sensible. Un enlace a un servicio tampoco demuestra que ya esté configurado.
+
+- [Piloto lingüístico:100 entradas, alcance y fuentes](reviews/README.md).

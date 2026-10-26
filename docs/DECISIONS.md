@@ -75,3 +75,8 @@ El modo inicial sigue al sistema; el botón guarda light/dark. No se añade una 
 El propietario rechaza verde y tarjetas rígidas. Prefiere negro neutro con rojo rosado/amarillo suaves,
 claro piedra descansado y tarjetas ligeramente redondeadas sin contorno. Sustituye la decisión anterior.
 La tarjeta principal y botones deben cambiar con la paleta; no conservar colores oscuros fijos en modo claro.
+
+## 2026-10-26 — Piloto lingüístico acotado
+El propietario autoriza100 entradas con cuatro agentes para medir consumo. Se reparten25 por participante
+(incluido coordinador). No ampliar hasta nueva instrucción. Auditoría y propuestas documentadas, sin aprobación humana
+ni modificación automática del catálogo. No extrapolar tasa de errores de esta muestra no aleatoria.
