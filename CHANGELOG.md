@@ -1,8 +1,14 @@
 # Cambios
 
+## 2026-10-26 — Revisión 201–500
+
+- 300 entradas examinadas: 92 registros con ajustes/notas; fuentes parciales y duda explícitas.
+- Correcciones de artículo/género/ejemplo propagadas sin perder IDs/progreso.
+- Control documental en suite de hooks; 30 pruebas aprobadas. No certificación lingüística 100%.
+
 ## 2026-10-26 — Revisión 101–200
 
-- Contraste nuclear de otras 100 entradas,33 ajustes/notas aplicados y 3 dudas documentadas.
+- Contraste nuclear de otras 100 entradas, 33 ajustes/notas aplicados y 3 dudas documentadas.
 - Se conservan revisión pendiente, importación y progreso; 26 pruebas aprobadas.
 
 ## 2026-10-26 — Reducir aspecto visible del botón

@@ -52,7 +52,12 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Compactar header a 64 px sin reducir el botón de tema.
 - [ ] Completar revisión de dudas/sentidos restantes; priorizar siguientes lotes por riesgo, sin certificación prematura.
 
-- [x] Compactar botón sol/luna a44px e icono18px conservando accesibilidad.
+- [x] Compactar botón sol/luna a 44px e icono18px conservando accesibilidad.
 
 - [x] Revisar 101–200 con un revisor y aplicar 33 ajustes conservadores; 3 dudas abiertas.
 - [ ] Esperar lectura de consumo antes de continuar 201–300.
+
+- [x] Examinar 201–500 con fuentes, integrar 92 ajustes/notas y documentar 21 contrastes parciales/1 duda.
+- [x] Alinear artículo/género/ejemplo del sentido elegido, preservando IDs/progreso.
+- [x] Comprobar cobertura documental de 300 índices desde la suite ejecutada por hooks.
+- [ ] Corroborar absolut y profundizar contrastes parciales; esperar medición antes de 501–600.

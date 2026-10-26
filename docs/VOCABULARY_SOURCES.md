@@ -133,3 +133,9 @@ El hash anterior corresponde exclusivamente al archivo importado, sin cambios en
 src/vocabulary-corrections.js aplica 46 ajustes/notas del piloto al material visible y práctica LEX.
 Ver [registro y límites](reviews/APPLIED_CORRECTIONS.md). No es nueva fuente importada ni certificación humana;
 se conservan atribución y revisión pendiente. Matices nuevos son paráfrasis editoriales, no copias extensas de diccionarios.
+
+## Revisión 201–500
+
+La capa editorial alcanza 171 registros ajustados; [registro de 300 entradas](reviews/LEX-201-500.md).
+Se preserva el hash del raw. No se convierten consultas fallidas, traducciones inferidas desde fuente monolingüe
+ni pruebas de estructura en certificación 100% de fidelidad. Revisión pendiente permanece en la aplicación.

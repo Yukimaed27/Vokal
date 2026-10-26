@@ -69,7 +69,7 @@ Después: audio, pronunciación, escritura extensa y evaluación de todas las co
 No introducir dependencia de una IA de pago para utilizar el catálogo básico.
 
 ## Piloto de revisión lingüística
-Las primeras100 entradas fueron auditadas por IA en cuatro bloques de25; ver [informes](reviews/README.md).
+Las primeras100 entradas fueron auditadas por IA en cuatro bloques de 25; ver [informes](reviews/README.md).
 No se han integrado propuestas ni validado paradigmas completos. Las etiquetas de revisión pendiente permanecen.
 
 ## Ajustes editoriales aplicados
@@ -81,6 +81,15 @@ Las notas acompañan fichas y feedback; etiquetas pendientes conservadas. No hay
 
 ## Lote 101–200
 
-Contraste nuclear por un solo revisor: 64 sin incidencia nuclear detectada, 33 ajustes aplicados,3 dudas.
+Contraste nuclear por un solo revisor: 64 sin incidencia nuclear detectada, 33 ajustes aplicados, 3 dudas.
 [Cien filas y fuentes](reviews/LEX-101-200.md). La capa editorial acumula 79 registros; todas las etiquetas pendientes.
 No se auditan todas las variantes ni conjugaciones. Las4800 entradas restantes no se presentan como contrastadas.
+
+## Lote 201–500
+
+[300 filas con fuentes y alcance](reviews/LEX-201-500.md). Se inspeccionaron campos y se contrastaron sentidos/incidencias,
+sin validar todas las variantes o paradigmas ni garantizar100% de exactitud.92 ajustes/notas aplicados,
+186 sin incidencia en contraste puntual, 21 contrastes parciales, 1 duda (absolut). Total 500 examinadas; 4500 por contrastar.
+La capa editorial 171 registros conserva IDs/progreso/importación y todas las etiquetas pendientes.
+Se corrigen artículo/género de Alter para edad y se acota das Teil a pieza. Sus ejemplos heredados se retiran.
+No declarar los 500 examinados ni los 171 ajustados como vocabulario aprobado completamente o lemas base certificados.

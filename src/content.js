@@ -80,6 +80,6 @@ for (const lesson of lessons) {
 }
 for (const entry of vocabulary.entries) {
   const previous = catalog.get(entry.id);
-  catalog.set(entry.id,{...entry,...previous,es:entry.editorialNote ? entry.es : previous.es,editorialNote:entry.editorialNote,lemma:entry.lemma,pos:entry.pos,gender:entry.gender,source:entry.source,reviewStatus:entry.reviewStatus,translations:entry.translations,definitions:entry.definitions,frequencyRank:entry.frequencyRank});
+  catalog.set(entry.id,{...entry,...previous,de:entry.de,example:entry.example,es:entry.editorialNote ? entry.es : previous.es,editorialNote:entry.editorialNote,lemma:entry.lemma,pos:entry.pos,gender:entry.gender,source:entry.source,reviewStatus:entry.reviewStatus,translations:entry.translations,definitions:entry.definitions,frequencyRank:entry.frequencyRank});
 }
 export const words = [...catalog.values()];

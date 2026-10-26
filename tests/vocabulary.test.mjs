@@ -111,3 +111,58 @@ test('el lote 101–200 no reintroduce fragmentos ni equivalencias descartadas e
   assert.equal(words.find(w=>w.lemma==='halt').pos,'particle');
   assert.equal(words.find(w=>w.lemma==='später').pos,'adv');
 });
+
+
+test('el lote 201–500 alinea género, artículo visible y respuestas sin perder el ID', async () => {
+  const {createVocabularyCourse} = await import('../src/vocabulary.js');
+  const course = createVocabularyCourse([{words:[['edad-previa','der Alter','viejo','Der Alter ist hier.']]}]);
+  const age = course.entries.find(w=>w.lemma==='Alter');
+  assert.equal(age.id,'edad-previa');
+  assert.equal(age.gender,'neut');
+  assert.equal(age.de,'das Alter');
+  assert.equal(age.es,'edad');
+  assert.equal(age.example,'');
+  const block=course.lessons.find(l=>l.words.some(w=>w[0]==='edad-previa'));
+  assert.ok(block.words.some(w=>w[0]==='edad-previa'&&w[1]==='das Alter'));
+  const questions=lessonQuestions(block).filter(q=>q.wordId==='edad-previa');
+  assert.ok(questions.some(q=>q.options&&q.answers.includes('edad')));
+  assert.ok(questions.some(q=>!q.options&&q.answers.includes('das Alter')));
+  for(const lemma of ['Alter','Teil']) {
+    const word=words.find(w=>w.lemma===lemma);
+    assert.equal(word.gender,'neut');
+    assert.ok(word.de.startsWith('das '));
+    assert.equal(word.example,'');
+  }
+});
+
+test('el lote 201–500 propaga significados acotados y no muestra plantillas editoriales', () => {
+  const selected = dictionaryEntries.slice(200,500).map(w=>words.find(v=>v.lemma===w.lemma));
+  assert.equal(selected.length,300);
+  for(const word of selected) {
+    assert.equal(word.reviewStatus,'pending');
+    assert.ok(word.definitions.every(d=>!d.includes('Diese Bedeutungsangabe muss überarbeitet werden')),word.lemma);
+  }
+  for(const [lemma,bad] of [['holen','aliento'],['Schule','discípulo'],['Mensch','mujerzuela'],['danach','eso'],['genauso','coincidir'],['legen','causar'],['sitzen','sentarse']])
+    assert.ok(!words.find(w=>w.lemma===lemma).translations.includes(bad),lemma);
+  for(const lemma of ['Alter','Teil','sitzen']) {
+    const word=words.find(w=>w.lemma===lemma);
+    const block=lessons.find(l=>l.level==='LEX'&&l.words.some(w=>w[0]===word.id));
+    assert.ok(lessonQuestions(block).some(q=>q.wordId===word.id&&q.options&&q.answers.includes(word.es)));
+  }
+});
+
+
+test('la ficha no mezcla una nota y definición de otro sentido con la lección guiada', async () => {
+  const {readFileSync} = await import('node:fs');
+  const {runInNewContext} = await import('node:vm');
+  const source=readFileSync(new URL('../src/app.js',import.meta.url),'utf8');
+  const snippet=source.slice(source.indexOf('function wordCard('),source.indexOf('function lessonPage('));
+  const word={id:'test',de:'erklären',es:'explicar',source:'freedict-wikdict',pos:'v',editorialNote:'NOTA DEL SENTIDO',definitions:['DEFINICIÓN DEL SENTIDO']};
+  const render=runInNewContext(snippet+';wordCard',{wordById:new Map([['test',word]]),partOfSpeech:{v:'Verbo'},esc:String});
+  const selected=render(['test','erklären','explicar','']);
+  assert.match(selected,/NOTA DEL SENTIDO/);
+  assert.match(selected,/DEFINICIÓN DEL SENTIDO/);
+  const other=render(['test','erklären','declarar','']);
+  assert.doesNotMatch(other,/NOTA DEL SENTIDO|DEFINICIÓN DEL SENTIDO/);
+  assert.match(other,/Revisión pendiente/);
+});

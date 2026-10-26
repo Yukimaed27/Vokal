@@ -16,12 +16,12 @@ export function createVocabularyCourse(guidedLessons) {
     return {
       id:compatible ? original[0] : `lex-${entry.lemma.toLocaleLowerCase('de-DE')}`,
       lemma:entry.lemma,
-      de:compatible ? original[1] : entry.pos === 'n' ? `${articles[entry.gender]} ${entry.lemma}` : entry.lemma,
+      de:correction?.de ?? (compatible ? original[1] : entry.pos === 'n' ? `${articles[correction?.gender ?? entry.gender]} ${entry.lemma}` : entry.lemma),
       es:correction?.translations ? translations.join(' / ') : compatible ? original[2] : translations.slice(0,4).join(' / '),
-      example:compatible ? original[3] : '',
+      example:correction?.example ?? (compatible ? original[3] : ''),
       translations, definitions:correction?.definitions ?? entry.senses.flatMap(sense => sense.definitions),
       editorialNote:correction?.note ?? '',
-      pos:correction?.pos ?? entry.pos,gender:entry.gender,source:'freedict-wikdict',reviewStatus:'pending',
+      pos:correction?.pos ?? entry.pos,gender:correction?.gender ?? entry.gender,source:'freedict-wikdict',reviewStatus:'pending',
       frequencyRank:entry.rank,level:'LEX',
     };
   });

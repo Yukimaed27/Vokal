@@ -1,4 +1,4 @@
-// Editorial adjustments: docs/reviews/APPLIED_CORRECTIONS.md and LEX-101-200.md.
+// Editorial adjustments: docs/reviews/APPLIED_CORRECTIONS.md and LEX-101-200.md / LEX-201-500.md.
 // Study senses remain pending full linguistic review; raw import and IDs stay intact.
 export const vocabularyCorrections = {
   "nicht": {
@@ -632,5 +632,849 @@ export const vocabularyCorrections = {
       "considerable",
       "bastante grande"
     ]
+  },
+  "verstehen": {
+    "note": "Se estudia comprender. Sich verstehen als tiene otra construcción; tener aislado no corresponde.",
+    "translations": [
+      "entender",
+      "comprender"
+    ],
+    "definitions": [
+      "den Sinn von etwas erfassen"
+    ]
+  },
+  "spielen": {
+    "note": "Aquí: jugar. Tocar un instrumento e interpretar un papel son construcciones distintas.",
+    "translations": [
+      "jugar"
+    ],
+    "definitions": [
+      "ein Spiel betreiben"
+    ]
+  },
+  "versuchen": {
+    "note": "Aquí: intentar una acción. Probar un alimento y tentar se dejan fuera.",
+    "translations": [
+      "intentar"
+    ],
+    "definitions": [
+      "sich bemühen, etwas zu tun"
+    ]
+  },
+  "endlich": {
+    "note": "Adjetivo: que tiene fin. El adverbio por fin es otro uso, mucho más habitual en conversación.",
+    "translations": [
+      "finito",
+      "limitado"
+    ],
+    "definitions": [
+      "ein Ende habend"
+    ]
+  },
+  "erste": {
+    "note": "Forma adjetiva ordinal: primero/primera según el sustantivo. No es un lema invariable."
+  },
+  "holen": {
+    "note": "No se practica aliento como si fuera un verbo. Luft holen (tomar aire) es otra construcción.",
+    "translations": [
+      "recoger",
+      "ir a buscar"
+    ],
+    "definitions": [
+      "jemanden oder etwas herbeiholen"
+    ]
+  },
+  "hoch": {
+    "note": "Aquí: altura. Las potencias matemáticas y otros usos se dejan fuera.",
+    "translations": [
+      "alto",
+      "elevado"
+    ],
+    "definitions": [
+      "eine große Höhe habend"
+    ]
+  },
+  "Alter": {
+    "note": "Se estudia das Alter, neutro: edad. Der Alte/ein Alter designa a un hombre mayor y tiene otra flexión.",
+    "translations": [
+      "edad"
+    ],
+    "definitions": [
+      "Dauer des Lebens oder Bestehens"
+    ],
+    "gender": "neut",
+    "de": "das Alter",
+    "example": ""
+  },
+  "Schau": {
+    "note": "Sustantivo die Schau; no es schau, forma de schauen (mirar).",
+    "translations": [
+      "exposición",
+      "exhibición"
+    ],
+    "definitions": [
+      "öffentliche Ausstellung"
+    ]
+  },
+  "Land": {
+    "note": "Se practica país. Tierra firme, terreno y propiedad son otros sentidos.",
+    "translations": [
+      "país"
+    ],
+    "definitions": [
+      "politisch abgegrenztes Gebiet"
+    ]
+  },
+  "Vier": {
+    "note": "Sustantivo die Vier para la cifra. Al contar se usa vier sin artículo.",
+    "translations": [
+      "el número cuatro"
+    ],
+    "definitions": [
+      "die Ziffer 4"
+    ]
+  },
+  "schuld": {
+    "note": "Se aprende con sein: schuld sein significa tener la culpa. No es el sustantivo die Schuld.",
+    "translations": [
+      "culpable"
+    ],
+    "definitions": [
+      "für einen Fehler verantwortlich"
+    ]
+  },
+  "getötet": {
+    "note": "Participio de töten (matar). No implica necesariamente asesinato ni es un lema base independiente.",
+    "translations": [
+      "muerto por acción externa"
+    ],
+    "definitions": [
+      "durch eine Handlung ums Leben gekommen"
+    ]
+  },
+  "verlassen": {
+    "note": "No confundir con sich auf jemanden verlassen: confiar en alguien.",
+    "translations": [
+      "abandonar",
+      "dejar"
+    ],
+    "definitions": [
+      "einen Ort oder eine Person verlassen"
+    ]
+  },
+  "Ort": {
+    "note": "Se retira de esta práctica el sentido minero especializado del registro.",
+    "translations": [
+      "lugar",
+      "sitio"
+    ],
+    "definitions": [
+      "bestimmter Platz oder bestimmte Stelle"
+    ]
+  },
+  "Seite": {
+    "note": "Lado y página requieren contexto. No son equivalentes intercambiables en cualquier frase.",
+    "translations": [
+      "lado",
+      "página"
+    ],
+    "definitions": [
+      "seitliche Fläche; beschriebene Fläche eines Blattes"
+    ]
+  },
+  "Schule": {
+    "note": "Se retira discípulo: es una persona, no la escuela/colectivo que describe ese sentido.",
+    "translations": [
+      "escuela",
+      "colegio"
+    ],
+    "definitions": [
+      "Einrichtung für Unterricht"
+    ]
+  },
+  "schlafen": {
+    "note": "Se conserva el sentido habitual; regionalismos y pernoctar se trabajan por separado.",
+    "translations": [
+      "dormir"
+    ],
+    "definitions": [
+      "sich im Schlaf befinden"
+    ]
+  },
+  "bloß": {
+    "note": "Se practica ausencia de cobertura. Mero/sencillamente corresponde a otros usos.",
+    "translations": [
+      "desnudo",
+      "descubierto"
+    ],
+    "definitions": [
+      "ohne Bekleidung oder Hülle"
+    ]
+  },
+  "Teil": {
+    "note": "Aquí: das Teil, pieza o componente. Der Teil se usa para parte/proporción; no mezclar artículos.",
+    "translations": [
+      "pieza",
+      "trozo"
+    ],
+    "definitions": [
+      "ein einzelnes Stück eines Ganzen"
+    ],
+    "de": "das Teil",
+    "example": ""
+  },
+  "Mensch": {
+    "note": "Der Mensch es masculino gramatical para una persona de cualquier sexo. El regional despectivo das Mensch es otra entrada.",
+    "translations": [
+      "ser humano",
+      "persona"
+    ],
+    "definitions": [
+      "menschliches Lebewesen"
+    ]
+  },
+  "stellen": {
+    "note": "Aquí: posición vertical. Ajustar un aparato y sich stellen son construcciones distintas.",
+    "translations": [
+      "colocar",
+      "poner de pie"
+    ],
+    "definitions": [
+      "etwas in eine aufrechte Position bringen"
+    ]
+  },
+  "ehrlich": {
+    "note": "Se evita fiel como equivalencia general; depende del contexto y no sustituye a sincero.",
+    "translations": [
+      "honesto",
+      "sincero"
+    ],
+    "definitions": [
+      "aufrichtig; nicht lügend"
+    ]
+  },
+  "Herz": {
+    "note": "Matiz anatómico limpio: se retira la instrucción editorial que no forma parte de una definición.",
+    "translations": [
+      "corazón"
+    ],
+    "definitions": [
+      "Organ des Blutkreislaufs"
+    ]
+  },
+  "alt": {
+    "note": "Se retira fiambre del estudio general de edad/antigüedad; no es la traducción neutra de alt.",
+    "translations": [
+      "viejo",
+      "antiguo"
+    ],
+    "definitions": [
+      "seit langer Zeit bestehend"
+    ]
+  },
+  "frei": {
+    "note": "Se eliminan instrucciones editoriales y se acota a libertad. Gratuito y otros sentidos requieren contexto.",
+    "translations": [
+      "libre"
+    ],
+    "definitions": [
+      "nicht gefangen; nicht eingeschränkt"
+    ]
+  },
+  "sondern": {
+    "note": "Verbo poco frecuente: separar. No es la conjunción sino de nicht … sondern …"
+  },
+  "setzen": {
+    "note": "Sich setzen es sentarse. Apostar o fijar requieren otra construcción.",
+    "translations": [
+      "sentar",
+      "poner sentado"
+    ],
+    "definitions": [
+      "jemanden in eine sitzende Position bringen"
+    ]
+  },
+  "dürfen": {
+    "note": "Modal de permiso. Tener o permitido aislados no expresan por sí solos el valor del verbo.",
+    "translations": [
+      "poder",
+      "tener permiso"
+    ],
+    "definitions": [
+      "die Erlaubnis haben, etwas zu tun"
+    ]
+  },
+  "Arsch": {
+    "note": "Registro vulgar: conviene reconocerlo, pero no usarlo en situaciones formales. El insulto es otro uso.",
+    "translations": [
+      "culo"
+    ],
+    "definitions": [
+      "derbe Bezeichnung für das Gesäß"
+    ]
+  },
+  "Pass": {
+    "note": "Aquí: documento de viaje. Paso de montaña y pase deportivo son otros sentidos.",
+    "translations": [
+      "pasaporte"
+    ],
+    "definitions": [
+      "Dokument für Reisen ins Ausland"
+    ]
+  },
+  "Menge": {
+    "note": "El conjunto matemático es otro sentido; no todas las cantidades son conjuntos matemáticos.",
+    "translations": [
+      "cantidad",
+      "montón"
+    ],
+    "definitions": [
+      "eine Anzahl oder eine große Anzahl von Dingen"
+    ]
+  },
+  "langsam": {
+    "note": "Uso adjetivo: lento. Despacio es una traducción para el uso adverbial.",
+    "translations": [
+      "lento"
+    ],
+    "definitions": [
+      "sich mit geringer Geschwindigkeit bewegend"
+    ]
+  },
+  "Büro": {
+    "note": "Se retira archivo como equivalente general: designa otro objeto o institución.",
+    "translations": [
+      "oficina",
+      "despacho"
+    ],
+    "definitions": [
+      "Raum oder Einrichtung für Verwaltungsarbeit"
+    ]
+  },
+  "Ruf": {
+    "note": "Se practica un llamamiento audible. Reputación y nombramiento son sentidos diferentes.",
+    "translations": [
+      "llamada",
+      "grito"
+    ],
+    "definitions": [
+      "laute Äußerung, die jemanden erreichen soll"
+    ]
+  },
+  "schaffen": {
+    "note": "Aquí: crear; puede conjugarse fuerte (schuf/geschaffen). El uso lograr se trabaja por separado, habitualmente con schaffte/geschafft.",
+    "translations": [
+      "crear"
+    ],
+    "definitions": [
+      "etwas hervorbringen"
+    ]
+  },
+  "Scheiß": {
+    "note": "Sustantivo coloquial y vulgar para algo desagradable o una tontería. No usar como registro neutro."
+  },
+  "voll": {
+    "note": "Aquí: lleno. El sentido coloquial borracho se deja fuera de esta práctica.",
+    "translations": [
+      "lleno"
+    ],
+    "definitions": [
+      "vollständig gefüllt"
+    ]
+  },
+  "Film": {
+    "note": "Se practica el sentido audiovisual. Capa fina de material es otro sentido.",
+    "translations": [
+      "película",
+      "cine"
+    ],
+    "definitions": [
+      "Werk aus bewegten Bildern"
+    ]
+  },
+  "Hund": {
+    "note": "Se deja fuera el uso como insulto a una persona.",
+    "translations": [
+      "perro"
+    ],
+    "definitions": [
+      "als Haustier gehaltenes Tier"
+    ]
+  },
+  "danach": {
+    "note": "Sentido temporal. Eso aislado no equivale a danach.",
+    "translations": [
+      "después",
+      "luego"
+    ],
+    "definitions": [
+      "zeitlich anschließend"
+    ]
+  },
+  "laufen": {
+    "note": "El movimiento depende del contexto. Fluir un líquido y funcionar una máquina son otros sentidos; andar no describe en general el líquido.",
+    "translations": [
+      "correr",
+      "andar"
+    ],
+    "definitions": [
+      "sich zu Fuß fortbewegen"
+    ]
+  },
+  "erinnern": {
+    "note": "Sich an etwas erinnern: acordarse de algo; jemanden erinnern: recordarle algo a alguien.",
+    "translations": [
+      "recordar"
+    ],
+    "definitions": [
+      "etwas im Gedächtnis behalten oder wieder bewusst machen"
+    ]
+  },
+  "völlig": {
+    "note": "Se conserva el uso adjetivo. Adverbialmente puede traducirse totalmente; no es la misma categoría española.",
+    "translations": [
+      "completo",
+      "total"
+    ],
+    "definitions": [
+      "vollständig; ohne Einschränkung"
+    ]
+  },
+  "Stelle": {
+    "note": "Se estudia el empleo. Autoridad, lugar y posición de una cifra requieren otros sentidos.",
+    "translations": [
+      "puesto",
+      "puesto de trabajo"
+    ],
+    "definitions": [
+      "berufliche Anstellung"
+    ]
+  },
+  "Kaffee": {
+    "note": "Se conserva café en registro neutro; feca es regional y no se practica como variante general.",
+    "translations": [
+      "café"
+    ],
+    "definitions": [
+      "Getränk aus gerösteten Kaffeebohnen"
+    ]
+  },
+  "zwar": {
+    "note": "Habitualmente zwar … aber: si bien …, pero …. Und zwar introduce una precisión, otro uso.",
+    "translations": [
+      "si bien",
+      "aunque"
+    ],
+    "definitions": [
+      "leitet eine Einschränkung mit aber ein"
+    ]
+  },
+  "groß": {
+    "note": "Se practica tamaño/altura. Gordo no es un equivalente universal de groß.",
+    "translations": [
+      "grande",
+      "alto"
+    ],
+    "definitions": [
+      "von großer Ausdehnung oder Körperhöhe"
+    ]
+  },
+  "Arzt": {
+    "note": "Se retira físico como traducción cotidiana; no equivale al profesional de la física.",
+    "translations": [
+      "médico",
+      "doctor"
+    ],
+    "definitions": [
+      "Person mit ärztlicher Ausbildung"
+    ]
+  },
+  "heiraten": {
+    "note": "El sentido intransitivo es casarse; casar a otras personas requiere otra construcción.",
+    "translations": [
+      "casarse"
+    ],
+    "definitions": [
+      "eine Ehe eingehen"
+    ]
+  },
+  "erklären": {
+    "note": "Se practica explicar o hacer comprensible. Declarar oficialmente algo es otro sentido que necesita contexto propio.",
+    "translations": [
+      "explicar",
+      "aclarar"
+    ],
+    "definitions": [
+      "etwas verständlich machen"
+    ]
+  },
+  "Wahl": {
+    "note": "Se retiran calidad/categoría/clase del sentido de elección política; no corresponden a esa definición.",
+    "translations": [
+      "elección",
+      "opción"
+    ],
+    "definitions": [
+      "Entscheidung zwischen Möglichkeiten"
+    ]
+  },
+  "leicht": {
+    "note": "Se practica poco peso. Fácil, barato y light se dejan fuera de este sentido.",
+    "translations": [
+      "ligero",
+      "liviano"
+    ],
+    "definitions": [
+      "von geringem Gewicht"
+    ]
+  },
+  "Gefühl": {
+    "note": "Se retiran variantes indiferenciadas como sensibilidad; los sentidos emocional y sensorial requieren contexto.",
+    "translations": [
+      "sentimiento",
+      "sensación"
+    ],
+    "definitions": [
+      "inneres Erleben oder Wahrnehmen"
+    ]
+  },
+  "geschafft": {
+    "note": "Aquí: adjetivo agotado. No equivale sin contexto al participio de schaffen en etwas geschafft haben (haber logrado algo)."
+  },
+  "genauso": {
+    "note": "No es el verbo coincidir; igual de necesita un complemento según la frase.",
+    "translations": [
+      "de la misma manera",
+      "igual de"
+    ],
+    "definitions": [
+      "auf dieselbe Weise oder im selben Maß"
+    ]
+  },
+  "kümmern": {
+    "note": "Construcción sich um jemanden/etwas kümmern; no traducir el verbo aislado sin su forma reflexiva.",
+    "translations": [
+      "ocuparse de",
+      "cuidar de"
+    ],
+    "definitions": [
+      "sich helfend oder sorgend um jemanden bemühen"
+    ]
+  },
+  "laut": {
+    "note": "Se refiere al volumen del sonido, no a la altura física de una persona.",
+    "translations": [
+      "fuerte",
+      "alto"
+    ],
+    "definitions": [
+      "mit großer Lautstärke"
+    ]
+  },
+  "sitzen": {
+    "note": "Estado o postura, no la acción sentarse (sich setzen). Sentado no debe partirse de estar como respuestas distintas.",
+    "translations": [
+      "estar sentado"
+    ],
+    "definitions": [
+      "sich in sitzender Haltung befinden"
+    ]
+  },
+  "Rest": {
+    "note": "El radical químico es otro sentido y se deja fuera del estudio general.",
+    "translations": [
+      "resto"
+    ],
+    "definitions": [
+      "übrig gebliebener Teil"
+    ]
+  },
+  "Opfer": {
+    "note": "Se estudia la persona perjudicada. Ofrenda/sacrificio son otros sentidos, no equivalentes universales.",
+    "translations": [
+      "víctima"
+    ],
+    "definitions": [
+      "Person, die einen Schaden erlitten hat"
+    ]
+  },
+  "vorstellen": {
+    "note": "Aquí: presentar personas. Sich etwas vorstellen es imaginar algo y requiere otra construcción.",
+    "translations": [
+      "presentar"
+    ],
+    "definitions": [
+      "Personen miteinander bekannt machen"
+    ]
+  },
+  "verletzt": {
+    "note": "La definición del registro solo cubría daño emocional. Herido puede ser físico; los contextos deben distinguirse.",
+    "translations": [
+      "herido",
+      "ofendido"
+    ],
+    "definitions": [
+      "körperlich oder seelisch verletzt"
+    ]
+  },
+  "stolz": {
+    "note": "Se conserva orgulloso. Maravilloso/grandioso son extensiones que no se practican como equivalencia general.",
+    "translations": [
+      "orgulloso"
+    ],
+    "definitions": [
+      "über eigene oder fremde Leistungen erfreut"
+    ]
+  },
+  "besonders": {
+    "note": "Se alinea el matiz con el sentido de énfasis. Por separado es otro uso, no esta definición.",
+    "translations": [
+      "especialmente",
+      "en particular"
+    ],
+    "definitions": [
+      "in besonderem Maße"
+    ]
+  },
+  "großartig": {
+    "note": "Famoso significa conocido: no se usa como equivalencia universal de großartig.",
+    "translations": [
+      "magnífico",
+      "estupendo"
+    ],
+    "definitions": [
+      "außergewöhnlich gut"
+    ]
+  },
+  "fühlen": {
+    "note": "Sich fühlen: sentirse; palpar o tocar requieren un contexto diferente. No se suman como respuestas intercambiables.",
+    "translations": [
+      "sentir"
+    ],
+    "definitions": [
+      "eine Empfindung wahrnehmen"
+    ]
+  },
+  "Boden": {
+    "note": "Se practica suelo/tierra y se elimina la plantilla editorial. Fondo de un recipiente y desván son otros sentidos.",
+    "translations": [
+      "suelo",
+      "tierra"
+    ],
+    "definitions": [
+      "obere Fläche des Erdbodens"
+    ]
+  },
+  "Stimme": {
+    "note": "Se practica voz. El sentido voto requiere su propia definición y no corresponde a producir un sonido.",
+    "translations": [
+      "voz"
+    ],
+    "definitions": [
+      "mit dem Kehlkopf erzeugter Laut"
+    ]
+  },
+  "lustig": {
+    "note": "Se retira antojado del estudio general; no es la equivalencia cotidiana de divertido.",
+    "translations": [
+      "divertido",
+      "alegre"
+    ],
+    "definitions": [
+      "amüsant oder gut gelaunt"
+    ]
+  },
+  "umbringen": {
+    "note": "El reflexivo sich umbringen es suicidarse, no suicidar aislado. Los usos figurados requieren contexto.",
+    "translations": [
+      "matar"
+    ],
+    "definitions": [
+      "jemanden töten"
+    ]
+  },
+  "laden": {
+    "note": "Invitar es otro uso. En informática, cargar no equivale siempre a descargar de una red.",
+    "translations": [
+      "cargar"
+    ],
+    "definitions": [
+      "mit einer Ladung versehen oder Daten in den Speicher übernehmen"
+    ]
+  },
+  "gestorben": {
+    "note": "Participio de sterben. No es un nuevo infinitivo ni un lema base independiente.",
+    "translations": [
+      "muerto",
+      "fallecido"
+    ],
+    "definitions": [
+      "nicht mehr lebend; verstorben"
+    ]
+  },
+  "Mörder": {
+    "note": "Sustantivo masculino. La forma femenina alemana es Mörderin; homicida no es una equivalencia jurídica universal.",
+    "translations": [
+      "asesino"
+    ],
+    "definitions": [
+      "männliche Person, die einen Mord begangen hat"
+    ]
+  },
+  "Idiot": {
+    "note": "Uso despectivo o insultante; no es una forma neutra de referirse a alguien."
+  },
+  "mögen": {
+    "note": "Se trabaja agrado. Los usos modales de concesión y posibilidad se dejan fuera de esta definición.",
+    "translations": [
+      "gustar"
+    ],
+    "definitions": [
+      "jemanden oder etwas gernhaben"
+    ]
+  },
+  "versprochen": {
+    "note": "Participio de versprechen: prometido. No se presenta como un verbo base independiente; paradigma completo pendiente."
+  },
+  "Acht": {
+    "note": "Sustantivo die Acht para la cifra. Atención/cuidado aparece en expresiones como Acht geben y no se practica aquí.",
+    "translations": [
+      "el número ocho"
+    ],
+    "definitions": [
+      "die Ziffer 8"
+    ]
+  },
+  "fallen": {
+    "note": "Movimiento intransitivo. Dejar caer es una acción transitiva diferente; abandonar requiere otra construcción.",
+    "translations": [
+      "caer"
+    ],
+    "definitions": [
+      "sich von oben nach unten bewegen"
+    ]
+  },
+  "Liebling": {
+    "note": "Se retira cariña del estudio general; el sustantivo alemán conserva género masculino.",
+    "translations": [
+      "cariño",
+      "amor"
+    ],
+    "definitions": [
+      "liebevolle Anrede für eine nahestehende Person"
+    ]
+  },
+  "tatsächlich": {
+    "note": "Se practica el adjetivo. En realidad/de hecho son traducciones del uso adverbial.",
+    "translations": [
+      "real",
+      "efectivo",
+      "verdadero"
+    ],
+    "definitions": [
+      "wirklich vorhanden oder geschehen"
+    ]
+  },
+  "behalten": {
+    "note": "Se precisa conservar, no simplemente tener: implica que algo permanece contigo.",
+    "translations": [
+      "conservar",
+      "mantener"
+    ],
+    "definitions": [
+      "etwas weiter im Besitz haben oder bewahren"
+    ]
+  },
+  "plötzlich": {
+    "note": "Uso adjetivo. De repente/súbitamente corresponden al uso adverbial.",
+    "translations": [
+      "repentino",
+      "súbito"
+    ],
+    "definitions": [
+      "unerwartet eintretend"
+    ]
+  },
+  "liegen": {
+    "note": "Postura o estado. Tender/acostar algo es una acción transitiva, no el sentido de liegen.",
+    "translations": [
+      "estar tumbado",
+      "estar echado"
+    ],
+    "definitions": [
+      "sich in waagerechter Lage befinden"
+    ]
+  },
+  "Hotel": {
+    "note": "Se conserva hotel; albergue no es un equivalente universal del tipo de alojamiento.",
+    "translations": [
+      "hotel"
+    ],
+    "definitions": [
+      "gewerbliche Unterkunft für Gäste"
+    ]
+  },
+  "Meister": {
+    "note": "Sentidos distintos según profesión o deporte. Se retira el arcaísmo maese del estudio cotidiano.",
+    "translations": [
+      "maestro",
+      "campeón"
+    ],
+    "definitions": [
+      "Person mit besonderem Können; Sieger einer Meisterschaft"
+    ]
+  },
+  "Arschloch": {
+    "note": "Palabra vulgar; tiene además un uso insultante. Se separa ese insulto del sentido anatómico.",
+    "translations": [
+      "ano"
+    ],
+    "definitions": [
+      "derbe Bezeichnung für den After"
+    ]
+  },
+  "fort": {
+    "note": "Se practica alejamiento. La continuación de una acción requiere otra construcción.",
+    "translations": [
+      "lejos",
+      "fuera"
+    ],
+    "definitions": [
+      "von einem Ort weg"
+    ]
+  },
+  "legen": {
+    "note": "Colocar algo en posición horizontal. Eier legen es poner huevos; causar no corresponde a esa definición.",
+    "translations": [
+      "poner",
+      "colocar"
+    ],
+    "definitions": [
+      "etwas in eine waagerechte Lage bringen"
+    ]
+  },
+  "Onkel": {
+    "translations": [
+      "tío"
+    ],
+    "definitions": [
+      "Bruder der Mutter oder des Vaters"
+    ],
+    "note": "Se practica tío en la relación familiar habitual. No se generaliza a cualquier primo de generaciones anteriores."
+  },
+  "Mord": {
+    "translations": [
+      "asesinato"
+    ],
+    "note": "Se conserva el significado general. No se certifica equivalencia entre categorías penales de países distintos ni se equipara a todo homicidio."
+  },
+  "tagen": {
+    "translations": [
+      "reunirse en sesión"
+    ],
+    "definitions": [
+      "eine Sitzung oder Tagung abhalten"
+    ],
+    "note": "Aquí: celebrar una reunión o sesión. El uso literario amanecer es otro sentido."
   }
 };

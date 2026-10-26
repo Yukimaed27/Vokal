@@ -74,7 +74,7 @@ La opción `--ignore-scripts` de instalación también evita el prepare automát
 
 | Comando | Resultado |
 | --- | --- |
-| `pnpm dev` | Servidor local en http://localhost:3000 |
+| `pnpm dev` | Servidor local en http://localhost: 3000 |
 | `pnpm check` | Sintaxis de módulos de src/scripts y todas las pruebas Node |
 | `pnpm test` | Solo pruebas Node |
 | `pnpm audit:deps` | Auditoría de dependencias; falla desde severidad low |
@@ -104,7 +104,7 @@ La comprobación usa Edge/Chromium instalado, su DevTools Protocol y WebSocket n
 No requiere instalar Playwright, Selenium ni paquetes del registro.
 
 Requisitos: un servidor de Vokal activo y un navegador con **perfil temporal exclusivo**, depuración en 9223 y sin sesiones reales.
-El script usa por defecto http://localhost:3000/; acepta otra URL como primer argumento para no interferir con un servidor del propietario.
+El script usa por defecto http://localhost: 3000/; acepta otra URL como primer argumento para no interferir con un servidor del propietario.
 Nunca conectes este script al perfil habitual del propietario: modifica el progreso de prueba y cierra el navegador de QA al terminar.
 El script no está diseñado para conservar datos personales.
 
@@ -221,3 +221,12 @@ Reiniciar pnpm dev tras esta entrega: la lista pública incorpora src/vocabulary
 Build de 13 archivos; pnpm check: 25 pruebas (incluye capa editorial/IDs). Hooks recogen las pruebas sin modificar sus scripts.
 Para cambiar vocabulario auditado, editar la capa editorial y su registro; no sobrescribir datos importados.
 Regenerar la importación conserva la capa, pero revisar cambios de lemas antes de afirmar compatibilidad.
+
+### Controles del lote 201–500
+
+pnpm check ejecuta30 pruebas, incluida tests/review-ledger.test.mjs para cobertura exacta del informe 201–500.
+Los hooks pre-commit/pre-push existentes llaman pnpm check y recogen este control sin duplicar comandos.
+Se verificó core.hooksPath=.githooks; al clonar, pnpm prepare lo instala localmente (la configuración Git no viaja con el clon).
+Build13 recursos, sin paquetes nuevos. Las capturas anteriores son históricas; no se hizo QA visual para esta entrega de datos.
+Si una futura importación cambia el orden/lemas, el control documental puede fallar: revisar correspondencia de evidencia,
+preservar IDs y no reescribir silenciosamente informes históricos para aparentar una revisión vigente.

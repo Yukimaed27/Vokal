@@ -86,3 +86,8 @@ con header compacto y lección móvil clara de 375 px; no flujo CDP completo. No
 
 Siguiente trabajo económico: revisar por riesgo las entradas aún pendientes, con un solo revisor y contraste
 solo de dudas; conservar evidencia y no abrir una nueva revisión masiva sin acordar alcance.
+
+## Continuaciones posteriores
+
+Este documento registra la primera integración de 46 entradas. La capa vigente alcanza 171 tras
+[lote 101–200](LEX-101-200.md) y [lote 201–500](LEX-201-500.md). Consultar esos registros antes de repetir trabajo.

@@ -45,8 +45,14 @@ no es presupuesto garantizado: hay redondeo, contexto compartido, integración d
 Esta muestra de primeras entradas por frecuencia no es aleatoria; no extrapolar su tasa de errores al catálogo entero.
 No iniciar otro lote hasta nueva instrucción del propietario.
 
-## Continuación autorizada:101–200
+## Continuación autorizada: 101–200
 
-[Lote de un revisor](LEX-101-200.md):64 sin incidencia nuclear detectada, 33 ajustes/notas aplicados,3 dudas.
-Total 200 examinadas con alcances limitados; 79 registros ajustados. No200 certificadas ni variantes exhaustivamente revisadas.
+[Lote de un revisor](LEX-101-200.md): 64 sin incidencia nuclear detectada, 33 ajustes/notas aplicados, 3 dudas.
+Total 200 examinadas con alcances limitados; 79 registros ajustados. No 200 certificadas ni variantes exhaustivamente revisadas.
 Se detiene al acabar el lote por instrucción del propietario para medir consumo. Próximo índice 201.
+
+## Lote 201–500 completado
+
+[Informe de 300 filas](LEX-201-500.md): 92 registros ajustados, 186 sin incidencia puntual, 21 contrastes parciales, 1 duda fuente.
+500 entradas examinadas en total con los límites descritos, no 500 aprobadas.171 registros con ajustes/notas en la app.
+Dudas anteriores permanecen abiertas. Detenerse para medir; próxima entrada 501. No afirmar100% de exactitud.

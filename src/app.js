@@ -115,7 +115,8 @@ function sectionPage(id) {
 }
 function wordCard([id,de,es,example]) {
   const word = wordById.get(id);
-  return `<article class="word-card">${word?.source ? `<div class="word-meta"><span>${partOfSpeech[word.pos]}</span><span>Revisión pendiente</span></div>` : ''}<h3 lang="de">${esc(de)}</h3><p>${esc(es)}</p>${word?.editorialNote ? `<p class="editorial-note">${esc(word.editorialNote)}</p>` : ''}${example ? `<p class="example" lang="de">${esc(example)}</p>` : word?.definitions?.length ? `<details class="word-details"><summary>Matiz del diccionario (alemán)</summary><p lang="de">${esc(word.definitions[0])}</p></details>` : ''}</article>`;
+  const sameSense = word?.de === de && word?.es === es;
+  return `<article class="word-card">${word?.source ? `<div class="word-meta"><span>${partOfSpeech[word.pos]}</span><span>Revisión pendiente</span></div>` : ''}<h3 lang="de">${esc(de)}</h3><p>${esc(es)}</p>${sameSense && word?.editorialNote ? `<p class="editorial-note">${esc(word.editorialNote)}</p>` : ''}${example ? `<p class="example" lang="de">${esc(example)}</p>` : sameSense && word?.definitions?.length ? `<details class="word-details"><summary>Matiz del diccionario (alemán)</summary><p lang="de">${esc(word.definitions[0])}</p></details>` : ''}</article>`;
 }
 function lessonPage(id) {
   const lesson = lessons.find(l => l.id === id);

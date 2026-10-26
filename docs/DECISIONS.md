@@ -77,7 +77,7 @@ claro piedra descansado y tarjetas ligeramente redondeadas sin contorno. Sustitu
 La tarjeta principal y botones deben cambiar con la paleta; no conservar colores oscuros fijos en modo claro.
 
 ## 2026-10-26 — Piloto lingüístico acotado
-El propietario autoriza100 entradas con cuatro agentes para medir consumo. Se reparten25 por participante
+El propietario autoriza 100 entradas con cuatro agentes para medir consumo. Se reparten25 por participante
 (incluido coordinador). No ampliar hasta nueva instrucción. Auditoría y propuestas documentadas, sin aprobación humana
 ni modificación automática del catálogo. No extrapolar tasa de errores de esta muestra no aleatoria.
 
@@ -87,8 +87,16 @@ El propietario prioriza fiabilidad y ahorro de tokens; se integra el piloto sin 
 Ajustes por lema fuera del archivo generado para sobrevivir a regeneración. Se acotan sentidos y añaden notas,
 sin certificar entradas ni borrar progreso. Header se reduce manteniendo botón de 48 px y navegación accesible.
 
-## 2026-10-26 — Continuación de100 entradas, un revisor
+## 2026-10-26 — Continuación de 100 entradas, un revisor
 
 El propietario elige explícitamente otras 100 y detenerse para medir. Alcance 101–200, sin auxiliares;
 contraste nuclear con fuentes, sin certificar todas las variantes ni retirar etiquetas pendientes.
 Se aplican ajustes respaldados por la capa existente, se preservan dudas y se espera medición antes de ampliar.
+
+## 2026-10-26 — Lote 300 y límites de fiabilidad
+
+El propietario autoriza 201–500, solicita fiabilidad total y continuidad documental. Se realiza el lote completo,
+pero no se promete100% de exactitud: se conservan etiquetas y se distinguen respaldo bilingüe, monolingüe y fuente insuficiente.
+Se permite corregir forma visible/género/ejemplo en la capa editorial, conservando identificadores y datos importados.
+Se añaden controles de cobertura documental a la suite existente que ejecutan los hooks; no se añaden dependencias.
+Se detiene después de 300 para medir consumo. Próximo índice 501; continuación requiere nueva instrucción.

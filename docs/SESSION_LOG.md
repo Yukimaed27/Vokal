@@ -270,7 +270,7 @@ paleta grafito/verde pino, claro neutro, sin gradiente/sombras/ilustración deco
 Un único botón nativo sol/luna con nombre accesible actualizado. Conserva preferencias previas y almacenamiento;
 sigue al sistema antes de la primera elección. Contenido, IDs y progreso no cambian. Sin dependencias nuevas.
 Pruebas y browser-check adaptados al botón. 22 pruebas aprobadas y build estático de 12 archivos correcto.
-Contraste medido >=4.5:1; capturas reales Edge escritorio oscuro y móvil claro de 375 px revisadas.
+Contraste medido >=4.5: 1; capturas reales Edge escritorio oscuro y móvil claro de 375 px revisadas.
 La revisión móvil detectó una regresión de media queries durante la edición; fue corregida antes de entregar.
 No se ejecutó CDP completo ni se verificó autenticación real. La precisión lingüística sigue pendiente.
 Contexto: HANDOFF/STATUS/DECISIONS/ARCHITECTURE actualizados. Siguiente paso funcional: GitHub OAuth y sincronización real.
@@ -282,19 +282,19 @@ Causa identificada: tokens hero/botones compartidos mantenían una superficie os
 Cambios: theme.css define paletas completas por tema; oscuro negro/rosa/amarillo y claro piedra sin blanco puro.
 style.css elimina bordes de tarjetas, usa radio 12 px y mantiene campos/foco identificables; se retiran colores hero fijos.
 Se actualizan meta theme-color en index.html/theme.js y pruebas de contraste, más una regresión de tokens hero.
-Verificación: 23 pruebas y build correctos, contraste >=4.5:1; capturas Edge escritorio claro/oscuro y móvil oscuro 375 px.
+Verificación: 23 pruebas y build correctos, contraste >=4.5: 1; capturas Edge escritorio claro/oscuro y móvil oscuro 375 px.
 Hooks pre-commit/pre-push inspeccionados: ambos ejecutan pnpm check; core.hooksPath=.githooks activo.
 No fue necesario reescribir hooks: incorporan automáticamente la nueva prueba. No generan contexto documental.
 HANDOFF/STATUS/DECISIONS/ARCHITECTURE/README/ROADMAP/CHANGELOG actualizados. Sin dependencias ni cambios de contenido/progreso.
 Límites: no recorrido CDP completo, OAuth y revisión lingüística siguen pendientes. Próximo paso: evaluar interfaz con propietario.
 
-## 2026-10-26 — Auditoría piloto de100 entradas con cuatro participantes
+## 2026-10-26 — Auditoría piloto de 100 entradas con cuatro participantes
 
-Solicitud: revisar100 palabras con cuatro agentes y esperar lectura del cupo para estimar ampliación.
-Se repartieron las primeras100 filas originales en cuatro grupos de25: tres auxiliares y coordinador.
+Solicitud: revisar 100 palabras con cuatro agentes y esperar lectura del cupo para estimar ampliación.
+Se repartieron las primeras100 filas originales en cuatro grupos de 25: tres auxiliares y coordinador.
 Revisión de traducciones/categoría/género/sentidos consultando diccionarios editoriales independientes de WikDict.
 Informes individuales y metodología en docs/reviews. Se distinguen errores, propuestas de adecuación y dudas.
-Sin cambios de datos, ejercicios, etiquetas, dependencias o progreso. No se presentan como100 entradas aprobadas.
+Sin cambios de datos, ejercicios, etiquetas, dependencias o progreso. No se presentan como 100 entradas aprobadas.
 Se comprobó cobertura de filas/índices; hooks de commit/push mantienen las pruebas de código existentes.
 No se midieron tokens ni cupo: solo el propietario ve su medidor. Inicio declarado93%; falta lectura final.
 Siguiente paso: esperar medición/decisión del propietario. Para integrar propuestas, mecanismo reproducible y pruebas de ejercicios.
@@ -312,7 +312,7 @@ Registro de aplicación, fuentes y límites en reviews/APPLIED_CORRECTIONS.md. H
 Próximo paso: reiniciar servidor para nuevo módulo y probar; continuar revisión selectiva, no una auditoría total afirmada.
 
 ## 2026-10-26 — Botón de tema más compacto
-Petición: reducir botón y explicar notas de uso. src/style.css: botón48→44px con min-height explícito, SVG22→18px; comportamiento/etiquetas intactos. Notas de uso son aclaraciones de contexto, no actividades ni aprobaciones lingüísticas. Hooks ejecutan las25 pruebas existentes; sin nuevas dependencias, pruebas específicas o capturas para este ajuste CSS.
+Petición: reducir botón y explicar notas de uso. src/style.css: botón48→44px con min-height explícito, SVG22→18px; comportamiento/etiquetas intactos. Notas de uso son aclaraciones de contexto, no actividades ni aprobaciones lingüísticas. Hooks ejecutan las 25 pruebas existentes; sin nuevas dependencias, pruebas específicas o capturas para este ajuste CSS.
 
 Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.
 
@@ -320,8 +320,24 @@ Ajuste visual posterior: el propietario no percibió la reducción anterior. El 
 
 Petición: continuar revisión. Ante necesidad de controlar cupo, propietario eligió otras 100 y detenerse.
 Sin subagentes: contraste nuclear/casos visibles en Langenscheidt, Duden/PONS para excepciones, fuentes por fila.
-Resultado: 64 sin incidencia nuclear, 33 ajustes de sentido/categoría/contexto aplicados,3 dudas (scheiße,Kerl,je).
+Resultado: 64 sin incidencia nuclear, 33 ajustes de sentido/categoría/contexto aplicados, 3 dudas (scheiße,Kerl,je).
 Se registra alcance limitado: no todas las variantes/paradigmas. Fuentes inaccesibles o homógrafos insuficientes quedan señalados.
 Capa editorial alcanza 79 registros. Archivo importado, IDs, progreso y UI intactos. Nueva regresión de fragmentos/traducciones.
 26 pruebas aprobadas y build de 13 recursos; hooks vigentes. Sin nueva captura para cambios de datos.
 Informe reviews/LEX-101-200.md; contexto actualizado. Próximo paso: lectura de porcentaje del propietario; no seguir 201 sin instrucción.
+
+## 2026-10-26 — Revisión 300 entradas201–500
+
+Solicitud: revisar 300, máxima fiabilidad y documentación/hooks para retomar en otro equipo. Se mantuvo un solo revisor.
+Se inspeccionaron campos del lote completo y contrastaron significados/incidencias con Langenscheidt/PONS, Duden y
+Netzverb (forma versprochen). Algunas URLs fallaron; se buscaron alternativas y se registraron límites monolingües/duda.
+No se afirma100% de exactitud ni se aprueban paradigmas/variantes no contrastadas. Todas las etiquetas siguen pendientes.
+92 registros reciben ajustes/notas (total 171), 186 sin incidencia puntual, 21 contrastes parciales y1 duda fuente:absolut.
+Se incorporan de/gender/example opcionales para corregir Alter y acotar Teil; catálogo/bloques/feedback usan los ajustes.
+Importación/IDs/orden/progreso intactos, sin recalificar logros. Se retiran dos ejemplos heredados de otros sentidos.
+Regresiones de artículo/respuestas y fragmentos/plantillas; nuevo test documental 300 índices/lemmas/fuentes.
+30 pruebas y build de 13 recursos correctos. Hooks revisados, activos, llaman pnpm check; no redactan contexto automáticamente.
+Sin nueva QA visual ni dependencias. Informe trazable reviews/LEX-201-500.md; HANDOFF/STATUS/arquitectura/contenido/operación actualizados.
+Detención al terminar300; referencia previa59% de cupo, falta lectura actual del propietario. Próximo índice 501.
+
+Se evita mezclar sentidos: wordCard muestra nota/definición editorial solo cuando de/es coinciden con la ficha corregida; las lecciones guiadas de otro sentido conservan su texto sin esa nota. Regresión de render probada con la función real y VM de Node, sin nuevo navegador.

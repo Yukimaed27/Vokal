@@ -33,3 +33,10 @@ No dependas del historial del chat, memoria del modelo, archivos locales ignorad
 Esta regla aplica a cambios técnicos, incluidas correcciones pequeñas. Documentar utilidad para continuar, no una transcripción de la actividad del usuario.
 Los hooks actuales ejecutan pruebas; no redactan ni verifican automáticamente la documentación. Esa responsabilidad es del agente.
 Sigue la matriz y la plantilla de cierre de docs/WORKFLOW.md. No crees documentos duplicados si existe uno adecuado.
+
+## Continuidad de revisión léxica
+
+Antes de ampliar vocabulario auditado, consultar docs/reviews/README.md y HANDOFF para el próximo índice.
+Distinguir contraste bilingüe, inferencia con fuente monolingüe y duda. No afirmar100% de fiabilidad ni revisión humana.
+Conservar IDs/progreso e importación; aplicar correcciones en la capa editorial y actualizar informe/alcance.
+Los hooks comprueban cobertura documental y código; no garantizan corrección lingüística ni redactan contexto.

@@ -4,19 +4,22 @@ Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Fiabilidad: estado actual
 
-Revisión adicional autorizada101–200 con un revisor: 64 sin incidencia nuclear, 33 ajustes aplicados y 3 dudas.
-Total 200 entradas examinadas, 79 registros con ajustes/notas entre ambos lotes. No equivalen a200 aprobaciones.
-Contraste de significado nuclear/casos visibles, sin certificar todas las variantes ni paradigmas. Todas las etiquetas pendientes.
-Fuentes y detalle en [lote 101–200](reviews/LEX-101-200.md); dudas abiertas scheiße,Kerl,je.
-26 pruebas aprobadas y build de 13 recursos; importación/IDs/progreso intactos. Sin cambios de interfaz en esta entrega.
-Esperar lectura de cupo y nueva instrucción antes de revisar 201–300. Restan 4800 entradas sin este contraste individual.
+Lote 201–500 completado: 92 registros con ajustes/notas, 186 sin incidencia en contraste puntual,
+21 contrastes parciales y1 duda de fuente (absolut). Fuentes/alcances por fila en [informe](reviews/LEX-201-500.md).
+No se garantiza100% de exactitud ni revisión humana. Fuentes monolingües no certifican traducciones españolas.
+Total 500 examinadas con límites; 4500 aún no tienen contraste individual. La capa acumula171 registros ajustados.
+Todas las etiquetas de revisión siguen pendientes; dudas de lotes anteriores no se borran por revisar otro.
+Se alinean Alter edad/das Alter/neutro y Teil pieza/das Teil. Se retiran ejemplos heredados de esos dos sentidos.
+IDs/importación/progreso intactos; logros antiguos sin recalificar.
+30 pruebas aprobadas, build de 13 recursos; hooks incluyen control de cobertura documental del lote.
+No cambios de UI ni nueva QA visual. Esperar medición de cupo; próximo índice 501, sin iniciar otro lote automáticamente.
 
 ## Entrega visual anterior
 
 Segunda revisión visual del 2026-10-26: negro neutro con acentos rosa/amarillo pastel, claro piedra sin blanco puro.
 Tarjetas sin contorno y radio 12 px. Botón sol/luna conservado; la tarjeta principal cambia completamente con el tema.
 Se corrige su paleta anterior oscura compartida, causa del salto visual brusco en modo claro.
-23 pruebas aprobadas y build correcto; contraste mínimo 4.5:1 incluido texto del hero y acento amarillo.
+23 pruebas aprobadas y build correcto; contraste mínimo 4.5: 1 incluido texto del hero y acento amarillo.
 Capturas reales escritorio claro/oscuro y móvil oscuro revisadas. Hooks locales activos con pnpm check.
 No se repitió CDP completo; las verificaciones detalladas siguientes corresponden a la ampliación anterior.
 
@@ -46,7 +49,7 @@ El propietario aceptó ese alcance; no se prometió revisión humana completa ni
 - Capturas reales de Edge sin puerto de depuración: escritorio oscuro, claro y vista de 375 px; ruta de secciones de vocabulario, bloque de estudio móvil y catálogo visibles.
 - En un marco local de QA con anchura real 375: innerWidth=375, documentWidth=360; sin desbordamiento horizontal.
 - Escritorio: innerWidth=1440, documentWidth=1425, en claro y oscuro.
-- Contraste de texto/acentos/botones/estados comprobado matemáticamente en ambas paletas, mínimo 4.5:1.
+- Contraste de texto/acentos/botones/estados comprobado matemáticamente en ambas paletas, mínimo 4.5: 1.
 - No se repitió el recorrido interactivo CDP completo en esta entrega. La QA visual por capturas no equivale a probar cada ejercicio en navegador.
 
 ## Nube: estado que permanece pendiente

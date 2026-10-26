@@ -217,7 +217,7 @@ En las tarjetas, el alumno revela el significado y se autoevalúa. Esta autoeval
     "saludos": {"score": 25, "total": 27, "updatedAt": 13600000}
   },
   "assessments": {
-    "a1-primeros": {"score": 24, "total": 27, "updatedAt": 13600000}
+    "a 1-primeros": {"score": 24, "total": 27, "updatedAt": 13600000}
   }
 }
 ```
@@ -317,7 +317,7 @@ con HTTP 401/código 42501. No se inspeccionaron las políticas ni se ejecutaron
 
 ## 10. Build, servidor y alojamiento
 
-El servidor escucha únicamente `127.0.0.1:3000`; acceder desde otro dispositivo no equivale a escribir localhost en ese dispositivo.
+El servidor escucha únicamente `127.0.0.1: 3000`; acceder desde otro dispositivo no equivale a escribir localhost en ese dispositivo.
 El servidor de desarrollo no se publica como servicio de producción ni se abre a la red por defecto.
 La lista `publicFiles` permite once archivos de aplicación; config.js se genera aparte: doce archivos públicos.
 El servidor responde 404 a contexto, SQL, .git, configuración local y archivos de entorno.
@@ -366,3 +366,17 @@ Tupla opcional ampliada:[id,de,es,example,note]; learning.js añade note a expli
 content.js conserva IDs/metadatos y prioriza el significado ajustado frente al texto heredado en el catálogo.
 app.js muestra editorialNote escapada en cada ficha. Originales guiados conservan sus propios sentidos.
 Lista pública añade vocabulary-corrections.js; build de 13 recursos. Header 64 px/padding de 8 px y main superior 28 px.
+
+## Correcciones de forma, género y ejemplo — lote 201–500
+
+La capa editorial admite de/gender/example opcionales. vocabulary.js los aplica antes de generar bloques;
+content.js prioriza de/example derivados en el catálogo sobre el registro heredado, conservando ID/level/progreso.
+Si el sentido elegido cambia el artículo, deben coincidir de, gender y la pregunta generada del sustantivo;
+no basta con cambiar el texto español. Alter se acota a das Alter/edad/neutro; Teil a das Teil/pieza.
+Para ambos se retira el ejemplo heredado de otro sentido/género con example vacío, sin fabricar una frase.
+Las lecciones guiadas originales conservan sus propios materiales; este lote no certifica sus paradigmas.
+La capa acumula171 ajustes/notas. Raw y sus hashes no cambian. reviewStatus sigue pending.
+Nuevo tests/review-ledger.test.mjs: 300 índices y lemas coincidentes con el raw, estado/alcance/fuente explícitos.
+Es control documental, no un verificador de verdad lingüística. La fuente fallida se conserva como duda, nunca como prueba positiva.
+
+Se evita mezclar sentidos: wordCard muestra nota/definición editorial solo cuando de/es coinciden con la ficha corregida; las lecciones guiadas de otro sentido conservan su texto sin esa nota. Regresión de render probada con la función real y VM de Node, sin nuevo navegador.
