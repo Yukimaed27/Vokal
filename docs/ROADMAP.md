@@ -51,3 +51,5 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Integrar46 ajustes/notas del piloto con capa reproducible, feedback contextual y pruebas de preservación de IDs.
 - [x] Compactar header a 64 px sin reducir el botón de tema.
 - [ ] Completar revisión de dudas/sentidos restantes; priorizar siguientes lotes por riesgo, sin certificación prematura.
+
+- [x] Compactar botón sol/luna a44px e icono18px conservando accesibilidad.

@@ -310,3 +310,6 @@ Header88→64px/padding de 8 px; main superior44→28px. Sin dependencias ni nue
 25 pruebas aprobadas y build de 13 recursos; capturas Edge escritorio oscuro/lección móvil clara de 375 px. No CDP completo.
 Registro de aplicación, fuentes y límites en reviews/APPLIED_CORRECTIONS.md. Hooks existentes ejecutan nuevas pruebas.
 Próximo paso: reiniciar servidor para nuevo módulo y probar; continuar revisión selectiva, no una auditoría total afirmada.
+
+## 2026-10-26 — Botón de tema más compacto
+Petición: reducir botón y explicar notas de uso. src/style.css: botón48→44px con min-height explícito, SVG22→18px; comportamiento/etiquetas intactos. Notas de uso son aclaraciones de contexto, no actividades ni aprobaciones lingüísticas. Hooks ejecutan las25 pruebas existentes; sin nuevas dependencias, pruebas específicas o capturas para este ajuste CSS.

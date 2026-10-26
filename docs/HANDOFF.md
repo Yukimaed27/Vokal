@@ -44,3 +44,6 @@ No hay una publicación confirmada. Código/contexto viajan por Git; progreso pr
 
 Conservar IDs y claves existentes. Un único botón de tema; sin selector ni titulares de volumen. No restaurar verde pino, contornos de tarjetas o hero oscuro fijo en modo claro.
 El hash de esta entrega se consulta con git log, evitando referencias autorreferenciales.
+
+## Ajuste posterior: botón de tema
+Botón reducido de48 a44px, icono22→18px. Conserva etiqueta accesible, foco y alternancia; objetivo táctil44px. Cambio CSS sin lógica nueva. Pruebas existentes pasan por hooks; sin nueva captura de navegador.

@@ -1,5 +1,9 @@
 # Cambios
 
+## 2026-10-26 — Botón de tema compacto
+
+- Botón sol/luna de 44 px e icono de 18 px; conserva foco y área táctil.
+
 ## 2026-10-26 — Fiabilidad y header compacto
 
 - 46 ajustes/notas editoriales del piloto en catálogo y práctica, conservando IDs y revisión pendiente.

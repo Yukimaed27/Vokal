@@ -71,3 +71,5 @@ La frecuencia de subtítulos no equivale a importancia para cada viajero, ni a u
 La selección usa heurísticas contra nombres/flexiones: puede haber errores o polisemia pendientes.
 No hay 5000 frases originales, pronunciación evaluada ni curso completo B2/C1.
 Sin cuenta funcional, el progreso sigue local. Una práctica incompleta no se reanuda tras recargar.
+
+Ajuste posterior: botón sol/luna44px (antes48), icono18px (antes22), conservando foco y objetivo táctil. Sin cambios de vocabulario.
