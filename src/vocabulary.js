@@ -21,7 +21,8 @@ export function createVocabularyCourse(guidedLessons) {
       example:correction?.example ?? (compatible ? original[3] : ''),
       translations, definitions:correction?.definitions ?? entry.senses.flatMap(sense => sense.definitions),
       editorialNote:correction?.note ?? '',
-      pos:correction?.pos ?? entry.pos,gender:correction?.gender ?? entry.gender,source:'freedict-wikdict',reviewStatus:'pending',
+      pos:correction?.pos ?? entry.pos,gender:correction?.gender ?? entry.gender,source:'freedict-wikdict',reviewStatus:correction?.review ? 'sense-checked-ai' : 'pending',
+      review:correction?.review ?? null,
       frequencyRank:entry.rank,level:'LEX',
     };
   });
@@ -41,7 +42,7 @@ export function createVocabularyCourse(guidedLessons) {
         id:`lexico-${number}-${blockNumber}`,unit:unit.id,level:'LEX',category:`VOCABULARIO · BLOQUE ${number}`,reviewStatus:'pending',
         title:`Palabras ${number}.${blockNumber}`,subtitle:`${block.slice(0,3).map(word=>word.lemma).join(', ')} y ${block.length-3} términos más.`,
         theory:'Empieza por leer la palabra alemana y su traducción. Si es un sustantivo, aprende también der, die o das. Después tapa el significado, intenta recordarlo y compruébalo. Estas palabras proceden de un diccionario: una equivalencia no sirve necesariamente para todos los contextos.',
-        grammar:'Distingue el sustantivo, que se escribe con mayúscula y se aprende con artículo, del verbo en infinitivo, el adjetivo y el adverbio. Una palabra puede tener más de un sentido. Los matices originales en alemán ayudan a reconocer cuál se recoge aquí. Las traducciones importadas están pendientes de revisión lingüística.',
+        grammar:'Distingue el sustantivo, que se escribe con mayúscula y se aprende con artículo, del verbo en infinitivo, el adjetivo y el adverbio. Una palabra puede tener más de un sentido. Los matices originales en alemán ayudan a reconocer cuál se recoge aquí. Cada ficha indica si el sentido está contrastado por IA o sigue pendiente; eso no certifica todos sus usos.',
         tip:'La lista de frecuencia procede de subtítulos y no asigna niveles A1–C1. Utiliza estos bloques como ampliación de vocabulario junto con las lecciones guiadas, no como una certificación de nivel.',
         dialogue:[['Was bedeutet dieses Wort?','¿Qué significa esta palabra?'],['Kannst du mir ein Beispiel geben?','¿Puedes darme un ejemplo?'],['Jetzt verstehe ich es besser.','Ahora lo entiendo mejor.']],
         example:['Was bedeutet dieses Wort?','¿Qué significa esta palabra?'],

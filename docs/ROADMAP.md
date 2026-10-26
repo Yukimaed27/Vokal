@@ -61,3 +61,8 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Alinear artículo/género/ejemplo del sentido elegido, preservando IDs/progreso.
 - [x] Comprobar cobertura documental de 300 índices desde la suite ejecutada por hooks.
 - [ ] Corroborar absolut y profundizar contrastes parciales; esperar medición antes de 501–600.
+
+- [x] Establecer política por sentido con dos fuentes y ausencia de revisión humana explícita.
+- [x] Recontrastar21 filas parciales y absolut: 22 sentidos delimitados con evidencia/estado visibles.
+- [x] Comprobar metadatos, render y registro documental desde los hooks existentes.
+- [ ] Extender ese umbral al resto aún pendiente; no tratar los 500 examinados como 500 aprobados.

@@ -1476,5 +1476,536 @@ export const vocabularyCorrections = {
       "eine Sitzung oder Tagung abhalten"
     ],
     "note": "Aquí: celebrar una reunión o sesión. El uso literario amanecer es otro sentido."
+  },
+  "woher": {
+    "translations": [
+      "de dónde"
+    ],
+    "definitions": [
+      "von welchem Ort oder aus welcher Richtung?"
+    ],
+    "note": "Uso interrogativo: pregunta por la procedencia. No se aprueban aquí los usos relativos.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/woher"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/woher"
+        }
+      ]
+    }
+  },
+  "Chance": {
+    "translations": [
+      "oportunidad"
+    ],
+    "definitions": [
+      "günstige Gelegenheit, etwas zu erreichen"
+    ],
+    "note": "Se estudia una posibilidad favorable para conseguir algo.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/chance"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Chance"
+        }
+      ]
+    }
+  },
+  "Krieg": {
+    "translations": [
+      "guerra"
+    ],
+    "definitions": [
+      "militärischer Konflikt mit Waffengewalt"
+    ],
+    "note": "Se estudia el conflicto armado. No se aprueban todas las metáforas ni sinónimos especializados.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/krieg"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Krieg"
+        }
+      ]
+    }
+  },
+  "Sorge": {
+    "translations": [
+      "preocupación"
+    ],
+    "definitions": [
+      "bedrückendes Gefühl der Unruhe"
+    ],
+    "note": "Se estudia preocupación. El sentido cuidado requiere otro contexto.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/sorge"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Sorge"
+        }
+      ]
+    }
+  },
+  "Ding": {
+    "translations": [
+      "cosa",
+      "objeto"
+    ],
+    "definitions": [
+      "nicht näher bezeichneter Gegenstand"
+    ],
+    "note": "Sustantivo neutro: das Ding. No se estudian aquí todos sus usos figurados.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/ding"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Ding_Gegenstand"
+        }
+      ]
+    }
+  },
+  "irgendwie": {
+    "translations": [
+      "de alguna forma"
+    ],
+    "definitions": [
+      "auf eine nicht näher bestimmte Weise"
+    ],
+    "note": "Se refiere a una manera no especificada.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/irgendwie"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/irgendwie"
+        }
+      ]
+    }
+  },
+  "hierher": {
+    "translations": [
+      "hacia aquí"
+    ],
+    "definitions": [
+      "an diesen Ort hier"
+    ],
+    "note": "Indica destino o dirección hacia este lugar; no confundir con hier como ubicación.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/hierher"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/hierher"
+        }
+      ]
+    }
+  },
+  "Dollar": {
+    "translations": [
+      "dólar"
+    ],
+    "definitions": [
+      "Währungseinheit mehrerer Länder"
+    ],
+    "note": "Se estudia la unidad monetaria. No se atribuye un valor de cambio ni un país único.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/dollar"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Dollar"
+        }
+      ]
+    }
+  },
+  "Hölle": {
+    "translations": [
+      "infierno"
+    ],
+    "definitions": [
+      "religiöser Ort ewiger Verdammnis"
+    ],
+    "note": "Se estudia el sentido religioso. Los usos figurados y abismo quedan fuera.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/hoelle"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Hoelle"
+        }
+      ]
+    }
+  },
+  "Tat": {
+    "translations": [
+      "acción"
+    ],
+    "definitions": [
+      "etwas, was jemand tut oder getan hat"
+    ],
+    "note": "Sustantivo die Tat. No es tat, pasado de tun.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Larousse",
+          "url": "https://www.larousse.com/dictionnaires/allemand-espagnol/Tat/36570"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Tat"
+        }
+      ]
+    }
+  },
+  "drüben": {
+    "translations": [
+      "al otro lado"
+    ],
+    "definitions": [
+      "auf der gegenüberliegenden Seite"
+    ],
+    "note": "Ubicación en el lado opuesto; no expresa por sí solo el movimiento de cruzar.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/drueben"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/drueben"
+        }
+      ]
+    }
+  },
+  "gefragt": {
+    "translations": [
+      "solicitado"
+    ],
+    "definitions": [
+      "begehrt oder erwünscht"
+    ],
+    "note": "Uso adjetivo: alguien o algo solicitado. No es el participio preguntado en una pregunta concreta.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "PONS",
+          "url": "https://en.pons.com/translate/german-spanish/gefragt"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/begehrt"
+        }
+      ]
+    }
+  },
+  "Körper": {
+    "translations": [
+      "cuerpo"
+    ],
+    "definitions": [
+      "Organismus eines Menschen oder Tieres"
+    ],
+    "note": "Se estudia el cuerpo de una persona o animal. Se excluyen sólidos geométricos y otros usos.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/koerper"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Koerper"
+        }
+      ]
+    }
+  },
+  "wovon": {
+    "translations": [
+      "de qué"
+    ],
+    "definitions": [
+      "von welcher Sache?"
+    ],
+    "note": "Uso interrogativo. La traducción relativa depende de otra construcción.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/wovon"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/wovon"
+        }
+      ]
+    }
+  },
+  "Wohnung": {
+    "translations": [
+      "vivienda"
+    ],
+    "definitions": [
+      "abgeschlossener Wohnbereich in einem Haus"
+    ],
+    "note": "Se estudia el espacio destinado a vivir. No equivale necesariamente a todo el edificio.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/wohnung"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Wohnung"
+        }
+      ]
+    }
+  },
+  "wenigstens": {
+    "translations": [
+      "por lo menos",
+      "al menos"
+    ],
+    "definitions": [
+      "zumindest"
+    ],
+    "note": "Expresa un mínimo o algo que se concede; no se certifican todos sus matices discursivos.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/wenigstens"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/wenigstens"
+        }
+      ]
+    }
+  },
+  "Zeug": {
+    "translations": [
+      "cosas"
+    ],
+    "definitions": [
+      "umgangssprachliche Bezeichnung für nicht näher benannte Gegenstände"
+    ],
+    "note": "Sustantivo colectivo neutro, sin plural habitual; coloquial y a veces despectivo. No es siempre una expresión neutra.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/zeug"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/Zeug"
+        }
+      ]
+    }
+  },
+  "General": {
+    "translations": [
+      "general"
+    ],
+    "definitions": [
+      "Offizier eines hohen militärischen Dienstgrades"
+    ],
+    "note": "Se estudia el sustantivo militar der General, no el adjetivo español general.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://de.langenscheidt.com/spanisch-deutsch/general"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/General"
+        }
+      ]
+    }
+  },
+  "jemals": {
+    "translations": [
+      "alguna vez"
+    ],
+    "definitions": [
+      "zu irgendeinem Zeitpunkt"
+    ],
+    "note": "Se estudia la referencia temporal en preguntas o contextos correspondientes; no significa siempre nunca.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "PONS",
+          "url": "https://en.pons.com/translate/german-spanish/jemals"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/jemals"
+        }
+      ]
+    }
+  },
+  "unterwegs": {
+    "translations": [
+      "en camino"
+    ],
+    "definitions": [
+      "sich auf dem Weg irgendwohin befindend"
+    ],
+    "note": "Se estudia estar en camino. No se certifican todas las variantes de viaje.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/unterwegs"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/unterwegs"
+        }
+      ]
+    }
+  },
+  "ständig": {
+    "translations": [
+      "permanente",
+      "constante"
+    ],
+    "definitions": [
+      "dauernd oder regelmäßig wiederkehrend"
+    ],
+    "note": "Uso adjetivo. Constantemente es una traducción de su uso adverbial en otra frase.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/staendig"
+        },
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/staendig"
+        }
+      ]
+    }
+  },
+  "absolut": {
+    "translations": [
+      "absoluto"
+    ],
+    "definitions": [
+      "ohne Einschränkung"
+    ],
+    "note": "Uso adjetivo. El adverbio absolutamente y la gradación no forman parte de esta ficha contrastada.",
+    "example": "",
+    "review": {
+      "date": "2026-10-26",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Larousse",
+          "url": "https://www.larousse.com/dictionnaires/allemand-espagnol/absolut/700"
+        },
+        {
+          "name": "Netzverb",
+          "url": "https://www.verbformen.de/deklination/adjektive/absolut.htm"
+        }
+      ]
+    }
   }
 };

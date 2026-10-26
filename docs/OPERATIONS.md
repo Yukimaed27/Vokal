@@ -224,9 +224,17 @@ Regenerar la importación conserva la capa, pero revisar cambios de lemas antes 
 
 ### Controles del lote 201–500
 
-pnpm check ejecuta30 pruebas, incluida tests/review-ledger.test.mjs para cobertura exacta del informe 201–500.
+pnpm check ejecuta 30 pruebas, incluida tests/review-ledger.test.mjs para cobertura exacta del informe 201–500.
 Los hooks pre-commit/pre-push existentes llaman pnpm check y recogen este control sin duplicar comandos.
 Se verificó core.hooksPath=.githooks; al clonar, pnpm prepare lo instala localmente (la configuración Git no viaja con el clon).
 Build13 recursos, sin paquetes nuevos. Las capturas anteriores son históricas; no se hizo QA visual para esta entrega de datos.
 Si una futura importación cambia el orden/lemas, el control documental puede fallar: revisar correspondencia de evidencia,
 preservar IDs y no reescribir silenciosamente informes históricos para aparentar una revisión vigente.
+
+### Contraste por sentido y comprobaciones
+
+pnpm check ejecuta 33 pruebas, incluidos metadatos de revisión, conjunto exacto de 22 fichas y registro RECHECK-22.
+Los hooks existentes ejecutan esas pruebas; no consultan fuentes ni validan semántica automáticamente.
+Build13 recursos. Para ampliar estados, seguir REVIEW_POLICY y registrar evidencia junto con cambios/pruebas.
+El test de conjunto debe ampliarse deliberadamente al añadir fichas, sin reescribir informes históricos para ocultar cambios.
+Captura nativa Edge móvil de 375 px para distintivo/fuentes; el flujo CDP completo no fue repetido.

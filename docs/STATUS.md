@@ -4,15 +4,17 @@ Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Fiabilidad: estado actual
 
-Lote 201–500 completado: 92 registros con ajustes/notas, 186 sin incidencia en contraste puntual,
-21 contrastes parciales y1 duda de fuente (absolut). Fuentes/alcances por fila en [informe](reviews/LEX-201-500.md).
-No se garantiza100% de exactitud ni revisión humana. Fuentes monolingües no certifican traducciones españolas.
-Total 500 examinadas con límites; 4500 aún no tienen contraste individual. La capa acumula171 registros ajustados.
-Todas las etiquetas de revisión siguen pendientes; dudas de lotes anteriores no se borran por revisar otro.
-Se alinean Alter edad/das Alter/neutro y Teil pieza/das Teil. Se retiran ejemplos heredados de esos dos sentidos.
-IDs/importación/progreso intactos; logros antiguos sin recalificar.
-30 pruebas aprobadas, build de 13 recursos; hooks incluyen control de cobertura documental del lote.
-No cambios de UI ni nueva QA visual. Esperar medición de cupo; próximo índice 501, sin iniciar otro lote automáticamente.
+Criterio del propietario: fuentes contrastadas con ausencia de revisión humana explícita.
+[Política vigente](reviews/REVIEW_POLICY.md) y [22 sentidos recontrastados](reviews/RECHECK-22.md).
+22 fichas tienen sense-checked-ai para el sentido mostrado, con dos fuentes, fecha y humanReviewed=false;
+4978 importadas siguen pendientes. No existe aprobación humana ni se garantiza100% de exactitud.
+Total 500 registros examinados históricamente (no 522); 4500 sin examen individual. Capa editorial 193 registros.
+Este recontraste resuelve evidencia del sentido elegido en 21 filas antes parciales y absolut; otros sentidos,
+paradigmas y dudas de lotes anteriores no se consideran aprobados por ello.
+Se conservan IDs/importación/progreso. Las fichas muestran el alcance; no se certifica la lección entera.
+33 pruebas aprobadas, build de 13 recursos; hooks incluyen coherencia del nuevo registro y estado de revisión.
+Captura móvil de 375 px con distintivo y fuentes revisada; no CDP completo. Sin cambios de paleta/header.
+Priorizar REVIEW_POLICY en material pendiente antes de ampliar; próximo rango nuevo 501 en adelante.
 
 ## Entrega visual anterior
 
@@ -75,6 +77,6 @@ La selección usa heurísticas contra nombres/flexiones: puede haber errores o p
 No hay 5000 frases originales, pronunciación evaluada ni curso completo B2/C1.
 Sin cuenta funcional, el progreso sigue local. Una práctica incompleta no se reanuda tras recargar.
 
-Ajuste posterior: botón sol/luna44px (antes48), icono18px (antes22), conservando foco y objetivo táctil. Sin cambios de vocabulario.
+Ajuste posterior: botón sol/luna44px (antes 48), icono18px (antes 22), conservando foco y objetivo táctil. Sin cambios de vocabulario.
 
 Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.

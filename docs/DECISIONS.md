@@ -100,3 +100,11 @@ pero no se promete100% de exactitud: se conservan etiquetas y se distinguen resp
 Se permite corregir forma visible/género/ejemplo en la capa editorial, conservando identificadores y datos importados.
 Se añaden controles de cobertura documental a la suite existente que ejecutan los hooks; no se añaden dependencias.
 Se detiene después de 300 para medir consumo. Próximo índice 501; continuación requiere nueva instrucción.
+
+## 2026-10-26 — Máxima fiabilidad sin validación humana
+
+El propietario eligió explícitamente «fuentes contrastadas; marcar que no hay revisión humana».
+Se fija umbral por sentido: corroboración bilingüe y gramatical con dos familias editoriales, fecha/URLs,
+contexto delimitado y aviso IA sin revisión humana. Sin aprobación global de palabras, ejemplos o conjugaciones.
+Las fichas que lo cumplen tienen sense-checked-ai; no se elimina la incertidumbre ni se promete100% de exactitud.
+Se recontrastan 22 casos anteriores, no se amplía el rango examinado. Se conservan todos los IDs/progreso.

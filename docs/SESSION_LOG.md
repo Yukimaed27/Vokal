@@ -341,3 +341,17 @@ Sin nueva QA visual ni dependencias. Informe trazable reviews/LEX-201-500.md; HA
 Detención al terminar300; referencia previa59% de cupo, falta lectura actual del propietario. Próximo índice 501.
 
 Se evita mezclar sentidos: wordCard muestra nota/definición editorial solo cuando de/es coinciden con la ficha corregida; las lecciones guiadas de otro sentido conservan su texto sin esa nota. Regresión de render probada con la función real y VM de Node, sin nuevo navegador.
+
+## 2026-10-26 — Fuentes contrastadas y ausencia de revisión humana explícita
+
+El propietario prioriza máxima fiabilidad y elige por pregunta asistida revisión de fuentes sin profesor obligatorio.
+Se recontrastaron 22 casos del lote 201–500: fuentes bilingües Langenscheidt/PONS/Larousse y gramaticales Duden/Netzverb.
+Tat se distinguió de tat; General se corroboró en entrada inversa; absolut por extracto indexado Larousse + Netzverb.
+No se declara apertura íntegra donde falló ni se convierte fuente monolingüe en traducción bilingüe sin evidencia.
+Cada sentido se acota; variante/ejemplo no comprobados se excluyen del registro contrastado. Sin garantía 100% ni validación humana.
+Se añade review con fecha/fuentes/humanReviewed=false. Estado sense-checked-ai solo en 22; resto 4978 pending.
+Capa 193 registros, rango histórico examinado 500 sin ampliarlo. ID/importación/progreso y lecciones guiadas originales conservados.
+WordCard condiciona distintivo al de/es visible; límites y dos fuentes accesibles. Textos generales remiten al estado de cada ficha.
+33 pruebas y build de 13 recursos correctos; hooks validan metadatos/render/cobertura documental. No son verificación semántica.
+Captura Edge de 375 px clara del distintivo/fuentes, docWidth=360 px sin overflow; no CDP completo. Servidor QA cerrado.
+REVIEW_POLICY/RECHECK-22 y contexto vigente actualizados; próximos pasos priorizan material pendiente con ese umbral.

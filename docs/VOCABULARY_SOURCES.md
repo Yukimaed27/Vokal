@@ -139,3 +139,10 @@ se conservan atribución y revisión pendiente. Matices nuevos son paráfrasis e
 La capa editorial alcanza 171 registros ajustados; [registro de 300 entradas](reviews/LEX-201-500.md).
 Se preserva el hash del raw. No se convierten consultas fallidas, traducciones inferidas desde fuente monolingüe
 ni pruebas de estructura en certificación 100% de fidelidad. Revisión pendiente permanece en la aplicación.
+
+## Evidencia editorial por sentido
+
+22 sentidos se corroboran mediante dos fuentes editoriales/gramaticales según [REVIEW_POLICY](reviews/REVIEW_POLICY.md);
+fuentes/alcance en [RECHECK-22](reviews/RECHECK-22.md). No se redistribuyen páginas completas de diccionarios.
+El raw, su hash y su licencia permanecen intactos. La capa editorial 193 registros incluye metadatos de revisión pública,
+no progreso del alumno. Sense-checked-ai no significa revisión humana ni certificación 100% de exactitud.

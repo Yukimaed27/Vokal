@@ -93,3 +93,11 @@ sin validar todas las variantes o paradigmas ni garantizar100% de exactitud.92 a
 La capa editorial 171 registros conserva IDs/progreso/importación y todas las etiquetas pendientes.
 Se corrigen artículo/género de Alter para edad y se acota das Teil a pieza. Sus ejemplos heredados se retiran.
 No declarar los 500 examinados ni los 171 ajustados como vocabulario aprobado completamente o lemas base certificados.
+
+## Criterio vigente de contraste
+
+El propietario eligió revisión por fuentes, marcando ausencia de revisión humana. Ver [política](reviews/REVIEW_POLICY.md).
+[22 sentidos recontrastados](reviews/RECHECK-22.md) tienen estado sense-checked-ai, dos fuentes y fecha;
+4978 registros importados siguen pendientes. Capa 193 registros ajustados; 500 examinados históricamente, no 522.
+Se limita significado/categoría/artículo y se excluyen ejemplos no comprobados. No aprueba todas las acepciones ni una lección entera.
+Los conteos de «todos pendientes» de entregas anteriores son históricos. No convertir este estado en certificación 100% ni revisión humana.

@@ -91,3 +91,6 @@ solo de dudas; conservar evidencia y no abrir una nueva revisión masiva sin aco
 
 Este documento registra la primera integración de 46 entradas. La capa vigente alcanza 171 tras
 [lote 101–200](LEX-101-200.md) y [lote 201–500](LEX-201-500.md). Consultar esos registros antes de repetir trabajo.
+
+Actualización: la capa alcanza 193 registros tras [RECHECK-22](RECHECK-22.md); 22 sentidos con contraste de fuentes explícito,
+4978 entradas aún pendientes. Ninguno tiene validación humana. La primera integración de 46 sigue documentada aquí como historial.

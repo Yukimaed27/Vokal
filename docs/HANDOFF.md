@@ -2,31 +2,35 @@
 
 Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega — revisión 201–500
+## Última entrega — criterio de máxima fiabilidad por sentido
 
-El propietario autorizó 300 entradas y pidió máxima fiabilidad y contexto para otro dispositivo.
-Un revisor, sin subagentes: inspección de campos de 201–500 y contraste de sentidos/incidencias con fuentes editoriales.
-Se completó el lote, pero NO se garantiza100% de exactitud ni se valida todo paradigma/variante. Todas las etiquetas pendientes.
-Resultado: 92 registros con ajustes/notas aplicados; 186 sin incidencia en contraste puntual; 21 con contraste parcial;
-1 duda de fuente (absolut). Fuentes monolingües implican interpretación española, expresamente señalada.
-Informe de 300 filas: reviews/LEX-201-500.md. Total 500 examinadas con alcances documentados; 4500 sin este contraste individual.
-Capa editorial 171 registros en total. Importación/IDs/orden/progreso conservados. No se recalificaron logros.
-Alter se limita a edad con das Alter/género neutro; Teil a pieza con das Teil. Ejemplos heredados de esos dos se retiran.
-La capa admite de/gender/example y content.js respeta esas correcciones en catálogo además de bloques/feedback.
-Sin cambios visuales ni nuevas dependencias.
+El propietario prioriza fiabilidad y eligió «fuentes contrastadas; marcar que no hay revisión humana».
+Criterio vigente: reviews/REVIEW_POLICY.md. Se recontrastan las 21 filas parciales y absolut del lote 201–500;
+NO es un nuevo lote, el total examinado sigue500, no 522. Evidencia y fuentes: reviews/RECHECK-22.md.
+22 sentidos delimitados cumplen contraste bilingüe + categoría/artículo, dos familias editoriales por ficha.
+Estado sense-checked-ai con review.date/sources/humanReviewed=false. Otros4978 importados siguen pending.
+171 ajustes anteriores +22=193 registros en capa editorial. Ninguno tiene validación humana ni certeza 100%.
+Se excluyen variantes no corroboradas y ejemplos no comprobados de estas22 fichas. No se aprueban otros sentidos/paradigmas.
+Absolut quedó corroborado mediante extracto indexado Larousse y Netzverb; no afirmar apertura íntegra de Larousse.
+Tat se distingue de tat verbal; General se corrobora en la dirección español→alemán; todo queda trazado.
 
-## Validación y siguiente paso
+## Código y verificación
 
-30 pruebas y build de 13 recursos correctos. Nuevo control de 300 filas/índices/lemmas/fuentes documentales;
-regresión de artículos/género/respuestas y fragmentos/plantillas. Hooks pre-commit/pre-push ejecutan pnpm check:
-recogen esos controles, pero NO escriben documentos ni certifican calidad lingüística.
-core.hooksPath=.githooks verificado. Al clonar en otra laptop, ejecutar pnpm prepare (ver OPERATIONS) y pnpm check.
-Sin nueva captura visual: esta entrega cambia datos y propagación de campos, no CSS.
+vocabulary.js deriva estado desde la evidencia de la capa; content.js conserva review.
+wordCard solo muestra distintivo/fuentes cuando de/es coincide; otro sentido continúa pendiente.
+Aviso visible «IA, sin revisión humana» y límites desplegables. No confundir word.review con state.reviews del repaso privado.
+Lecciones completas mixtas siguen pendientes. IDs/importación/orden/progreso intactos; no se recalifican logros.
+33 pruebas y build de 13 recursos correctos. Hooks recogen controles de metadatos, conjunto exacto, render y22 filas documentales.
+Captura Edge real de 375 px clara con ficha absolut/distintivo/fuentes; ancho documental 360px, sin desbordamiento.
+No recorrido CDP completo ni revisión humana. Servidor QA cerrado al finalizar; no detener servidor del propietario.
 
-Detenerse tras el lote por instrucción del propietario. Esperar lectura actual de cupo; referencia anterior 59%,
-no lectura del agente ni garantía de que fuera el valor exacto al comenzar. Próximo índice 501, no repetir 201–500.
-Primero resolver absolut/contrastes parciales si se busca mayor profundidad. No iniciar otro lote sin nueva instrucción.
-Leer reviews/LEX-201-500 y ARCHITECTURE antes de modificar correcciones. Los informes previos son históricos.
+## Siguiente acción
+
+Para máxima fiabilidad, aplicar REVIEW_POLICY a sentidos ya examinados aún pendientes y resolver dudas históricas;
+no saltar directamente a presentar los 500 como aprobados. Próximo rango nuevo sería501 en adelante.
+No iniciar automáticamente un lote masivo. El agente no ve el cupo; última referencia comunicada59% antes del lote 300.
+Al añadir fichas contrastadas, actualizar evidencia/registro/pruebas en la misma entrega, manteniendo informes históricos.
+Al clonar en otra laptop, seguir OPERATIONS y pnpm prepare; configuración local Git de hooks no viaja con el clon.
 
 ## Continuidad técnica
 

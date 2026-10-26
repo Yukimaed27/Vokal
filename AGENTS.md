@@ -40,3 +40,7 @@ Antes de ampliar vocabulario auditado, consultar docs/reviews/README.md y HANDOF
 Distinguir contraste bilingüe, inferencia con fuente monolingüe y duda. No afirmar100% de fiabilidad ni revisión humana.
 Conservar IDs/progreso e importación; aplicar correcciones en la capa editorial y actualizar informe/alcance.
 Los hooks comprueban cobertura documental y código; no garantizan corrección lingüística ni redactan contexto.
+
+La prioridad vigente es fiabilidad por sentido. Leer docs/reviews/REVIEW_POLICY.md antes de cambiar estados:
+solo fuentes contrastadas, humanReviewed=false explícito; no atribuir aprobación a variantes/ejemplos no comprobados.
+La decisión del propietario permite continuar sin profesor, no afirmar revisión humana ni certeza 100%.

@@ -1,5 +1,10 @@
 # Cambios
 
+## 2026-10-26 — Sentidos contrastados con fuentes
+
+- 22 fichas con sentido delimitado, dos fuentes y aviso IA sin revisión humana; 4978 importadas siguen pendientes.
+- Política y registro de evidencia; 33 pruebas aprobadas y build de 13 recursos. No se amplía el rango examinado.
+
 ## 2026-10-26 — Revisión 201–500
 
 - 300 entradas examinadas: 92 registros con ajustes/notas; fuentes parciales y duda explícitas.

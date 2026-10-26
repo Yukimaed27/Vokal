@@ -380,3 +380,14 @@ Nuevo tests/review-ledger.test.mjs: 300 índices y lemas coincidentes con el raw
 Es control documental, no un verificador de verdad lingüística. La fuente fallida se conserva como duda, nunca como prueba positiva.
 
 Se evita mezclar sentidos: wordCard muestra nota/definición editorial solo cuando de/es coinciden con la ficha corregida; las lecciones guiadas de otro sentido conservan su texto sin esa nota. Regresión de render probada con la función real y VM de Node, sin nuevo navegador.
+
+## Estado editorial por sentido
+
+La capa vocabulary-corrections.js puede incluir review:{date,humanReviewed:false,sources:[{name,url},…]}.
+vocabulary.js deriva sense-checked-ai si hay review curada; en otro caso pending. content.js preserva review explícitamente.
+La validación de esquema/conjunto/fuentes en pruebas evita aprobar registros por una marca vacía o un cambio masivo.
+WordCard requiere coincidencia de/es con el sentido del catálogo para mostrar distintivo y fuentes; otro sentido sigue pendiente.
+Se indica IA sin revisión humana. La evidencia cubre significado/categoría/artículo, no ejemplos o paradigmas completos.
+Los22 registros con este estado no tienen ejemplos incluidos; los 4978 restantes siguen pending. Lesson.reviewStatus permanece pending.
+No confundir review editorial pública con state.reviews privado (repaso espaciado). No cambia contrato de nube/progreso.
+Capa 193 registros, build de 13 recursos. Detalle y fuentes en reviews/RECHECK-22 y política en REVIEW_POLICY.

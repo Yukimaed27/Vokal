@@ -22,7 +22,7 @@ test('el catálogo aporta 5000 lemas únicos con traducciones y sentidos, sin in
   }
   for (const name of ['Aachen','Aalborg','Aaron','Acapulco']) assert.equal(dictionaryEntries.some(word=>word.lemma === name),false);
 });
-test('los 5000 lemas tienen práctica y revisión pendiente en 25 secciones de 200 palabras', () => {
+test('las entradas tienen práctica y estado de revisión explícito en sus secciones', () => {
   const lexicalUnits = units.filter(unit=>unit.track === 'vocabulary');
   assert.equal(lexicalUnits.length,25);
   const seen = new Set();
@@ -42,7 +42,7 @@ test('los 5000 lemas tienen práctica y revisión pendiente en 25 secciones de 2
     }
   }
   assert.equal(seen.size,5000);
-  assert.ok(words.filter(word=>word.source).every(word=>word.reviewStatus === 'pending'));
+  assert.ok(words.filter(word=>word.source).every(word=>['pending','sense-checked-ai'].includes(word.reviewStatus)));
 });
 test('la ruta de vocabulario abre hoy sin exigir completar C1 y mantiene su propio desbloqueo', () => {
   const [first,second] = units.filter(unit=>unit.track === 'vocabulary');
@@ -70,7 +70,7 @@ test('los ajustes editoriales llegan a fichas y ejercicios sin cambiar el archiv
   for (const [lemma,correction] of Object.entries(vocabularyCorrections)) {
     const entry = course.entries.find(w=>w.lemma===lemma);
     assert.ok(entry,lemma);
-    assert.equal(entry.reviewStatus,'pending');
+    assert.equal(entry.reviewStatus,correction.review ? 'sense-checked-ai' : 'pending');
     assert.equal(entry.editorialNote,correction.note);
     if(correction.translations) assert.deepEqual(entry.translations,correction.translations);
     const block = course.lessons.find(l=>l.words.some(w=>w[0]===entry.id));
@@ -139,7 +139,7 @@ test('el lote 201–500 propaga significados acotados y no muestra plantillas ed
   const selected = dictionaryEntries.slice(200,500).map(w=>words.find(v=>v.lemma===w.lemma));
   assert.equal(selected.length,300);
   for(const word of selected) {
-    assert.equal(word.reviewStatus,'pending');
+    assert.ok(['pending','sense-checked-ai'].includes(word.reviewStatus));
     assert.ok(word.definitions.every(d=>!d.includes('Diese Bedeutungsangabe muss überarbeitet werden')),word.lemma);
   }
   for(const [lemma,bad] of [['holen','aliento'],['Schule','discípulo'],['Mensch','mujerzuela'],['danach','eso'],['genauso','coincidir'],['legen','causar'],['sitzen','sentarse']])
@@ -165,4 +165,42 @@ test('la ficha no mezcla una nota y definición de otro sentido con la lección 
   const other=render(['test','erklären','declarar','']);
   assert.doesNotMatch(other,/NOTA DEL SENTIDO|DEFINICIÓN DEL SENTIDO/);
   assert.match(other,/Revisión pendiente/);
+});
+
+
+test('solo los22 sentidos delimitados tienen dos fuentes y estado IA sin revisión humana', () => {
+  const expected=['woher','Chance','Krieg','Sorge','Ding','irgendwie','hierher','Dollar','Hölle','Tat','drüben','gefragt','Körper','wovon','Wohnung','wenigstens','Zeug','General','jemals','unterwegs','ständig','absolut'].sort();
+  const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai');
+  assert.deepEqual(checked.map(w=>w.lemma).sort(),expected);
+  assert.equal(words.filter(w=>w.source&&w.reviewStatus==='pending').length,4978);
+  for(const word of checked) {
+    assert.equal(word.review.humanReviewed,false);
+    assert.match(word.review.date,/^\d{4}-\d{2}-\d{2}$/);
+    assert.equal(word.review.sources.length,2);
+    assert.equal(new Set(word.review.sources.map(s=>new URL(s.url).hostname)).size,2);
+    for(const source of word.review.sources) {
+      assert.equal(new URL(source.url).protocol,'https:');
+      assert.ok(source.name);
+    }
+    assert.equal(word.example,'');
+    if(word.pos==='n') assert.ok(word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
+  }
+});
+
+test('el distintivo contrastado aparece solo en el sentido y muestra límites y fuentes', async () => {
+  const {readFileSync} = await import('node:fs');
+  const {runInNewContext} = await import('node:vm');
+  const source=readFileSync(new URL('../src/app.js',import.meta.url),'utf8');
+  const snippet=source.slice(source.indexOf('function wordCard('),source.indexOf('function lessonPage('));
+  const word=words.find(w=>w.lemma==='absolut');
+  const render=runInNewContext(snippet+';wordCard',{wordById:new Map([[word.id,word]]),partOfSpeech:{adj:'Adjetivo'},esc:String});
+  const selected=render([word.id,word.de,word.es,'']);
+  assert.match(selected,/Sentido contrastado/);
+  assert.match(selected,/sin revisión humana/);
+  assert.match(selected,/No certifica otros sentidos/);
+  assert.match(selected,/Larousse/);
+  assert.match(selected,/Netzverb/);
+  const other=render([word.id,word.de,'absolutamente','']);
+  assert.match(other,/Revisión pendiente/);
+  assert.doesNotMatch(other,/Sentido contrastado|Revisión y fuentes/);
 });

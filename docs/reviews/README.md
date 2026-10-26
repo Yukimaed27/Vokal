@@ -56,3 +56,10 @@ Se detiene al acabar el lote por instrucción del propietario para medir consumo
 [Informe de 300 filas](LEX-201-500.md): 92 registros ajustados, 186 sin incidencia puntual, 21 contrastes parciales, 1 duda fuente.
 500 entradas examinadas en total con los límites descritos, no 500 aprobadas.171 registros con ajustes/notas en la app.
 Dudas anteriores permanecen abiertas. Detenerse para medir; próxima entrada 501. No afirmar100% de exactitud.
+
+## Estado vigente: contraste por sentido
+
+El propietario elige fuentes contrastadas sin revisión humana obligatoria: [política](REVIEW_POLICY.md).
+[Recontraste de 22 casos](RECHECK-22.md): 22 sentidos con dos fuentes, fecha y distintivo IA sin revisión humana.
+193 registros con ajustes; 500 examinados históricamente. No522 ni 500 aprobados. Otros4978 importados siguen pendientes.
+Los informes anteriores conservan su estado histórico; este documento y HANDOFF/STATUS apuntan a la actualización vigente.
