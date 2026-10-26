@@ -70,3 +70,8 @@ El propietario reemplaza su preferencia previa de coral y selector: grafito/verd
 sol/luna como único control y cifras del catálogo fuera de titulares promocionales.
 Se retiran decoración y sombras; se mantienen contraste, datos, progreso y avisos de revisión.
 El modo inicial sigue al sistema; el botón guarda light/dark. No se añade una tercera acción para restablecer automático.
+
+## 2026-10-26 — Segunda revisión: negro, pastel y superficies sin contorno
+El propietario rechaza verde y tarjetas rígidas. Prefiere negro neutro con rojo rosado/amarillo suaves,
+claro piedra descansado y tarjetas ligeramente redondeadas sin contorno. Sustituye la decisión anterior.
+La tarjeta principal y botones deben cambiar con la paleta; no conservar colores oscuros fijos en modo claro.

@@ -4,11 +4,12 @@ Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Entrega actual
 
-Revisión visual del 2026-10-26: grafito/verde pino, modo claro gris neutro, tarjetas y controles cuadrados.
-Botón sol/luna accesible; detecta el sistema inicialmente y conserva la elección manual.
-Sin ilustración decorativa, gradiente, sombras o cifras promocionales del catálogo. Contenido/progreso conservados.
-22 pruebas aprobadas, build correcto y contraste mínimo 4.5:1. Capturas reales escritorio oscuro/móvil claro revisadas.
-No se repitió el recorrido CDP completo; las verificaciones detalladas siguientes corresponden a la ampliación anterior.
+Segunda revisión visual del 2026-10-26: negro neutro con acentos rosa/amarillo pastel, claro piedra sin blanco puro.
+Tarjetas sin contorno y radio 12 px. Botón sol/luna conservado; la tarjeta principal cambia completamente con el tema.
+Se corrige su paleta anterior oscura compartida, causa del salto visual brusco en modo claro.
+23 pruebas aprobadas y build correcto; contraste mínimo 4.5:1 incluido texto del hero y acento amarillo.
+Capturas reales escritorio claro/oscuro y móvil oscuro revisadas. Hooks locales activos con pnpm check.
+No se repitió CDP completo; las verificaciones detalladas siguientes corresponden a la ampliación anterior.
 
 Meta acordada y cumplida: catálogo utilizable de **5000 lemas de diccionario con traducción y ejercicios**, marcado como pendiente de revisión.
 El propietario aceptó ese alcance; no se prometió revisión humana completa ni un curso A1–C1 terminado.

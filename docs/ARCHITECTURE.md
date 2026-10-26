@@ -34,7 +34,7 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | --- | --- | --- |
 | `index.html` | Estructura, navegación, contenedor principal, apariencia y avisos | Carga CSS y módulos; incluye CSP en meta para alojamiento estático |
 | `src/style.css` | Distribución, tarjetas, tipografía, estados y adaptación por ancho | Reescrito para eliminar reglas/colores antiguos y dar coherencia al rediseño |
-| `src/theme.css` | Tokens grafito/verde pino y claro neutro, contraste y esquemas | Paleta separada de la estructura; aliases green/lime solo por compatibilidad |
+| `src/theme.css` | Tokens negro con rosa/amarillo suave y claro neutro, contraste y esquemas | Paleta separada de la estructura; aliases green/lime solo por compatibilidad |
 | `src/theme.js` | Preferencia del sistema y botón sol/luna (sistema inicial, elección persistente) | Lee/escribe `vokal.theme`; conserva valores anteriores y actualiza data-theme/meta |
 | `src/app.js` | Rutas, renderizado, eventos, ejercicios y coordinación de persistencia/sincronización | Consume contenido, lógica pura, configuración y cliente de nube |
 | `src/content.js` | Tres lecciones originales y composición del catálogo completo | Conserva IDs antiguos; incorpora currículo y elimina IDs repetidos del catálogo |
@@ -341,10 +341,18 @@ Consultar [CONTENT](CONTENT.md), [ROADMAP](ROADMAP.md) y [CLOUD](CLOUD.md) antes
 
 ## Apariencia — revisión 2026-10-26
 
-Tarjetas y controles de esquinas rectas; sin gradiente, sombras ni ilustración decorativa del inicio.
-Paleta grafito/verde pino y claro gris neutro. `#theme-toggle` es un botón nativo con SVG de sol/luna:
+Tarjetas y controles de esquinas suavizadas; sin gradiente, sombras ni ilustración decorativa del inicio.
+Paleta negro con rosa/amarillo suave y claro piedra. `#theme-toggle` es un botón nativo con SVG de sol/luna:
 el icono y su nombre accesible indican el modo que activará. Sin selector adicional.
 Se conserva `vokal.theme`: `system` o ausencia siguen al sistema hasta la primera pulsación;
 `light`/`dark` antiguos se respetan. Cada pulsación guarda el modo opuesto al efectivo.
 La interfaz ya no ofrece volver al modo automático; eliminar esa clave permite restablecerlo.
 Se mantienen conteos útiles de progreso/búsqueda y avisos de procedencia, sin titulares publicitarios de volumen.
+
+### Segunda revisión visual del 2026-10-26
+
+La preferencia vigente sustituye verde pino: negro neutro, rojo rosado y amarillo pastel, claro piedra sin blanco puro.
+Cada bloque de theme.css define todos los tokens hero y botones; no heredar un hero oscuro fijo al cambiar a claro.
+Tarjetas sin borde (separadas por superficie/espacio), radio 12 px. Campos y foco conservan contornos de interacción.
+El amarillo aparece en el botón principal oscuro y en la cifra de práctica; rojo rosado en navegación/acentos.
+La prueba de contraste incluye hero-ink/hero, hero-text/hero y gold/surface; otra exige tokens hero en cada modo.

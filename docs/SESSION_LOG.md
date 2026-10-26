@@ -274,3 +274,16 @@ Contraste medido >=4.5:1; capturas reales Edge escritorio oscuro y móvil claro 
 La revisión móvil detectó una regresión de media queries durante la edición; fue corregida antes de entregar.
 No se ejecutó CDP completo ni se verificó autenticación real. La precisión lingüística sigue pendiente.
 Contexto: HANDOFF/STATUS/DECISIONS/ARCHITECTURE actualizados. Siguiente paso funcional: GitHub OAuth y sincronización real.
+
+## 2026-10-26 — Negro y acentos pastel; corrección del modo claro
+
+Motivo: el propietario rechazó verde pino, bordes marcados y contraste brusco del modo claro.
+Causa identificada: tokens hero/botones compartidos mantenían una superficie oscura al cambiar de modo.
+Cambios: theme.css define paletas completas por tema; oscuro negro/rosa/amarillo y claro piedra sin blanco puro.
+style.css elimina bordes de tarjetas, usa radio 12 px y mantiene campos/foco identificables; se retiran colores hero fijos.
+Se actualizan meta theme-color en index.html/theme.js y pruebas de contraste, más una regresión de tokens hero.
+Verificación: 23 pruebas y build correctos, contraste >=4.5:1; capturas Edge escritorio claro/oscuro y móvil oscuro 375 px.
+Hooks pre-commit/pre-push inspeccionados: ambos ejecutan pnpm check; core.hooksPath=.githooks activo.
+No fue necesario reescribir hooks: incorporan automáticamente la nueva prueba. No generan contexto documental.
+HANDOFF/STATUS/DECISIONS/ARCHITECTURE/README/ROADMAP/CHANGELOG actualizados. Sin dependencias ni cambios de contenido/progreso.
+Límites: no recorrido CDP completo, OAuth y revisión lingüística siguen pendientes. Próximo paso: evaluar interfaz con propietario.

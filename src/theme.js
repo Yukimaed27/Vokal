@@ -9,7 +9,7 @@ try {
 function apply() {
   const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
   document.documentElement.dataset.theme = theme;
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#141817' : '#f4f5f3';
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#111113' : '#e9e6e1';
   const label = theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro';
   toggle.setAttribute('aria-label', label);
   toggle.title = label;

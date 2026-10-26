@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-26 — Negro y acentos suaves
+
+- Tarjetas sin contorno con redondeo ligero, negro/rosa/amarillo y claro piedra.
+- Corregida la tarjeta principal que conservaba colores oscuros al activar modo claro.
+- Paletas completas y nueva prueba de regresión; 23 pruebas aprobadas.
+
 ## 2026-10-26 — Ajuste visual
 
 - Grafito/verde pino, tarjetas cuadradas y botón sol/luna accesible.

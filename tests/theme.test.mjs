@@ -47,9 +47,19 @@ test('texto, acentos y botones alcanzan contraste 4.5:1 en ambas paletas', () =>
   assert.equal(blocks.length,3);
   for (const block of blocks) {
     const colors = {...blocks[0],...block};
-    for (const [a,b] of [['ink','bg'],['muted','surface'],['accent','bg'],['on-accent','accent'],['button-ink','button-bg'],['hero-text','hero'],['hero-button-ink','hero-accent'],['correct-ink','correct-bg'],['retry-ink','retry-bg']]) {
+    for (const [a,b] of [['ink','bg'],['muted','surface'],['accent','bg'],['on-accent','accent'],['button-ink','button-bg'],['hero-text','hero'],['hero-ink','hero'],['gold','surface'],['hero-button-ink','hero-accent'],['correct-ink','correct-bg'],['retry-ink','retry-bg']]) {
       const x=light(colors[a]),y=light(colors[b]);
       assert.ok((Math.max(x,y)+.05)/(Math.min(x,y)+.05)>=4.5,`${block.bg}: ${a}/${b}`);
     }
   }
+});
+
+test('la tarjeta principal tiene superficies y texto propios para ambos temas', () => {
+  const css = readFileSync(new URL('../src/theme.css',import.meta.url),'utf8');
+  const blocks = [...css.matchAll(/\{([^{}]+)\}/g)].map(m => m[1]).filter(b => b.includes('--bg:'));
+  for(const block of blocks) {
+    for(const token of ['hero','hero-ink','hero-text','hero-accent','hero-button-ink'])
+      assert.match(block,new RegExp('--'+token+':#[a-f0-9]{6}'));
+  }
+  assert.notEqual(blocks[0].match(/--hero:(#[a-f0-9]{6})/)[1],blocks[2].match(/--hero:(#[a-f0-9]{6})/)[1]);
 });

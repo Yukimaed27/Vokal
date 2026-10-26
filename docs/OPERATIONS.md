@@ -208,3 +208,9 @@ El script CDP fue actualizado al botón sol/luna único y a los recorridos del c
 
 No hace falta instalar paquetes de navegador para usar el catálogo. Si la infraestructura no permite una prueba visual,
 registrar el límite y completar las comprobaciones seguras disponibles sin eludir el bloqueo.
+
+### Hooks y segunda revisión visual del 2026-10-26
+
+Comprobados core.hooksPath=.githooks y ambos hooks (pre-commit/pre-push): ejecutan pnpm check,
+que incorpora automáticamente las 23 pruebas, incluida la regresión de paletas hero.
+La nueva revisión de CSS se comprobó mediante capturas Edge sin depuración remota; CDP completo no repetido.
