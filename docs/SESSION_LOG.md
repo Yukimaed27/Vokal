@@ -298,3 +298,15 @@ Sin cambios de datos, ejercicios, etiquetas, dependencias o progreso. No se pres
 Se comprobó cobertura de filas/índices; hooks de commit/push mantienen las pruebas de código existentes.
 No se midieron tokens ni cupo: solo el propietario ve su medidor. Inicio declarado93%; falta lectura final.
 Siguiente paso: esperar medición/decisión del propietario. Para integrar propuestas, mecanismo reproducible y pruebas de ejercicios.
+
+## 2026-10-26 — Integración editorial económica y header compacto
+
+Solicitud: priorizar vocabulario fiable, ahorrar tokens y reducir espaciado del header.
+Sin nuevos subagentes/búsquedas: reutilizada evidencia del piloto. src/vocabulary-corrections.js define 46 ajustes/notas,
+consumidos por vocabulary.js/content.js: sentidos acotados, POS partícula en nicht, definiciones coherentes y notas.
+App muestra notas escapadas; learning.js las añade al feedback. Tupla opcional de quinta posición conserva compatibilidad.
+Importación sin cambios; IDs/orden/progreso conservados. No se recalifican logros ni se eliminan etiquetas pendientes.
+Header88→64px/padding de 8 px; main superior44→28px. Sin dependencias ni nueva infraestructura.
+25 pruebas aprobadas y build de 13 recursos; capturas Edge escritorio oscuro/lección móvil clara de 375 px. No CDP completo.
+Registro de aplicación, fuentes y límites en reviews/APPLIED_CORRECTIONS.md. Hooks existentes ejecutan nuevas pruebas.
+Próximo paso: reiniciar servidor para nuevo módulo y probar; continuar revisión selectiva, no una auditoría total afirmada.

@@ -214,3 +214,10 @@ registrar el límite y completar las comprobaciones seguras disponibles sin elud
 Comprobados core.hooksPath=.githooks y ambos hooks (pre-commit/pre-push): ejecutan pnpm check,
 que incorpora automáticamente las 23 pruebas, incluida la regresión de paletas hero.
 La nueva revisión de CSS se comprobó mediante capturas Edge sin depuración remota; CDP completo no repetido.
+
+### Integración editorial y recursos públicos
+
+Reiniciar pnpm dev tras esta entrega: la lista pública incorpora src/vocabulary-corrections.js.
+Build de 13 archivos; pnpm check: 25 pruebas (incluye capa editorial/IDs). Hooks recogen las pruebas sin modificar sus scripts.
+Para cambiar vocabulario auditado, editar la capa editorial y su registro; no sobrescribir datos importados.
+Regenerar la importación conserva la capa, pero revisar cambios de lemas antes de afirmar compatibilidad.

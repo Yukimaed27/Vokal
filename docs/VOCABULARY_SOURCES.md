@@ -126,3 +126,10 @@ La salida UTF-8 con LF es determinista para esos datos y filtros. SHA-256 genera
 - Restauración de 5000 repasos y tamaño inferior al límite de cuatro millones de bytes de la RPC.
 
 Estas pruebas validan estructura, coherencia y casos conocidos; no certifican exactitud lingüística de cada traducción.
+
+## Capa editorial posterior
+
+El hash anterior corresponde exclusivamente al archivo importado, sin cambios en esta integración.
+src/vocabulary-corrections.js aplica 46 ajustes/notas del piloto al material visible y práctica LEX.
+Ver [registro y límites](reviews/APPLIED_CORRECTIONS.md). No es nueva fuente importada ni certificación humana;
+se conservan atribución y revisión pendiente. Matices nuevos son paráfrasis editoriales, no copias extensas de diccionarios.

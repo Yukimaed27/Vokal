@@ -46,4 +46,8 @@ Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras 
 - [x] Segunda revisión: negro con acentos rosa/amarillo suave, claro piedra, tarjetas sin contorno y hero adaptado a ambos temas.
 
 - [x] Piloto: auditoría IA documentada de las primeras 100 entradas, cuatro participantes y fuentes por fila.
-- [ ] Resolver e integrar propuestas del piloto con mecanismo reproducible, sin retirar etiquetas prematuramente.
+- [x] Integrar propuestas claras del piloto con mecanismo reproducible, sin retirar etiquetas prematuramente; dudas restantes abiertas.
+
+- [x] Integrar46 ajustes/notas del piloto con capa reproducible, feedback contextual y pruebas de preservación de IDs.
+- [x] Compactar header a 64 px sin reducir el botón de tema.
+- [ ] Completar revisión de dudas/sentidos restantes; priorizar siguientes lotes por riesgo, sin certificación prematura.

@@ -1,8 +1,9 @@
 import {dictionaryEntries} from './vocabulary-data.js';
+import {vocabularyCorrections} from './vocabulary-corrections.js';
 
 export const dictionaryLemmaCount = dictionaryEntries.length;
 const articles = {masc:'der',fem:'die',neut:'das'};
-export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio'};
+export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio',particle:'Partícula'};
 const canonical = value => value.normalize('NFC').replace(/^(der|die|das)\s+/i,'').toLocaleLowerCase('de-DE');
 
 export function createVocabularyCourse(guidedLessons) {
@@ -10,15 +11,17 @@ export function createVocabularyCourse(guidedLessons) {
   const entries = dictionaryEntries.map(entry => {
     const original = existing.get(canonical(entry.lemma));
     const compatible = original && (entry.pos !== 'n' || /^(der|die|das)\s/i.test(original[1]));
-    const translations = [...new Set(entry.senses.flatMap(sense => sense.translations))];
+    const correction = vocabularyCorrections[entry.lemma];
+    const translations = correction?.translations ?? [...new Set(entry.senses.flatMap(sense => sense.translations))];
     return {
       id:compatible ? original[0] : `lex-${entry.lemma.toLocaleLowerCase('de-DE')}`,
       lemma:entry.lemma,
       de:compatible ? original[1] : entry.pos === 'n' ? `${articles[entry.gender]} ${entry.lemma}` : entry.lemma,
-      es:compatible ? original[2] : translations.slice(0,4).join(' / '),
+      es:correction?.translations ? translations.join(' / ') : compatible ? original[2] : translations.slice(0,4).join(' / '),
       example:compatible ? original[3] : '',
-      translations, definitions:entry.senses.flatMap(sense => sense.definitions),
-      pos:entry.pos,gender:entry.gender,source:'freedict-wikdict',reviewStatus:'pending',
+      translations, definitions:correction?.definitions ?? entry.senses.flatMap(sense => sense.definitions),
+      editorialNote:correction?.note ?? '',
+      pos:correction?.pos ?? entry.pos,gender:entry.gender,source:'freedict-wikdict',reviewStatus:'pending',
       frequencyRank:entry.rank,level:'LEX',
     };
   });
@@ -42,7 +45,7 @@ export function createVocabularyCourse(guidedLessons) {
         tip:'La lista de frecuencia procede de subtítulos y no asigna niveles A1–C1. Utiliza estos bloques como ampliación de vocabulario junto con las lecciones guiadas, no como una certificación de nivel.',
         dialogue:[['Was bedeutet dieses Wort?','¿Qué significa esta palabra?'],['Kannst du mir ein Beispiel geben?','¿Puedes darme un ejemplo?'],['Jetzt verstehe ich es besser.','Ahora lo entiendo mejor.']],
         example:['Was bedeutet dieses Wort?','¿Qué significa esta palabra?'],
-        words:block.map(word => [word.id,word.de,word.es,word.example]),questions,
+        words:block.map(word => [word.id,word.de,word.es,word.example,word.editorialNote]),questions,
       });
     }
   }

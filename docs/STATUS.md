@@ -2,12 +2,14 @@
 
 Fecha: 2026-10-26. Versión: 0.3.0.
 
-## Piloto lingüístico actual
+## Fiabilidad: estado actual
 
-Auditadas las primeras 100 entradas mediante tres auxiliares y coordinador (25 cada uno).
-Informes trazables en [reviews/README.md](reviews/README.md). No equivalen a revisión humana ni cobertura de paradigmas completos.
-Propuestas pendientes de integración; los 5000 registros siguen etiquetados pendientes en la aplicación.
-Esperar lectura de consumo del propietario (inicio declarado: 93 %) antes de ampliar.
+Capa editorial aplicada a 46 registros del piloto, con significados acotados, matices alineados y notas de uso.
+Las 6 dudas no se consideran resueltas: sentidos no corroborados quedan fuera de esa práctica o señalados.
+Todas las entradas importadas mantienen revisión pendiente. No se auditó el resto ni se certifican conjugaciones.
+Ver [integración y registro](reviews/APPLIED_CORRECTIONS.md) y fuentes históricas por entrada en reviews/README.md.
+25 pruebas aprobadas, build de 13 recursos; no cambia archivo importado, IDs, orden ni progreso.
+Header compacto:64px y menos espacio superior. Capturas reales escritorio oscuro/lección móvil clara revisadas.
 
 ## Entrega visual anterior
 

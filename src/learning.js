@@ -64,14 +64,14 @@ export function unitUnlocked(unitId, units, lessons, completed) {
 
 export function lessonQuestions(lesson) {
   const meanings = lesson.words.map(word => word[2]);
-  const recognition = lesson.words.map(([id, de, es], index) => {
+  const recognition = lesson.words.map(([id, de, es, ,note], index) => {
     const choices = [...new Set([es, meanings[(index + 1) % meanings.length], meanings[(index + 4) % meanings.length]])];
     const offset = index % choices.length;
-    return {prompt:`¿Qué significado trabajamos aquí para «${de}»?`,options:[...choices.slice(offset),...choices.slice(0,offset)],answers:[es],explanation:`${de}: ${es}. Consulta el material de la lección para distinguir sus sentidos.`,wordId:id};
+    return {prompt:`¿Qué significado trabajamos aquí para «${de}»?`,options:[...choices.slice(offset),...choices.slice(0,offset)],answers:[es],explanation:`${de}: ${es}. Consulta el material de la lección para distinguir sus sentidos.${note ? ` ${note}` : ''}`,wordId:id};
   });
-  const production = lesson.words.map(([id,de,es,example]) => ({
+  const production = lesson.words.map(([id,de,es,example,note]) => ({
     prompt:`Recuerda la palabra o expresión de esta lección para «${es}». Incluye el artículo si lo aprendiste.`,
-    answers:[de], explanation:`La expresión objetivo es «${de}». ${example ? `Ejemplo: ${example}` : 'Es una traducción de diccionario; puede tener otros sentidos según el contexto.'}`,wordId:id,
+    answers:[de], explanation:`La expresión objetivo es «${de}». ${example ? `Ejemplo: ${example}` : 'Es una traducción de diccionario; puede tener otros sentidos según el contexto.'}${note ? ` ${note}` : ''}`,wordId:id,
   }));
   return [...lesson.questions, ...recognition, ...production];
 }

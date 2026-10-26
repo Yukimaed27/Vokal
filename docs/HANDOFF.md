@@ -2,19 +2,24 @@
 
 Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega — piloto de revisión lingüística
+## Última entrega — fiabilidad del vocabulario y header compacto
 
-El propietario autorizó revisar 100 entradas con cuatro agentes para medir consumo, partiendo de 93 % restante.
-Tres auxiliares y coordinador revisaron 25 entradas distintas cada uno, no cuatro revisiones de cada palabra.
-Informes y fuentes por entrada en reviews/README.md y sus cuatro lotes. Revisión IA, no validación humana.
-Se documentan errores, propuestas pedagógicas y dudas. No se aplicaron correcciones al catálogo ni se retiraron etiquetas.
-La interfaz de la entrega anterior se conserva (negro/rosa/amarillo suave, claro piedra, tarjetas sin contorno).
+Prioridad del propietario: fiabilidad del vocabulario sin otro gasto masivo de tokens; header demasiado espaciado.
+Se integra evidencia ya documentada del piloto sin subagentes ni nuevas búsquedas.46 registros reciben ajustes
+conservadores de sentido/categoría/contexto; no 46 aprobaciones lingüísticas. Ver reviews/APPLIED_CORRECTIONS.md.
+Nueva capa src/vocabulary-corrections.js: no modificar el archivo importado. Se aplica al catálogo y a bloques LEX;
+las notas de uso se muestran en fichas y explicaciones de ejercicios. Todas las etiquetas siguen pendientes.
+Se mantienen IDs/orden/progreso y no se recalifican logros. Besser sigue identificado como comparativo, Seine como río;
+no se ha renormalizado el catálogo a lemas base certificados ni ampliado la muestra auditada.
+Header escritorio 64 px (antes 88), padding vertical8px, espacio superior del contenido28px (antes 44).
 
-## Siguiente acción inmediata
+## Verificación y continuidad inmediata
 
-Esperar porcentaje restante del propietario; estimar el coste de ampliar con cautela (medidor no disponible al agente).
-No iniciar otro lote automáticamente. Antes de integrar propuestas: resolver dudas, crear correcciones reproducibles
-sin romper IDs/progreso y probar ejercicios afectados. Ver reviews/README.md para alcance, límites y medición.
+25 pruebas y build de 13 recursos correctos; nuevo recurso público vocabulary-corrections.js.
+Hooks existentes ejecutan esas pruebas automáticamente. Capturas Edge escritorio oscuro y lección móvil clara de 375 px;
+no CDP completo ni auditoría humana. Reiniciar pnpm dev si el servidor ya estaba abierto para cargar el nuevo módulo.
+Siguiente paso: practicar las entradas ajustadas y priorizar futuros lotes por riesgo. No prometer que el resto esté validado.
+El propietario reportó93→74% en el piloto; es referencia histórica de su medidor, no consumo calculable por el agente.
 
 ## Continuidad técnica
 

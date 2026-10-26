@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-26 — Fiabilidad y header compacto
+
+- 46 ajustes/notas editoriales del piloto en catálogo y práctica, conservando IDs y revisión pendiente.
+- Correcciones separadas de la importación; notas de uso en fichas y feedback.
+- Header 64 px, menos espacio superior; 25 pruebas aprobadas y build de 13 recursos.
+
 ## 2026-10-26 — Auditoría lingüística piloto
 
 - Informes por palabra de las primeras100 entradas, cuatro participantes, fuentes y dudas explícitas.

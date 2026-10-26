@@ -1,6 +1,10 @@
 # Muestra de revisión lingüística — primeras 100 entradas
 
-Fecha: 2026-10-26. Base auditada: b43562e, `dictionaryEntries` en `src/vocabulary-data.js`.
+Estado histórico del piloto: 2026-10-26.
+
+Actualización posterior: [integración de 46 ajustes/notas](APPLIED_CORRECTIONS.md). Las afirmaciones de propuestas
+no aplicadas de los informes describen la auditoría inicial, antes de esa integración.
+ Base auditada: b43562e, `dictionaryEntries` en `src/vocabulary-data.js`.
 El propietario autorizó 100 palabras con cuatro agentes para medir consumo antes de decidir si amplía la revisión.
 
 ## Reparto y alcance

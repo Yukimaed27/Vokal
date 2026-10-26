@@ -80,3 +80,9 @@ La tarjeta principal y botones deben cambiar con la paleta; no conservar colores
 El propietario autoriza100 entradas con cuatro agentes para medir consumo. Se reparten25 por participante
 (incluido coordinador). No ampliar hasta nueva instrucción. Auditoría y propuestas documentadas, sin aprobación humana
 ni modificación automática del catálogo. No extrapolar tasa de errores de esta muestra no aleatoria.
+
+## 2026-10-26 — Fiabilidad con evidencia existente y bajo consumo
+
+El propietario prioriza fiabilidad y ahorro de tokens; se integra el piloto sin nueva revisión masiva/subagentes.
+Ajustes por lema fuera del archivo generado para sobrevivir a regeneración. Se acotan sentidos y añaden notas,
+sin certificar entradas ni borrar progreso. Header se reduce manteniendo botón de 48 px y navegación accesible.

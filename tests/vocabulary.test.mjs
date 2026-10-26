@@ -60,3 +60,40 @@ test('el progreso de los 5000 términos se restaura y cabe bajo el límite de 4 
   const restored = readState(raw,lessons.map(l=>l.id),words.map(w=>w.id),units.map(u=>u.id));
   assert.equal(Object.keys(restored.reviews).length,5000);
 });
+
+
+test('los ajustes editoriales llegan a fichas y ejercicios sin cambiar el archivo importado', async () => {
+  const {vocabularyCorrections} = await import('../src/vocabulary-corrections.js');
+  const {createVocabularyCourse} = await import('../src/vocabulary.js');
+  const snapshot = JSON.stringify(dictionaryEntries);
+  const course = createVocabularyCourse([]);
+  for (const [lemma,correction] of Object.entries(vocabularyCorrections)) {
+    const entry = course.entries.find(w=>w.lemma===lemma);
+    assert.ok(entry,lemma);
+    assert.equal(entry.reviewStatus,'pending');
+    assert.equal(entry.editorialNote,correction.note);
+    if(correction.translations) assert.deepEqual(entry.translations,correction.translations);
+    const block = course.lessons.find(l=>l.words.some(w=>w[0]===entry.id));
+    const questions = lessonQuestions(block).filter(q=>q.wordId===entry.id);
+    assert.ok(questions.find(q=>q.options).answers.includes(entry.es));
+    assert.ok(questions.every(q=>q.explanation.includes(correction.note)));
+    const visible = words.find(w=>w.lemma===lemma);
+    assert.equal(visible.editorialNote,correction.note);
+    if(correction.translations) assert.equal(visible.es,correction.translations.join(' / '));
+  }
+  assert.equal(JSON.stringify(dictionaryEntries),snapshot);
+  for (const [lemma,bad] of [['Habe','propriedad'],['einfach','just'],['morgen','cras'],['selbst','aún'],['meinen','intentar'],['kommen','correrse']])
+    assert.ok(!course.entries.find(w=>w.lemma===lemma).translations.includes(bad),lemma);
+  assert.equal(course.entries.find(w=>w.lemma==='nicht').pos,'particle');
+});
+
+test('corregir una entrada reutilizada conserva su ID, artículo y ejemplo', async () => {
+  const {createVocabularyCourse} = await import('../src/vocabulary.js');
+  const course = createVocabularyCourse([{words:[['id-preservado','die Habe','propriedad','Dies ist meine Habe.']]}]);
+  const entry = course.entries.find(w=>w.lemma==='Habe');
+  assert.equal(entry.id,'id-preservado');
+  assert.equal(entry.de,'die Habe');
+  assert.equal(entry.es,'propiedad / bienes');
+  assert.equal(entry.example,'Dies ist meine Habe.');
+  assert.ok(course.lessons.flatMap(l=>l.words).some(w=>w[0]==='id-preservado'&&w[2]==='propiedad / bienes'));
+});

@@ -71,3 +71,10 @@ No introducir dependencia de una IA de pago para utilizar el catálogo básico.
 ## Piloto de revisión lingüística
 Las primeras100 entradas fueron auditadas por IA en cuatro bloques de25; ver [informes](reviews/README.md).
 No se han integrado propuestas ni validado paradigmas completos. Las etiquetas de revisión pendiente permanecen.
+
+## Ajustes editoriales aplicados
+
+46 registros del piloto reciben correcciones o notas de contexto; [registro](reviews/APPLIED_CORRECTIONS.md).
+La práctica se limita a sentidos respaldados donde había mezcla/duda. No declarar las 6 dudas resueltas ni 46 aprobaciones.
+No cambian IDs, tamaños ni archivo importado. Lecciones LEX y catálogo usan ajustes; guiadas originales conservan sus sentidos.
+Las notas acompañan fichas y feedback; etiquetas pendientes conservadas. No hay nuevas entradas ni validación humana.

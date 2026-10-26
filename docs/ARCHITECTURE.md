@@ -356,3 +356,13 @@ Cada bloque de theme.css define todos los tokens hero y botones; no heredar un h
 Tarjetas sin borde (separadas por superficie/espacio), radio 12 px. Campos y foco conservan contornos de interacción.
 El amarillo aparece en el botón principal oscuro y en la cifra de práctica; rojo rosado en navegación/acentos.
 La prueba de contraste incluye hero-ink/hero, hero-text/hero y gold/surface; otra exige tokens hero en cada modo.
+
+## Capa editorial y notas de ejercicios — 2026-10-26
+
+src/vocabulary-corrections.js almacena ajustes por lema exacto del piloto, separados de datos importados.
+vocabulary.js aplica traducciones/definiciones/POS opcionales y editorialNote antes de crear entradas y lecciones.
+Categoría particle añadida para nicht. reviewStatus permanece pending; no es un sello de revisión humana.
+Tupla opcional ampliada:[id,de,es,example,note]; learning.js añade note a explicaciones, nunca a respuestas válidas.
+content.js conserva IDs/metadatos y prioriza el significado ajustado frente al texto heredado en el catálogo.
+app.js muestra editorialNote escapada en cada ficha. Originales guiados conservan sus propios sentidos.
+Lista pública añade vocabulary-corrections.js; build de 13 recursos. Header 64 px/padding de 8 px y main superior 28 px.
