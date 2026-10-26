@@ -1,12 +1,14 @@
 # Estado para retomar
 
-Fecha: 2026-10-25. Versión: 0.3.0.
+Fecha: 2026-10-26. Versión: 0.3.0.
 
 ## Entrega actual
 
-Rediseño solicitado: fondo carbón, acento rojo coral, modo claro neutro y un único selector de apariencia (automático/oscuro/claro).
-Se sustituyó el CSS anterior para evitar capas de paletas antiguas. Inicio con navegación por iconos, tarjeta de estudio,
-plan de sesión, progreso real y acceso al catálogo. La carga inicial ya no desplaza el foco ocultando el encabezado.
+Revisión visual del 2026-10-26: grafito/verde pino, modo claro gris neutro, tarjetas y controles cuadrados.
+Botón sol/luna accesible; detecta el sistema inicialmente y conserva la elección manual.
+Sin ilustración decorativa, gradiente, sombras o cifras promocionales del catálogo. Contenido/progreso conservados.
+22 pruebas aprobadas, build correcto y contraste mínimo 4.5:1. Capturas reales escritorio oscuro/móvil claro revisadas.
+No se repitió el recorrido CDP completo; las verificaciones detalladas siguientes corresponden a la ampliación anterior.
 
 Meta acordada y cumplida: catálogo utilizable de **5000 lemas de diccionario con traducción y ejercicios**, marcado como pendiente de revisión.
 El propietario aceptó ese alcance; no se prometió revisión humana completa ni un curso A1–C1 terminado.

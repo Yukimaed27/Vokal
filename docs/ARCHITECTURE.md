@@ -34,8 +34,8 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | --- | --- | --- |
 | `index.html` | Estructura, navegación, contenedor principal, apariencia y avisos | Carga CSS y módulos; incluye CSP en meta para alojamiento estático |
 | `src/style.css` | Distribución, tarjetas, tipografía, estados y adaptación por ancho | Reescrito para eliminar reglas/colores antiguos y dar coherencia al rediseño |
-| `src/theme.css` | Tokens carbón/coral y claro neutro, contraste y esquemas | Paleta separada de la estructura; aliases green/lime solo por compatibilidad |
-| `src/theme.js` | Preferencia del sistema y único selector automático/oscuro/claro | Lee/escribe `vokal.theme`; conserva valores anteriores y actualiza data-theme/meta |
+| `src/theme.css` | Tokens grafito/verde pino y claro neutro, contraste y esquemas | Paleta separada de la estructura; aliases green/lime solo por compatibilidad |
+| `src/theme.js` | Preferencia del sistema y botón sol/luna (sistema inicial, elección persistente) | Lee/escribe `vokal.theme`; conserva valores anteriores y actualiza data-theme/meta |
 | `src/app.js` | Rutas, renderizado, eventos, ejercicios y coordinación de persistencia/sincronización | Consume contenido, lógica pura, configuración y cliente de nube |
 | `src/content.js` | Tres lecciones originales y composición del catálogo completo | Conserva IDs antiguos; incorpora currículo y elimina IDs repetidos del catálogo |
 | `src/curriculum.js` | Orden de secciones, ampliación de lecciones, teoría, diálogos y preguntas específicas | Genera objetos de lección a partir de datos redactados para el proyecto |
@@ -74,7 +74,7 @@ Git transporta desarrollo y contexto. Supabase transportará progreso de alumnos
 | `tests/learning.test.mjs` | Corrección, caracteres alemanes, intervalos, contenido, migración, desbloqueo y combinación |
 | `tests/cloud.test.mjs` | Configuración, OTP, cabeceras, sesión, renovación compartida, errores y cierre con API simulada |
 | `tests/server.test.mjs` | Recursos públicos, CSP, ocultación de archivos privados y rutas malformadas |
-| `tests/theme.test.mjs` | Único selector, sistema/persistencia/almacenamiento bloqueado y contraste de ambas paletas |
+| `tests/theme.test.mjs` | Botón sol/luna, sistema/persistencia/almacenamiento bloqueado y contraste de ambas paletas |
 | `tests/vocabulary.test.mjs` | 5000 lemas, cobertura de práctica, tamaños, desbloqueo independiente y restauración a escala |
 | `supabase/migrations/001_progress.sql` | Tabla, RLS, funciones de combinación y RPC autenticada |
 
@@ -338,3 +338,13 @@ Conservar la simplicidad no permite marcar como terminados curso, nube, pronunci
 Para escalar el catálogo habrá que revisar importación/licencias, metadatos, respuestas alternativas, descarga por módulos
 y búsqueda, en lugar de añadir miles de términos sin control. La implementación actual carga todo el currículo disponible en memoria.
 Consultar [CONTENT](CONTENT.md), [ROADMAP](ROADMAP.md) y [CLOUD](CLOUD.md) antes de ampliar esas áreas.
+
+## Apariencia — revisión 2026-10-26
+
+Tarjetas y controles de esquinas rectas; sin gradiente, sombras ni ilustración decorativa del inicio.
+Paleta grafito/verde pino y claro gris neutro. `#theme-toggle` es un botón nativo con SVG de sol/luna:
+el icono y su nombre accesible indican el modo que activará. Sin selector adicional.
+Se conserva `vokal.theme`: `system` o ausencia siguen al sistema hasta la primera pulsación;
+`light`/`dark` antiguos se respetan. Cada pulsación guarda el modo opuesto al efectivo.
+La interfaz ya no ofrece volver al modo automático; eliminar esa clave permite restablecerlo.
+Se mantienen conteos útiles de progreso/búsqueda y avisos de procedencia, sin titulares publicitarios de volumen.

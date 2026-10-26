@@ -1,27 +1,22 @@
 # Traspaso activo
 
-Actualizado: 2026-10-25. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
+Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
 
-## Última entrega
+## Última entrega — 2026-10-26
 
-El propietario pidió mejorar la interfaz, quitar la redundancia entre botón y selector de tema y sustituir el guindo.
-Después pidió alcanzar 5000 palabras hoy. Aceptó un catálogo utilizable con traducciones/ejercicios y revisión indicada,
-no la afirmación de que estuvieran revisadas manualmente.
-
-Hecho: carbón/rojo coral y claro neutro, un único selector automático/oscuro/claro, inicio más elaborado y progreso visible.
-Hecho: 5000 lemas importados con fuente/licencia, 25 secciones de 200 palabras, 200 bloques de 25 y práctica por palabra.
-El curso guiado previo se conserva. Totales: 231 lecciones, 40 secciones, 5184 entradas y 10 981 ejercicios.
-
-El catálogo se genera desde fuentes fijadas y verificadas: leer VOCABULARY_SOURCES antes de cambiarlo.
-No añadir traducciones automáticas inventadas ni presentar la importación como revisión humana o temario MCER completo.
+El propietario pidió una interfaz discreta, sin tonos pastel/coral, tarjetas cuadradas,
+un botón de sol/luna y quitar protagonismo a las cifras del catálogo.
+Implementado: grafito/verde pino, claro gris neutro, esquinas rectas, sin gradiente/sombras ni tarjeta decorativa.
+Inicio y vocabulario usan textos breves centrados en estudiar. Se conservan contenido, IDs, progreso y avisos de revisión.
+El botón reemplaza el selector: sigue inicialmente al sistema, respeta preferencias existentes y guarda cada alternancia.
+Esta preferencia nueva sustituye la decisión anterior de conservar un selector único o la paleta coral.
 
 ## Verificación
 
-22 pruebas y build correctos. Importación reproducible; hashes y volumen comprobados.
-Capturas de Edge sin depuración remota: inicio oscuro/claro, vista de 375 px y ruta de vocabulario.
-Anchura de marco comprobada: 375/360 y escritorio 1440/1425 (viewport/documento), sin overflow horizontal.
-Control de tema, persistencia y contraste probados con Node; no se repitió el flujo CDP interactivo completo.
-Las capturas y el marco temporal de QA están en .qa, ignorados por Git, no son infraestructura de producción.
+22 pruebas aprobadas y build correcto; contraste matemático mínimo 4.5:1 en ambas paletas.
+Pruebas del botón cubren sistema inicial, alternancia, nombre accesible, persistencia y almacenamiento bloqueado.
+Capturas nativas de Edge revisadas en escritorio oscuro y móvil claro de 375 px; sin flujo CDP completo.
+Las fuentes y limitaciones lingüísticas del catálogo permanecen en VOCABULARY_SOURCES.
 
 ## Continuidad técnica
 
@@ -44,5 +39,5 @@ No hay una publicación confirmada. Código/contexto viajan por Git; progreso pr
 - CLOUD: estado de acceso y preparación de Supabase.
 - WORKFLOW/AGENTS: obligación de mantener contexto técnico relevante, sin bitácora de clics.
 
-Conservar IDs y claves existentes. No volver al botón duplicado de tema ni a la paleta guinda.
+Conservar IDs y claves existentes. Un único botón de tema; no restaurar selector, coral ni titulares de volumen.
 El hash de esta entrega se consulta con git log, evitando referencias autorreferenciales.

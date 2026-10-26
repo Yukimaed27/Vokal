@@ -30,7 +30,7 @@ Python 3 solo es necesario para regenerar el catálogo; los datos ya vienen incl
 
 ## Qué incluye
 
-- Diseño carbón/rojo coral y modo claro neutro. Un único selector automático/oscuro/claro, con preferencia persistente.
+- Diseño grafito/verde pino y modo claro neutro. Botón sol/luna con preferencia persistente; inicialmente sigue al sistema.
 - Curso guiado: 31 lecciones y 15 secciones A1–C1.
 - Catálogo añadido: 5000 lemas con traducción y ejercicios, en 25 secciones de 200 palabras y bloques de 25.
 - Total: 231 lecciones, 40 secciones, 5184 entradas y 10 981 ejercicios. Vocabulario accesible sin completar C1.

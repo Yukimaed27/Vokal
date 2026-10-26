@@ -124,7 +124,7 @@ Se completó la verificación local mediante HTTP; la QA visual anterior sigue c
 
 Recorridos comprobados:
 
-1. Tema de sistema oscuro, botón y selector; preferencia conservada al recargar.
+1. Tema inicial del sistema y botón sol/luna; preferencia manual conservada al recargar.
 2. Práctica aprobada de saludos y persistencia de progreso (recorrido CDP disponible).
 3. Evaluación de primeros pasos aprobada y desbloqueo de siguiente sección.
 4. Evaluación de siguiente sección reprobada, sin abrir la posterior.
@@ -204,7 +204,7 @@ Para anchos pequeños, Edge puede imponer un ancho de ventana superior al solici
 Se utilizó un marco local de QA de 375 px y se registró innerWidth=375/documentWidth=360; en escritorio 1440/1425.
 El marco solo existió en .qa, no se sirve ni se incluye en dist. No se relajaron cabeceras de producción.
 Se revisaron inicio claro/oscuro y ruta de vocabulario; el contraste se prueba también por cálculo.
-El script CDP fue actualizado al selector único y a los recorridos del catálogo, pero no se ejecutó íntegramente en esta entrega.
+El script CDP fue actualizado al botón sol/luna único y a los recorridos del catálogo, pero no se ejecutó íntegramente en esta entrega.
 
 No hace falta instalar paquetes de navegador para usar el catálogo. Si la infraestructura no permite una prueba visual,
 registrar el límite y completar las comprobaciones seguras disponibles sin eludir el bloqueo.

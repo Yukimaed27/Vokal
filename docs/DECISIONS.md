@@ -64,3 +64,9 @@ La guía UI UX Pro Max recomendó jerarquía/tarjetas de dashboard; la paleta se
 Pidió 5000 palabras para la entrega inmediata y aceptó expresamente catálogo utilizable con traducción/ejercicios y revisión indicada.
 Se cumple con 5000 lemas de FreeDict/WikDict priorizados por FrequencyWords, atribución y licencia visibles.
 La ruta de vocabulario es independiente del curso y no recibe nivel MCER ficticio. No se promete revisión humana ni 5000 ejemplos completos.
+
+## 2026-10-26 — Interfaz discreta y botón de tema
+El propietario reemplaza su preferencia previa de coral y selector: grafito/verde pino, tarjetas cuadradas,
+sol/luna como único control y cifras del catálogo fuera de titulares promocionales.
+Se retiran decoración y sombras; se mantienen contraste, datos, progreso y avisos de revisión.
+El modo inicial sigue al sistema; el botón guarda light/dark. No se añade una tercera acción para restablecer automático.

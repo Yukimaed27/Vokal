@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-26 — Ajuste visual
+
+- Grafito/verde pino, tarjetas cuadradas y botón sol/luna accesible.
+- Inicio más sobrio, sin ilustración decorativa ni cifras promocionales del catálogo.
+- Contenido y progreso conservados; sin dependencias nuevas.
+
 ## 0.3.0 — 2026-10-25
 - Paleta carbón/rojo coral y claro neutro; un solo selector automático/oscuro/claro, sin botón redundante.
 - Inicio, navegación por iconos, tarjeta de estudio, plan de sesión, progreso y tarjetas refinados; foco inicial sin ocultar encabezado.

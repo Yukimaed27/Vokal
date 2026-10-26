@@ -2,7 +2,7 @@
 
 ## Base y refinamientos
 - [x] Estructura portable, documentación, hooks y CI.
-- [x] Carbón/rojo coral, modo claro neutro y único selector con detección del sistema; inicio y navegación refinados.
+- [x] Grafito/verde pino, modo claro neutro y botón sol/luna con detección inicial del sistema; inicio y navegación refinados.
 - [x] Migración a pnpm y revisión de paquetes/avisos publicados.
 - [x] 15 secciones y 31 lecciones con teoría, diálogos y 781 ejercicios.
 - [x] Desbloqueo progresivo con umbral del 80 % y evaluaciones por sección.
@@ -40,3 +40,5 @@
 - [ ] Completar C1 y ampliar a 25 000 según utilidad y calidad.
 
 Los nombres A1–C1 describen la intención de la ruta. La cantidad de palabras y los tests de vocabulario no certifican esos niveles.
+
+- [x] Revisión 2026-10-26: esquinas rectas, grafito/verde pino, botón sol/luna y textos sin promoción de cantidad.

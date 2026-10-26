@@ -73,12 +73,13 @@ try {
     if (await evaluate('!!document.querySelector("main h1")')) break;
     await evaluate('new Promise(r=>setTimeout(r,100))');
   }
+  await evaluate('document.querySelector("#theme-toggle").click()');
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'dark');
-  assert.equal(await evaluate('document.querySelectorAll("#theme-select").length'),1);
-  assert.equal(await evaluate('document.querySelectorAll("#theme-toggle").length'),0);
-  await evaluate('document.querySelector("#theme-select").value="light";document.querySelector("#theme-select").dispatchEvent(new Event("change"))');
+  assert.equal(await evaluate('document.querySelectorAll("#theme-toggle").length'),1);
+  assert.equal(await evaluate('document.querySelectorAll("#theme-select").length'),0);
+  await evaluate('if(document.documentElement.dataset.theme!=="light")document.querySelector("#theme-toggle").click()');
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'light');
-  await evaluate('document.querySelector("#theme-select").value="system";document.querySelector("#theme-select").dispatchEvent(new Event("change"))');
+
   assert.equal(await evaluate('document.documentElement.dataset.theme'),'dark');
   await go('leccion/tiempo');assert.match(await evaluate('document.querySelector("main").textContent'),/Esta sección se abre después/);
   await go('leccion/saludos');await start('practice:saludos');await answerAll(lessonQuestions(lessons[0]));
@@ -108,7 +109,7 @@ try {
   await go('inicio');
   await mkdir(new URL('../.qa/',import.meta.url),{recursive:true});
   for (const theme of ['dark','light']) {
-    await evaluate(`document.querySelector('#theme-select').value='${theme}';document.querySelector('#theme-select').dispatchEvent(new Event('change'));`);
+    await evaluate(`if(document.documentElement.dataset.theme!=='${theme}')document.querySelector('#theme-toggle').click();`);
     const colors = await evaluate(`Object.fromEntries(['ink','muted','bg','surface','green','hero','hero-text','hero-ink','correct-bg','correct-ink','retry-bg','retry-ink'].map(k=>[k,getComputedStyle(document.documentElement).getPropertyValue('--'+k).trim()]))`);
     for (const [fg,bg] of [['ink','surface'],['muted','bg'],['green','bg'],['hero-text','hero'],['hero-ink','hero'],['correct-ink','correct-bg'],['retry-ink','retry-bg']]) assert.ok(contrast(colors[fg],colors[bg])>=4.5,`${theme}: contrast ${fg}/${bg}`);
     for (const [width,height] of [[1440,1000],[375,812],[812,375]]) {

@@ -5,34 +5,37 @@ import vm from 'node:vm';
 const source = readFileSync(new URL('../src/theme.js',import.meta.url),'utf8');
 function setup(saved, blocked = false) {
   const handlers = {};
-  const select = {value:'system',addEventListener:(type,fn) => {handlers[type] = fn;}};
+  const toggle = {setAttribute:(key,value) => {toggle[key]=value;},addEventListener:(type,fn) => {handlers[type] = fn;}};
   const meta = {};
   const root = {dataset:{}};
   const system = {matches:true,addEventListener:(_,fn) => {system.change = fn;}};
   const store = new Map(saved ? [['vokal.theme',saved]] : []);
   vm.runInNewContext(source,{
-    document:{documentElement:root,querySelector:s => s === '#theme-select' ? select : meta},
+    document:{documentElement:root,querySelector:s => s === '#theme-toggle' ? toggle : meta},
     matchMedia:() => system,
     localStorage:{getItem:key => {if(blocked) throw Error('blocked');return store.get(key);},setItem:(key,value) => {if(blocked) throw Error('blocked');store.set(key,value);}},
   });
-  return {root,select,system,store,meta,choose:value => {select.value=value;handlers.change();}};
+  return {root,toggle,system,store,meta,click:() => handlers.click()};
 }
-test('un solo selector sigue al sistema, guarda elección y permite volver al modo automático', () => {
+test('un botón sigue al sistema hasta elegir y alterna tema con nombre accesible', () => {
   const app = setup();
   assert.equal(app.root.dataset.theme,'dark');
-  app.choose('light');
+  assert.equal(app.toggle['aria-label'],'Activar modo claro');
+  app.system.matches=false;app.system.change();
   assert.equal(app.root.dataset.theme,'light');
-  assert.equal(app.store.get('vokal.theme'),'light');
-  app.system.change();assert.equal(app.root.dataset.theme,'light');
-  app.choose('system');app.system.matches=false;app.system.change();
-  assert.equal(app.root.dataset.theme,'light');
-  app.system.matches=true;app.system.change();assert.equal(app.root.dataset.theme,'dark');
+  app.click();
+  assert.equal(app.root.dataset.theme,'dark');
+  assert.equal(app.store.get('vokal.theme'),'dark');
+  assert.equal(app.toggle['aria-label'],'Activar modo claro');
+  app.system.change();assert.equal(app.root.dataset.theme,'dark');
+  app.click();assert.equal(app.root.dataset.theme,'light');
+  assert.equal(app.toggle['aria-label'],'Activar modo oscuro');
 });
-test('conserva las preferencias antiguas y funciona cuando el almacenamiento está bloqueado', () => {
+test('conserva preferencias antiguas y alterna sin almacenamiento disponible', () => {
   assert.equal(setup('light').root.dataset.theme,'light');
+  assert.equal(setup('system').root.dataset.theme,'dark');
   const blocked = setup(null,true);
-  assert.equal(blocked.root.dataset.theme,'dark');
-  blocked.choose('light');assert.equal(blocked.root.dataset.theme,'light');
+  blocked.click();assert.equal(blocked.root.dataset.theme,'light');
 });
 test('texto, acentos y botones alcanzan contraste 4.5:1 en ambas paletas', () => {
   const css = readFileSync(new URL('../src/theme.css',import.meta.url),'utf8');
@@ -44,7 +47,7 @@ test('texto, acentos y botones alcanzan contraste 4.5:1 en ambas paletas', () =>
   assert.equal(blocks.length,3);
   for (const block of blocks) {
     const colors = {...blocks[0],...block};
-    for (const [a,b] of [['ink','bg'],['muted','surface'],['accent','bg'],['on-accent','accent'],['hero-text','hero'],['hero-button-ink','hero-accent'],['correct-ink','correct-bg'],['retry-ink','retry-bg']]) {
+    for (const [a,b] of [['ink','bg'],['muted','surface'],['accent','bg'],['on-accent','accent'],['button-ink','button-bg'],['hero-text','hero'],['hero-button-ink','hero-accent'],['correct-ink','correct-bg'],['retry-ink','retry-bg']]) {
       const x=light(colors[a]),y=light(colors[b]);
       assert.ok((Math.max(x,y)+.05)/(Math.min(x,y)+.05)>=4.5,`${block.bg}: ${a}/${b}`);
     }

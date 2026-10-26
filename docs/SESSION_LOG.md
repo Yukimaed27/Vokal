@@ -261,3 +261,16 @@ La autenticación GitHub del cliente y guardado real permanecen pendientes: el r
 Reiniciar pnpm dev tras actualizar para que el servidor reconozca los nuevos módulos públicos.
 Recoger feedback del propietario sobre interfaz y bloques. Después completar OAuth y revisar catálogo por lotes.
 Actualizar los .md solo por cambios técnicos relevantes, no por navegación incidental.
+
+## 2026-10-26 — Interfaz sobria y tema sol/luna
+
+Solicitud: sustituir apariencia pastel/coral y tarjetas redondeadas por una interfaz discreta orientada al aprendizaje.
+Cambios: index.html, src/style.css, src/theme.css, src/theme.js y src/app.js; tarjetas/controles cuadrados,
+paleta grafito/verde pino, claro neutro, sin gradiente/sombras/ilustración decorativa; titulares sin volumen de catálogo.
+Un único botón nativo sol/luna con nombre accesible actualizado. Conserva preferencias previas y almacenamiento;
+sigue al sistema antes de la primera elección. Contenido, IDs y progreso no cambian. Sin dependencias nuevas.
+Pruebas y browser-check adaptados al botón. 22 pruebas aprobadas y build estático de 12 archivos correcto.
+Contraste medido >=4.5:1; capturas reales Edge escritorio oscuro y móvil claro de 375 px revisadas.
+La revisión móvil detectó una regresión de media queries durante la edición; fue corregida antes de entregar.
+No se ejecutó CDP completo ni se verificó autenticación real. La precisión lingüística sigue pendiente.
+Contexto: HANDOFF/STATUS/DECISIONS/ARCHITECTURE actualizados. Siguiente paso funcional: GitHub OAuth y sincronización real.
