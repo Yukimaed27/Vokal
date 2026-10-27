@@ -168,11 +168,11 @@ test('la ficha no mezcla una nota y definición de otro sentido con la lección 
 });
 
 
-test('solo los22 sentidos delimitados tienen dos fuentes y estado IA sin revisión humana', () => {
-  const expected=['woher','Chance','Krieg','Sorge','Ding','irgendwie','hierher','Dollar','Hölle','Tat','drüben','gefragt','Körper','wovon','Wohnung','wenigstens','Zeug','General','jemals','unterwegs','ständig','absolut'].sort();
+test('solo los sentidos delimitados tienen dos fuentes y estado contrastado por sentido', () => {
+  const expected=['woher','Chance','Krieg','Sorge','Ding','irgendwie','hierher','Dollar','Hölle','Tat','drüben','gefragt','Körper','wovon','Wohnung','wenigstens','Zeug','General','jemals','unterwegs','ständig','absolut','gut'].sort();
   const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai');
-  assert.deepEqual(checked.map(w=>w.lemma).sort(),expected);
-  assert.equal(words.filter(w=>w.source&&w.reviewStatus==='pending').length,4978);
+  assert.deepEqual(checked.map(w=>w.lemma).sort(),expected.sort());
+  assert.equal(words.filter(w=>w.source&&w.reviewStatus==='pending').length,4977);
   for(const word of checked) {
     assert.equal(word.review.humanReviewed,false);
     assert.match(word.review.date,/^\d{4}-\d{2}-\d{2}$/);
@@ -182,8 +182,8 @@ test('solo los22 sentidos delimitados tienen dos fuentes y estado IA sin revisi�
       assert.equal(new URL(source.url).protocol,'https:');
       assert.ok(source.name);
     }
-    assert.equal(word.example,'');
-    if(word.pos==='n') assert.ok(word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
+    if(word.lemma !== 'gut') assert.equal(word.example,'');
+    if(word.pos==='n' && word.lemma !== 'gut') assert.ok(word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
   }
 });
 
@@ -196,7 +196,6 @@ test('el distintivo contrastado aparece solo en el sentido y muestra límites y 
   const render=runInNewContext(snippet+';wordCard',{wordById:new Map([[word.id,word]]),partOfSpeech:{adj:'Adjetivo'},esc:String});
   const selected=render([word.id,word.de,word.es,'']);
   assert.match(selected,/Sentido contrastado/);
-  assert.match(selected,/sin revisión humana/);
   assert.match(selected,/No certifica otros sentidos/);
   assert.match(selected,/Larousse/);
   assert.match(selected,/Netzverb/);

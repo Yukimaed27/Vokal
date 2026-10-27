@@ -51,13 +51,27 @@ export const vocabularyCorrections = {
     ]
   },
   "gut": {
-    "note": "Se limita al sentido adjetivo bueno; fiel queda sin corroborar y fuera de esta práctica.",
+    "note": "Se limita al sentido adjetivo bueno; fiel queda sin corroborar y fuera de esta pr\u00e1ctica.",
     "translations": [
       "bueno"
     ],
     "definitions": [
-      "von guter Qualität"
-    ]
+      "von guter Qualit\u00e4t"
+    ],
+    "review": {
+      "date": "2026-10-27",
+      "humanReviewed": false,
+      "sources": [
+        {
+          "name": "Duden",
+          "url": "https://www.duden.de/rechtschreibung/gut"
+        },
+        {
+          "name": "Langenscheidt",
+          "url": "https://es.langenscheidt.com/aleman-espanol/gut"
+        }
+      ]
+    }
   },
   "Mal": {
     "note": "En esta ficha: vez, como en una repetición. El sentido marca se deja fuera.",
