@@ -1,6 +1,6 @@
 # Estado para retomar
 
-Actualizado:2026-10-27. Vokal0.3.0. Resultado integrado y comprobado en main; consultar comunicacion.md/Git para el push final.
+Actualizado:2026-10-27. Vokal0.3.0. Resultado integrado y comprobado en main; push de6bd2312 confirmado. Consultar Git para el último cierre documental.
 
 ## Vocabulario
 

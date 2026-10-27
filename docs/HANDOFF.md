@@ -4,7 +4,7 @@ Actualizado: 2026-10-27. Vokal0.3.0. Español breve; documentación técnica en 
 
 ## Resultado léxico
 
-Meta de1000 sentidos contrastados integrada y comprobada en main. Código y contexto preparados para push; verificar el remoto en Git.
+Meta de1000 sentidos contrastados integrada y comprobada en main. Push de6bd2312 confirmado; consultar Git para el último cierre documental.
 Se examinaron1005 posiciones:498 contrastadas en1–500 (incluye22 previas),497 en501–1000 y5 adicionales1001–1005.
 Total1000 contrastadas,4000 pendientes:5 examinadas con evidencia insuficiente y3995 sin examen individual.
 Pendientes explícitos:scheiße/getötet/zerstört/Hau/Mister. No se aprobaron para ajustar la cifra.

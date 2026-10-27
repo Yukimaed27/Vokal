@@ -1,4 +1,8 @@
-# Muestra de revisión lingüística — primeras 100 entradas
+# Índice de revisión léxica
+
+Estado actual2026-10-27:1000 sentidos contrastados entre1005 posiciones examinadas,5 dudas explícitas y4000 pendientes totales.
+Entregas integradas en main: [recontraste inicial/complemento](RECHECK-001-500.md) y [501–1000](LEX-501-1000.md).
+El piloto y los conteos inferiores son históricos. Los22 recontrastes anteriores se incluyen, no se suman otra vez.
 
 Estado histórico del piloto: 2026-10-26.
 

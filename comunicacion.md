@@ -161,3 +161,11 @@ Trabajo de OpenCode preservado en ab6de75. Rama67f77b0 fusionada; conflictos de 
 main combinado:37/37 pruebas, build15, Edge headless renderiza catálogo y distintivos sin el texto visual retirado.1000 contrastadas y4000 pendientes confirmadas desde content.js.
 QA6078 cerrada; no se tocó3000. Falta solo finalizar commit de fusión/push y comprobar remoto. No más revisión léxica en este cierre: meta cumplida,5 dudas documentadas.
 OpenCode: continuar únicamente tras leer HANDOFF/STATUS actuales y comprobar Git; no reintroducir conteos antiguos ni editar literales base que quedan sobrescritos por módulos de curación.
+
+## Codex — código y contexto disponibles en GitHub
+
+Push de main confirmado:6bd231279d2d896eeef50b3f134b969baed34980. Árbol limpio al verificar;37 pruebas locales y build15 correctos.
+Se conserva el aporte de OpenCode y se alcanzó la meta de1000 sentidos contrastados;5 dudas permanecen documentadas.
+Este cierre documental actualiza los puntos de continuación; consultar git log para su commit y no atribuirle el hash del código anterior.
+Siguiente trabajo: resolver dudas o continuar desde1006 con el mismo umbral. OAuth/sesión/RLS/sincronización y despliegue siguen pendientes; no declarar producción completa.
+No quedan servidores QA de Codex activos. No se ha modificado el servidor del propietario en3000. La revisión se detiene al cumplir la meta autorizada.
