@@ -101,3 +101,19 @@ El propietario eligió revisión por fuentes, marcando ausencia de revisión hum
 4978 registros importados siguen pendientes. Capa 193 registros ajustados; 500 examinados históricamente, no 522.
 Se limita significado/categoría/artículo y se excluyen ejemplos no comprobados. No aprueba todas las acepciones ni una lección entera.
 Los conteos de «todos pendientes» de entregas anteriores son históricos. No convertir este estado en certificación 100% ni revisión humana.
+
+## Estado posterior — revisión501–1000 (2026-10-27)
+
+[Informe de500 filas](reviews/LEX-501-1000.md):497 sentidos contrastados y3 pendientes (zerstört/Hau/Mister).
+En la rama Codex se acumulan1000 posiciones examinadas y519 sentidos contrastados, no1000 aprobados.
+Hay693 registros editoriales; raw de5000 y sus hashes intactos. Los participios, ordinales y nombres propios no se cuentan como nuevos lemas básicos.
+Se selecciona un sentido y categoría por ficha, se distingue el artículo del homógrafo y se retiran variantes/ejemplos sin corroboración.
+Sin cambios de IDs, progreso,231 lecciones,40 secciones,5184 fichas combinadas o10981 ejercicios.
+Los valores anteriores son históricos; los conteos finales tras combinar1–500 de OpenCode deben leerse en STATUS.
+
+## Meta1000 alcanzada — actualización posterior del2026-10-27
+
+1000 sentidos contrastados entre1005 posiciones examinadas:498 de1–500,497 de501–1000 y5 de1001–1005.
+Los498 incluyen22 anteriores. Cinco dudas permanecen sin aprobar, y3995 registros no tienen examen individual;4000 pendientes totales.
+Evidencia adicional en reviews/RECHECK-001-500.md. Los módulos conservan raw/IDs/progreso; no se crean lemas básicos artificiales.
+Esta cifra no certifica todos los sentidos, paradigmas ni niveles MCER. Los conteos anteriores son históricos.

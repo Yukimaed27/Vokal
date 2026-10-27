@@ -1,5 +1,16 @@
 # Hoja de ruta
 
+## Prioridad vigente — 2026-10-27
+
+- [x] Examinar501–1000 y registrar evidencia:497 sentidos contrastados,3 pendientes.
+- [x] Distinguir participios/categorías funcionales y corregir artículo/forma sin cambiar IDs.
+- [ ] Integrar1–500 de OpenCode, conservar su retirada visual y registrar conteos combinados.
+- [x] Llegar a1000 sentidos contrastados con fuentes entre1005 posiciones, manteniendo5 dudas explícitas.
+- [ ] Resolver pendientes del lote (zerstört/Hau/Mister) y del tramo1–500.
+- [ ] Cerrar sesión real, OAuth, RLS, sincronización y despliegue antes de declarar producción.
+
+Los hitos inferiores son anteriores; esta prioridad sustituye las pausas de medición antiguas.
+
 ## Base y refinamientos
 - [x] Estructura portable, documentación, hooks y CI.
 - [x] Negro con rosa/amarillo suave, modo claro neutro y botón sol/luna con detección inicial del sistema; inicio y navegación refinados.

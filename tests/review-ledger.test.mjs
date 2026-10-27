@@ -26,12 +26,9 @@ test('el informe 201–500 cubre cada índice y lema una sola vez con fuente y e
 test('el recontraste documenta exactamente las fichas marcadas y sus fuentes vigentes', () => {
   const report=readFileSync(new URL('../docs/reviews/RECHECK-22.md',import.meta.url),'utf8');
   const rows=report.split('\n').filter(line=>/^\| \d+ \|/.test(line)).map(line=>line.split('|').slice(1,-1).map(v=>v.trim()));
-  const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai');
-  assert.ok(rows.length >= 22);
-  const documented = new Set(rows.map(r=>r[1]));
-  for(const lemma of documented) {
-    assert.ok(checked.map(w=>w.lemma).includes(lemma));
-  }
+  const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai'&&rows.some(row=>row[1]===w.lemma));
+  assert.equal(rows.length,22);
+  assert.deepEqual(rows.map(r=>r[1]).sort(),checked.map(w=>w.lemma).sort());
   for(const row of rows) {
     assert.equal(dictionaryEntries[Number(row[0])-1].lemma,row[1]);
     const word=checked.find(w=>w.lemma===row[1]);

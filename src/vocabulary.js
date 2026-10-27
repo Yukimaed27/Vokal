@@ -3,7 +3,7 @@ import {vocabularyCorrections} from './vocabulary-corrections.js';
 
 export const dictionaryLemmaCount = dictionaryEntries.length;
 const articles = {masc:'der',fem:'die',neut:'das'};
-export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio',particle:'Partícula'};
+export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio',particle:'Partícula',part:'Participio',num:'Numeral',conj:'Conjunción',prep:'Preposición',pron:'Pronombre'};
 const canonical = value => value.normalize('NFC').replace(/^(der|die|das)\s+/i,'').toLocaleLowerCase('de-DE');
 
 export function createVocabularyCourse(guidedLessons) {
@@ -36,7 +36,7 @@ export function createVocabularyCourse(guidedLessons) {
     for (let start=0;start<group.length;start+=25) {
       const block = group.slice(start,start+25);
       const blockNumber = String(start/25+1).padStart(2,'0');
-      const noun = block.find(word => word.pos === 'n');
+      const noun = block.find(word => word.pos === 'n' && /^(der|die|das)\s/.test(word.de));
       const questions = noun ? [{prompt:`En «${noun.de}», ¿qué artículo acompaña al sustantivo?`,options:['der','die','das'],answers:[articles[noun.gender]],explanation:`El diccionario registra «${noun.lemma}» con el artículo «${articles[noun.gender]}». Aprende artículo y nombre juntos.`}] : [{prompt:'Para estudiar un verbo, ¿qué conviene distinguir?',options:['Su infinitivo y sus formas conjugadas','Solo la primera letra','El número de letras'],answers:['Su infinitivo y sus formas conjugadas'],explanation:'La forma del diccionario no sustituye aprender cómo se utiliza un verbo en una oración.'}];
       lessons.push({
         id:`lexico-${number}-${blockNumber}`,unit:unit.id,level:'LEX',category:`VOCABULARIO · BLOQUE ${number}`,reviewStatus:'pending',

@@ -1,5 +1,18 @@
 # Cambios
 
+## 2026-10-27 — Meta1000 sentidos contrastados
+
+- Recontraste inicial y cinco complementos:1000 sentidos respaldados entre1005 posiciones examinadas;5 dudas conservadas.
+- Se preservan las22 evidencias anteriores;978 contrastes nuevos. IDs/progreso/raw intactos.
+-37 pruebas locales y build15 correctos; carga/render de catálogo comprobados en Edge. Producción remota pendiente.
+
+## 2026-10-27 — Revisión501–1000 por sentido
+
+- 500 registros examinados:497 con contraste suficiente,3 pendientes explícitos; fuentes por fila.
+- Categorías de participio/numeral/conjunción/preposición y correcciones de homógrafos/artículos/formas sin cambiar IDs.
+- 519 sentidos contrastados en la rama de Codex antes de combinar1–500 de OpenCode; no1000 aprobados.
+- 36 pruebas locales y build de14 recursos correctos. Sin nuevas dependencias ni verificación de producción remota.
+
 ## 2026-10-26 — Sentidos contrastados con fuentes
 
 - 22 fichas con sentido delimitado, dos fuentes y aviso IA sin revisión humana; 4978 importadas siguen pendientes.

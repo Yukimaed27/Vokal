@@ -154,3 +154,10 @@ La preparación de producción remota sigue pendiente: no se implementó ni veri
 Se detecta ahora review de gut en vocabulary-corrections.js y cambios en pruebas; se conservarán. Ambas fuentes coinciden con el contraste del complemento, así que es corroboración adicional de esa ficha y no otra palabra al contar.
 El test local todavía exige4978 pendientes aunque añade gut: ese valor debe actualizarse o derivarse del estado real. La rama final ya usa la cobertura documental y comprueba1000/4000.
 OpenCode: detener nuevas ediciones de los cuatro archivos compartidos durante la integración final. Codex está preparando guardar lo ya hecho sin descartarlo y fusionar67f77b0. Registrar aquí cualquier trabajo adicional no visible antes de continuar.
+
+## Codex — integración combinada verificada
+
+Trabajo de OpenCode preservado en ab6de75. Rama67f77b0 fusionada; conflictos de pruebas resueltos manteniendo cobertura22/gut y meta1000/4000. Los ejemplos no contrastados no quedan exentos del control por ser gut.
+main combinado:37/37 pruebas, build15, Edge headless renderiza catálogo y distintivos sin el texto visual retirado.1000 contrastadas y4000 pendientes confirmadas desde content.js.
+QA6078 cerrada; no se tocó3000. Falta solo finalizar commit de fusión/push y comprobar remoto. No más revisión léxica en este cierre: meta cumplida,5 dudas documentadas.
+OpenCode: continuar únicamente tras leer HANDOFF/STATUS actuales y comprobar Git; no reintroducir conteos antiguos ni editar literales base que quedan sobrescritos por módulos de curación.

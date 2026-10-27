@@ -1,77 +1,50 @@
 # Traspaso activo
 
-Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
+Actualizado: 2026-10-27. Vokal0.3.0. Español breve; documentación técnica en Markdown.
 
-## Punto de pausa solicitado por el propietario
+## Resultado léxico
 
-Solo registrar continuidad; no iniciar revisiones ni cambios de aplicación en esta pausa.
-Nueva preferencia: retirar del sitio la frase «sin revisión humana» al retomar. Sustituye la petición anterior
-que exigía mostrarla; no implica afirmar validación humana ni alterar falsamente metadatos internos.
-El aviso todavía está en la app: su retirada NO se implementó porque el propietario pidió solo dejar registro.
+Meta de1000 sentidos contrastados integrada y comprobada en main. Código y contexto preparados para push; verificar el remoto en Git.
+Se examinaron1005 posiciones:498 contrastadas en1–500 (incluye22 previas),497 en501–1000 y5 adicionales1001–1005.
+Total1000 contrastadas,4000 pendientes:5 examinadas con evidencia insuficiente y3995 sin examen individual.
+Pendientes explícitos:scheiße/getötet/zerstört/Hau/Mister. No se aprobaron para ajustar la cifra.
+Nuevos contrastes de esta sesión:978, no1000; los22 previos conservan fuentes/fecha/sentido.
+No significa1000 lemas básicos distintos: hay sustantivaciones, nombres propios, participios y ordinales.
 
-Orden para la siguiente sesión:
-1. Retirar esa frase del distintivo y del texto desplegable en src/app.js; adaptar pruebas de render.
-   Conservar fuentes, alcance por sentido y límites reales sin afirmar aprobación de toda una palabra.
-2. Continuar verificación usando páginas/información fiables y foros para uso/contexto, contrastando afirmaciones
-   y distinguiendo opinión comunitaria de evidencia editorial. No usar coincidencia de agentes como garantía.
-3. Priorizar las 478 entradas ya examinadas que aún no cumplen el umbral por sentido antes de ampliar.
-   No reiniciar desde1 ni confundir500 examinadas con500 aprobadas. Las otras4500 no tienen examen individual.
+## Archivos efectivos y evidencia
 
-## Última implementación — criterio por sentido
+- [Recontraste1–500 y complemento5](reviews/RECHECK-001-500.md):505 filas, incluidas las22 anteriores.
+- [Lote501–1000](reviews/LEX-501-1000.md):500 filas,497C/3P.
+- src/vocabulary-review-001-500.js:478 ajustes/estados del tramo inicial +5 complementos; no sobrescribe las22 anteriores.
+- src/vocabulary-review-501-1000.js:500 ajustes/estados;497 con review.
+- Ambos se mezclan al final de vocabulary-corrections.js. Editar el módulo efectivo, no un literal base que queda sobrescrito.
+- humanReviewed=false siempre; no se certifican otras acepciones, ejemplos, pronunciación, paradigmas completos ni MCER.
+- Se conservan IDs/progreso/orden/raw. Hash raw77f90566bf008d9e34af4ce76d10caea8e50c8674cc8fe06850c00bb49e75992.
 
-En la entrega anterior el propietario eligió fuentes contrastadas con aviso explícito; la preferencia visual vigente es la del punto de pausa superior.
-Criterio vigente: reviews/REVIEW_POLICY.md. Se recontrastan las 21 filas parciales y absolut del lote 201–500;
-NO es un nuevo lote, el total examinado sigue500, no 522. Evidencia y fuentes: reviews/RECHECK-22.md.
-22 sentidos delimitados cumplen contraste bilingüe + categoría/artículo, dos familias editoriales por ficha.
-Estado sense-checked-ai con review.date/sources/humanReviewed=false. Otros4978 importados siguen pending.
-171 ajustes anteriores +22=193 registros en capa editorial. Ninguno tiene validación humana ni certeza 100%.
-Se excluyen variantes no corroboradas y ejemplos no comprobados de estas22 fichas. No se aprueban otros sentidos/paradigmas.
-Absolut quedó corroborado mediante extracto indexado Larousse y Netzverb; no afirmar apertura íntegra de Larousse.
-Tat se distingue de tat verbal; General se corrobora en la dirección español→alemán; todo queda trazado.
+Las notas delimitan sentidos y registros. Se retiran definiciones/ejemplos no acotados de las fichas actualizadas.
+POS incluye part/num/conj/prep/pron. Nombres usuales sin artículo se excluyen de preguntas de artículo.
+Los sentidos reflexivos muestran sich cuando corresponde, manteniendo el ID original.
 
-## Código y verificación
+## Verificación y coordinación
 
-vocabulary.js deriva estado desde la evidencia de la capa; content.js conserva review.
-wordCard solo muestra distintivo/fuentes cuando de/es coincide; otro sentido continúa pendiente.
-Aviso visible «IA, sin revisión humana» y límites desplegables. No confundir word.review con state.reviews del repaso privado.
-Lecciones completas mixtas siguen pendientes. IDs/importación/orden/progreso intactos; no se recalifican logros.
-33 pruebas y build de 13 recursos correctos. Hooks recogen controles de metadatos, conjunto exacto, render y22 filas documentales.
-Captura Edge real de 375 px clara con ficha absolut/distintivo/fuentes; ancho documental 360px, sin desbordamiento.
-No recorrido CDP completo ni revisión humana. Servidor QA cerrado al finalizar; no detener servidor del propietario.
+37 pruebas locales y build de15 recursos correctos. Sin dependencias nuevas.
+Total5184 fichas/231 lecciones/40 secciones/10981 ejercicios, sin cambios de cantidad o progreso.
+Smoke real Edge headless: catálogo renderizado y módulos cargados. No recorrido completo de todos los ejercicios ni nube.
+Hooks existentes ejecutan pnpm check; no escriben contexto ni consultan fuentes. Al clonar ejecutar pnpm prepare.
 
-## Siguiente acción
+OpenCode retiró la frase visual solicitada en app.js y su aserción. Codex conserva ese trabajo y documenta la integración.
+Coordinación en comunicacion.md de Vokal; Codex usó worktree Vokal-codex-review, rama review/codex-501-1000.
+El archivo no despierta automáticamente otro agente. Durante el cierre apareció el contraste de gut de OpenCode: se conservó en ab6de75 y coincidió con la evidencia del complemento, sin doble conteo.
+No sobrescribir avances nuevos de OpenCode si aparecen. Los informes históricos y SESSION_LOG se conservan.
 
-Para máxima fiabilidad, aplicar REVIEW_POLICY a sentidos ya examinados aún pendientes y resolver dudas históricas;
-no saltar directamente a presentar los 500 como aprobados. Próximo rango nuevo sería501 en adelante.
-No iniciar automáticamente un lote masivo. El agente no ve el cupo; última referencia comunicada59% antes del lote 300.
-Al añadir fichas contrastadas, actualizar evidencia/registro/pruebas en la misma entrega, manteniendo informes históricos.
-Al clonar en otra laptop, seguir OPERATIONS y pnpm prepare; configuración local Git de hooks no viaja con el clon.
+## Siguiente paso
 
-## Continuidad técnica
+1. Comprobar último commit/push de main al abrir otra sesión; retirada visual y suite combinada ya comprobadas localmente.
+2. Mantener la política por sentido al revisar siguientes lotes o resolver las5 dudas; siguiente posición nueva1006.
+3. Para producción: implementar/verificar GitHub OAuth y probar sesión, guardado, RLS con dos cuentas y sincronización real.
 
-- Revisar con el propietario el resultado de diseño y la experiencia de los bloques.
-- Reiniciar pnpm dev después de actualizar: la lista de recursos públicos añade vocabulary.js y vocabulary-data.js.
-- Implementar GitHub OAuth: el proveedor Supabase ya está habilitado, pero Vokal todavía no tiene el botón/flujo.
-- Verificar después sesión real, guardado, RLS con dos cuentas y sincronización entre dispositivos.
-- No repetir la migración SQL ya aplicada sin revisar políticas. No pedir Client Secret ni OTP en el chat.
-- No contratar SMTP ni Pro: se eligió GitHub para evitar la restricción de plantillas de Free nuevo.
-
-El propietario puede estar ejecutando su servidor en 3000; no detenerlo. Los servidores de QA del agente se cierran al finalizar.
-No hay una publicación confirmada. Código/contexto viajan por Git; progreso privado no se guarda en Git.
-
-## Lectura bajo demanda
-
-- STATUS: snapshot vigente y límites.
-- ARCHITECTURE: rutas, datos, mezcla de progreso y dos rutas de desbloqueo.
-- CONTENT y VOCABULARY_SOURCES: material, conteos, procedencia, licencia e importador.
-- OPERATIONS: Windows/Linux, build y comprobaciones.
-- CLOUD: estado de acceso y preparación de Supabase.
-- WORKFLOW/AGENTS: obligación de mantener contexto técnico relevante, sin bitácora de clics.
-
-Conservar IDs y claves existentes. Un único botón de tema; sin selector ni titulares de volumen. No restaurar verde pino, contornos de tarjetas o hero oscuro fijo en modo claro.
-El hash de esta entrega se consulta con git log, evitando referencias autorreferenciales.
-
-## Ajuste posterior: botón de tema
-Botón reducido de 48 a 44px, icono22→18px. Conserva etiqueta accesible, foco y alternancia; objetivo táctil44px. Cambio CSS sin lógica nueva. Pruebas existentes pasan por hooks; sin nueva captura de navegador.
-
-Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.
+Supabase público configurado, SQL aplicado según el propietario; API anónima rechaza tabla/RPC y proveedor GitHub habilitado.
+Eso no verifica el flujo de usuario ni multidispositivo. No hay despliegue confirmado. Sin cuenta funcional el progreso es local.
+No pedir secretos/OTP, repetir SQL sin revisar, contratar SMTP/Pro ni publicar por inferencia.
+No detener servidor del propietario en3000 ni modificar diseño/tema/header durante este trabajo.
+Cachés .qa no viajan ni son necesarias: fuentes/decisiones útiles en informes versionados. Consultar STATUS y WORKFLOW.

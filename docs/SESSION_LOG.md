@@ -364,3 +364,51 @@ Se actualizan HANDOFF/STATUS/DECISIONS/ROADMAP/REVIEW_POLICY y regla de continui
 Sin modificaciones de app, datos, fuentes o dependencias ni nuevas búsquedas. Los hooks existentes comprueban código al guardar.
 Estado:500 examinadas,22 sentidos contrastados,478 examinadas aún pendientes del umbral y4500 sin examen individual.
 Siguiente sesión: cambio de texto/pruebas y luego revisión de las478. No continuar automáticamente durante la pausa.
+
+## 2026-10-27 — Codex revisa501–1000 y coordina con OpenCode
+
+### Solicitud y alcance
+El propietario autoriza continuar con OpenCode para alcanzar1000 palabras revisadas y máxima fiabilidad, coordinando por comunicacion.md.
+Se detectan cambios ajenos en app.js/tests (retirada del texto visual), que se conservan. Codex crea rama review/codex-501-1000 y worktree hermano.
+OpenCode confirma1–500; Codex501–1000. Se prepara caché de lectura para ayudar a OpenCode, sin editar sus datos.
+
+### Cambios
+500 posiciones examinadas,497 sentidos con evidencia suficiente,3 pendientes (zerstört, Hau, Mister).
+Fuentes bilingües Langenscheidt/PONS y Duden; se revisan reenvíos, redirecciones erróneas, homógrafos y equivalencias secundarias.
+Módulo de filas curadas, informe con fuentes por fila y tres pruebas de cobertura/propagación/categorías.
+Se añaden etiquetas part/num/conj/prep y se excluyen nombres sin artículo de las preguntas de artículo.
+Loch y Tor pasan al género neutro para agujero/gol; See femenino para mar; Band masculino para tomo. Reflexivos mantienen sich.
+Se preservan raw, IDs, orden, claves y progreso. Se retiran traducciones mezcladas, definiciones y ejemplos no delimitados de este lote.
+
+### Verificación
+pnpm check:36/36; pnpm build:14 recursos; git diff --check correcto. Hash raw77f90566bf008d9e34af4ce76d10caea8e50c8674cc8fe06850c00bb49e75992 intacto.
+519 sentidos contrastados/4481 pendientes/693 registros editoriales en esta rama antes de combinar OpenCode.5184 fichas/10981 preguntas conservadas.
+No QA de navegador completa, CI ni sesión/autorización remota verificadas en este lote. Sin paquetes nuevos.
+
+### Límites y continuidad
+1000 examinadas históricamente no son1000 contrastadas. Falta integrar la rama y las correcciones1–500 de OpenCode y registrar el total combinado.
+Se conservan pendientes por insuficiencia de evidencia; no se presenta una URL o un200 como aprobación automática.
+Producción requiere OAuth/sesión/guardado/RLS entre cuentas/sincronización/despliegue reales. No se publica ni contratan servicios.
+Ver HANDOFF/STATUS y comunicacion.md para el estado de integración y Git; no declarar push antes de comprobarlo.
+
+## 2026-10-27 — Meta1000 y complemento del tramo inicial
+
+Para completar la meta autorizada sin depender de una entrega aún no visible de OpenCode, Codex recuperó fuentes y recontrastó1–500 en archivos independientes.
+Se mantienen22 registros ya contrastados;476 estados nuevos del tramo inicial,497 del lote501–1000 y5 complementos1001–1005:1000 en total,978 nuevos.
+1005 examinadas,5 dudas explícitas;4000 pendientes en el catálogo. No se fuerza aprobación de scheiße/getötet/zerstört/Hau/Mister.
+Se corroboraron nominalizaciones en fuentes bilingües, géneros de homógrafos, funciones gramaticales y sentidos secundarios.
+Se usan módulos de curación, preservando raw/IDs/progreso. El artículo no se inventa para nombres propios; se diferencia pron/part/num/conj/prep.
+37/37 pruebas locales y build15 correctos.5184 fichas/10981 ejercicios conservados. Smoke Edge real de catálogo/carga; servidor QA propio cerrado.
+Los tests conservan las22 evidencias anteriores y verifican filas/estados/fuentes/propagación; no sustituyen revisión semántica.
+No se verificó producción remota ni se implementó OAuth. Mantener trabajo visual de OpenCode en la integración.
+El estado de Git se registra en comunicacion.md al terminar; no afirmar push antes de comprobarlo. Próximo rango nuevo1006.
+
+## 2026-10-27 — Integración final con OpenCode en main
+
+Se guarda y conserva el trabajo de OpenCode en ab6de75: retirada visual y contraste de gut con fuentes.
+Se fusiona la rama de Codex (67f77b0). Los conflictos fueron de conteo/cobertura en dos pruebas; se conservan evidencia histórica y comprobación del conjunto1000/4000, además de gut.
+La ficha gut coincide en sentido/fuentes entre ambos trabajos y no añade otra palabra al total. El complemento efectivo retira ejemplos no contrastados.
+Resultado combinado:37/37 pruebas, build15 y smoke Edge headless real del catálogo con distintivos, sin la frase visual retirada.
+No se afirma prueba de todas las categorías o ejercicios en navegador, ni sesión/nube remotas. Servidor QA6078 cerrado; no se tocó3000.
+Se actualizan política/AGENTS y snapshots para reflejar la retirada ya implementada. Hooks existentes ejecutan los controles nuevos.
+Verificar push final de main en comunicacion.md y remoto; no confundir respaldo de rama con integración publicada.

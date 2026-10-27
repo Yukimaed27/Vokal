@@ -1,1 +1,1 @@
-export const publicFiles = ['index.html','src/app.js','src/style.css','src/theme.css','src/theme.js','src/learning.js','src/content.js','src/curriculum.js','src/cloud.js','src/vocabulary.js','src/vocabulary-corrections.js','src/vocabulary-data.js'];
+export const publicFiles = ['index.html','src/app.js','src/style.css','src/theme.css','src/theme.js','src/learning.js','src/content.js','src/curriculum.js','src/cloud.js','src/vocabulary.js','src/vocabulary-corrections.js','src/vocabulary-review-501-1000.js','src/vocabulary-review-001-500.js','src/vocabulary-data.js'];

@@ -87,14 +87,14 @@ test('los ajustes editoriales llegan a fichas y ejercicios sin cambiar el archiv
   assert.equal(course.entries.find(w=>w.lemma==='nicht').pos,'particle');
 });
 
-test('corregir una entrada reutilizada conserva su ID, artículo y ejemplo', async () => {
+test('corregir una entrada reutilizada conserva ID y artículo y retira el ejemplo no contrastado', async () => {
   const {createVocabularyCourse} = await import('../src/vocabulary.js');
   const course = createVocabularyCourse([{words:[['id-preservado','die Habe','propriedad','Dies ist meine Habe.']]}]);
   const entry = course.entries.find(w=>w.lemma==='Habe');
   assert.equal(entry.id,'id-preservado');
   assert.equal(entry.de,'die Habe');
   assert.equal(entry.es,'propiedad / bienes');
-  assert.equal(entry.example,'Dies ist meine Habe.');
+  assert.equal(entry.example,'');
   assert.ok(course.lessons.flatMap(l=>l.words).some(w=>w[0]==='id-preservado'&&w[2]==='propiedad / bienes'));
 });
 
@@ -104,7 +104,7 @@ test('el lote 101–200 no reintroduce fragmentos ni equivalencias descartadas e
     const word=words.find(w=>w.lemma===lemma);
     assert.ok(word.editorialNote,lemma);
     assert.ok(!word.translations.includes(bad),lemma);
-    assert.equal(word.reviewStatus,'pending');
+    assert.equal(word.reviewStatus,'sense-checked-ai');
     const row=lessons.filter(l=>l.level==='LEX').flatMap(l=>l.words).find(w=>w[0]===word.id);
     assert.equal(row[2],word.es);
   }
@@ -168,11 +168,11 @@ test('la ficha no mezcla una nota y definición de otro sentido con la lección 
 });
 
 
-test('solo los sentidos delimitados tienen dos fuentes y estado contrastado por sentido', () => {
+test('las fichas contrastadas tienen evidencia y los22 sentidos originales se conservan', () => {
   const expected=['woher','Chance','Krieg','Sorge','Ding','irgendwie','hierher','Dollar','Hölle','Tat','drüben','gefragt','Körper','wovon','Wohnung','wenigstens','Zeug','General','jemals','unterwegs','ständig','absolut','gut'].sort();
   const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai');
-  assert.deepEqual(checked.map(w=>w.lemma).sort(),expected.sort());
-  assert.equal(words.filter(w=>w.source&&w.reviewStatus==='pending').length,4977);
+  for(const lemma of expected) assert.ok(checked.some(w=>w.lemma===lemma),lemma);
+  assert.equal(checked.length+words.filter(w=>w.source&&w.reviewStatus==='pending').length,5000);
   for(const word of checked) {
     assert.equal(word.review.humanReviewed,false);
     assert.match(word.review.date,/^\d{4}-\d{2}-\d{2}$/);
@@ -182,8 +182,8 @@ test('solo los sentidos delimitados tienen dos fuentes y estado contrastado por 
       assert.equal(new URL(source.url).protocol,'https:');
       assert.ok(source.name);
     }
-    if(word.lemma !== 'gut') assert.equal(word.example,'');
-    if(word.pos==='n' && word.lemma !== 'gut') assert.ok(word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
+    assert.equal(word.example,'');
+    if(word.pos==='n') assert.ok(word.de===word.lemma || word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
   }
 });
 
@@ -196,6 +196,7 @@ test('el distintivo contrastado aparece solo en el sentido y muestra límites y 
   const render=runInNewContext(snippet+';wordCard',{wordById:new Map([[word.id,word]]),partOfSpeech:{adj:'Adjetivo'},esc:String});
   const selected=render([word.id,word.de,word.es,'']);
   assert.match(selected,/Sentido contrastado/);
+  assert.doesNotMatch(selected,/sin revisión humana/);
   assert.match(selected,/No certifica otros sentidos/);
   assert.match(selected,/Larousse/);
   assert.match(selected,/Netzverb/);
