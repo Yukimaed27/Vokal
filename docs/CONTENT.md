@@ -125,3 +125,12 @@ Separación Entschuldigung como sustantivo/fórmula, Uhr/Stunde y formas que apa
 Las lecciones tienen30/30/30/28 ejercicios,118 en conjunto. Total10993; fichas5184/lecciones231/secciones40 sin cambios.
 Revisión documentada en reviews/A1-CODEX.md; no modifica estados1000/4000 del catálogo ni acredita A1 completo.
 OpenCode tiene3 lecciones/36 fichas asignadas y entregó solo resumen preliminar a la fecha de este registro.
+
+## Cierre de auditoría del A1 existente — 2026-10-27
+
+Revisadas las7 lecciones actuales:84 fichas y23 turnos,202 ejercicios finales.
+Codex añade9 preguntas a las3 restantes (28 por lección); ciclo completo21 nuevas. Total aplicación11002 ejercicios.
+Se amplían casos de artículos/preposiciones, destino/ubicación, plurales y separables, conservando fichas e IDs.
+Informes A1-CODEX.md/A1-CIERRE.md: fuentes, usos enseñados y límites. Catálogo1000/4000 sin promoción automática.
+El informe fuente de OpenCode no llegó: Codex completó el contraste, sin dejar una dependencia pendiente para este cierre.
+Próximo alcance: ampliar currículo y tareas de cuatro destrezas; estas7 lecciones no completan todo A1.

@@ -151,3 +151,9 @@ Priorizar revisar el A1 existente como material (reglas, ejemplos, diálogos y p
 Reparto solicitado: Codex4 lecciones/48 fichas; OpenCode3 lecciones/36 fichas. No nuevos agentes internos para controlar consumo.
 No confundir la auditoría de7 lecciones con un curso A1 completo. Mantener aviso del catálogo hasta ampliar su evidencia específica.
 La entrega de OpenCode necesita URLs y alcance concreto; un listado genérico de editoriales no acredita contraste.
+
+## 2026-10-27 — Terminar la revisión sin esperar evidencia externa
+
+A petición del propietario, Codex asume las36 fichas restantes al no recibir informe fuente de OpenCode.
+Conservar propuestas preliminares, contrastar directamente y atribuir correctamente el trabajo.
+Cerrar la auditoría de7 lecciones no equivale a completar el currículo A1 ni cambia1000 estados léxicos por inferencia.

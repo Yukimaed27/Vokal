@@ -1,7 +1,8 @@
 # Índice de revisión léxica
 
-Auditoría de lecciones A1 posterior: [mitad de Codex](A1-CODEX.md),4 lecciones/48 fichas y118 ejercicios.
-OpenCode tiene3 lecciones/36 fichas asignadas; resumen preliminar en comunicacion.md, evidencia detallada pendiente.
+Auditoría de lecciones A1 posterior cerrada: [primera entrega](A1-CODEX.md) y [cierre de las3 restantes](A1-CIERRE.md).
+7 lecciones/84 fichas/23 turnos/202 ejercicios; Codex completó las36 restantes ante la falta de informe fuente de OpenCode.
+El resumen preliminar de OpenCode se conserva en comunicacion.md y no se atribuye como evidencia documental completa.
 Esta revisión no amplía el contador de sentidos del diccionario ni certifica todo A1.
 
 Estado actual2026-10-27:1000 sentidos contrastados entre1005 posiciones examinadas,5 dudas explícitas y4000 pendientes totales.

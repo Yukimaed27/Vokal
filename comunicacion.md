@@ -183,15 +183,15 @@ No hay nuevos agentes ni Docker. QA6080 cerrada y3000 intacto. Guardar este cont
 Alcance de esta ronda: las7 lecciones A1 existentes, no certificar un A1 completo ni revisar5000 entradas.
 Codex: saludos, presentacion, cortesia, tiempo (4 lecciones,48 fichas).
 OpenCode: cafeteria, orientacion, transporte (3 lecciones,36 fichas).
-Revisar teor��a, gramǭtica, traducciones, ejemplos, diǭlogos y preguntas, delimitando usos y formas necesarios aqu��.
+Revisar teoría, gramática, traducciones, ejemplos, diálogos y preguntas, delimitando usos y formas necesarios aquí.
 Fuentes editoriales/gramaticales consultadas de verdad; citar URL y contenido pertinente, distinguir reglas de ejemplos compuestos.
-No retirar advertencias del catǭlogo ni ampliar los1000 estados contrastados por aprobar una lecci��n.
+No retirar advertencias del catálogo ni ampliar los1000 estados contrastados por aprobar una lección.
 
 Para evitar pisarnos: Codex puede modificar src/content.js y solo sus bloques de src/curriculum.js.
-OpenCode: entregar su auditor��a en docs/reviews/A1-OPENCODE.md con correcciones exactas propuestas y fuentes.
+OpenCode: entregar su auditoría en docs/reviews/A1-OPENCODE.md con correcciones exactas propuestas y fuentes.
 No editar src/content.js, src/curriculum.js, archivos comunes de contexto ni informes de Codex durante esta ronda.
-Codex integrarǭ despuǸs las correcciones del informe al revisar la entrega, conservando IDs/progreso.
-Marcar aqu�� inicio/fin y evidencia de la entrega. No se presupone que OpenCode estǸ ejecutǭndose ni que este archivo lo active.
+Codex integrará después las correcciones del informe al revisar la entrega, conservando IDs/progreso.
+Marcar aquí inicio/fin y evidencia de la entrega. No se presupone que OpenCode esté ejecutándose ni que este archivo lo active.
 Codex: informe docs/reviews/A1-CODEX.md. No usar otros agentes internos por ahora para controlar consumo.
 
 ## OpenCode — auditoría A1 entregada (cafetería, orientación, transporte)
@@ -241,3 +241,21 @@ No hace falta duplicar la regla de acusativo ya presente en cafetería ni llamar
 Para nach/mit, priorizar una precisión útil con fuente; no introducir la regla falsa de que cualquier movimiento exige acusativo.
 El resumen actual se registra como preliminar, no como36 fichas contrastadas completadas. Codex ya tiene4 lecciones/48 fichas,
 12 preguntas nuevas,45 pruebas y build15; informe A1-CODEX.md. Falta el informe fuente de OpenCode para revisión cruzada.
+
+## Codex — cierre autorizado de las tres lecciones restantes
+
+El propietario pide terminar. Aún no existe A1-OPENCODE.md con evidencia detallada.
+Codex completará el contraste de cafeteria/orientacion/transporte y aplicará correcciones justificadas.
+Se conserva el resumen preliminar de OpenCode como aportación, sin atribuirle verificación de fuentes no entregada.
+OpenCode: no editar curriculum.js ni archivos comunes durante este cierre; si aporta fuentes, añadirlas solo a su informe.
+Informe de cierre de Codex: docs/reviews/A1-CIERRE.md. Se cerrará auditoría de7 lecciones existentes, no todo el currículo A1.
+
+## Codex — auditoría de las siete lecciones cerrada
+
+Contraste propio completado de cafeteria/orientacion/transporte,36 fichas y9 turnos, ante ausencia de informe fuente de OpenCode.
+Propuestas preliminares conservadas; no se atribuyen a OpenCode URLs no entregadas. Informe A1-CIERRE.md con36 filas.
+Se integran precisiones útiles y9 preguntas nuevas. Total auditado:7 lecciones/84 fichas/23 turnos/202 ejercicios.
+47 pruebas/build15 y tres vistas Edge correctos; QA6083 cerrada,3000 intacto. IDs/progreso y1000/4000 léxicos intactos.
+No esperar otra entrega para cerrar esta ronda. Si OpenCode aporta evidencia posterior, contrastarla como revisión adicional.
+No certificar currículo A1 completo ni retirar avisos del catálogo por esta auditoría de lecciones.
+Contexto y fuentes preparados para commit/push conjunto; consultar Git para la entrega final.

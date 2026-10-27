@@ -269,3 +269,10 @@ GitHub CLI no disponible; no se ejecutó workflow Pages. Procedimiento manual y 
 Se verifica hash de IDs previo, respuestas como mir frente a mich/ein frente a eins y sustantivo frente a interjección.
 Edge headless sin puerto de depuración abre #leccion/saludos:12 fichas, gramática nueva y30 ejercicios presentes.
 No se recorrieron manualmente todos los ejercicios. QA6082 cerrada,3000 intacto, evidencia .qa ignorada.
+
+## QA del cierre A1 — 2026-10-27
+
+47 pruebas locales/build15 correctos. Dos regresiones nuevas en tests/a1-review.test.mjs para las36 fichas restantes.
+Edge headless sin depuración: cafeteria/orientacion/transporte con12 tarjetas,28 ejercicios y gramática nueva cada una.
+Perfil aislado .qa/a1-close-profile y progreso ficticio local solo para desbloquear vistas en QA, nube desactivada.
+Servidor6083 cerrado;3000 del propietario intacto. Evidencia .qa ignorada. No recorrido completo de202 respuestas en navegador.

@@ -434,6 +434,6 @@ No cambian contratos de nube o progreso. Las cifras de párrafos anteriores desc
 ## Extensión de preguntas gramaticales — 2026-10-27
 
 En curriculum.js cada grammarChecks[id] mantiene [prompt,answers,explanation] y puede añadir una cuarta posición,
-extraQuestions: array de objetos de pregunta. make la toma como [] cuando falta; solo tiempo la usa en esta entrega.
+extraQuestions: array de objetos de pregunta. make la toma como [] cuando falta; tiempo, cafeteria, orientacion y transporte la usan tras el cierre A1.
 No cambian contratos de preguntas ni filas léxicas, IDs o progreso. Las tres lecciones originales conservan su definición en content.js.
 Auditoría docente por lección documentada en reviews/A1-CODEX.md, sin nuevos estados editoriales ni módulos públicos.

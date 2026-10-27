@@ -45,3 +45,33 @@ test('el sustantivo disculpa no exige escribir una interjección como si fuera u
   assert.ok(!production.prompt.includes('disculpe'));
   assert.ok(lesson.grammar.includes('sin artículo'));
 });
+
+test('el cierre de A1 conserva las36 fichas restantes y la compatibilidad de progreso', () => {
+  const remaining = lessons.filter(lesson => ['cafeteria','orientacion','transporte'].includes(lesson.id));
+  const ids = remaining.flatMap(lesson => [lesson.id,...lesson.words.map(word => word[0])]);
+  assert.equal(createHash('sha256').update(JSON.stringify(ids)).digest('hex'),'1c40b0f323959098a9fa1dd36a236377dafc4b1efcd0fa11756c37c5d2572386');
+  assert.equal(remaining.flatMap(lesson => lesson.words).length,36);
+  assert.equal(remaining.reduce((sum,lesson) => sum+lessonQuestions(lesson).length,0),84);
+  assert.equal(remaining.find(lesson => lesson.id === 'transporte').dialogue[1][0],'Der Zug fährt von Gleis drei ab.');
+});
+
+test('las tres lecciones finales practican caso, destino, plural y prefijo separable', () => {
+  const checks = [
+    ['cafeteria','indefinido: Ich möchte ___ Kaffee','einen','ein'],
+    ['cafeteria','indefinido: Ich möchte ___ Wasser','ein','einen'],
+    ['cafeteria','mit ___ Zucker','dem','den'],
+    ['cafeteria','ohne ___ Zucker','den','dem'],
+    ['orientacion','pregunta de destino','Wohin','Wo'],
+    ['orientacion','plural de Bahnhof','Bahnhöfe','Bahnhofe'],
+    ['orientacion','indicación formal','Gehen','Geh'],
+    ['transporte','presente de fahren','fährst','fahrst'],
+    ['transporte','mit ___ Bus','dem','den'],
+    ['transporte','verbo separable aussteigen','aus','ein'],
+  ];
+  for (const [id,part,correct,incorrect] of checks) {
+    const question = lessonQuestions(lessons.find(lesson => lesson.id === id)).find(question => question.prompt.includes(part));
+    assert.ok(question,`${id}: ${part}`);
+    assert.ok(isCorrect(correct,question.answers),`${part}: ${correct}`);
+    assert.ok(!isCorrect(incorrect,question.answers),`${part}: rechazar ${incorrect}`);
+  }
+});

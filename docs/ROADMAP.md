@@ -3,8 +3,8 @@
 ## Prioridad vigente — 2026-10-27
 
 - [x] Auditar mitad de Codex del A1 existente:4 lecciones/48 fichas, explicaciones y12 preguntas nuevas.
-- [ ] Recibir informe fuente de OpenCode para cafeteria/orientacion/transporte (36 fichas); hay resumen preliminar.
-- [ ] Contrastar e integrar la entrega de OpenCode y cerrar revisión cruzada de las7 lecciones existentes.
+- [x] Completar cafeteria/orientacion/transporte (36 fichas) mediante contraste propio de Codex al faltar informe fuente de OpenCode.
+- [x] Contrastar sus propuestas, aplicar cambios justificados y cerrar auditoría/coherencia de las7 lecciones existentes.
 - [ ] Completar currículo y destrezas A1; auditar lo existente no cubre todo el nivel.
 
 - [x] Examinar501–1000 y registrar evidencia:497 sentidos contrastados,3 pendientes.

@@ -125,3 +125,10 @@ Saludos, presentación, cortesía y tiempo: explicaciones ampliadas, Entschuldig
 48 fichas/IDs conservados;118 ejercicios en ese grupo. Informe con fuentes y límites en docs/reviews/A1-CODEX.md.
 45 pruebas/build15 y smoke Edge correctos. Total10993 ejercicios, sin añadir palabras ni cambiar1000 estados léxicos contrastados.
 La mitad de OpenCode sigue pendiente de informe fuente. No acredita A1 completo ni elimina avisos del diccionario.
+
+## 2026-10-27 — Auditoría del A1 existente cerrada
+
+Cafetería, orientación y transporte contrastados directamente: gramática ampliada y9 preguntas nuevas.
+7 lecciones/84 fichas/23 turnos/202 ejercicios en el conjunto revisado. Total11002 ejercicios de aplicación.
+47 pruebas/build15 y tres vistas Edge correctos. IDs/progreso conservados. Fuentes y alcance: docs/reviews/A1-CIERRE.md.
+No equivale a currículo completo A1. Propuestas de OpenCode conservadas, evidencia restante completada por Codex.

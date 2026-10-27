@@ -1,5 +1,7 @@
 # Auditoría A1 — mitad de Codex
 
+Cierre posterior: [A1-CIERRE](A1-CIERRE.md). La auditoría de7 lecciones ya terminó; los pendientes inferiores reflejan esta primera entrega.
+
 Fecha: 2026-10-27. Base:596f052. Responsable: Codex.
 Reparto solicitado por el propietario en comunicacion.md; no se presume aceptación o ejecución de OpenCode.
 

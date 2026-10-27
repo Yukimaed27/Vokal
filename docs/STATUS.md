@@ -14,12 +14,13 @@ Actualizado:2026-10-27. Vokal0.3.0. Resultado integrado y comprobado en main; pu
 
 ## Aplicación y verificación
 
-Última entrega: auditoría A1 de Codex en saludos/presentacion/cortesia/tiempo (48 fichas y14 turnos).
-12 preguntas añadidas, gramática ampliada y Entschuldigung acotada. Informe: reviews/A1-CODEX.md.
-Conteo vigente:5184 fichas/231 lecciones/40 secciones/10993 ejercicios;118 en las4 lecciones auditadas.
-45 pruebas locales/build15; Edge renderiza saludos con sus12 fichas y30 ejercicios. QA6082 cerrada.
-OpenCode:3 lecciones/36 fichas asignadas, resumen preliminar recibido, informe con evidencia aún pendiente.
-No se declara A1 completo ni cambia el contador léxico1000/4000. Los párrafos de37 pruebas inferiores describen la integración léxica anterior.
+Última entrega: auditoría de las7 lecciones A1 existentes cerrada:84 fichas,23 turnos,202 ejercicios.
+Codex completó36 fichas restantes al faltar informe fuente de OpenCode, conservando sus propuestas y contrastándolas.
+21 preguntas añadidas en el ciclo. Informes: reviews/A1-CODEX.md y reviews/A1-CIERRE.md.
+Conteo vigente:5184 fichas/231 lecciones/40 secciones/11002 ejercicios.
+47 pruebas locales/build15; Edge renderiza las3 lecciones finales con12 fichas y28 ejercicios cada una.
+QA6083 cerrada; perfil separado y datos ficticios, sin comprobar cuenta real en ese QA.
+No se declara currículo A1 completo ni cambia el contador léxico1000/4000. Los párrafos de37 pruebas inferiores son históricos.
 
 5184 fichas/231 lecciones/40 secciones/10981 ejercicios. IDs, importación y progreso conservados.
 Dos módulos editoriales de lote; build de15 recursos, sin dependencias nuevas.

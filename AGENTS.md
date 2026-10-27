@@ -51,5 +51,5 @@ Modificar el módulo efectivo del rango, no un literal antiguo que quede sobresc
 Meta actual:1000 sentidos contrastados; no se certifican1000 lemas básicos ni un nivel MCER. Consultar STATUS antes de ampliar.
 
 Prioridad posterior: auditoría del A1 existente repartida con OpenCode por comunicacion.md.
-Codex: saludos/presentacion/cortesia/tiempo; OpenCode: cafeteria/orientacion/transporte.
-Leer docs/reviews/A1-CODEX.md y la entrega de OpenCode antes de integrar. No certificar A1 completo por revisar sus7 lecciones actuales.
+Reparto inicial: Codex4 lecciones, OpenCode3; al faltar informe fuente de OpenCode, Codex completó el cierre autorizado.
+Leer docs/reviews/A1-CODEX.md y A1-CIERRE.md. Auditoría de7 lecciones cerrada; no certificar A1 completo por ello.

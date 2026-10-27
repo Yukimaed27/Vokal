@@ -470,3 +470,28 @@ Límites: ejemplos propios revisados mediante reglas, no todos atestiguados lite
 Aún faltan contenidos de A1, escucha/habla y evaluación abierta. Corrector tolera mayúsculas y pide formas objetivo, no todo sinónimo posible.
 Siguiente paso: revisar fuentes/entrega OpenCode, integrar cambios justificados sin duplicar reglas y completar revisión cruzada.
 Implementación y contexto se guardan juntos; comprobar remoto antes de anunciar disponibilidad entre equipos.
+
+## 2026-10-27 — Cierre de las siete lecciones A1 actuales
+
+El propietario pide terminar. Falta A1-OPENCODE.md con fuentes; Codex completa contraste propio de cafeteria/orientacion/transporte.
+Se conserva el resumen preliminar de OpenCode y se aplican sus sugerencias útiles de práctica, sin atribuirle evidencia inexistente.
+Informe docs/reviews/A1-CIERRE.md con36 filas y fuentes exactas, complementa48 de A1-CODEX.md.
+
+Cambios en curriculum.js:9 preguntas nuevas, enunciado de artículo indefinido en cafetería y gramática ampliada de las3 lecciones.
+Se explican porciones/sustancias, mit+dem frente a ohne+den, ubicación/destino, plurales, fahren y prefijos separables.
+Diálogo de transporte explicita abfahren; no se declara agramatical la versión anterior.
+Revisión de coherencia de primeras4 lecciones y sus118 ejercicios conservados; no segunda auditoría independiente de cada ficha.
+Tests nuevos en a1-review.test.mjs: conservación36 IDs y respuestas que distinguen casos/flexión/destino/prefijo.
+
+Verificación:47 pruebas locales y build15 aprobados. Hash de IDs previos/posteriores idéntico.
+Edge headless real: cada vista final muestra12 fichas/28 ejercicios y nueva gramática; sin bloqueo.
+QA6083 usa perfil separado y progreso ficticio para abrir vistas. No son resultados del alumno ni verificación de nube.
+Servidor QA cerrado;3000 intacto. Las36 descargas bilingües terminaron; .qa no es necesaria para continuar.
+No dependencias ni cambios de diseño, autenticación, raw o progreso. Catálogo1000 contrastados/4000 pendientes intacto.
+
+Alcance cerrado:7 lecciones existentes,84 fichas,23 turnos,202 ejercicios. Ciclo completo añade21 preguntas (12+9).
+Total aplicación:5184 fichas/231 lecciones/40 secciones/11002 ejercicios.
+Límites: no currículo A1 completo, no pronunciación del alumno, ejemplos compuestos revisados mediante reglas y no siempre corpus literal.
+El aviso de alcance del catálogo permanece; esta auditoría no certifica todas las acepciones ni100% infalible.
+Contexto, estado, hoja de ruta, contenido, arquitectura, operación, comunicación y changelog actualizados con el cierre.
+Siguiente trabajo: cubrir huecos curriculares/destrezas A1 por hitos; nube multidispositivo y RLS siguen pendientes de prueba real.

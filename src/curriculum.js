@@ -40,9 +40,21 @@ const grammarChecks = {
     {prompt:'Completa con el sustantivo para duración: Ich lerne eine ___. (Estudio una hora.)',answers:['Stunde'],explanation:'Stunde mide una duración. Uhr se usa para el reloj o para indicar la hora.'},
     {prompt:'Completa con el plural de Minute: Drei ___, bitte.',answers:['Minuten'],explanation:'Minute es femenino y su plural es Minuten: eine Minute, drei Minuten.'},
   ]],
-  cafeteria:['Completa: Ich möchte ___ Kaffee.',['einen'],'Kaffee es masculino y aquí funciona como objeto en acusativo: einen Kaffee.'],
-  orientacion:['Pregunta por una ubicación: ___ ist der Bahnhof?',['Wo'],'Wo pregunta dónde está algo; wohin pregunta por el destino.'],
-  transporte:['Completa: Ich fahre ___ Berlin.',['nach'],'Nach se utiliza aquí con una ciudad sin artículo.'],
+  cafeteria:['Completa con el artículo indefinido: Ich möchte ___ Kaffee.',['einen'],'Kaffee es masculino y aquí funciona como objeto en acusativo: einen Kaffee.',[
+    {prompt:'Completa con el artículo indefinido: Ich möchte ___ Wasser.',answers:['ein'],explanation:'Wasser es neutro. Su artículo indefinido en acusativo es ein; aquí se pide una porción de agua.'},
+    {prompt:'Completa con el artículo definido: mit ___ Zucker.',answers:['dem'],explanation:'Mit exige dativo. Der Zucker pasa a dem Zucker.'},
+    {prompt:'Completa con el artículo definido: ohne ___ Zucker.',answers:['den'],explanation:'Ohne exige acusativo. Der Zucker pasa a den Zucker.'},
+  ]],
+  orientacion:['Pregunta por una ubicación: ___ ist der Bahnhof?',['Wo'],'Wo pregunta dónde está algo; wohin pregunta por el destino.',[
+    {prompt:'Completa la pregunta de destino: ___ gehst du? (¿Adónde vas?)',answers:['Wohin'],explanation:'Wohin pregunta por el destino; Wo pregunta por la ubicación.'},
+    {prompt:'Completa con el plural de Bahnhof: die ___.',answers:['Bahnhöfe'],explanation:'Bahnhof es masculino; su plural cambia la vocal y añade e: die Bahnhöfe.'},
+    {prompt:'Completa la indicación formal con gehen: ___ Sie geradeaus!',answers:['Gehen'],explanation:'En la indicación formal, Gehen va antes de Sie: Gehen Sie geradeaus!'},
+  ]],
+  transporte:['Completa con la preposición de destino para esta ciudad: Ich fahre ___ Berlin.',['nach'],'Nach se utiliza aquí con una ciudad sin artículo.',[
+    {prompt:'Completa el presente de fahren: Du ___ nach Berlin.',answers:['fährst'],explanation:'Fahren cambia a por ä con du: du fährst. Con ich se dice ich fahre.'},
+    {prompt:'Completa con el artículo definido: Ich fahre mit ___ Bus.',answers:['dem'],explanation:'Mit exige dativo, también al viajar: der Bus pasa a dem Bus. El movimiento no cambia esa regla.'},
+    {prompt:'Completa el verbo separable aussteigen: Ich steige hier ___.',answers:['aus'],explanation:'En esta oración principal se separa aus al final. Con muss permanece junto: Ich muss hier aussteigen.'},
+  ]],
   vivienda:['Completa: Es gibt ___ Balkon.',['einen'],'Es gibt lleva acusativo. Balkon es masculino: einen Balkon.'],
   rutinas:['Completa el verbo separable: Ich stehe um sieben Uhr ___.',['auf'],'Aufstehen separa auf al final en esta oración principal.'],
   compras:['Completa la comparación: Diese Jacke ist günstiger ___ die andere.',['als'],'Als introduce el segundo término en una comparación de desigualdad.'],
@@ -100,7 +112,7 @@ wann|cuándo|Wann kommst du?
 spät|tarde (hora avanzada)|Es ist schon spät.`),
   make('cafeteria','a1-diario','Un café, por favor','Pide algo, pregunta el precio y paga.',
     'Ich möchte… significa «Quisiera…» y sirve para pedir de manera amable. Puedes señalar el menú mientras practicas. Para pedir la cuenta: Die Rechnung, bitte. Para preguntar cuánto cuesta algo: Was kostet das?',
-    'Los sustantivos alemanes comienzan con mayúscula. Aprende su artículo desde el inicio: der Kaffee, die Rechnung, das Wasser. Después de Ich möchte, un sustantivo masculino como Kaffee usa einen: Ich möchte einen Kaffee. Los femeninos usan eine y los neutros ein.',
+    'Los sustantivos comienzan con mayúscula. El artículo pertenece al nombre alemán: der Kaffee, der Tee, das Wasser, die Milch, der Zucker, die Rechnung. En una petición con artículo indefinido y objeto en acusativo: einen Kaffee, einen Tee, eine Rechnung, ein Wasser. Ein Wasser pide aquí una porción, como un vaso o una botella; el contexto decide cuál. Milch y Zucker se usan como sustancias en mit Milch y ohne Zucker, sin forzar un plural. Mit exige dativo: mit dem Zucker; ohne exige acusativo: ohne den Zucker. Por eso no basta con decir que todo lo que sigue a möchte lleva einen. Ich möchte es una petición cortés («Quisiera»). Was kostet das? pregunta el precio; kostet viene de kosten. Ich möchte bezahlen pide pagar. Zusammen y getrennt indican si se paga en conjunto o por separado. Para varias cuentas: die Rechnungen; para variedades de té: die Tees. Aprende los plurales según el uso, no añadiendo siempre una s.',
     'En algunos locales te preguntarán Zusammen oder getrennt? Quieren saber si van a pagar juntos o por separado.',
     [['Ich möchte einen Tee, bitte.','Quisiera un té, por favor.'],['Mit Zucker?','¿Con azúcar?'],['Nein, danke. Die Rechnung, bitte.','No, gracias. La cuenta, por favor.']],
     `der Kaffee|el café|Ich möchte einen Kaffee.
@@ -117,7 +129,7 @@ mit|con|Einen Kaffee mit Milch, bitte.
 ohne|sin|Ich trinke Tee ohne Zucker.`),
   make('orientacion','a1-ciudad','Encuentra tu camino','Pregunta dónde está un lugar y sigue indicaciones.',
     'Wo ist…? pregunta dónde está algo. Usa links, rechts y geradeaus para seguir indicaciones. Combina un saludo, Entschuldigung y tu pregunta. Antes de caminar, confirma el lugar que buscas.',
-    'Wo pregunta por ubicación. Wohin pregunta por destino. Hoy practicamos Wo ist der Bahnhof? Puedes entender in der Nähe como «cerca» sin resolver todavía todas las declinaciones. Aprende las expresiones completas y después analiza sus partes.',
+    'Wo ist der Bahnhof? pregunta dónde está la estación; Wohin gehst du? pregunta adónde vas. Gehen Sie geradeaus! es una indicación formal: verbo primero y Sie con mayúscula. Para una persona cercana: Geh geradeaus! Links y rechts indican izquierda y derecha; geradeaus, seguir recto. En Dann gehen Sie rechts, dann ocupa la primera posición y el verbo la segunda. Hier significa «aquí» y dort, «allí». In der Nähe significa «cerca»: Nähe es femenino y aquí aparece con der por el dativo de ubicación. No conviertas ese der en un artículo masculino. Weit puede significar «lejos» en Ist es weit? Conserva singular y plural juntos: der Bahnhof / die Bahnhöfe; die Straße / die Straßen; der Platz / die Plätze; die Apotheke / die Apotheken; der Supermarkt / die Supermärkte. Platz significa aquí «plaza», aunque en otros contextos puede ser lugar o asiento.',
     'Las indicaciones pueden darse por calles o puntos de referencia. Repite la dirección si tienes dudas: Also links? («¿Entonces, a la izquierda?»).',
     [['Entschuldigung, wo ist der Bahnhof?','Disculpe, ¿dónde está la estación?'],['Geradeaus und dann links.','Recto y después a la izquierda.'],['Vielen Dank!','¡Muchas gracias!']],
     `links|a la izquierda|Gehen Sie links.
@@ -134,9 +146,9 @@ in der Nähe|cerca|Der Bahnhof ist in der Nähe.
 weit|lejos / lejano|Ist es weit?`),
   make('transporte','a1-ciudad','Tu próximo destino','Compra un billete y encuentra tu transporte.',
     'Un billete puede llamarse Fahrkarte o Ticket. Pregunta por el destino antes de subir. Ich fahre nach Berlin expresa un destino urbano. Abfahrt es salida y Ankunft es llegada: distinguirlas te ayuda a leer una pantalla.',
-    'El verbo fahren cambia a fahre con ich. Para ciudades sin artículo se usa normalmente nach: nach Berlin. Para el medio de transporte puedes decir mit dem Bus. Esta forma de dem se estudiará con el dativo; de momento, practica la expresión.',
+    'Fahren puede significar viajar en vehículo o conducir; Ich fahre mit dem Bus no dice que conduzcas el autobús. Presente: ich fahre, du fährst, er/sie/es fährt, wir fahren, ihr fahrt, sie/Sie fahren. Para el destino de una ciudad sin artículo: nach Berlin. Nach y mit exigen dativo; el movimiento no los convierte en acusativo. Aprende mit dem Bus y mit dem Zug. Con un país que lleva artículo, el destino puede expresarse con in y acusativo: in die Schweiz. Einsteigen y aussteigen son separables: ich steige ein / ich steige aus. Con muss, que expresa necesidad, se mantiene el infinitivo junto: Ich muss hier aussteigen. Abfahren expresa salir en vehículo: Der Zug fährt ab. Von Gleis drei identifica la vía de salida; Gleis es la vía ferroviaria y Bahnsteig el andén donde esperan las personas. Abfahrt es salida y Ankunft, llegada. Plurales de transporte: Fahrkarten, Züge, Busse, Haltestellen, Gleise, Abfahrten, Ankünfte y Verspätungen; todos llevan die en nominativo plural.',
     'La necesidad de validar un billete depende del sistema de transporte y del tipo de billete. Comprueba las instrucciones locales.',
-    [['Eine Fahrkarte nach Berlin, bitte.','Un billete a Berlín, por favor.'],['Der Zug fährt von Gleis drei.','El tren sale de la vía tres.'],['Danke. Ist der Zug pünktlich?','Gracias. ¿El tren va puntual?']],
+    [['Eine Fahrkarte nach Berlin, bitte.','Un billete a Berlín, por favor.'],['Der Zug fährt von Gleis drei ab.','El tren sale de la vía tres.'],['Danke. Ist der Zug pünktlich?','Gracias. ¿El tren va puntual?']],
     `die Fahrkarte|el billete de transporte|Ich brauche eine Fahrkarte.
 der Zug|el tren|Der Zug kommt.
 der Bus|el autobús|Ich fahre mit dem Bus.
