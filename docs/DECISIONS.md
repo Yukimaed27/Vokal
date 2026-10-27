@@ -131,3 +131,11 @@ Se amplía el examen a1001–1005 para completar1000 sentidos contrastados sin a
 Se conservan22 metadatos anteriores, no se suman como trabajo nuevo. No modificar la política ni el raw para ajustar cifras.
 La coordinación por archivo solo funciona cuando cada herramienta lo lee; no es un canal que active otra sesión automáticamente.
 Codex aporta complemento independiente de1–500 al no observar entrega adicional de datos; conservar cualquier avance de OpenCode al integrar.
+
+## 2026-10-27 — Acceso GitHub sin SDK
+
+Se completa la elección previa de GitHub con PKCE S256 nativo, sin dependencias ni SMTP.
+Verificador en sessionStorage por pestaña y diez minutos de validez local; requiere retornar a la misma pestaña.
+Mantener progresos separados e importación de invitado voluntaria. No persistir tokens del proveedor GitHub.
+Una prueba simulada no certifica autorización ni RLS. No declarar nube lista hasta probarla con cuentas reales.
+Docker queda opcional para reproducibilidad entre Windows/Linux; no es necesario para esta entrega.

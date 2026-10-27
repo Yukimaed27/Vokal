@@ -79,3 +79,11 @@ Referencias: [mitigación de ataques de suministro](https://pnpm.io/supply-chain
 Comprueba que sea necesario, su origen, licencia, avisos publicados y dependencias transitivas.
 Usa una versión exacta, revisa el diff del lockfile y ejecuta `pnpm audit`, `pnpm check` y `pnpm build`.
 La espera de siete días es un filtro, no sustituye esa revisión. Si aparece un aviso posterior, evalúa su alcance y actualiza de forma controlada.
+
+## 2026-10-27 — Seguridad del acceso GitHub
+
+PKCE S256 con Web Crypto, verificador temporal por pestaña y código eliminado de URL antes del intercambio.
+Tokens GitHub excluidos de persistencia; solo sesión Supabase e identidad mínima. Renovación invalidada al cerrar sesión.
+Sin dependencias nuevas. Pruebas cubren callbacks sin solicitud, vencidos/cancelados y carrera de renovación/cierre.
+Límite: tokens Supabase permanecen en localStorage para restaurar sesión, sujetos al acceso al perfil y a XSS.
+No se verificó RLS entre cuentas reales ni autorización completa; proveedor habilitado no demuestra configuración correcta.

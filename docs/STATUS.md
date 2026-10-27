@@ -22,8 +22,13 @@ OpenCode retiró el aviso visual solicitado; Codex conserva sus cambios durante 
 
 ## Producción pendiente
 
+Actualización de cuenta: OAuth GitHub PKCE S256 y botón implementados, sin nuevas dependencias.
+42 pruebas locales y build15 correctos. Edge muestra acceso y rechazo de callback sin solicitud local.
+GitHub habilitado confirmado por API real HTTP200. Falta autorización y guardado reales con el propietario.
+Guía inmediata en CLOUD; no se publicó ni se añadió Docker. QA6080 cerrada,3000 intacto.
+
 Supabase configurado y API anónima protegida; migración aplicada según el propietario y GitHub habilitado.
-Falta implementar/verificar OAuth GitHub, sesión real, guardado, RLS entre dos cuentas y sincronización multidispositivo.
+Falta verificar OAuth GitHub implementado, sesión real, guardado, RLS entre dos cuentas y sincronización multidispositivo.
 No hay despliegue confirmado. Sin cuenta funcional el progreso permanece local.
 La meta léxica se alcanzó; no equivale a un curso B2/C1 completo ni a toda la aplicación lista para producción.
 

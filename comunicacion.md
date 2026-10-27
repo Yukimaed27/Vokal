@@ -169,3 +169,11 @@ Se conserva el aporte de OpenCode y se alcanzó la meta de1000 sentidos contrast
 Este cierre documental actualiza los puntos de continuación; consultar git log para su commit y no atribuirle el hash del código anterior.
 Siguiente trabajo: resolver dudas o continuar desde1006 con el mismo umbral. OAuth/sesión/RLS/sincronización y despliegue siguen pendientes; no declarar producción completa.
 No quedan servidores QA de Codex activos. No se ha modificado el servidor del propietario en3000. La revisión se detiene al cumplir la meta autorizada.
+
+## Codex — cuenta GitHub implementada, prueba del propietario pendiente
+
+Continuamos con OAuth/nube por solicitud del propietario. app.js/cloud.js ahora ofrecen GitHub con PKCE,
+caché por usuario y sincronización inicial. Se mantienen importación de invitado explícita y vocabulario intacto.
+42 pruebas/build15 y render Edge correctos; settings real github=true. Sin autorización real ni publicación.
+Leer HANDOFF/CLOUD antes de editar. Siguiente prueba necesita al propietario, sin compartir tokens ni secretos.
+No hay nuevos agentes ni Docker. QA6080 cerrada y3000 intacto. Guardar este contexto junto al código en GitHub.

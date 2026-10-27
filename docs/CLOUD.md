@@ -1,11 +1,34 @@
 # Activar la nube cuando estés listo
 
-## Estado técnico actual: 0.2.1
+## Estado técnico actual: 0.3.0 — acceso GitHub implementado
+
+El cliente ya ofrece «Continuar con GitHub», PKCE S256, retorno a Mi cuenta y sincronización inicial.
+Verificado localmente con pruebas y Edge; pendiente completar una autorización real y comprobar dos cuentas/dispositivos.
+GitHub habilitado confirmado por API (HTTP 200, external.github=true) el 2026-10-27. No prueba el secreto ni el callback.
+
+### Prueba inmediata con el propietario
+
+1. En Supabase → Authentication → URL Configuration, autorizar exactamente `http://localhost:3000/` en Redirect URLs.
+2. En la aplicación: `http://localhost:3000/#cuenta` → «Continuar con GitHub». Autorizar en la misma pestaña.
+3. El callback de la OAuth App de GitHub sigue siendo `https://kgdqpilfitmknkautbhh.supabase.co/auth/v1/callback`.
+   No sustituirlo por localhost. Las credenciales del proveedor se guardan solo en Supabase.
+4. Al volver debe aparecer «Guardado en la nube». El progreso de invitado se importa únicamente por decisión explícita.
+5. Completar una práctica, abrir otra sesión/dispositivo con la misma cuenta y comprobar su aparición.
+   Probar también dos cuentas distintas para verificar aislamiento RLS y recuperación tras desconexión.
+
+Para Pages autorizar después la URL exacta de despliegue terminada en `/Vokal/`; el código conserva esa subruta.
+No enviar tokens, secretos ni códigos de retorno al chat. Si falla, compartir únicamente el mensaje visible.
+El código OAuth se elimina de la barra antes del intercambio. El verificador vive en sessionStorage de esa pestaña,
+caduca localmente a los diez minutos y se elimina tras éxito o cancelación. Una nueva solicitud reemplaza la anterior.
+Solo se guardan tokens de Supabase, expiración e identidad mínima; no tokens del proveedor GitHub.
+La renovación pendiente no puede restaurar una sesión cerrada. Las cachés locales de invitado/cuenta siguen separadas.
+
+El resto de esta guía describe preparación e historia del método por correo; la interfaz vigente usa GitHub.
 
 El proyecto Vokal está configurado en src/config.js con URL y clave publishable públicas. No hay claves administrativas.
 La API de autenticación responde y el proveedor email está habilitado, con confirmaciones activas.
 El propietario informó SQL ejecutado sin errores; tabla y RPC rechazaron solicitudes sin sesión (401, código 42501).
-Faltan plantilla OTP, primer acceso real, pruebas autenticadas y sincronización entre dispositivos.
+Faltan primer acceso real, pruebas autenticadas y sincronización entre dispositivos; OTP no es requisito del método elegido.
 Sin iniciar sesión, el progreso sigue siendo local. No se ha publicado la web ni contratado un servicio.
 
 
@@ -85,7 +108,7 @@ No solicitar la contraseña SMTP ni claves secretas por chat ni guardarlas en el
 
 Método elegido: acceso con GitHub mediante Supabase OAuth, sin envío de correo de acceso ni edición de plantillas.
 El proveedor ya está habilitado, comprobado con Auth settings (external.github=true).
-Faltan el botón/flujo OAuth del cliente y su verificación real; el valor true no prueba Client Secret, callback ni guardado.
+Botón y flujo OAuth implementados; falta su verificación real. El valor true no prueba Client Secret, callback ni guardado.
 Referencia: [acceso con GitHub](https://supabase.com/docs/guides/auth/social-sign-in/auth-github).
 No contratar servicios de correo ni cambiar de nuevo el método sin acordarlo con el propietario.
 
@@ -121,11 +144,11 @@ export const cloudConfig = {
 ```
 
 Ese archivo está ignorado por Git. El servidor usa sus datos y nunca publica el archivo local completo.
-Reinicia `pnpm dev`. En **Mi cuenta**, introduce tu correo, recibe el código y entra.
+Reinicia `pnpm dev`. En **Mi cuenta**, pulsa **Continuar con GitHub** y completa la autorización.
 El progreso de invitado solo se importa si pulsas el botón correspondiente.
 La clave pública identifica el proyecto; la protección de los datos depende de la sesión y de RLS.
 
-En otra computadora, conecta al mismo proyecto o usa la web publicada. Accede con el mismo correo.
+En otra computadora, conecta al mismo proyecto o usa la web publicada. Accede con la misma cuenta de GitHub.
 La apariencia queda en cada dispositivo; los resultados, logros y repasos se sincronizan al terminar una práctica o repaso.
 Una práctica a medias no se reanuda al recargar. El cierre de sesión conserva la copia del usuario separada de la de invitado.
 

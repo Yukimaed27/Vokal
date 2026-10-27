@@ -5,6 +5,22 @@ Si se modifica un contrato descrito aquí, actualizar este documento en la misma
 
 ## 1. Enfoque general
 
+### Actualización de autenticación — 2026-10-27
+
+La interfaz usa GitHub. Los métodos OTP del cliente se conservan por compatibilidad, sin formulario activo.
+`githubUrl(redirectTo)` genera un verificador aleatorio de32 bytes (64 caracteres hex), desafío SHA256/base64url
+y URL `/auth/v1/authorize?provider=github` con `code_challenge_method=s256`. Admite HTTPS y HTTP solo en localhost/127.0.0.1.
+La redirección conserva pathname, incluidos subdirectorios Pages, y elimina query/hash.
+`completeOAuth(callbackUrl)` exige una solicitud local vigente (10 minutos) y envía auth_code/code_verifier
+a `/auth/v1/token?grant_type=pkce`. Se elimina el verificador al completar o cancelar.
+El almacenamiento temporal es sessionStorage, clave `vokal.auth:<proyecto>:pkce`; una nueva solicitud reemplaza la anterior.
+app.js limpia el código de la URL con replaceState antes de cualquier intercambio y vuelve a #cuenta.
+Carga caché por UUID y sincroniza; importar invitado sigue siendo explícito. Fallos se muestran sin borrar progreso.
+Persistencia de sesión limitada a access_token/refresh_token/expires_at e id/email; no guarda tokens del proveedor.
+Una revisión de sesión invalida renovaciones pendientes al cerrar sesión para impedir que restauren la cuenta.
+Los contratos REST se contrastaron con el [OpenAPI oficial](https://github.com/supabase/auth/blob/master/openapi.yaml).
+Pruebas simuladas confirman contratos; no sustituyen autorización ni comprobaciones RLS reales.
+
 Vokal es una aplicación web estática de una sola página, escrita con HTML, CSS y módulos JavaScript nativos.
 Node se usa para desarrollo, pruebas y construcción de archivos públicos; no hay servidor de aplicación propio en producción.
 No hay React, framework de rutas, bundler, SDK de Supabase, base de datos local ni dependencias del registro npm.

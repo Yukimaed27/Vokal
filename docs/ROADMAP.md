@@ -28,7 +28,8 @@ Los hitos inferiores son anteriores; esta prioridad sustituye las pausas de medi
 - [x] Preparar build estático y workflow de GitHub Pages.
 - [x] Configurar identificadores públicos del proyecto y comprobar API real y rechazo de acceso anónimo.
 - [x] Elegir GitHub y habilitar su proveedor en Supabase; external.github=true verificado por API.
-- [ ] Implementar botón y flujo GitHub OAuth en Vokal; probar redirección y sesión real.
+- [x] Implementar botón y flujo GitHub OAuth con PKCE; pruebas locales y pantalla en Edge.
+- [ ] Completar autorización GitHub y sesión real con el propietario.
 - [x] Migración aplicada según el propietario; API de tabla/RPC rechaza acceso sin sesión.
 - [ ] Probar restricciones de RLS con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.

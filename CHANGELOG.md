@@ -106,3 +106,10 @@
 - Evaluación de la unidad, progreso por lección y repaso espaciado local.
 - Base sin dependencias, pruebas, hooks y CI Windows/Linux.
 - Contexto, decisiones y hoja de ruta para continuar entre equipos.
+
+## 2026-10-27 — OAuth GitHub implementado
+
+Botón de acceso y retorno PKCE S256 conectados a caché por cuenta y sincronización inicial, sin SDK ni SMTP.
+Verificador temporal por pestaña, código retirado de URL, tokens GitHub no persistidos y carrera de cierre corregida.
+42 pruebas locales/build15 y smoke Edge correctos. Settings real confirma GitHub activo.
+Pendientes: autorización real, escritura/sincronización/RLS entre cuentas y despliegue. Guía actualizada en docs/CLOUD.md.

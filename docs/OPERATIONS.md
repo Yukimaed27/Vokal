@@ -253,3 +253,12 @@ No se afirma QA de navegador completa ni CI/producción remota a partir de estas
 pnpm check:37 pruebas. pnpm build:15 recursos. Se añade vocabulary-review-001-500.js a publicFiles.
 Prueba Edge nativa headless: catálogo renderiza fichas y carga ambos módulos; no equivale a un E2E completo ni a nube autenticada.
 Sin dependencias nuevas. Hooks existentes ejecutan la suite; no necesitan cambios para recoger las pruebas del complemento.
+
+## Entrega GitHub OAuth — 2026-10-27
+
+42 pruebas locales y build de15 recursos, cero dependencias nuevas.
+Edge headless sin puerto de depuración: #cuenta renderiza GitHub/aviso de invitado y no muestra formulario OTP.
+Callback con código ficticio y sin verificador se rechaza y deja la pantalla utilizable; no se envió código a Supabase.
+API pública Auth settings HTTP200/external.github=true. No se ejecutó autorización ni escritura autenticada.
+Servidor QA6080 cerrado, servidor3000 del propietario intacto. Evidencia local .qa ignorada, no requerida para continuar.
+GitHub CLI no disponible; no se ejecutó workflow Pages. Procedimiento manual y URLs en CLOUD.

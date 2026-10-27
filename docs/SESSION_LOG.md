@@ -412,3 +412,24 @@ Resultado combinado:37/37 pruebas, build15 y smoke Edge headless real del catál
 No se afirma prueba de todas las categorías o ejercicios en navegador, ni sesión/nube remotas. Servidor QA6078 cerrado; no se tocó3000.
 Se actualizan política/AGENTS y snapshots para reflejar la retirada ya implementada. Hooks existentes ejecutan los controles nuevos.
 Verificar push final de main en comunicacion.md y remoto; no confundir respaldo de rama con integración publicada.
+
+## 2026-10-27 — Acceso GitHub y continuidad de producción
+
+El propietario pidió continuar con cuenta, sincronización y preparación de publicación.
+Se implementan botón GitHub y OAuth PKCE S256 en src/cloud.js y src/app.js, sin paquetes nuevos.
+Se elimina el formulario OTP activo, conservando métodos REST por compatibilidad. No requiere SMTP.
+Retorno a Mi cuenta, código retirado de URL, caché por cuenta, importación de invitado explícita y sincronización inicial.
+Verificador temporal por pestaña con caducidad10 minutos; no se persisten tokens del proveedor GitHub.
+Corregida carrera de renovación durante cierre: la sesión cerrada no puede restaurarse desde una respuesta pendiente.
+Pruebas añadidas en tests/cloud.test.mjs cubren PKCE, subruta Pages, rechazo/caducidad/cancelación, fallo de red,
+almacenamiento bloqueado, sesión incompleta, tokens GitHub descartados y cierre durante renovación.
+Contratos contrastados con documentación/OpenAPI oficiales de Supabase.
+
+Validación:42 pruebas locales y build15. Edge headless real muestra botón y aviso de invitado, sin formulario OTP;
+callback sin solicitud local rechazado manteniendo cuenta visible. API real de settings HTTP200/github=true.
+No autoriza una cuenta ni prueba secretos/callback/RLS. No se ha verificado escritura autenticada ni dos dispositivos.
+QA6080 cerrada,3000 intacto; artefactos .qa ignorados. No desplegado: gh no disponible y sin conector de administración.
+Documentación: CLOUD, ARCHITECTURE, README, HANDOFF, STATUS, ROADMAP, DECISIONS, SECURITY, OPERATIONS y CHANGELOG.
+Consulta Docker respondida: entorno reproducible útil pero opcional después; no se instaló ni modificó alcance.
+Siguiente acción: propietario autoriza localhost en Supabase y prueba Mi cuenta; después probar RLS/sincronización real.
+Código y contexto se entregan juntos mediante commit/push; verificar resultado Git antes de afirmar disponibilidad.

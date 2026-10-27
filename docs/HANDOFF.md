@@ -2,6 +2,23 @@
 
 Actualizado: 2026-10-27. Vokal0.3.0. Español breve; documentación técnica en Markdown.
 
+## Tarea activa: cuenta y sincronización
+
+El propietario aceptó continuar con cuenta, sincronización y preparación de publicación.
+Botón GitHub y OAuth PKCE S256 implementados en cloud.js/app.js, sin dependencias nuevas.
+Retorno a #cuenta, limpieza inmediata del código de la URL, carga de caché propia y sincronización inicial.
+No se importa invitado automáticamente. El verificador temporal está aislado por pestaña; no se guardan tokens GitHub.
+También se corrige la carrera de cierre durante renovación: no puede reaparecer la sesión cerrada.
+42 pruebas locales y build15; Edge renderiza el botón, sin formulario OTP, y rechaza callback sin verificador.
+API real: HTTP200/external.github=true. No autorización real, escritura autenticada ni RLS con dos cuentas verificadas.
+QA6080 cerrada; servidor3000 intacto. GitHub CLI no está disponible; no hay conector GitHub de administración.
+No se ejecutó workflow ni se publicó. No hay Docker añadido: consulta del propietario, recomendado opcional más adelante.
+
+Siguiente acción del propietario: autorizar http://localhost:3000/ en Redirect URLs de Supabase y entrar desde #cuenta.
+Consultar CLOUD para distinguir esa URL del callback GitHub hacia Supabase. Nunca pedir secretos ni tokens.
+Después comprobar guardado real, dos dispositivos, dos cuentas y desconexión; luego publicación manual con la guía.
+El nuevo trabajo sustituye el pendiente antiguo de implementar OAuth; siguen vigentes los resultados léxicos inferiores.
+
 ## Resultado léxico
 
 Meta de1000 sentidos contrastados integrada y comprobada en main. Push de6bd2312 confirmado; consultar Git para el último cierre documental.
@@ -41,7 +58,7 @@ No sobrescribir avances nuevos de OpenCode si aparecen. Los informes históricos
 
 1. Comprobar último commit/push de main al abrir otra sesión; retirada visual y suite combinada ya comprobadas localmente.
 2. Mantener la política por sentido al revisar siguientes lotes o resolver las5 dudas; siguiente posición nueva1006.
-3. Para producción: implementar/verificar GitHub OAuth y probar sesión, guardado, RLS con dos cuentas y sincronización real.
+3. Para producción: verificar GitHub OAuth ya implementado y probar sesión, guardado, RLS con dos cuentas y sincronización real.
 
 Supabase público configurado, SQL aplicado según el propietario; API anónima rechaza tabla/RPC y proveedor GitHub habilitado.
 Eso no verifica el flujo de usuario ni multidispositivo. No hay despliegue confirmado. Sin cuenta funcional el progreso es local.

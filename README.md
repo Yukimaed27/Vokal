@@ -38,7 +38,7 @@ Python 3 solo es necesario para regenerar el catálogo; los datos ya vienen incl
 - Comprensión y escritura. Alcanzar un 80 % permite dominar la lección; completar una sección abre la siguiente.
 - Evaluaciones de sección para saltar conocimientos ya dominados y repasos por palabra.
 - Búsqueda de vocabulario por texto/nivel con paginación.
-- Integración de nube preparada: correo con código, progreso por usuario y combinación entre dispositivos.
+- Acceso GitHub con PKCE y progreso por usuario; sincronización implementada, pendiente de prueba autenticada real.
 
 La ruta es una base ampliada en desarrollo, no un curso completo ni una certificación A1–C1.
 Los 5000 lemas importados son utilizables con práctica y revisión pendiente indicada; no están revisados manualmente uno por uno.
@@ -51,7 +51,7 @@ Las sesiones apuntan a 20–30 minutos, pero no imponemos una duración artifici
 Sin iniciar sesión, el progreso permanece en este navegador. No se muestra como sincronizado.
 Sigue [la guía de nube](docs/CLOUD.md) para completar el acceso GitHub, verificar la sincronización y publicar con GitHub Pages.
 El proyecto Supabase ya está configurado con sus identificadores públicos en el repositorio.
-La API responde y rechaza acceso sin sesión. El proveedor GitHub está habilitado, pero falta su botón/flujo en Vokal y comprobar el guardado con una cuenta real.
+La API responde y rechaza acceso sin sesión. GitHub está habilitado y su botón/flujo implementado; falta comprobar el guardado con una cuenta real.
 No hay un despliegue público verificado.
 
 `pnpm build` genera únicamente los archivos públicos en `dist/`. No subas documentos, credenciales o datos personales como archivos estáticos.

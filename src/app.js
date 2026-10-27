@@ -23,8 +23,7 @@ let syncTimer;
 let syncing = false;
 let syncAgain = false;
 let syncMessage = account ? 'Conectando con tu nube…' : 'Progreso local';
-let otpEmail = '';
-let sendingCode = false;
+let signingIn = false;
 let wordPage = 0;
 let wordQuery = '';
 let wordLevel = '';
@@ -176,12 +175,12 @@ function showWords() {
   document.querySelector('#word-pagination').innerHTML = `<div class="pagination"><button class="secondary" data-action="words-prev" ${wordPage === 0 ? 'disabled' : ''}>Anterior</button><span>${wordPage+1} / ${pages}</span><button class="secondary" data-action="words-next" ${wordPage+1 === pages ? 'disabled' : ''}>Siguiente</button></div>`;
 }
 function accountPage() {
-  if (!cloud) return `${title('TU APRENDIZAJE CONTIGO','Una cuenta, todos tus dispositivos.','La sincronización aún no está activada. Puedes seguir aprendiendo con una copia en este navegador.')}<section class="paper"><h2>La conexión con la nube está preparada.</h2><p>Falta conectar un proyecto de Supabase. Cuando esté activado, entra con tu correo desde celular, tableta o computadora.</p><a class="secondary" href="https://github.com/Yukimaed27/Vokal/blob/main/docs/CLOUD.md" target="_blank" rel="noopener">Cómo activar la nube ↗</a></section>`;
+  if (!cloud) return `${title('TU APRENDIZAJE CONTIGO','Una cuenta, todos tus dispositivos.','La sincronización aún no está activada. Puedes seguir aprendiendo con una copia en este navegador.')}<section class="paper"><h2>La conexión con la nube está preparada.</h2><p>Falta conectar un proyecto de Supabase. Cuando esté activado, entra con GitHub desde celular, tableta o computadora.</p><a class="secondary" href="https://github.com/Yukimaed27/Vokal/blob/main/docs/CLOUD.md" target="_blank" rel="noopener">Cómo activar la nube ↗</a></section>`;
   if (account) {
     const guest = load(guestKey);
     return `${title('TU CUENTA','Tu progreso viaja contigo.',esc(cloud.user?.email ?? 'Sesión iniciada'))}<section class="paper"><h2>Estado de tu progreso</h2><p id="account-message" role="status">${esc(syncMessage)}</p><div class="account-actions">${button('Sincronizar ahora','sync')}${button('Cerrar sesión','signout','secondary')}</div>${guest.completed.length || Object.keys(guest.reviews).length ? `<h3>¿Quieres conservar lo que aprendiste sin cuenta?</h3><p>Hay progreso de invitado en este navegador. Solo se añadirá a tu cuenta si lo eliges.</p>${button('Importar mi progreso local','import-guest','secondary')}` : ''}<p>Cierra tu sesión si compartes este dispositivo. Tu copia local queda separada de la de otros usuarios.</p></section>`;
   }
-  return `${title('TU CUENTA','Continúa desde donde estés.','Recibe un código en tu correo. No necesitas crear una contraseña.')}<section class="paper"><h2>${otpEmail ? 'Introduce tu código' : 'Entra con tu correo'}</h2><form id="${otpEmail ? 'verify-form' : 'login-form'}" class="cloud-form">${otpEmail ? `<p>Enviamos un código a ${esc(otpEmail)}.</p><label for="otp">Código del correo</label><input id="otp" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required><button class="primary" type="submit">Entrar y sincronizar</button>` : '<label for="email">Tu correo</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254"><button class="primary" type="submit">Enviar código</button>'}</form><p id="account-message" role="status"></p>${otpEmail ? button('Usar otro correo / reenviar','change-email','secondary') : ''}<p class="cloud-status">El progreso de invitado no se incorpora a una cuenta sin que lo elijas.</p></section>`;
+  return `${title('TU CUENTA','Continúa desde donde estés.','Entra con GitHub para guardar tu progreso y recuperarlo en tus dispositivos.')}<section class="paper"><h2>Tu cuenta de aprendizaje</h2>${button('Continuar con GitHub','github-login')}<p id="account-message" role="status"></p><p class="cloud-status">El progreso de invitado solo se incorpora si lo eliges después de entrar.</p></section>`;
 }
 function render(focus = true) {
   const current = route();
@@ -205,21 +204,6 @@ main.addEventListener('input',event => {if (event.target.id === 'word-search') {
 main.addEventListener('change',event => {if (event.target.id === 'word-level') {wordLevel = event.target.value;wordPage = 0;showWords();}});
 main.addEventListener('submit',async event => {
   event.preventDefault();const form = event.target;
-  if (['login-form','verify-form'].includes(form.id)) {
-    if (sendingCode || !cloud) return;
-    sendingCode = true;const submit = form.querySelector('button[type=submit]');submit.disabled = true;
-    try {
-      const data = new FormData(form);
-      if (form.id === 'login-form') {
-        const email = String(data.get('email')).trim();await cloud.sendCode(email);otpEmail = email;render();
-      } else {
-        const user = await cloud.verifyCode(otpEmail,String(data.get('code')).trim());
-        account = user.id;state = load(cacheKey());session = null;otpEmail = '';syncMessage = 'Conectando con tu nube…';render();await syncProgress();
-      }
-    } catch (error) {const message = document.querySelector('#account-message');if (message) {message.textContent = error.message;message.classList.add('error-text');}}
-    finally {sendingCode = false;if (submit.isConnected) submit.disabled = false;}
-    return;
-  }
   if (form.id !== 'answer-form' || !session || session.answered) return;
   const q = session.questions[session.index];
   const correct = isCorrect(new FormData(form).get('answer') ?? '',q.answers);
@@ -241,7 +225,11 @@ main.addEventListener('click',async event => {
     const word = session.words[session.index];state.reviews[word.id] = schedule(state.reviews[word.id],action === 'remember');save();
     session.index++;session.revealed = false;if (session.index === session.words.length) session = null;render();
   } else if (action === 'words-prev' || action === 'words-next') {wordPage += action === 'words-next' ? 1 : -1;showWords();document.querySelector('#word-results').scrollIntoView({block:'start'});}
-  else if (action === 'change-email') {otpEmail = '';render();}
+  else if (action === 'github-login' && cloud && !signingIn) {
+    signingIn = true;control.disabled = true;
+    try {location.assign(await cloud.githubUrl(location.href));}
+    catch (error) {notify(error.message);signingIn = false;control.disabled = false;}
+  }
   else if (action === 'sync') {control.disabled = true;await syncProgress();if (control.isConnected) control.disabled = false;}
   else if (action === 'import-guest' && account) {state = mergeProgress(state,load(guestKey));save();render();}
   else if (action === 'signout' && cloud) {
@@ -257,5 +245,16 @@ window.addEventListener('hashchange',() => {
 });
 window.addEventListener('online',() => syncProgress());
 window.addEventListener('focus',() => {if (account) syncProgress();});
-render(false);
-if (account) syncProgress();
+async function initializeAccount() {
+  const callback = new URL(location.href);
+  if (cloud && (callback.searchParams.has('code') || callback.searchParams.has('error'))) {
+    history.replaceState(null,'',`${callback.pathname}#cuenta`);
+    try {
+      const user = await cloud.completeOAuth(callback.href);
+      if (user) {account = user.id;state = load(cacheKey());session = null;syncMessage = 'Conectando con tu nube…';}
+    } catch (error) {notify(error.message);}
+  }
+  render(false);
+  if (account) await syncProgress();
+}
+initializeAccount();
