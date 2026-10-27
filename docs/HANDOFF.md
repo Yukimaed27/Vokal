@@ -4,6 +4,12 @@ Actualizado: 2026-10-27. Vokal0.3.0. Español breve; documentación técnica en 
 
 ## Tarea activa: cuenta y sincronización
 
+Último ajuste: account-actions usa align-items:center; evita estirar «Sincronizar ahora» por márgenes de Cerrar sesión.
+Edge con fixture de clases reales/CSS vigente: los tres botones miden48px de alto;42 pruebas correctas.
+QA6081 cerrada. No se tocó3000. Usuario confirma acceso GitHub y mensaje «Guardado en la nube»;
+confirmación del propietario, no verificación independiente del agente. Falta recuperación en otro equipo y RLS entre cuentas.
+Uso acordado por ahora: pnpm dev en cada PC; despliegue pospuesto. No pedir repetir el primer acceso ya confirmado.
+
 El propietario aceptó continuar con cuenta, sincronización y preparación de publicación.
 Botón GitHub y OAuth PKCE S256 implementados en cloud.js/app.js, sin dependencias nuevas.
 Retorno a #cuenta, limpieza inmediata del código de la URL, carga de caché propia y sincronización inicial.
@@ -14,7 +20,7 @@ API real: HTTP200/external.github=true. No autorización real, escritura autenti
 QA6080 cerrada; servidor3000 intacto. GitHub CLI no está disponible; no hay conector GitHub de administración.
 No se ejecutó workflow ni se publicó. No hay Docker añadido: consulta del propietario, recomendado opcional más adelante.
 
-Siguiente acción del propietario: autorizar http://localhost:3000/ en Redirect URLs de Supabase y entrar desde #cuenta.
+Siguiente acción del propietario: importar invitado si lo desea y comprobar recuperación en otro navegador o PC con la misma cuenta.
 Consultar CLOUD para distinguir esa URL del callback GitHub hacia Supabase. Nunca pedir secretos ni tokens.
 Después comprobar guardado real, dos dispositivos, dos cuentas y desconexión; luego publicación manual con la guía.
 El nuevo trabajo sustituye el pendiente antiguo de implementar OAuth; siguen vigentes los resultados léxicos inferiores.

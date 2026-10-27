@@ -29,7 +29,7 @@ Los hitos inferiores son anteriores; esta prioridad sustituye las pausas de medi
 - [x] Configurar identificadores públicos del proyecto y comprobar API real y rechazo de acceso anónimo.
 - [x] Elegir GitHub y habilitar su proveedor en Supabase; external.github=true verificado por API.
 - [x] Implementar botón y flujo GitHub OAuth con PKCE; pruebas locales y pantalla en Edge.
-- [ ] Completar autorización GitHub y sesión real con el propietario.
+- [x] Completar autorización GitHub y sesión real: propietario confirma acceso y «Guardado en la nube».
 - [x] Migración aplicada según el propietario; API de tabla/RPC rechaza acceso sin sesión.
 - [ ] Probar restricciones de RLS con dos cuentas reales.
 - [ ] Comprobar conflictos, recuperación y sincronización en dos dispositivos.

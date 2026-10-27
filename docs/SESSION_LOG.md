@@ -433,3 +433,15 @@ Documentación: CLOUD, ARCHITECTURE, README, HANDOFF, STATUS, ROADMAP, DECISIONS
 Consulta Docker respondida: entorno reproducible útil pero opcional después; no se instaló ni modificó alcance.
 Siguiente acción: propietario autoriza localhost en Supabase y prueba Mi cuenta; después probar RLS/sincronización real.
 Código y contexto se entregan juntos mediante commit/push; verificar resultado Git antes de afirmar disponibilidad.
+
+## 2026-10-27 — Botón de sincronización al mismo alto
+
+Solicitud: reducir Sincronizar ahora para que coincida con Cerrar sesión e Importar mi progreso local.
+Causa: flex estiraba el botón primario por márgenes verticales del secundario.
+Cambio único de interfaz: align-items:center en .account-actions de src/style.css. Mantiene altura base48px y anchos por texto.
+Validación: Edge headless con fixture de clases reales y CSS actual mide [48,48,48];42 pruebas correctas.
+No nueva prueba automática para esta regla CSS; no recorrido de cuenta autenticada en esta comprobación.
+QA6081 cerrada,3000 intacto. Evidencia .qa ignorada. Contexto actualizado junto al cambio.
+Además, el propietario confirma sesión GitHub y mensaje Guardado en la nube, sin datos personales registrados.
+No se ha confirmado recuperación en otro dispositivo ni aislamiento RLS. Publicación pospuesta: usar pnpm dev por ahora.
+Siguiente acción: comprobar recuperación de progreso con la misma cuenta en otro navegador/equipo.

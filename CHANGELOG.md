@@ -113,3 +113,8 @@ Botón de acceso y retorno PKCE S256 conectados a caché por cuenta y sincroniza
 Verificador temporal por pestaña, código retirado de URL, tokens GitHub no persistidos y carrera de cierre corregida.
 42 pruebas locales/build15 y smoke Edge correctos. Settings real confirma GitHub activo.
 Pendientes: autorización real, escritura/sincronización/RLS entre cuentas y despliegue. Guía actualizada en docs/CLOUD.md.
+
+## 2026-10-27 — Alineación de acciones de cuenta
+
+Sincronizar ahora deja de estirarse verticalmente y conserva la misma altura base48px que las otras acciones.
+Comprobación Edge con fixture CSS: [48,48,48];42 pruebas correctas.

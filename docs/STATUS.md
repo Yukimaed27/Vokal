@@ -22,6 +22,10 @@ OpenCode retiró el aviso visual solicitado; Codex conserva sus cambios durante 
 
 ## Producción pendiente
 
+Propietario confirma acceso GitHub y «Guardado en la nube». Pendientes recuperación entre equipos y aislamiento entre cuentas.
+Uso local acordado por ahora, publicación pospuesta. Botón Sincronizar alineado sin estiramiento; Edge fixture48px los tres.
+42 pruebas aprobadas; QA6081 cerrada.
+
 Actualización de cuenta: OAuth GitHub PKCE S256 y botón implementados, sin nuevas dependencias.
 42 pruebas locales y build15 correctos. Edge muestra acceso y rechazo de callback sin solicitud local.
 GitHub habilitado confirmado por API real HTTP200. Falta autorización y guardado reales con el propietario.

@@ -151,7 +151,7 @@ fieldset{border:0;padding:0;margin:24px 0}
 .cloud-form{display:grid;gap:12px;max-width:480px}
 .cloud-form label{font-size:.85rem}
 .cloud-form input{width:100%}
-.account-actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+.account-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}
 .error-text{color:var(--danger)}
 .section-description{max-width:65ch}
 .empty-state{padding:24px;background:var(--tint);border-radius:6px}

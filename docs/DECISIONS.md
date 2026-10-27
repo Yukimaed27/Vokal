@@ -139,3 +139,8 @@ Verificador en sessionStorage por pestaña y diez minutos de validez local; requ
 Mantener progresos separados e importación de invitado voluntaria. No persistir tokens del proveedor GitHub.
 Una prueba simulada no certifica autorización ni RLS. No declarar nube lista hasta probarla con cuentas reales.
 Docker queda opcional para reproducibilidad entre Windows/Linux; no es necesario para esta entrega.
+
+## 2026-10-27 — Uso local mientras se verifica sincronización
+
+El propietario prefiere seguir con pnpm dev en cada PC y posponer publicación.
+Confirma primer acceso GitHub y mensaje Guardado en la nube. Falta confirmar recuperación real entre dispositivos.
