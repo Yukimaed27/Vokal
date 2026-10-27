@@ -1,38 +1,33 @@
 # Estado para retomar
 
-Fecha: 2026-10-27. Versión: 0.3.0. Snapshot de review/codex-501-1000 antes de integrar OpenCode.
+Actualizado:2026-10-27. Vokal0.3.0. Resultado verificado en la rama Codex; integración en main registrada en comunicacion.md/Git.
 
 ## Vocabulario
 
-- 5000 registros importados; no todos son lemas básicos: hay homógrafos, participios, ordinales y nombres propios.
-- 1000 posiciones examinadas acumuladas: 1–500 históricas y 501–1000 actuales. No duplicar los 22 recontrastes.
-- 519 sentidos contrastados en esta rama: 22 anteriores + 497 nuevos; 4481 pendientes. No 1000 aprobados.
-- 693 registros con curación editorial. Importación/orden/IDs/progreso conservados.
-- Tramo 501–1000: 500 examinadas, 497 con evidencia suficiente, 3 pendientes (zerstört, Hau, Mister).
-- [Fuentes por fila](reviews/LEX-501-1000.md); [criterio](reviews/REVIEW_POLICY.md).
-- Fuentes bilingües Langenscheidt/PONS y gramaticales Duden. Sin atribuir validación humana ni certeza 100%.
-- Se acotan traducciones, categoría/artículo y usos reflexivos; no se certifican ejemplos o paradigmas completos.
+- 1000 sentidos contrastados,4000 pendientes,1005 posiciones examinadas.
+- Desglose:498 en1–500 (incluye22 anteriores),497 en501–1000,5 complementarias1001–1005.
+- 5 examinadas pendientes:scheiße/getötet/zerstört/Hau/Mister.3995 aún sin examen individual.
+- 1005 registros editoriales efectivos; raw de5000 intacto. No son5000 lemas básicos certificados.
+- 978 contrastes nuevos esta sesión. No sumar otra vez las22 anteriores.
+- [Evidencia inicial/complemento](reviews/RECHECK-001-500.md), [lote501–1000](reviews/LEX-501-1000.md), [política](reviews/REVIEW_POLICY.md).
+- Sin atribuir revisión humana ni certeza100%. Se delimita sentido/categoría/artículo, no todos los usos o paradigmas.
 
-## Aplicación y controles
+## Aplicación y verificación
 
-5184 fichas al combinar catálogo/curso, 231 lecciones, 40 secciones y 10981 ejercicios.
-Módulo editorial separado, incluido en los 14 recursos públicos del build.
-Etiquetas de participio/numeral/conjunción/preposición; nombres sin artículo excluidos de preguntas de artículo.
-36 pruebas locales aprobadas y build correcto. Hooks recogen los tests; no verifican lingüística ni escriben documentos.
-Sin dependencias nuevas ni cambio visual. No se repitió un recorrido completo de navegador durante el lote.
+5184 fichas/231 lecciones/40 secciones/10981 ejercicios. IDs, importación y progreso conservados.
+Dos módulos editoriales de lote; build de15 recursos, sin dependencias nuevas.
+37 pruebas locales aprobadas. Smoke Edge real de carga/render; no recorrido completo de todos los ejercicios.
+Hooks recogen la suite y no validan semántica ni redactan .md.
+OpenCode retiró el aviso visual solicitado; Codex conserva sus cambios durante la integración.
 
-OpenCode confirmó retirada del texto visual solicitado y 33 pruebas en su carpeta principal; Codex conservó esos cambios.
-Su revisión 1–500 y la integración se coordinan mediante comunicacion.md. No contar trabajo declarado como integrado antes de verificarlo.
-Los snapshots deben actualizarse con los conteos combinados al integrar.
+## Producción pendiente
 
-## Producción: pendiente
+Supabase configurado y API anónima protegida; migración aplicada según el propietario y GitHub habilitado.
+Falta implementar/verificar OAuth GitHub, sesión real, guardado, RLS entre dos cuentas y sincronización multidispositivo.
+No hay despliegue confirmado. Sin cuenta funcional el progreso permanece local.
+La meta léxica se alcanzó; no equivale a un curso B2/C1 completo ni a toda la aplicación lista para producción.
 
-Supabase con configuración pública y migración aplicada según el propietario; API anónima rechaza tabla/RPC.
-GitHub habilitado, pero faltan botón/flujo OAuth y pruebas reales de sesión, guardado, RLS entre cuentas y sincronización.
-Sin cuenta funcional el progreso permanece local. Sin despliegue confirmado ni curso completo B2/C1.
-La revisión léxica no sustituye esos recorridos. No publicar ni contratar planes por inferencia.
+## Continuidad
 
-## Próximo paso
-
-Integrar con OpenCode sin pisar 1–500/UI; verificar el resultado y subir código/contexto a GitHub.
-Resolver los pendientes hasta alcanzar 1000 realmente contrastados y cerrar los requisitos de producción.
+Comprobar main/push combinados en Git y comunicacion.md. Próximo rango nuevo1006; las5 dudas siguen separadas.
+Conservar el criterio por sentido, documentación/históricos y pruebas al ampliar. No alterar diseño ni progreso para simplificar.

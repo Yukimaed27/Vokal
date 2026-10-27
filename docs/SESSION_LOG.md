@@ -390,3 +390,15 @@ No QA de navegador completa, CI ni sesión/autorización remota verificadas en e
 Se conservan pendientes por insuficiencia de evidencia; no se presenta una URL o un200 como aprobación automática.
 Producción requiere OAuth/sesión/guardado/RLS entre cuentas/sincronización/despliegue reales. No se publica ni contratan servicios.
 Ver HANDOFF/STATUS y comunicacion.md para el estado de integración y Git; no declarar push antes de comprobarlo.
+
+## 2026-10-27 — Meta1000 y complemento del tramo inicial
+
+Para completar la meta autorizada sin depender de una entrega aún no visible de OpenCode, Codex recuperó fuentes y recontrastó1–500 en archivos independientes.
+Se mantienen22 registros ya contrastados;476 estados nuevos del tramo inicial,497 del lote501–1000 y5 complementos1001–1005:1000 en total,978 nuevos.
+1005 examinadas,5 dudas explícitas;4000 pendientes en el catálogo. No se fuerza aprobación de scheiße/getötet/zerstört/Hau/Mister.
+Se corroboraron nominalizaciones en fuentes bilingües, géneros de homógrafos, funciones gramaticales y sentidos secundarios.
+Se usan módulos de curación, preservando raw/IDs/progreso. El artículo no se inventa para nombres propios; se diferencia pron/part/num/conj/prep.
+37/37 pruebas locales y build15 correctos.5184 fichas/10981 ejercicios conservados. Smoke Edge real de catálogo/carga; servidor QA propio cerrado.
+Los tests conservan las22 evidencias anteriores y verifican filas/estados/fuentes/propagación; no sustituyen revisión semántica.
+No se verificó producción remota ni se implementó OAuth. Mantener trabajo visual de OpenCode en la integración.
+El estado de Git se registra en comunicacion.md al terminar; no afirmar push antes de comprobarlo. Próximo rango nuevo1006.

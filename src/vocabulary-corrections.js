@@ -1,4 +1,5 @@
 import {vocabularyReview5011000} from './vocabulary-review-501-1000.js';
+import {vocabularyReview001500} from './vocabulary-review-001-500.js';
 
 // Editorial adjustments: docs/reviews/APPLIED_CORRECTIONS.md and LEX-101-200.md / LEX-201-500.md / LEX-501-1000.md.
 // Study senses remain pending full linguistic review; raw import and IDs stay intact.
@@ -2011,4 +2012,5 @@ export const vocabularyCorrections = {
     }
   },
   ...vocabularyReview5011000,
+  ...vocabularyReview001500,
 };

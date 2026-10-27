@@ -45,3 +45,7 @@ La prioridad vigente es fiabilidad por sentido. Leer docs/reviews/REVIEW_POLICY.
 fuentes contrastadas y metadatos veraces; no atribuir aprobación a variantes/ejemplos no comprobados.
 Preferencia visual posterior: retirar «sin revisión humana» del sitio al retomar; mantener humanReviewed=false internamente.
 La decisión del propietario permite continuar sin profesor, no afirmar revisión humana ni certeza 100%.
+
+Curación vigente: vocabulary-review-001-500.js y vocabulary-review-501-1000.js se mezclan al final de vocabularyCorrections.
+Modificar el módulo efectivo del rango, no un literal antiguo que quede sobrescrito. El primer módulo incluye5 complementos1001–1005.
+Meta actual:1000 sentidos contrastados; no se certifican1000 lemas básicos ni un nivel MCER. Consultar STATUS antes de ampliar.

@@ -124,3 +124,10 @@ Meta:1000 sentidos contrastados con la política vigente. Examinar1000 posicione
 Tres casos del nuevo lote se mantienen pending por evidencia insuficiente; no relajar el criterio para alcanzar una cifra.
 Los nombres propios se estudian en su forma usual sin artículo y se distinguen categorías funcionales/participios.
 No hay publicación ni autorización de pagos implícita en pedir preparación para producción; falta verificar nube real.
+
+## 2026-10-27 — Completar la meta conservando dudas
+
+Se amplía el examen a1001–1005 para completar1000 sentidos contrastados sin aprobar por fuerza las5 dudas de1–1000.
+Se conservan22 metadatos anteriores, no se suman como trabajo nuevo. No modificar la política ni el raw para ajustar cifras.
+La coordinación por archivo solo funciona cuando cada herramienta lo lee; no es un canal que active otra sesión automáticamente.
+Codex aporta complemento independiente de1–500 al no observar entrega adicional de datos; conservar cualquier avance de OpenCode al integrar.

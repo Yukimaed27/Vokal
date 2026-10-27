@@ -87,14 +87,14 @@ test('los ajustes editoriales llegan a fichas y ejercicios sin cambiar el archiv
   assert.equal(course.entries.find(w=>w.lemma==='nicht').pos,'particle');
 });
 
-test('corregir una entrada reutilizada conserva su ID, artículo y ejemplo', async () => {
+test('corregir una entrada reutilizada conserva ID y artículo y retira el ejemplo no contrastado', async () => {
   const {createVocabularyCourse} = await import('../src/vocabulary.js');
   const course = createVocabularyCourse([{words:[['id-preservado','die Habe','propriedad','Dies ist meine Habe.']]}]);
   const entry = course.entries.find(w=>w.lemma==='Habe');
   assert.equal(entry.id,'id-preservado');
   assert.equal(entry.de,'die Habe');
   assert.equal(entry.es,'propiedad / bienes');
-  assert.equal(entry.example,'Dies ist meine Habe.');
+  assert.equal(entry.example,'');
   assert.ok(course.lessons.flatMap(l=>l.words).some(w=>w[0]==='id-preservado'&&w[2]==='propiedad / bienes'));
 });
 
@@ -104,7 +104,7 @@ test('el lote 101–200 no reintroduce fragmentos ni equivalencias descartadas e
     const word=words.find(w=>w.lemma===lemma);
     assert.ok(word.editorialNote,lemma);
     assert.ok(!word.translations.includes(bad),lemma);
-    assert.equal(word.reviewStatus,'pending');
+    assert.equal(word.reviewStatus,'sense-checked-ai');
     const row=lessons.filter(l=>l.level==='LEX').flatMap(l=>l.words).find(w=>w[0]===word.id);
     assert.equal(row[2],word.es);
   }

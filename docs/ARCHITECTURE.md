@@ -405,3 +405,12 @@ El módulo debe estar en publicFiles para servir/desplegar; build de14 recursos.
 Los tests de22 registros se conservan como regresión de un subconjunto; tests/vocabulary-501-1000.test.mjs valida el nuevo lote completo.
 Conteos de esta rama:519 sentidos contrastados,4481 pendientes,693 registros editoriales. Al integrar OpenCode actualizar STATUS.
 No cambia el contrato word.review frente a state.reviews ni el estado pendiente de las lecciones con contenido mixto.
+
+## Curación efectiva y meta1000 — actualización posterior
+
+vocabulary-review-001-500.js añade478 ajustes previos pendientes y5 complementos1001–1005; sus22 filas históricas no se aplican otra vez.
+vocabulary-review-501-1000.js aporta500 ajustes. Ambos objetos se mezclan al final de vocabularyCorrections.
+Por tanto, editar una clave antigua de la base puede no cambiar el resultado: modificar el módulo del rango correspondiente.
+POS añade pron=Pronombre para cuantificadores y mantiene part/num/conj/prep. Las construcciones se almacenan en de sin cambiar ID.
+Estado verificado de esta entrega:1000 contrastadas/4000 pendientes/1005 registros editoriales; build15 y37 pruebas.
+No cambian contratos de nube o progreso. Las cifras de párrafos anteriores describen entregas históricas.

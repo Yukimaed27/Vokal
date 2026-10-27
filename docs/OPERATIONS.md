@@ -247,3 +247,9 @@ El informe viaja en Git; las cachés .qa de consultas no son necesarias para eje
 Trabajo paralelo: comunicacion.md en la carpeta principal coordina con OpenCode; Codex usa worktree Vokal-codex-review/rama review/codex-501-1000.
 Integrar conservando cambios1–500 y retirada visual de OpenCode; volver a comprobar el resultado combinado.
 No se afirma QA de navegador completa ni CI/producción remota a partir de estas pruebas locales.
+
+### Actualización posterior: meta1000
+
+pnpm check:37 pruebas. pnpm build:15 recursos. Se añade vocabulary-review-001-500.js a publicFiles.
+Prueba Edge nativa headless: catálogo renderiza fichas y carga ambos módulos; no equivale a un E2E completo ni a nube autenticada.
+Sin dependencias nuevas. Hooks existentes ejecutan la suite; no necesitan cambios para recoger las pruebas del complemento.

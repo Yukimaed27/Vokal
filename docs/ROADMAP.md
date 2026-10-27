@@ -5,7 +5,7 @@
 - [x] Examinar501–1000 y registrar evidencia:497 sentidos contrastados,3 pendientes.
 - [x] Distinguir participios/categorías funcionales y corregir artículo/forma sin cambiar IDs.
 - [ ] Integrar1–500 de OpenCode, conservar su retirada visual y registrar conteos combinados.
-- [ ] Llegar a1000 sentidos realmente contrastados; examinar1000 posiciones no acredita ese umbral.
+- [x] Llegar a1000 sentidos contrastados con fuentes entre1005 posiciones, manteniendo5 dudas explícitas.
 - [ ] Resolver pendientes del lote (zerstört/Hau/Mister) y del tramo1–500.
 - [ ] Cerrar sesión real, OAuth, RLS, sincronización y despliegue antes de declarar producción.
 

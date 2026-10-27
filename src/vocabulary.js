@@ -3,7 +3,7 @@ import {vocabularyCorrections} from './vocabulary-corrections.js';
 
 export const dictionaryLemmaCount = dictionaryEntries.length;
 const articles = {masc:'der',fem:'die',neut:'das'};
-export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio',particle:'Partícula',part:'Participio',num:'Numeral',conj:'Conjunción',prep:'Preposición'};
+export const partOfSpeech = {n:'Sustantivo',v:'Verbo',adj:'Adjetivo',adv:'Adverbio',particle:'Partícula',part:'Participio',num:'Numeral',conj:'Conjunción',prep:'Preposición',pron:'Pronombre'};
 const canonical = value => value.normalize('NFC').replace(/^(der|die|das)\s+/i,'').toLocaleLowerCase('de-DE');
 
 export function createVocabularyCourse(guidedLessons) {
