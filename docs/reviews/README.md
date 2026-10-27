@@ -63,3 +63,10 @@ El propietario elige fuentes contrastadas sin revisión humana obligatoria: [pol
 [Recontraste de 22 casos](RECHECK-22.md): 22 sentidos con dos fuentes, fecha y distintivo IA sin revisión humana.
 193 registros con ajustes; 500 examinados históricamente. No522 ni 500 aprobados. Otros4978 importados siguen pendientes.
 Los informes anteriores conservan su estado histórico; este documento y HANDOFF/STATUS apuntan a la actualización vigente.
+
+## Continuación501–1000 — 2026-10-27
+
+[Lote de500 entradas](LEX-501-1000.md):497 sentidos contrastados y3 pendientes explícitos.
+El acumulado histórico examinado llega a1000, sin contar de nuevo los22 recontrastes. No son1000 aprobadas.
+Estado de rama Codex antes de combinar OpenCode:519 contrastadas,4481 pendientes,693 registros con curación.
+La meta pendiente de1000 contrastadas conserva REVIEW_POLICY; los conteos integrados actuales se consultan en STATUS.

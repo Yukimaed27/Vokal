@@ -238,3 +238,12 @@ Los hooks existentes ejecutan esas pruebas; no consultan fuentes ni validan sem�
 Build13 recursos. Para ampliar estados, seguir REVIEW_POLICY y registrar evidencia junto con cambios/pruebas.
 El test de conjunto debe ampliarse deliberadamente al añadir fichas, sin reescribir informes históricos para ocultar cambios.
 Captura nativa Edge móvil de 375 px para distintivo/fuentes; el flujo CDP completo no fue repetido.
+
+### Verificación de lote501–1000 — 2026-10-27
+
+36 pruebas locales aprobadas (pnpm check) y build de14 recursos. Nuevo módulo público vocabulary-review-501-1000.js.
+Se reutilizan pre-commit/pre-push sin cambiarlos: ejecutan la suite nueva. No validan semántica ni actualizan documentación.
+El informe viaja en Git; las cachés .qa de consultas no son necesarias para ejecutar ni continuar desde otra laptop.
+Trabajo paralelo: comunicacion.md en la carpeta principal coordina con OpenCode; Codex usa worktree Vokal-codex-review/rama review/codex-501-1000.
+Integrar conservando cambios1–500 y retirada visual de OpenCode; volver a comprobar el resultado combinado.
+No se afirma QA de navegador completa ni CI/producción remota a partir de estas pruebas locales.

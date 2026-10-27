@@ -364,3 +364,29 @@ Se actualizan HANDOFF/STATUS/DECISIONS/ROADMAP/REVIEW_POLICY y regla de continui
 Sin modificaciones de app, datos, fuentes o dependencias ni nuevas búsquedas. Los hooks existentes comprueban código al guardar.
 Estado:500 examinadas,22 sentidos contrastados,478 examinadas aún pendientes del umbral y4500 sin examen individual.
 Siguiente sesión: cambio de texto/pruebas y luego revisión de las478. No continuar automáticamente durante la pausa.
+
+## 2026-10-27 — Codex revisa501–1000 y coordina con OpenCode
+
+### Solicitud y alcance
+El propietario autoriza continuar con OpenCode para alcanzar1000 palabras revisadas y máxima fiabilidad, coordinando por comunicacion.md.
+Se detectan cambios ajenos en app.js/tests (retirada del texto visual), que se conservan. Codex crea rama review/codex-501-1000 y worktree hermano.
+OpenCode confirma1–500; Codex501–1000. Se prepara caché de lectura para ayudar a OpenCode, sin editar sus datos.
+
+### Cambios
+500 posiciones examinadas,497 sentidos con evidencia suficiente,3 pendientes (zerstört, Hau, Mister).
+Fuentes bilingües Langenscheidt/PONS y Duden; se revisan reenvíos, redirecciones erróneas, homógrafos y equivalencias secundarias.
+Módulo de filas curadas, informe con fuentes por fila y tres pruebas de cobertura/propagación/categorías.
+Se añaden etiquetas part/num/conj/prep y se excluyen nombres sin artículo de las preguntas de artículo.
+Loch y Tor pasan al género neutro para agujero/gol; See femenino para mar; Band masculino para tomo. Reflexivos mantienen sich.
+Se preservan raw, IDs, orden, claves y progreso. Se retiran traducciones mezcladas, definiciones y ejemplos no delimitados de este lote.
+
+### Verificación
+pnpm check:36/36; pnpm build:14 recursos; git diff --check correcto. Hash raw77f90566bf008d9e34af4ce76d10caea8e50c8674cc8fe06850c00bb49e75992 intacto.
+519 sentidos contrastados/4481 pendientes/693 registros editoriales en esta rama antes de combinar OpenCode.5184 fichas/10981 preguntas conservadas.
+No QA de navegador completa, CI ni sesión/autorización remota verificadas en este lote. Sin paquetes nuevos.
+
+### Límites y continuidad
+1000 examinadas históricamente no son1000 contrastadas. Falta integrar la rama y las correcciones1–500 de OpenCode y registrar el total combinado.
+Se conservan pendientes por insuficiencia de evidencia; no se presenta una URL o un200 como aprobación automática.
+Producción requiere OAuth/sesión/guardado/RLS entre cuentas/sincronización/despliegue reales. No se publica ni contratan servicios.
+Ver HANDOFF/STATUS y comunicacion.md para el estado de integración y Git; no declarar push antes de comprobarlo.

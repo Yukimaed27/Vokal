@@ -168,11 +168,11 @@ test('la ficha no mezcla una nota y definición de otro sentido con la lección 
 });
 
 
-test('solo los22 sentidos delimitados tienen dos fuentes y estado IA sin revisión humana', () => {
+test('las fichas contrastadas tienen evidencia y los22 sentidos originales se conservan', () => {
   const expected=['woher','Chance','Krieg','Sorge','Ding','irgendwie','hierher','Dollar','Hölle','Tat','drüben','gefragt','Körper','wovon','Wohnung','wenigstens','Zeug','General','jemals','unterwegs','ständig','absolut'].sort();
   const checked=words.filter(w=>w.reviewStatus==='sense-checked-ai');
-  assert.deepEqual(checked.map(w=>w.lemma).sort(),expected);
-  assert.equal(words.filter(w=>w.source&&w.reviewStatus==='pending').length,4978);
+  for(const lemma of expected) assert.ok(checked.some(w=>w.lemma===lemma),lemma);
+  assert.equal(checked.length+words.filter(w=>w.source&&w.reviewStatus==='pending').length,5000);
   for(const word of checked) {
     assert.equal(word.review.humanReviewed,false);
     assert.match(word.review.date,/^\d{4}-\d{2}-\d{2}$/);
@@ -183,7 +183,7 @@ test('solo los22 sentidos delimitados tienen dos fuentes y estado IA sin revisi�
       assert.ok(source.name);
     }
     assert.equal(word.example,'');
-    if(word.pos==='n') assert.ok(word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
+    if(word.pos==='n') assert.ok(word.de===word.lemma || word.de.startsWith(({masc:'der',fem:'die',neut:'das'})[word.gender]+' '));
   }
 });
 

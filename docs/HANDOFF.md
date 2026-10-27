@@ -1,77 +1,53 @@
 # Traspaso activo
 
-Actualizado: 2026-10-26. Aplicación: 0.3.0. Español breve en conversación; documentación técnica detallada.
+Actualizado: 2026-10-27. Aplicación: 0.3.0. Español breve; contexto técnico en Markdown.
 
-## Punto de pausa solicitado por el propietario
+## Tarea vigente y coordinación
 
-Solo registrar continuidad; no iniciar revisiones ni cambios de aplicación en esta pausa.
-Nueva preferencia: retirar del sitio la frase «sin revisión humana» al retomar. Sustituye la petición anterior
-que exigía mostrarla; no implica afirmar validación humana ni alterar falsamente metadatos internos.
-El aviso todavía está en la app: su retirada NO se implementó porque el propietario pidió solo dejar registro.
+El propietario reanuda con Codex y OpenCode para llegar a 1000 fichas contrastadas y preparar producción.
+La coordinación compartida se realiza en comunicacion.md de la carpeta principal Vokal.
+OpenCode asumió 1–500; Codex 501–1000. No sobrescribir cambios ajenos.
+Esta entrega de Codex está en review/codex-501-1000, worktree hermano Vokal-codex-review.
+Al integrar, conservar la retirada visual que hizo OpenCode en app.js y su prueba; no restaurar la frase anterior.
+En esta rama app.js no se editó: esa retirada existe en el trabajo local de OpenCode, no en esta base aislada.
 
-Orden para la siguiente sesión:
-1. Retirar esa frase del distintivo y del texto desplegable en src/app.js; adaptar pruebas de render.
-   Conservar fuentes, alcance por sentido y límites reales sin afirmar aprobación de toda una palabra.
-2. Continuar verificación usando páginas/información fiables y foros para uso/contexto, contrastando afirmaciones
-   y distinguiendo opinión comunitaria de evidencia editorial. No usar coincidencia de agentes como garantía.
-3. Priorizar las 478 entradas ya examinadas que aún no cumplen el umbral por sentido antes de ampliar.
-   No reiniciar desde1 ni confundir500 examinadas con500 aprobadas. Las otras4500 no tienen examen individual.
+## Resultado del tramo 501–1000
 
-## Última implementación — criterio por sentido
+[Informe de 500 filas y fuentes](reviews/LEX-501-1000.md). 497 sentidos cumplen REVIEW_POLICY; 3 pendientes: zerstört, Hau, Mister.
+519 sentidos contrastados en esta rama (22 anteriores + 497), 4481 pendientes. Actualizar al integrar el tramo de OpenCode.
+1000 posiciones examinadas acumuladas históricamente NO significan 1000 aprobadas ni 1000 lemas básicos distintos.
+Capa editorial de 693 registros; no se añadieron palabras al archivo importado.
+Se selecciona un sentido por ficha, se corrigen homografías/género y se retiran traducciones, definiciones y ejemplos no acotados.
+Raw conserva SHA256 77f90566bf008d9e34af4ce76d10caea8e50c8674cc8fe06850c00bb49e75992.
+IDs, orden, progreso y 10981 preguntas conservados; total 5184 fichas/231 lecciones/40 secciones.
+No se certifican pronunciación, todos los sentidos, conjugaciones completas o nivel MCER.
 
-En la entrega anterior el propietario eligió fuentes contrastadas con aviso explícito; la preferencia visual vigente es la del punto de pausa superior.
-Criterio vigente: reviews/REVIEW_POLICY.md. Se recontrastan las 21 filas parciales y absolut del lote 201–500;
-NO es un nuevo lote, el total examinado sigue500, no 522. Evidencia y fuentes: reviews/RECHECK-22.md.
-22 sentidos delimitados cumplen contraste bilingüe + categoría/artículo, dos familias editoriales por ficha.
-Estado sense-checked-ai con review.date/sources/humanReviewed=false. Otros4978 importados siguen pending.
-171 ajustes anteriores +22=193 registros en capa editorial. Ninguno tiene validación humana ni certeza 100%.
-Se excluyen variantes no corroboradas y ejemplos no comprobados de estas22 fichas. No se aprueban otros sentidos/paradigmas.
-Absolut quedó corroborado mediante extracto indexado Larousse y Netzverb; no afirmar apertura íntegra de Larousse.
-Tat se distingue de tat verbal; General se corrobora en la dirección español→alemán; todo queda trazado.
+## Implementación y comprobación
 
-## Código y verificación
+src/vocabulary-review-501-1000.js contiene 500 filas y exporta vocabularyReview5011000, mezclado al final de la capa editorial.
+497 filas tienen review con fecha, fuentes y humanReviewed=false; 3 mantienen pending. Fuentes recuperadas y contrastadas, no URLs inventadas.
+Categorías nuevas: part/num/conj/prep. Nombres de uso sin artículo conservan su forma; las preguntas de artículo los excluyen.
+Loch se acota a das Loch/agujero; Tor a das Tor/gol; See a die See/mar; Band a der Band/tomo.
+Se presentan sich freuen/sich verhalten para sus sentidos reflexivos. El ID antiguo se conserva.
+Tests históricos mantienen sus 22 como subconjunto en vez de impedir futuras revisiones legítimas.
+36 pruebas locales aprobadas y build de 14 recursos correcto. Sin dependencias nuevas; hooks existentes ejecutan la suite.
+No se repitió un recorrido completo de navegador ni se validó un servicio remoto autenticado durante este lote.
 
-vocabulary.js deriva estado desde la evidencia de la capa; content.js conserva review.
-wordCard solo muestra distintivo/fuentes cuando de/es coincide; otro sentido continúa pendiente.
-Aviso visible «IA, sin revisión humana» y límites desplegables. No confundir word.review con state.reviews del repaso privado.
-Lecciones completas mixtas siguen pendientes. IDs/importación/orden/progreso intactos; no se recalifican logros.
-33 pruebas y build de 13 recursos correctos. Hooks recogen controles de metadatos, conjunto exacto, render y22 filas documentales.
-Captura Edge real de 375 px clara con ficha absolut/distintivo/fuentes; ancho documental 360px, sin desbordamiento.
-No recorrido CDP completo ni revisión humana. Servidor QA cerrado al finalizar; no detener servidor del propietario.
+## Siguiente acción concreta
 
-## Siguiente acción
+1. Leer la última respuesta de OpenCode en comunicacion.md y conservar su trabajo 1–500/UI.
+2. Integrar esta rama: módulo, import/spread final, whitelist, categorías, tests y contexto; resolver conteos del estado real combinado.
+3. Ejecutar pnpm check y pnpm build combinados; registrar commit/push real. No afirmar CI sin comprobarlo.
+4. Completar los 3 pendientes del lote y los casos de 1–500 sin REVIEW_POLICY. No marcar 1000 por alcanzar una cifra.
+5. Antes de producción, implementar/verificar OAuth GitHub, sesión, guardado, RLS de dos cuentas y sincronización real.
 
-Para máxima fiabilidad, aplicar REVIEW_POLICY a sentidos ya examinados aún pendientes y resolver dudas históricas;
-no saltar directamente a presentar los 500 como aprobados. Próximo rango nuevo sería501 en adelante.
-No iniciar automáticamente un lote masivo. El agente no ve el cupo; última referencia comunicada59% antes del lote 300.
-Al añadir fichas contrastadas, actualizar evidencia/registro/pruebas en la misma entrega, manteniendo informes históricos.
-Al clonar en otra laptop, seguir OPERATIONS y pnpm prepare; configuración local Git de hooks no viaja con el clon.
+## Continuidad general
 
-## Continuidad técnica
-
-- Revisar con el propietario el resultado de diseño y la experiencia de los bloques.
-- Reiniciar pnpm dev después de actualizar: la lista de recursos públicos añade vocabulary.js y vocabulary-data.js.
-- Implementar GitHub OAuth: el proveedor Supabase ya está habilitado, pero Vokal todavía no tiene el botón/flujo.
-- Verificar después sesión real, guardado, RLS con dos cuentas y sincronización entre dispositivos.
-- No repetir la migración SQL ya aplicada sin revisar políticas. No pedir Client Secret ni OTP en el chat.
-- No contratar SMTP ni Pro: se eligió GitHub para evitar la restricción de plantillas de Free nuevo.
-
-El propietario puede estar ejecutando su servidor en 3000; no detenerlo. Los servidores de QA del agente se cierran al finalizar.
-No hay una publicación confirmada. Código/contexto viajan por Git; progreso privado no se guarda en Git.
-
-## Lectura bajo demanda
-
-- STATUS: snapshot vigente y límites.
-- ARCHITECTURE: rutas, datos, mezcla de progreso y dos rutas de desbloqueo.
-- CONTENT y VOCABULARY_SOURCES: material, conteos, procedencia, licencia e importador.
-- OPERATIONS: Windows/Linux, build y comprobaciones.
-- CLOUD: estado de acceso y preparación de Supabase.
-- WORKFLOW/AGENTS: obligación de mantener contexto técnico relevante, sin bitácora de clics.
-
-Conservar IDs y claves existentes. Un único botón de tema; sin selector ni titulares de volumen. No restaurar verde pino, contornos de tarjetas o hero oscuro fijo en modo claro.
-El hash de esta entrega se consulta con git log, evitando referencias autorreferenciales.
-
-## Ajuste posterior: botón de tema
-Botón reducido de 48 a 44px, icono22→18px. Conserva etiqueta accesible, foco y alternancia; objetivo táctil44px. Cambio CSS sin lógica nueva. Pruebas existentes pasan por hooks; sin nueva captura de navegador.
-
-Ajuste visual posterior: el propietario no percibió la reducción anterior. El botón conserva área táctil invisible de 44 px, pero el fondo visible ahora es de 28 px, sin contorno, y el icono de 16 px. Solo CSS; comportamiento y foco conservados.
+Supabase público configurado; SQL aplicado según el propietario. API anónima rechaza tabla/RPC; GitHub habilitado.
+Falta botón/flujo OAuth y verificar sesión/guardado/aislamiento/sincronización. Sin despliegue confirmado.
+No pedir secretos/OTP ni repetir SQL sin revisar; no contratar SMTP/Pro. Sin cuenta funcional el progreso es local.
+No detener el servidor del propietario en 3000. Solo cerrar servidores de QA propios.
+Al clonar en Windows/Linux: seguir OPERATIONS y pnpm prepare. La configuración Git de hooks no viaja.
+Cachés .qa no viajan y no son necesarias: evidencia útil en el informe versionado.
+No modificar paleta/header/botón de tema; conservar diseño acordado y claves de progreso.
+Consultar STATUS, WORKFLOW y el índice de docs. Los hooks ejecutan pruebas; no redactan contexto ni verifican semántica.

@@ -391,3 +391,17 @@ Se indica IA sin revisión humana. La evidencia cubre significado/categoría/art
 Los22 registros con este estado no tienen ejemplos incluidos; los 4978 restantes siguen pending. Lesson.reviewStatus permanece pending.
 No confundir review editorial pública con state.reviews privado (repaso espaciado). No cambia contrato de nube/progreso.
 Capa 193 registros, build de 13 recursos. Detalle y fuentes en reviews/RECHECK-22 y política en REVIEW_POLICY.
+
+## Lote editorial 501–1000 — 2026-10-27
+
+La implementación más reciente añade src/vocabulary-review-501-1000.js: 500 filas curadas y un objeto por lema.
+Cada fila conserva índice del raw, lema, forma de estudio, traducción, categoría/género, alcance, URLs y estado.
+Se mezcla al final de vocabularyCorrections. No se modifica raw ni el algoritmo de IDs; los cambios de progreso siguen siendo compatibles.
+497 filas incluyen review (fecha, dos fuentes de familias distintas, humanReviewed=false); tres no incluyen review y siguen pending.
+Definitions y example se vacían deliberadamente para no asociar material de otras acepciones al sentido contrastado.
+POS admite part/num/conj/prep. La forma editorial puede incluir sich o una construcción, conservando el ID del lema.
+La pregunta de artículo solo toma sustantivos cuya forma empieza por der/die/das; no inventa artículos de nombres propios.
+El módulo debe estar en publicFiles para servir/desplegar; build de14 recursos. Sin dependencias nuevas.
+Los tests de22 registros se conservan como regresión de un subconjunto; tests/vocabulary-501-1000.test.mjs valida el nuevo lote completo.
+Conteos de esta rama:519 sentidos contrastados,4481 pendientes,693 registros editoriales. Al integrar OpenCode actualizar STATUS.
+No cambia el contrato word.review frente a state.reviews ni el estado pendiente de las lecciones con contenido mixto.

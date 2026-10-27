@@ -1,4 +1,6 @@
-// Editorial adjustments: docs/reviews/APPLIED_CORRECTIONS.md and LEX-101-200.md / LEX-201-500.md.
+import {vocabularyReview5011000} from './vocabulary-review-501-1000.js';
+
+// Editorial adjustments: docs/reviews/APPLIED_CORRECTIONS.md and LEX-101-200.md / LEX-201-500.md / LEX-501-1000.md.
 // Study senses remain pending full linguistic review; raw import and IDs stay intact.
 export const vocabularyCorrections = {
   "nicht": {
@@ -2007,5 +2009,6 @@ export const vocabularyCorrections = {
         }
       ]
     }
-  }
+  },
+  ...vocabularyReview5011000,
 };

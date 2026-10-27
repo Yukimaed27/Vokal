@@ -115,3 +115,12 @@ El propietario pide solo registrar para continuar en otro dispositivo. Retirar d
 esta instrucción sustituye el requisito visual anterior. No equivale a declarar revisión humana o certeza absoluta.
 Usar también foros y páginas fiables para contrastar usos/contextos, diferenciando opiniones de evidencia verificable.
 No se modifica la aplicación ni se inicia otro lote durante la pausa. Prioridad siguiente:478 examinadas pendientes.
+
+## 2026-10-27 — Trabajo conjunto y meta de fiabilidad
+
+El propietario autoriza continuar con OpenCode mediante comunicacion.md sin esperar respuestas del chat.
+Reparto confirmado: OpenCode1–500; Codex501–1000 en rama/worktree aislados. No sobrescribir el trabajo del otro.
+Meta:1000 sentidos contrastados con la política vigente. Examinar1000 posiciones no basta para declararlos aprobados.
+Tres casos del nuevo lote se mantienen pending por evidencia insuficiente; no relajar el criterio para alcanzar una cifra.
+Los nombres propios se estudian en su forma usual sin artículo y se distinguen categorías funcionales/participios.
+No hay publicación ni autorización de pagos implícita en pedir preparación para producción; falta verificar nube real.
