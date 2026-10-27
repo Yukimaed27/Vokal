@@ -144,3 +144,10 @@ Docker queda opcional para reproducibilidad entre Windows/Linux; no es necesario
 
 El propietario prefiere seguir con pnpm dev en cada PC y posponer publicación.
 Confirma primer acceso GitHub y mensaje Guardado en la nube. Falta confirmar recuperación real entre dispositivos.
+
+## 2026-10-27 — Auditoría didáctica por lección
+
+Priorizar revisar el A1 existente como material (reglas, ejemplos, diálogos y preguntas), separado del contador de1000 sentidos.
+Reparto solicitado: Codex4 lecciones/48 fichas; OpenCode3 lecciones/36 fichas. No nuevos agentes internos para controlar consumo.
+No confundir la auditoría de7 lecciones con un curso A1 completo. Mantener aviso del catálogo hasta ampliar su evidencia específica.
+La entrega de OpenCode necesita URLs y alcance concreto; un listado genérico de editoriales no acredita contraste.

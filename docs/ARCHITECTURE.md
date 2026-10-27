@@ -430,3 +430,10 @@ Por tanto, editar una clave antigua de la base puede no cambiar el resultado: mo
 POS añade pron=Pronombre para cuantificadores y mantiene part/num/conj/prep. Las construcciones se almacenan en de sin cambiar ID.
 Estado verificado de esta entrega:1000 contrastadas/4000 pendientes/1005 registros editoriales; build15 y37 pruebas.
 No cambian contratos de nube o progreso. Las cifras de párrafos anteriores describen entregas históricas.
+
+## Extensión de preguntas gramaticales — 2026-10-27
+
+En curriculum.js cada grammarChecks[id] mantiene [prompt,answers,explanation] y puede añadir una cuarta posición,
+extraQuestions: array de objetos de pregunta. make la toma como [] cuando falta; solo tiempo la usa en esta entrega.
+No cambian contratos de preguntas ni filas léxicas, IDs o progreso. Las tres lecciones originales conservan su definición en content.js.
+Auditoría docente por lección documentada en reviews/A1-CODEX.md, sin nuevos estados editoriales ni módulos públicos.

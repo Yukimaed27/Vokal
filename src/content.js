@@ -19,6 +19,9 @@ const initialLessons = [
       { prompt: 'Entras en una tienda y quieres saludar de manera formal.', options: ['Guten Tag', 'Tschüss', 'Danke'], answers: ['Guten Tag'], explanation: 'Guten Tag es un saludo adecuado para un encuentro formal durante el día.' },
       { prompt: '¿Cómo te despides de una amiga?', options: ['Guten Morgen', 'Tschüss', 'Guten Abend'], answers: ['Tschüss'], explanation: 'Tschüss es una despedida informal. Guten Morgen y Guten Abend son saludos.' },
       { prompt: 'Escribe el saludo informal «Hola» en alemán.', answers: ['Hallo'], explanation: 'Hallo significa «Hola». Recuerda la doble l.' },
+      { prompt: 'Te vas a dormir. ¿Qué despedida corresponde?', options: ['Gute Nacht', 'Guten Abend', 'Guten Morgen'], answers: ['Gute Nacht'], explanation: 'Gute Nacht desea una buena noche al despedirse para dormir; Guten Abend saluda al llegar por la tarde-noche.' },
+      { prompt: 'Completa la respuesta formal: Danke, gut. Und ___?', answers: ['Ihnen'], explanation: 'Ihnen corresponde aquí al tratamiento formal Sie y lleva mayúscula. Und Ihnen? significa «¿Y usted?».' },
+      { prompt: '¿Qué despedida significa «Hasta mañana»?', options: ['Bis morgen', 'Bis bald', 'Willkommen'], answers: ['Bis morgen'], explanation: 'Bis morgen se refiere a mañana; Bis bald significa «Hasta pronto», sin fijar el día.' },
     ],
   },
   {
@@ -37,7 +40,10 @@ const initialLessons = [
     questions: [
       { prompt: '¿Qué frase significa «Me llamo Ana»?', options: ['Ich komme aus Peru.', 'Ich heiße Ana.', 'Guten Tag, Ana.'], answers: ['Ich heiße Ana.'], explanation: 'Ich heiße… introduce tu nombre. Ich komme aus… introduce tu procedencia.' },
       { prompt: 'Completa: Ich komme ___ Peru.', answers: ['aus'], explanation: 'Aus indica procedencia. Con Peru no necesitas artículo en esta frase.' },
-      { prompt: 'Completa: Ich ___ Ana. (Soy Ana.)', answers: ['bin'], explanation: 'El verbo sein cambia a bin cuando el sujeto es ich.' },
+      { prompt: 'Completa con sein: Ich ___ Ana. (Soy Ana.)', answers: ['bin'], explanation: 'El verbo sein cambia a bin cuando el sujeto es ich.' },
+      { prompt: 'Completa con heißen: Wie ___ du?', answers: ['heißt'], explanation: 'Con du se escribe heißt, sin añadir otra s a la raíz terminada en ß.' },
+      { prompt: 'Completa con sprechen: Du ___ Spanisch.', answers: ['sprichst'], explanation: 'Sprechen cambia e por i con du: du sprichst. Con ich se conserva e: ich spreche.' },
+      { prompt: '¿Qué pregunta pide el lugar de residencia?', options: ['Wo wohnst du?', 'Woher kommst du?', 'Wie heißt du?'], answers: ['Wo wohnst du?'], explanation: 'Wo wohnst du? pregunta dónde vives. Woher kommst du? pregunta de dónde eres o vienes.' },
     ],
   },
   {
@@ -48,7 +54,7 @@ const initialLessons = [
     words: [
       ['bitte', 'bitte', 'por favor / de nada', 'Noch einmal, bitte.'],
       ['danke', 'danke', 'gracias', 'Danke für Ihre Hilfe.'],
-      ['entschuldigung', 'die Entschuldigung', 'la disculpa; «disculpe» como expresión', 'Entschuldigung, bitte.'],
+      ['entschuldigung', 'die Entschuldigung', 'la disculpa', 'Entschuldigung, bitte.'],
       ['ja', 'ja', 'sí', 'Ja, gerne.'],
       ['nein', 'nein', 'no', 'Nein, danke.'],
       ['verstehen', 'verstehen', 'entender', 'Ich verstehe nicht.'],
@@ -57,6 +63,9 @@ const initialLessons = [
       { prompt: 'Alguien te ayuda. ¿Qué dices para agradecer?', options: ['Danke', 'Nein', 'Auf Wiedersehen'], answers: ['Danke'], explanation: 'Danke expresa agradecimiento. Puedes acompañarlo con una sonrisa.' },
       { prompt: 'Pides que repitan: Noch einmal, ___.', answers: ['bitte'], explanation: 'Noch einmal, bitte significa «Otra vez, por favor».' },
       { prompt: '¿Cómo dices «No entiendo»?', options: ['Ich heiße Ana.', 'Ich verstehe nicht.', 'Ja, gerne.'], answers: ['Ich verstehe nicht.'], explanation: 'Nicht niega aquí el verbo: verstehe significa «entiendo»; verstehe nicht, «no entiendo».' },
+      { prompt: 'Completa la petición formal: Können Sie ___ helfen? (¿Puede ayudarme?)', answers: ['mir'], explanation: 'Helfen lleva dativo para la persona ayudada: mir significa aquí «a mí». Helfen permanece en infinitivo al final después de können.' },
+      { prompt: 'Respondes a un agradecimiento. ¿Qué expresión significa aquí «De nada»?', options: ['Bitte', 'Entschuldigung', 'Nein'], answers: ['Bitte'], explanation: 'Bitte puede responder a Danke. En una petición, la misma palabra significa «por favor».' },
+      { prompt: 'Completa con helfen: Du ___ mir.', answers: ['hilfst'], explanation: 'Helfen cambia e por i con du: du hilfst. Mir identifica a la persona ayudada.' },
     ],
   },
 ];

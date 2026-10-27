@@ -49,3 +49,7 @@ La decisión del propietario permite continuar sin profesor, no afirmar revisió
 Curación vigente: vocabulary-review-001-500.js y vocabulary-review-501-1000.js se mezclan al final de vocabularyCorrections.
 Modificar el módulo efectivo del rango, no un literal antiguo que quede sobrescrito. El primer módulo incluye5 complementos1001–1005.
 Meta actual:1000 sentidos contrastados; no se certifican1000 lemas básicos ni un nivel MCER. Consultar STATUS antes de ampliar.
+
+Prioridad posterior: auditoría del A1 existente repartida con OpenCode por comunicacion.md.
+Codex: saludos/presentacion/cortesia/tiempo; OpenCode: cafeteria/orientacion/transporte.
+Leer docs/reviews/A1-CODEX.md y la entrega de OpenCode antes de integrar. No certificar A1 completo por revisar sus7 lecciones actuales.

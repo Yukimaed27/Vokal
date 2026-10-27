@@ -445,3 +445,28 @@ QA6081 cerrada,3000 intacto. Evidencia .qa ignorada. Contexto actualizado junto 
 Además, el propietario confirma sesión GitHub y mensaje Guardado en la nube, sin datos personales registrados.
 No se ha confirmado recuperación en otro dispositivo ni aislamiento RLS. Publicación pospuesta: usar pnpm dev por ahora.
 Siguiente acción: comprobar recuperación de progreso con la misma cuenta en otro navegador/equipo.
+
+## 2026-10-27 — Auditoría A1 de Codex y reparto con OpenCode
+
+Solicitud: repartir la revisión para mejorar la autonomía de aprendizaje. Se delimita esta primera ronda a7 lecciones existentes.
+Codex: saludos/presentacion/cortesia/tiempo,48 fichas y14 turnos bilingües. OpenCode: cafeteria/orientacion/transporte,36 fichas.
+Se registra propiedad y protocolo en comunicacion.md. No se activan otros agentes internos ni se presume ejecución externa automática.
+Se recibe resumen preliminar de OpenCode, pero sin URLs/evidencia por ficha; se solicita A1-OPENCODE.md antes de aprobar/integrar.
+
+Cambios: content.js añade9 preguntas, acota Entschuldigung al sustantivo y precisa que bin se pide con sein.
+curriculum.js amplía gramática de las4 lecciones y añade3 preguntas de tiempo. Se enseñan formas presentes, dativo,
+tratamientos, negación, Uhr/Stunde/plurales/ein Uhr y lectura contextual de Morgen.
+Fuentes realmente consultadas y fallos de recuperación documentados en docs/reviews/A1-CODEX.md (48 filas).
+No se eliminan avisos de alcance ni se promueve el estado de las fichas del catálogo.
+
+Validación:45 pruebas locales y build15, sin dependencias. tests/a1-review.test.mjs verifica compatibilidad de IDs,
+respuestas correctas/incorrectas de los nuevos contrastes y separación sustantivo/fórmula.
+Hash de IDs antes/después idéntico;1000 sentidos contrastados/4000 pendientes conservados.
+Edge headless real muestra saludos, explicación nueva,12 fichas y30 ejercicios. No recorrido completo de todos los ejercicios.
+QA6082 cerrada,3000 intacto; descargas .qa ignoradas y sin procesos de descarga pendientes.
+Conteos:5184 fichas,231 lecciones,40 secciones,10993 ejercicios;118 en el grupo de Codex.
+
+Límites: ejemplos propios revisados mediante reglas, no todos atestiguados literalmente; no certificación integral A1 ni revisión100% infalible.
+Aún faltan contenidos de A1, escucha/habla y evaluación abierta. Corrector tolera mayúsculas y pide formas objetivo, no todo sinónimo posible.
+Siguiente paso: revisar fuentes/entrega OpenCode, integrar cambios justificados sin duplicar reglas y completar revisión cruzada.
+Implementación y contexto se guardan juntos; comprobar remoto antes de anunciar disponibilidad entre equipos.

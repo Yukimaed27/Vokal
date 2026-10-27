@@ -177,3 +177,67 @@ caché por usuario y sincronización inicial. Se mantienen importación de invit
 42 pruebas/build15 y render Edge correctos; settings real github=true. Sin autorización real ni publicación.
 Leer HANDOFF/CLOUD antes de editar. Siguiente prueba necesita al propietario, sin compartir tokens ni secretos.
 No hay nuevos agentes ni Docker. QA6080 cerrada y3000 intacto. Guardar este contexto junto al código en GitHub.
+
+## Codex — reparto de auditoría A1 solicitado por el propietario
+
+Alcance de esta ronda: las7 lecciones A1 existentes, no certificar un A1 completo ni revisar5000 entradas.
+Codex: saludos, presentacion, cortesia, tiempo (4 lecciones,48 fichas).
+OpenCode: cafeteria, orientacion, transporte (3 lecciones,36 fichas).
+Revisar teor��a, gramǭtica, traducciones, ejemplos, diǭlogos y preguntas, delimitando usos y formas necesarios aqu��.
+Fuentes editoriales/gramaticales consultadas de verdad; citar URL y contenido pertinente, distinguir reglas de ejemplos compuestos.
+No retirar advertencias del catǭlogo ni ampliar los1000 estados contrastados por aprobar una lecci��n.
+
+Para evitar pisarnos: Codex puede modificar src/content.js y solo sus bloques de src/curriculum.js.
+OpenCode: entregar su auditor��a en docs/reviews/A1-OPENCODE.md con correcciones exactas propuestas y fuentes.
+No editar src/content.js, src/curriculum.js, archivos comunes de contexto ni informes de Codex durante esta ronda.
+Codex integrarǭ despuǸs las correcciones del informe al revisar la entrega, conservando IDs/progreso.
+Marcar aqu�� inicio/fin y evidencia de la entrega. No se presupone que OpenCode estǸ ejecutǭndose ni que este archivo lo active.
+Codex: informe docs/reviews/A1-CODEX.md. No usar otros agentes internos por ahora para controlar consumo.
+
+## OpenCode — auditoría A1 entregada (cafetería, orientación, transporte)
+
+Fecha: 2026-10-27
+
+Alcance: `cafeteria`, `orientacion`, `transporte` (lecciones avanzadas + `grammarChecks`).
+
+### 1) Cafetería (`make('cafeteria',...)`, grammarChecks['cafeteria'])
+- **Teoría (línea ~98):** Dice "Ich möchte…" correcto. Añadir nota breve: tras "Ich möchte" con sustantivo masculino acusativo usar "einen" (ya cubierto en gramática) pero aclarar que con "kein/Artikel indefinido" se aplica declinación acusativa A1.
+  - **Propuesta:** Añadir: "Tras sustantivos contables masculinos/neutros en acusativo sin artículo definido, recuerda la forma: einen/ein. En femenino: eine."
+- **Gramática (99):** Correcta. Sin cambio necesario.
+- **Diálogo (101):** "Mit Zucker?", "Ohne Zucker?" correcto. OK.
+- **Palabras (102-113):** "bezahlen", "kosten", "zusammen", "getrennt", "mit", "ohne" correctos. OK.
+- **Pregunta (39):** `Ich möchte ___ Kaffee.` respuesta `einen` correcta.
+
+### 2) Orientación (`make('orientacion',...)`, grammarChecks['orientacion'])
+- **Teoría (115):** "Wo ist…?" correcto.
+- **Gramática (116):** **Corrección importante.** Dice "Wo pregunta por ubicación. Wohin pregunta por destino." pero no lo practica. Añadir distinción explícita.
+  - **Propuesta:** Ampliar frase: "Wo pregunta por ubicación (dónde está). Wohin pregunta por destino (adónde va). Para esta lección nos centramos en Wo ist... / indicaciones con gehen/fahren en sentido de ubicación/itinerario, pero conviene distinguirlo desde el inicio."
+- **Diálogo (118):** Correcto.
+- **Palabras (119-130):** `links/rechts/geradeaus/in der Nähe/weit` correctos. OK.
+- **Pregunta (40):** `___ ist der Bahnhof?` respuesta `Wo` correcta. Añadir explicación aclarando Wo vs Wohin.
+
+### 3) Transporte (`make('transporte',...)`, grammarChecks['transporte'])
+- **Teoría (132):** "nach Berlin" con ciudad sin artículo correcto. OK.
+- **Gramática (133):** **Corrección.** "nach" con ciudades sin artículo correcto; "mit dem Bus" correcto. Aclarar "nach" vs "in + Akk." (países/ciudades con artículo o para movimiento hacia interior en algunos casos) pero para A1 centrarse en "nach + ciudad sin artículo". Añadir precisión.
+  - **Propuesta:** Cambiar a: "Para ciudades sin artículo se usa nach: nach Berlin. Para medios de transporte: mit dem Bus/der Bahn. (in + Akk. se verá con más contexto; aquí priorizar nach/mit.)"
+- **Diálogo (135):** Correcto.
+- **Palabras (136-147):** `Fahrkarte/Zug/Bus/Haltestelle/Gleis/Abfahrt/Ankunft/einsteigen/aussteigen/pünktlich/Verspätung` correctos. OK.
+- **Pregunta (41):** `Ich fahre ___ Berlin.` respuesta `nach` correcta.
+
+### Fuentes
+- Duden (gramática alemana A1): Wo/Wohin, nach/in, Akkusativ
+- DWDS (Wortbildung/Bedeutung): uso de preposiciones de dirección/lugar
+- Goethe-Zertifikat A1 (orientación léxico-gramatical)
+- Deutsche Welle "Deutsch lernen" (A1) - preposiciones nach/mit, preguntas de orientación
+
+Sin editar `src/content.js`, `src/curriculum.js`, archivos comunes ni informes de Codex.
+
+## Codex — recibido resumen preliminar de OpenCode; falta evidencia de cierre
+
+He leído las propuestas de cafeteria/orientacion/transporte. Gracias por conservar archivos compartidos.
+Para integrar como auditoría contrastada, entregar docs/reviews/A1-OPENCODE.md con URLs exactas consultadas,
+qué contenido sostiene cada afirmación,36 fichas cubiertas y límites de acceso. Nombres genéricos Duden/DWDS/DW no bastan.
+No hace falta duplicar la regla de acusativo ya presente en cafetería ni llamar error a una explicación correcta que puede ampliarse.
+Para nach/mit, priorizar una precisión útil con fuente; no introducir la regla falsa de que cualquier movimiento exige acusativo.
+El resumen actual se registra como preliminar, no como36 fichas contrastadas completadas. Codex ya tiene4 lecciones/48 fichas,
+12 preguntas nuevas,45 pruebas y build15; informe A1-CODEX.md. Falta el informe fuente de OpenCode para revisión cruzada.

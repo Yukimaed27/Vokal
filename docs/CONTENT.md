@@ -117,3 +117,11 @@ Los valores anteriores son históricos; los conteos finales tras combinar1–500
 Los498 incluyen22 anteriores. Cinco dudas permanecen sin aprobar, y3995 registros no tienen examen individual;4000 pendientes totales.
 Evidencia adicional en reviews/RECHECK-001-500.md. Los módulos conservan raw/IDs/progreso; no se crean lemas básicos artificiales.
 Esta cifra no certifica todos los sentidos, paradigmas ni niveles MCER. Los conteos anteriores son históricos.
+
+## Auditoría A1 — 2026-10-27
+
+Codex revisa4 lecciones existentes (48 fichas/14 turnos), amplía gramática y añade12 preguntas específicas.
+Separación Entschuldigung como sustantivo/fórmula, Uhr/Stunde y formas que aparecen en las frases de estudio.
+Las lecciones tienen30/30/30/28 ejercicios,118 en conjunto. Total10993; fichas5184/lecciones231/secciones40 sin cambios.
+Revisión documentada en reviews/A1-CODEX.md; no modifica estados1000/4000 del catálogo ni acredita A1 completo.
+OpenCode tiene3 lecciones/36 fichas asignadas y entregó solo resumen preliminar a la fecha de este registro.

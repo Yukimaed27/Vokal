@@ -18,24 +18,28 @@ export const units = [
 
 export const firstLessonExtras = {
   saludos: {
-    grammar:'Guten Morgen, Guten Tag y Guten Abend son expresiones fijas. No traduzcas cada terminación por separado todavía. Gute Nacht se utiliza al despedirse para ir a dormir, no como saludo al llegar por la noche. La cortesía depende también del tono y de la situación.',
+    grammar:'Guten Morgen saluda por la mañana; Guten Tag, durante el día; Guten Abend, por la tarde-noche. Son expresiones fijas: conserva Guten en esos saludos y Gute en Gute Nacht, que se usa al despedirse para dormir. En Wie geht es Ihnen? («¿Cómo está usted?»), Ihnen es la forma de cortesía y lleva mayúscula. Para alguien cercano: Wie geht es dir? («¿Cómo estás?»). Responde Mir geht es gut («Estoy bien»); gut expresa aquí bienestar, no «bueno» delante de un nombre. Auch significa «también». Bis bald no fija una fecha; Bis morgen sí: hasta mañana. Willkommen in Berlin! da la bienvenida, sin cambiar willkommen según el género de la persona. En schlaf gut («duerme bien»), schlaf es una petición informal a una persona; no es la forma de cortesía.',
     dialogue:[['Guten Morgen! Wie geht es Ihnen?','¡Buenos días! ¿Cómo está usted?'],['Danke, gut. Und Ihnen?','Bien, gracias. ¿Y usted?'],['Auch gut. Auf Wiedersehen!','También bien. ¡Hasta luego!']],
     words:[['gute-nacht','Gute Nacht','Buenas noches (al ir a dormir)','Gute Nacht und schlaf gut!'],['bis-bald','Bis bald','Hasta pronto','Tschüss, bis bald!'],['bis-morgen','Bis morgen','Hasta mañana','Bis morgen, Anna!'],['willkommen','willkommen','bienvenido/a','Willkommen in Berlin!'],['gut','gut','bien / bueno','Mir geht es gut.'],['auch','auch','también','Mir geht es auch gut.']],
   },
   presentacion: {
-    grammar:'En una oración afirmativa sencilla, el verbo conjugado suele ocupar la segunda posición: Ich heiße Ana. Para preguntar por el nombre: Wie heißen Sie? (formal) o Wie heißt du? (informal). Aprende primero la frase completa y después cambia el nombre o el país.',
+    grammar:'En estas afirmaciones, el verbo conjugado ocupa la segunda posición: Ich heiße Ana. Una posición puede contener varias palabras; no significa «segunda palabra». En Wie heißt du? y Woher kommst du?, la palabra interrogativa va delante del verbo. Presente de sein: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind. Presente de heißen: ich heiße, du heißt, er/sie/es heißt, wir heißen, ihr heißt, sie/Sie heißen. Kommen y wohnen siguen aquí las terminaciones -e, -st, -t, -en, -t, -en: ich komme, du kommst; ich wohne, du wohnst. Sprechen cambia la vocal con du y er/sie/es: ich spreche, du sprichst, er spricht, wir sprechen, ihr sprecht, sie/Sie sprechen. Sie se dirige formalmente a una o varias personas; sie puede significar «ella» o «ellos/ellas». Woher kommst du? pide procedencia; Wo wohnst du? pide residencia. Aus Peru expresa procedencia; in Lima, ubicación. Deutschland, Peru y Spanien se usan aquí sin artículo; otros países sí lo necesitan, como die Schweiz: aus der Schweiz.',
     dialogue:[['Hallo! Wie heißt du?','¡Hola! ¿Cómo te llamas?'],['Ich heiße Luis. Und du?','Me llamo Luis. ¿Y tú?'],['Ich bin Anna. Woher kommst du?','Soy Anna. ¿De dónde eres?'],['Ich komme aus Peru.','Soy de Perú.']],
     words:[['du','du','tú','Wie heißt du?'],['sie-formal','Sie','usted / ustedes (formal)','Wie heißen Sie?'],['wer','wer','quién','Wer ist das?'],['woher','woher','de dónde','Woher kommst du?'],['wohnen','wohnen','vivir / residir','Ich wohne in Lima.'],['sprechen','sprechen','hablar','Ich spreche Spanisch.']],
   },
   cortesia: {
-    grammar:'Para pedir ayuda de manera formal puedes decir Können Sie mir helfen? («¿Puede ayudarme?»). Noch einmal, bitte y Langsam, bitte permiten controlar el ritmo. No hace falta dominar todas las reglas para usar una expresión que comprendes; identifica su intención y practícala en una situación real.',
+    grammar:'Können Sie mir helfen? significa «¿Puede ayudarme?» y sirve también para dirigirse formalmente a varias personas. En esta pregunta de sí/no, können va primero y helfen permanece en infinitivo al final. Helfen lleva dativo para la persona ayudada: mir («a mí»), dir («a ti»), Ihnen («a usted/ustedes»). Presente de helfen: ich helfe, du hilfst, er/sie/es hilft, wir helfen, ihr helft, sie/Sie helfen. Verstehen conserva la raíz en presente: ich verstehe, du verstehst, er/sie/es versteht, wir verstehen, ihr versteht, sie/Sie verstehen. Ich verstehe nicht niega «entiendo»; Nein responde «no» a una pregunta. Nicht no tiene una posición fija en todas las oraciones: aquí va al final. Die Entschuldigung es el sustantivo «la disculpa», para disculpas concretas, plural die Entschuldigungen; Entschuldigung! sin artículo es la fórmula «¡Disculpe!/¡Perdón!». Bitte significa «por favor» al pedir y «de nada» al responder a Danke. Gerne expresa disposición: Ja, gerne («Sí, con gusto»). Noch einmal, bitte pide repetir; Sprechen Sie bitte langsam pide hablar despacio. Natürlich expresa aquí «por supuesto».',
     dialogue:[['Entschuldigung, können Sie mir helfen?','Disculpe, ¿puede ayudarme?'],['Ja, gerne.','Sí, con gusto.'],['Ich verstehe nicht. Langsam, bitte.','No entiendo. Despacio, por favor.'],['Natürlich.','Por supuesto.']],
     words:[['helfen','helfen','ayudar','Können Sie mir helfen?'],['langsam','langsam','despacio / lento','Sprechen Sie bitte langsam.'],['noch-einmal','noch einmal','otra vez','Noch einmal, bitte.'],['gerne','gerne','con gusto','Ja, gerne.'],['natuerlich','natürlich','por supuesto / naturalmente','Natürlich helfe ich Ihnen.'],['nicht','nicht','no (negación)','Ich verstehe nicht.']],
   },
 };
 
 const grammarChecks = {
-  tiempo:['Completa: Wir treffen uns ___ acht Uhr.',['um'],'Um introduce una hora concreta.'],
+  tiempo:['Completa con la preposición para la hora exacta: Wir treffen uns ___ acht Uhr.',['um'],'Um introduce la hora acordada: a las ocho.',[
+    {prompt:'Completa la hora: Es ist ___ Uhr. (Es la una.)',answers:['ein'],explanation:'Se cuenta eins, pero delante de Uhr se usa ein: ein Uhr.'},
+    {prompt:'Completa con el sustantivo para duración: Ich lerne eine ___. (Estudio una hora.)',answers:['Stunde'],explanation:'Stunde mide una duración. Uhr se usa para el reloj o para indicar la hora.'},
+    {prompt:'Completa con el plural de Minute: Drei ___, bitte.',answers:['Minuten'],explanation:'Minute es femenino y su plural es Minuten: eine Minute, drei Minuten.'},
+  ]],
   cafeteria:['Completa: Ich möchte ___ Kaffee.',['einen'],'Kaffee es masculino y aquí funciona como objeto en acusativo: einen Kaffee.'],
   orientacion:['Pregunta por una ubicación: ___ ist der Bahnhof?',['Wo'],'Wo pregunta dónde está algo; wohin pregunta por el destino.'],
   transporte:['Completa: Ich fahre ___ Berlin.',['nach'],'Nach se utiliza aquí con una ciudad sin artículo.'],
@@ -72,14 +76,14 @@ function make(id, unit, title, subtitle, theory, grammar, tip, dialogue, terms) 
     const key = de.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
     return [`term-${key}`, de, es, example];
   });
-  const [prompt,answers,explanation] = grammarChecks[id];
-  return {id, unit, level, title, subtitle, category: units.find(u => u.id === unit).title.toUpperCase(), theory, grammar, tip, dialogue, example: dialogue[0], words:wordRows, questions:[{prompt,answers,explanation}]};
+  const [prompt,answers,explanation,extraQuestions = []] = grammarChecks[id];
+  return {id, unit, level, title, subtitle, category: units.find(u => u.id === unit).title.toUpperCase(), theory, grammar, tip, dialogue, example: dialogue[0], words:wordRows, questions:[{prompt,answers,explanation},...extraQuestions]};
 }
 
 export const advancedLessons = [
   make('tiempo','a1-diario','El tiempo a tu favor','Di la hora y organiza un encuentro.',
     'Para preguntar la hora usa Wie spät ist es? Para acordar una hora, um indica el momento: um acht Uhr. Heute, morgen y gestern te sitúan en el calendario. Primero distingue cuándo ocurre algo; no necesitas aprender todos los números de una vez.',
-    'En Es ist acht Uhr, ist es la forma de sein para es. En Wir treffen uns um acht Uhr, um introduce una hora concreta. Morgen, con mayúscula y artículo, puede ser «la mañana»; morgen, como adverbio, significa «mañana». Observa el contexto.',
+    'Es ist acht Uhr significa «Son las ocho»; ist es la forma de sein para es. Um acht Uhr significa «a las ocho». Die Uhr es el reloj (plural die Uhren); al decir la hora, Uhr no cambia: ein Uhr, acht Uhr. Die Stunde mide duración: eine Stunde, zwei Stunden. Die Minute forma el plural die Minuten. Morgen como sustantivo significa «la mañana»; morgen como adverbio, «mañana», aunque al iniciar una oración también lleva mayúscula. Heute es «hoy» y gestern, «ayer». En Gestern war ich hier, war es el pasado de sein para ich («estaba/estuve»). En Morgen habe ich Zeit, habe viene de haben («tengo»); el presente puede expresar un plan futuro con morgen. En Wir treffen uns, uns significa aquí «nos»: nos encontramos. Treffen cambia con du/er: du triffst, er trifft. En Wann kommst du?, wann pregunta «cuándo», mientras que Wie spät ist es? pregunta la hora. Eins sirve al contar; delante de Uhr se dice ein Uhr, sin s. Ante un sustantivo femenino: eine Minute, eine Stunde.',
     'Los horarios de transporte suelen expresarse con el sistema de 24 horas. Comprueba siempre el día y la hora.',
     [['Wann treffen wir uns?','¿Cuándo nos encontramos?'],['Morgen um acht Uhr.','Mañana a las ocho.'],['Gut, bis morgen!','Bien, ¡hasta mañana!']],
     `heute|hoy|Heute lerne ich Deutsch.

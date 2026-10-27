@@ -118,3 +118,10 @@ Pendientes: autorización real, escritura/sincronización/RLS entre cuentas y de
 
 Sincronizar ahora deja de estirarse verticalmente y conserva la misma altura base48px que las otras acciones.
 Comprobación Edge con fixture CSS: [48,48,48];42 pruebas correctas.
+
+## 2026-10-27 — Cuatro lecciones A1 revisadas por Codex
+
+Saludos, presentación, cortesía y tiempo: explicaciones ampliadas, Entschuldigung separada por función y12 preguntas añadidas.
+48 fichas/IDs conservados;118 ejercicios en ese grupo. Informe con fuentes y límites en docs/reviews/A1-CODEX.md.
+45 pruebas/build15 y smoke Edge correctos. Total10993 ejercicios, sin añadir palabras ni cambiar1000 estados léxicos contrastados.
+La mitad de OpenCode sigue pendiente de informe fuente. No acredita A1 completo ni elimina avisos del diccionario.

@@ -262,3 +262,10 @@ Callback con código ficticio y sin verificador se rechaza y deja la pantalla ut
 API pública Auth settings HTTP200/external.github=true. No se ejecutó autorización ni escritura autenticada.
 Servidor QA6080 cerrado, servidor3000 del propietario intacto. Evidencia local .qa ignorada, no requerida para continuar.
 GitHub CLI no disponible; no se ejecutó workflow Pages. Procedimiento manual y URLs en CLOUD.
+
+## Comprobación de auditoría A1 — 2026-10-27
+
+45 pruebas locales (3 nuevas en tests/a1-review.test.mjs) y build15 aprobados, sin cambios de dependencias.
+Se verifica hash de IDs previo, respuestas como mir frente a mich/ein frente a eins y sustantivo frente a interjección.
+Edge headless sin puerto de depuración abre #leccion/saludos:12 fichas, gramática nueva y30 ejercicios presentes.
+No se recorrieron manualmente todos los ejercicios. QA6082 cerrada,3000 intacto, evidencia .qa ignorada.

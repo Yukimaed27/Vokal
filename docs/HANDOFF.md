@@ -2,7 +2,24 @@
 
 Actualizado: 2026-10-27. Vokal0.3.0. Español breve; documentación técnica en Markdown.
 
-## Tarea activa: cuenta y sincronización
+## Tarea activa: auditoría A1 con OpenCode
+
+El propietario pidió repartir la revisión de A1, no ampliar más vocabulario aislado.
+Codex completó saludos/presentacion/cortesia/tiempo:48 fichas,14 turnos, teoría/gramática y118 ejercicios finales.
+Se amplían reglas y formas enseñadas, se separa sustantivo/fórmula de Entschuldigung y se añaden12 preguntas.
+Informe con48 filas/fuentes/alcance: docs/reviews/A1-CODEX.md. Código efectivo: content.js y bloques asignados de curriculum.js.
+45 pruebas locales y build15 correctos. Edge renderiza saludos, gramática nueva,12 fichas y30 ejercicios.
+QA6082 cerrada;3000 intacto. No se modificó diseño, nube, raw ni IDs/progreso;1000/4000 estados léxicos intactos.
+
+OpenCode asignado cafeteria/orientacion/transporte (36 fichas). Dejó resumen preliminar en comunicacion.md;
+Codex solicitó informe A1-OPENCODE.md con fuentes exactas y36 filas antes de integrarlo como contraste completo.
+No sobrescribir sus aportes ni contabilizar propuesta como auditoría terminada. No se activaron agentes internos nuevos.
+La comunicación se lee manualmente; no presumir que despierta otra herramienta.
+Siguiente acción: leer entrega de OpenCode, comprobar evidencia, integrar solo correcciones justificadas y hacer revisión cruzada.
+Cerrar esas7 lecciones aún no cierra un A1 completo: faltan contenidos y evaluación de las cuatro destrezas.
+Conteos actuales:5184 fichas/231 lecciones/40 secciones/10993 ejercicios. Fuentes y decisiones viajan en Git; .qa no es necesaria.
+
+## Estado de cuenta y sincronización
 
 Último ajuste: account-actions usa align-items:center; evita estirar «Sincronizar ahora» por márgenes de Cerrar sesión.
 Edge con fixture de clases reales/CSS vigente: los tres botones miden48px de alto;42 pruebas correctas.
